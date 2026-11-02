@@ -1,0 +1,368 @@
+{
+  "sessionId": "420a23e2-9612-45b4-9bab-5fae3b15a372",
+  "state": {
+    "name": "Ravi",
+    "diet": null,
+    "awaiting": null,
+    "lang": "en",
+    "table": "7",
+    "cart": {
+      "lines": [],
+      "count": 0,
+      "bill": {
+        "sub": 0,
+        "cgst": 0,
+        "sgst": 0,
+        "round": 0,
+        "total": 0
+      },
+      "orderNote": "",
+      "orderVoice": null
+    },
+    "order": {
+      "no": "NDB-6612",
+      "customer": "Ravi",
+      "mode": "dine",
+      "table": "7",
+      "items": [
+        {
+          "id": "masala-chai",
+          "name": "Masala Chai",
+          "cat": "chai",
+          "veg": true,
+          "price": 40,
+          "qty": 1,
+          "amount": 40,
+          "note": "",
+          "voice": null
+        },
+        {
+          "id": "butter-naan",
+          "name": "Butter Naan",
+          "cat": "bread",
+          "veg": true,
+          "price": 60,
+          "qty": 2,
+          "amount": 120,
+          "note": "Extra butter, well done please",
+          "voice": null
+        },
+        {
+          "id": "dal-makhani",
+          "name": "Dal Makhani",
+          "cat": "gravy",
+          "veg": true,
+          "price": 220,
+          "qty": 1,
+          "amount": 220,
+          "note": "",
+          "voice": null
+        }
+      ],
+      "bill": {
+        "sub": 380,
+        "cgst": 9.5,
+        "sgst": 9.5,
+        "round": 0,
+        "total": 399
+      },
+      "note": "",
+      "voice": null,
+      "placedAt": 1793634716206,
+      "stage": 7,
+      "paid": true,
+      "payment": {
+        "method": "UPI",
+        "ref": "TXN34730121",
+        "at": 1793634730121
+      },
+      "feedback": {
+        "stars": 5,
+        "text": "★★★★★ Loved it",
+        "at": 1793634730839
+      }
+    }
+  },
+  "transcript": [
+    {
+      "at": 1793634710340,
+      "role": "bot",
+      "text": "Namaste! I'm **Masala Mitra**, your table-side friend at NASH Dhabha & Bakes.\nSay **hi** to start. I'll ask your mood and suggest dishes from our menu. You can type or tap the mic to speak.",
+      "chips": [
+        "Hi",
+        "What are your timings?",
+        "Veg biryani"
+      ]
+    },
+    {
+      "at": 1793634710736,
+      "role": "user",
+      "text": "hi",
+      "voice": false
+    },
+    {
+      "at": 1793634710737,
+      "role": "bot",
+      "text": "Hi! Welcome to **NASH Dhabha & Bakes**. May I know your name?"
+    },
+    {
+      "at": 1793634711430,
+      "role": "user",
+      "text": "I am Ravi",
+      "voice": false
+    },
+    {
+      "at": 1793634711431,
+      "role": "bot",
+      "text": "Nice to meet you, **Ravi**! What is your mood today? Tell me in chat or tap the mic and say it.",
+      "chips": [
+        "Happy",
+        "Hungry",
+        "Tired",
+        "Stressed",
+        "Sad",
+        "Adventurous"
+      ]
+    },
+    {
+      "at": 1793634712118,
+      "role": "user",
+      "text": "I'm feeling tired",
+      "voice": false
+    },
+    {
+      "at": 1793634712120,
+      "role": "bot",
+      "text": "Long day? Let's get your energy back. You sound **tired**, Ravi. From our menu:\nPrefer veg only? Just say “veg”.",
+      "items": [
+        {
+          "id": "masala-chai",
+          "name": "Masala Chai",
+          "price": 40,
+          "veg": true,
+          "cat": "Chai & Coffee",
+          "spice": "",
+          "desc": "Kadak tea with ginger and cardamom.",
+          "add": true
+        },
+        {
+          "id": "egg-biryani",
+          "name": "Egg Biryani",
+          "price": 230,
+          "veg": false,
+          "cat": "Biryani",
+          "spice": "Medium",
+          "desc": "Spiced eggs layered with biryani rice.",
+          "add": true
+        },
+        {
+          "id": "egg-curry",
+          "name": "Egg Curry",
+          "price": 210,
+          "veg": false,
+          "cat": "Gravies & Curries",
+          "spice": "Medium",
+          "desc": "Boiled eggs in onion-tomato masala.",
+          "add": true
+        }
+      ],
+      "source": "Menu, matched to your mood"
+    },
+    {
+      "at": 1793634712120,
+      "role": "bot",
+      "text": "Can I add **Masala Chai** (₹40) to your cart?",
+      "chips": [
+        "Yes, add it",
+        "No, show another",
+        "Direct me to menu"
+      ]
+    },
+    {
+      "at": 1793634712824,
+      "role": "user",
+      "text": "Yes, add it",
+      "voice": false
+    },
+    {
+      "at": 1793634712825,
+      "role": "bot",
+      "text": "Done! **Masala Chai** is in your cart. Cart total: **₹40**.\nWant anything else? You can add a note for the chef from the menu or the cart.",
+      "chips": [
+        "Suggest a dessert",
+        "Show my cart",
+        "Direct me to menu",
+        "Checkout"
+      ],
+      "cartChanged": true
+    },
+    {
+      "at": 1793634713514,
+      "role": "user",
+      "text": "add 2 butter naan and dal makhani",
+      "voice": false
+    },
+    {
+      "at": 1793634713516,
+      "role": "bot",
+      "text": "Added to your cart: **2 × Butter Naan**, **1 × Dal Makhani**. Cart total: **₹380**.",
+      "chips": [
+        "Show my cart",
+        "Checkout",
+        "Direct me to menu"
+      ],
+      "source": "Menu",
+      "cartChanged": true
+    },
+    {
+      "at": 1793634714675,
+      "role": "event",
+      "type": "chef-note",
+      "id": "butter-naan",
+      "note": "Extra butter, well done please",
+      "voice": null,
+      "transcript": ""
+    },
+    {
+      "at": 1793634716206,
+      "role": "event",
+      "type": "order-placed",
+      "orderNo": "NDB-6612",
+      "total": 399
+    },
+    {
+      "at": 1793634716206,
+      "role": "bot",
+      "text": "Order **NDB-6612** placed, Ravi! 4 items, dine-in at table 7.",
+      "items": [
+        {
+          "id": "masala-chai",
+          "name": "Masala Chai",
+          "price": 40,
+          "veg": true,
+          "cat": "Chai & Coffee",
+          "spice": "",
+          "desc": "Kadak tea with ginger and cardamom.",
+          "qty": 1
+        },
+        {
+          "id": "butter-naan",
+          "name": "Butter Naan",
+          "price": 120,
+          "veg": true,
+          "cat": "Breads",
+          "spice": "",
+          "desc": "Soft tandoor naan brushed with white butter.",
+          "qty": 2
+        },
+        {
+          "id": "dal-makhani",
+          "name": "Dal Makhani",
+          "price": 220,
+          "veg": true,
+          "cat": "Gravies & Curries",
+          "spice": "Mild",
+          "desc": "Black lentils slow-cooked overnight with butter and cream.",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "at": 1793634718472,
+      "role": "bot",
+      "text": "Your order has been sent to the chef. The chef received these notes:\n• Butter Naan: “Extra butter, well done please”"
+    },
+    {
+      "at": 1793634721473,
+      "role": "bot",
+      "text": "Your order is getting ready: the tandoor is fired up, the kadai is on the flame, drinks are being made fresh. About 15–25 minutes in the kitchen."
+    },
+    {
+      "at": 1793634726472,
+      "role": "bot",
+      "text": "Your order is ready and on its way to table 7. Enjoy your meal!"
+    },
+    {
+      "at": 1793634729473,
+      "role": "bot",
+      "text": "Here is your bill:",
+      "bill": {
+        "no": "NDB-6612",
+        "at": 1793634716206,
+        "mode": "dine",
+        "table": "7",
+        "customer": "Ravi",
+        "lines": [
+          {
+            "name": "Masala Chai",
+            "qty": 1,
+            "amount": 40
+          },
+          {
+            "name": "Butter Naan",
+            "qty": 2,
+            "amount": 120
+          },
+          {
+            "name": "Dal Makhani",
+            "qty": 1,
+            "amount": 220
+          }
+        ],
+        "sub": 380,
+        "cgst": 9.5,
+        "sgst": 9.5,
+        "round": 0,
+        "total": 399
+      }
+    },
+    {
+      "at": 1793634729473,
+      "role": "bot",
+      "text": "How would you like to pay **₹399**?",
+      "chips": [
+        "UPI",
+        "Card",
+        "Cash"
+      ]
+    },
+    {
+      "at": 1793634730121,
+      "role": "user",
+      "text": "UPI",
+      "voice": false
+    },
+    {
+      "at": 1793634730122,
+      "role": "bot",
+      "text": "Payment of **₹399** by **UPI** received. Reference **TXN34730121**. Thank you!",
+      "source": "Demo payment: no real money is charged"
+    },
+    {
+      "at": 1793634730122,
+      "role": "bot",
+      "text": "How was the food, Ravi? Rate it or tell me in your own words.",
+      "chips": [
+        "★★★★★ Loved it",
+        "★★★★ Good",
+        "★★★ Okay",
+        "★★ Not great",
+        "★ Bad"
+      ]
+    },
+    {
+      "at": 1793634730839,
+      "role": "user",
+      "text": "★★★★★ Loved it",
+      "voice": false
+    },
+    {
+      "at": 1793634730840,
+      "role": "bot",
+      "text": "Thank you, Ravi! So happy you enjoyed it. I've passed your 5-star review to the chef.\nVisit NASH Dhabha & Bakes again soon!",
+      "chips": [
+        "Start a new order"
+      ]
+    }
+  ]
+}

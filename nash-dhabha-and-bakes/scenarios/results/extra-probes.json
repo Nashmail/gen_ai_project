@@ -7,7 +7,7 @@
       "happy"
     ],
     "expected": "Mild or non-spicy dishes",
-    "output": "Sure! For mild dishes, here's what I'd suggest: [Masala Chai ₹40, Butter Naan ₹60, Gulab Jamun (2 pcs) ₹90, Chocolate Truffle Pastry ₹120] || My pick: Masala Chai. Kadak tea with ginger and cardamom. It's one of our bestsellers. || Can I add Masala Chai (₹40) to your cart?",
+    "output": "Sure! For mild dishes, here's what I'd suggest: [Butter Naan ₹60, Mango Lassi ₹130, Gulab Jamun (2 pcs) ₹90, Masala Chai ₹40] || My pick: Butter Naan. Soft tandoor naan brushed with white butter. It's one of our bestsellers. || Can I add Butter Naan (₹60) to your cart?",
     "status": "PASS"
   },
   {
@@ -21,8 +21,8 @@
     "input": "cancel my order",
     "setup": [],
     "expected": "Cancel the order or explain how",
-    "output": "Your cart is empty. Tell me a dish or open the menu.",
-    "status": "FAIL"
+    "output": "There's no active order to cancel.",
+    "status": "PASS"
   },
   {
     "input": "enaku biryani venum",
@@ -35,7 +35,7 @@
     "input": "do you deliver to my home?",
     "setup": [],
     "expected": "A delivery answer",
-    "output": "I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood.",
+    "output": "I'm not sure about that, and I don't want to guess. I couldn't find it in our menu or restaurant information. Shall I ask a staff member to help you?",
     "status": "FAIL"
   },
   {
@@ -56,7 +56,7 @@
     "input": "where are you located?",
     "setup": [],
     "expected": "The restaurant address",
-    "output": "I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood.",
+    "output": "I'm not sure about that, and I don't want to guess. I couldn't find it in our menu or restaurant information. Shall I ask a staff member to help you?",
     "status": "FAIL"
   }
 ]

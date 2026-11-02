@@ -12,7 +12,7 @@ const DB_FILE = path.join(DATA_DIR, "db.json");
 const VOICE_DIR = path.join(DATA_DIR, "voice");
 fs.mkdirSync(VOICE_DIR, { recursive: true });
 
-let db = { sessions: {}, orders: [], feedback: [] };
+let db = { sessions: {}, orders: [], feedback: [], requests: [] };
 try { db = Object.assign(db, JSON.parse(fs.readFileSync(DB_FILE, "utf8"))); } catch (e) { /* first run */ }
 
 let timer = null;
@@ -48,6 +48,9 @@ module.exports = {
     persist();
   },
   orders() { return db.orders.slice().reverse(); },
+  addRequest(sessionId, r) { const rec = Object.assign({ sessionId }, r); delete rec.saved; const i = db.requests.findIndex((x) => x.id === r.id); if (i >= 0) db.requests[i] = Object.assign(db.requests[i], rec); else db.requests.push(rec); persist(); },
+  requests() { return (db.requests || []).slice().reverse(); },
+  updateRequest(id, status) { const r = (db.requests || []).find((x) => x.id === id); if (r) { r.status = status; r.doneAt = Date.now(); persist(); } return r || null; },
   feedback() { return db.feedback.slice().reverse(); },
   saveVoice(buf, ext) {
     const name = id() + "." + ext;

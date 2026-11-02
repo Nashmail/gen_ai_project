@@ -1,0 +1,260 @@
+{
+  "sessionId": "4eb166f4-d564-43ff-86f3-a59261ae587a",
+  "state": {
+    "name": "",
+    "diet": "nonveg",
+    "awaiting": null,
+    "lang": "en",
+    "table": null,
+    "cart": {
+      "lines": [],
+      "count": 0,
+      "bill": {
+        "sub": 0,
+        "cgst": 0,
+        "sgst": 0,
+        "round": 0,
+        "total": 0
+      },
+      "orderNote": "",
+      "orderVoice": null
+    },
+    "order": null
+  },
+  "transcript": [
+    {
+      "at": 1793634758702,
+      "role": "bot",
+      "text": "Namaste! I'm **Masala Mitra**, your table-side friend at NASH Dhabha & Bakes.\nSay **hi** to start. I'll ask your mood and suggest dishes from our menu. You can type or tap the mic to speak.",
+      "chips": [
+        "Hi",
+        "What are your timings?",
+        "Veg biryani"
+      ]
+    },
+    {
+      "at": 1793634759073,
+      "role": "user",
+      "text": "What are your timings?",
+      "voice": false
+    },
+    {
+      "at": 1793634759075,
+      "role": "bot",
+      "text": "We are open every day from 7:00 AM to 11:30 PM. The kitchen serves meals from 11:00 AM to 11:00 PM, and the bakery counter opens at 7:00 AM.",
+      "source": "Timings"
+    },
+    {
+      "at": 1793634759756,
+      "role": "user",
+      "text": "do you have jain food?",
+      "voice": false
+    },
+    {
+      "at": 1793634759756,
+      "role": "bot",
+      "text": "Jain preparation (no onion, garlic or root vegetables) is possible for most gravies on request. Add it as a chef note. Bakes contain wheat and dairy; kulfi and desserts may contain nuts. Tell the chef about any allergy in the chef note. I've also asked a staff member to confirm which dishes the chef can make Jain today.",
+      "source": "Allergies and Jain food",
+      "staffAlert": true,
+      "chips": [
+        "Show veg dishes",
+        "Add a chef note"
+      ]
+    },
+    {
+      "at": 1793634760443,
+      "role": "user",
+      "text": "how much GST do you charge",
+      "voice": false
+    },
+    {
+      "at": 1793634760444,
+      "role": "bot",
+      "text": "Bills include 5% GST, split as 2.5% CGST and 2.5% SGST. Totals are rounded to the nearest rupee.",
+      "source": "Bill and taxes"
+    },
+    {
+      "at": 1793634761125,
+      "role": "user",
+      "text": "is the black forest cake eggless",
+      "voice": false
+    },
+    {
+      "at": 1793634761126,
+      "role": "bot",
+      "text": "**Black Forest Cake (500 g)** is eggless. Eggless whole cake with cherries and cream.",
+      "items": [
+        {
+          "id": "black-forest-cake-500-g",
+          "name": "Black Forest Cake (500 g)",
+          "price": 550,
+          "veg": true,
+          "cat": "Bakes",
+          "spice": "",
+          "desc": "Eggless whole cake with cherries and cream.",
+          "add": true
+        }
+      ],
+      "source": "Menu: Black Forest Cake (500 g)"
+    },
+    {
+      "at": 1793634761126,
+      "role": "bot",
+      "text": "Can I add **Black Forest Cake (500 g)** (₹550) to your cart?",
+      "chips": [
+        "Yes, add it",
+        "No, show another",
+        "Direct me to menu"
+      ]
+    },
+    {
+      "at": 1793634761808,
+      "role": "user",
+      "text": "price of chicken 65",
+      "voice": false
+    },
+    {
+      "at": 1793634761809,
+      "role": "bot",
+      "text": "**Chicken 65** is ₹260. Deep-fried spicy chicken with curry leaves.",
+      "items": [
+        {
+          "id": "chicken-65",
+          "name": "Chicken 65",
+          "price": 260,
+          "veg": false,
+          "cat": "Starters",
+          "spice": "Hot",
+          "desc": "Deep-fried spicy chicken with curry leaves.",
+          "add": true
+        }
+      ],
+      "source": "Menu: Chicken 65"
+    },
+    {
+      "at": 1793634761810,
+      "role": "bot",
+      "text": "Can I add **Chicken 65** (₹260) to your cart?",
+      "chips": [
+        "Yes, add it",
+        "No, show another",
+        "Direct me to menu"
+      ]
+    },
+    {
+      "at": 1793634762487,
+      "role": "user",
+      "text": "do you have pizza?",
+      "voice": false
+    },
+    {
+      "at": 1793634762489,
+      "role": "bot",
+      "text": "Sorry, we don't have pizza on our menu. We're a dhaba and bakery, so you'll find tandoor breads, curries, biryani, starters, drinks, desserts and bakes.",
+      "chips": [
+        "Direct me to menu",
+        "What is your bestseller?",
+        "Something spicy"
+      ]
+    },
+    {
+      "at": 1793634763175,
+      "role": "user",
+      "text": "checkout",
+      "voice": false
+    },
+    {
+      "at": 1793634763175,
+      "role": "bot",
+      "text": "Your cart is empty right now. Add a dish first.",
+      "chips": [
+        "Direct me to menu"
+      ]
+    },
+    {
+      "at": 1793634763858,
+      "role": "user",
+      "text": "asdfghjkl",
+      "voice": false
+    },
+    {
+      "at": 1793634763861,
+      "role": "bot",
+      "text": "Sorry, I didn't catch that. You can ask me things like “dry non veg”, “something sweet” or “is paneer tikka spicy?”, or tap Direct me to menu.",
+      "chips": [
+        "Direct me to menu",
+        "What is your bestseller?",
+        "Something spicy"
+      ]
+    },
+    {
+      "at": 1793634764545,
+      "role": "user",
+      "text": "something spicy non veg",
+      "voice": false
+    },
+    {
+      "at": 1793634764546,
+      "role": "bot",
+      "text": "Sure! For spicy non-veg dishes, here's what I'd suggest:",
+      "items": [
+        {
+          "id": "chicken-65",
+          "name": "Chicken 65",
+          "price": 260,
+          "veg": false,
+          "cat": "Starters",
+          "spice": "Hot",
+          "desc": "Deep-fried spicy chicken with curry leaves.",
+          "add": true
+        },
+        {
+          "id": "chicken-dum-biryani",
+          "name": "Chicken Dum Biryani",
+          "price": 290,
+          "veg": false,
+          "cat": "Biryani",
+          "spice": "Medium",
+          "desc": "Hyderabadi-style chicken dum biryani with raita.",
+          "add": true
+        },
+        {
+          "id": "hyderabadi-mutton-biryani",
+          "name": "Hyderabadi Mutton Biryani",
+          "price": 380,
+          "veg": false,
+          "cat": "Biryani",
+          "spice": "Medium",
+          "desc": "Kacchi mutton biryani with saffron and fried onion.",
+          "add": true
+        },
+        {
+          "id": "tandoori-chicken-half",
+          "name": "Tandoori Chicken (Half)",
+          "price": 300,
+          "veg": false,
+          "cat": "Starters",
+          "spice": "Medium",
+          "desc": "Half chicken marinated in yoghurt and spices, roasted in the tandoor.",
+          "add": true
+        }
+      ],
+      "source": "Menu"
+    },
+    {
+      "at": 1793634764546,
+      "role": "bot",
+      "text": "My pick: **Chicken 65**. Deep-fried spicy chicken with curry leaves. It's one of our bestsellers."
+    },
+    {
+      "at": 1793634764546,
+      "role": "bot",
+      "text": "Can I add **Chicken 65** (₹260) to your cart?",
+      "chips": [
+        "Yes, add it",
+        "No, show another",
+        "Direct me to menu"
+      ]
+    }
+  ]
+}

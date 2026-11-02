@@ -16,3 +16,9 @@ const out = '<meta name="claude:viewport-fit-sides" content="cover">\n' + head.t
 fs.mkdirSync(path.join(__dirname, "..", "dist"), { recursive: true });
 fs.writeFileSync(path.join(__dirname, "..", "dist", "nash-dhabha.html"), out);
 console.log("dist/nash-dhabha.html", (out.length / 1024).toFixed(0) + " KB");
+
+// Standalone copy: a normal web page you can open straight in Chrome/Edge (double-click), voice included.
+const standalone = '<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">\n'
+  + '<link rel="icon" href="' + dataUri("assets/logo-mark.svg") + '">\n' + head.trim() + "\n</head>\n<body>\n" + body.trim() + "\n</body>\n</html>\n";
+fs.writeFileSync(path.join(__dirname, "..", "dist", "NASH-Dhabha-voice-app.html"), standalone);
+console.log("dist/NASH-Dhabha-voice-app.html", (standalone.length / 1024).toFixed(0) + " KB");

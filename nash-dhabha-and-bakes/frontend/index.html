@@ -53,6 +53,7 @@
       <a href="#home" data-nav="home">Home</a>
       <a href="#menu" data-nav="menu">Menu</a>
       <a href="#kitchen" data-nav="kitchen">Kitchen</a>
+      <a href="#staff" data-nav="staff">Staff</a>
     </nav>
     <a class="cart-btn" href="#checkout" data-nav="checkout" aria-label="Cart"><svg><use href="#i-bag"/></svg><span class="cart-label">Cart</span><span class="badge" id="cart-count">0</span></a>
   </div>
@@ -82,6 +83,7 @@
             <img class="chat-ava" src="assets/logo-mark.svg" alt="" width="40" height="40">
             <div class="chat-who"><b>Masala Mitra</b><small><i class="dot" id="conn-dot"></i><span id="conn-label">Connecting…</span></small></div>
             <button class="icon-btn" id="ai-btn" type="button" title="AI settings (Google Gemini)" aria-label="AI settings"><svg><use href="#i-spark"/></svg></button>
+            <div class="lang-seg" role="group" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true" title="English">EN</button><button type="button" data-lang="hi" aria-pressed="false" title="हिंदी">हिं</button><button type="button" data-lang="ta" aria-pressed="false" title="தமிழ்">த</button></div>
             <button class="icon-btn" id="tts-btn" aria-pressed="false" title="Read replies aloud" aria-label="Read replies aloud"><svg><use href="#i-speak"/></svg></button>
             <button class="icon-btn drawer-only" id="drawer-close" aria-label="Close chat"><svg><use href="#i-x"/></svg></button>
           </div>
@@ -160,6 +162,18 @@
     </div>
   </section>
   <div class="container" id="co-body"></div>
+</main>
+
+<!-- ============ STAFF ============ -->
+<main id="view-staff" class="view" hidden>
+  <section class="page-head">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a><span>/</span><span>Staff</span></nav>
+      <div class="page-head-row"><div><h1>Staff desk</h1><p>Requests from tables (water, chairs, complaints, "call a human") and how happy guests are.</p></div>
+        <button class="btn btn-ghost" type="button" id="staff-refresh"><svg><use href="#i-refresh"/></svg>Refresh</button></div>
+    </div>
+  </section>
+  <div class="container staff-grid" id="staff-body"></div>
 </main>
 
 <!-- ============ KITCHEN ============ -->

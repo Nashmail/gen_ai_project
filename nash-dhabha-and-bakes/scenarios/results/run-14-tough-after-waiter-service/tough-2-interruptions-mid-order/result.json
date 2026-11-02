@@ -1,0 +1,152 @@
+{
+  "id": 2,
+  "title": "Interruptions during the order lifecycle",
+  "ranAt": "2026-11-02T15:53:37.430Z",
+  "passed": 9,
+  "total": 9,
+  "steps": [
+    {
+      "step": 1,
+      "kind": "chat",
+      "input": "add 1 chicken dum biryani and 1 masala chaas",
+      "output": "Added to your cart: 1 × Chicken Dum Biryani, 1 × Masala Chaas. Cart total: ₹360.\nSource: Menu",
+      "checks": [
+        {
+          "check": "both added",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "step": 2,
+      "kind": "place order",
+      "input": "Checkout dine-in, table 12",
+      "output": "Order NDB-3361 placed, Farhan! 2 items, dine-in at table 12.\n1 × Chicken Dum Biryani\nBiryani · Medium\n₹290\n1 × Masala Chaas\nJuices & Lassi\n₹70",
+      "checks": [
+        {
+          "check": "order placed",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "step": 3,
+      "kind": "chat (while cooking)",
+      "input": "how long will it take?",
+      "output": "Your order NDB-3361 has been placed and is going to the kitchen. Estimated waiting time: about 20 minutes.",
+      "checks": [
+        {
+          "check": "answers with prep time",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "step": 4,
+      "kind": "chat (before bill)",
+      "input": "I want to pay now",
+      "output": "Your order NDB-3361 is still being prepared. I'll share the bill here as soon as it's ready, then you can pay by UPI, card or cash.",
+      "checks": [
+        {
+          "check": "explains the bill comes when the order is ready",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "does not mark the order paid early",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "step": 5,
+      "kind": "chat (while cooking)",
+      "input": "add 1 gulab jamun to my order",
+      "output": "Your order has been sent to the chef. No special notes, so it will be cooked the house way.\nAdded to your cart: 1 × Gulab Jamun (2 pcs). Cart total: ₹90.\nYour order NDB-3361 is already with the chef, so these are in a new cart. Place them as a separate order from checkout.\nSource: Menu",
+      "checks": [
+        {
+          "check": "adds the dish",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "says it is a separate new order (the first is already with the chef)",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "step": 6,
+      "kind": "wait",
+      "input": "(kitchen updates until the bill)",
+      "output": "Your order has been sent to the chef. No special notes, so it will be cooked the house way.\nAdded to your cart: 1 × Gulab Jamun (2 pcs). Cart total: ₹90.\nYour order NDB-3361 is already with the chef, so these are in a new cart. Place them as a separate order from checkout.\nSource: Menu\nYour order is getting ready: your biryani is on dum, drinks are being made fresh. About 15–25 minutes in the kitchen.\nYour order is ready and on its way to table 12. Enjoy your meal!\nHere is your bill:\nNASH DHABHA & BAKES\nBill NDB-3361 · 2/11/2026 03:53 pm\nDine-in · Table 12 · Farhan\n1 × Chicken Dum Biryani\t₹290\n1 × Masala Chaas\t₹70\nSubtotal\t₹360\nCGST 2.5%\t₹9\nSGST 2.5%\t₹9\nTotal\t₹378\nHow would you like to pay ₹378?",
+      "checks": [
+        {
+          "check": "bill shown",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "bill does not include the gulab jamun added after ordering",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "step": 7,
+      "kind": "chat (payment)",
+      "input": "bitcoin",
+      "output": "Please choose how you'd like to pay: UPI, Card or Cash.",
+      "checks": [
+        {
+          "check": "rejects unsupported method and re-asks",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "step": 8,
+      "kind": "chat (payment)",
+      "input": "card",
+      "output": "Payment of ₹378 by Card received. Reference TXN34815986. Thank you!\nSource: Demo payment: no real money is charged\nHow was the food, Farhan? Rate it or tell me in your own words.",
+      "checks": [
+        {
+          "check": "payment received by card",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "step": 9,
+      "kind": "chat (feedback)",
+      "input": "food was great but the service was slow",
+      "output": "Glad you enjoyed the food, Farhan, and sorry about what went wrong. I've passed both to the chef and the manager so we can fix it.\nVisit NASH Dhabha & Bakes again soon!",
+      "checks": [
+        {
+          "check": "acknowledges both the praise and the complaint",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "status": "PASS"
+    }
+  ],
+  "sessionId": "2827a73f-89e0-4257-a131-c385974d8fa7",
+  "consoleErrors": []
+}

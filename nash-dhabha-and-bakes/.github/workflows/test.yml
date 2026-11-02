@@ -1,0 +1,21 @@
+name: Scenario tests
+on: [push, pull_request, workflow_dispatch]
+jobs:
+  scenarios:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: cd backend && npm ci
+      - run: npm install --no-save playwright@1.48.2 && npx playwright install --with-deps chromium
+      - name: Start backend
+        run: (cd backend && npm start &) && sleep 2 && curl -sf http://localhost:4000/api/health
+      - run: node scenarios/run-scenarios.js http://localhost:4000 ci
+      - run: node scenarios/run-probes.js
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: scenario-results
+          path: scenarios/results/ci

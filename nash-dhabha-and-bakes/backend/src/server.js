@@ -28,9 +28,11 @@ function session(req, res) {
   return s;
 }
 function publicState(S) {
-  return { name: S.name, diet: S.diet, awaiting: S.awaiting, cart: E.cartView(S), order: S.order };
+  return { name: S.name, diet: S.diet, awaiting: S.awaiting, lang: S.lang || "en", table: S.table || null, cart: E.cartView(S), order: S.order };
 }
 function reply(res, s, messages) {
+  // new staff requests (water, chair, complaint, human hand-off...) go to the staff screen
+  (s.state.requests || []).forEach((r) => { if (!r.saved) { r.saved = true; store.addRequest(s.id, r); } });
   messages.forEach((m) => store.log(s.id, m));
   if (s.state.order) store.upsertOrder(s.id, s.state.order);
   store.saveSession();
@@ -123,7 +125,16 @@ app.get("/api/sessions/:sid/progress", (req, res) => {
 });
 
 // Kitchen display + admin views
-app.get("/api/kitchen/orders", (req, res) => res.json({ orders: store.orders().map((o) => Object.assign({ stageLabel: o.stage >= 7 ? "Done" : E.STAGES[o.stage] }, o)) }));
+app.get("/api/kitchen/orders", (req, res) => res.json({ orders: store.orders().map((o) => Object.assign({ stageLabel: o.cancelled ? "Cancelled" : o.stage >= 7 ? "Done" : E.STAGES[o.stage] }, o)) }));
+
+// Staff screen: service requests and customer-satisfaction monitor
+app.get("/api/staff/requests", (req, res) => res.json({ requests: store.requests() }));
+app.post("/api/staff/requests/:id", (req, res) => {
+  const r = store.updateRequest(req.params.id, String((req.body && req.body.status) || "done").slice(0, 20));
+  if (!r) return res.status(404).json({ error: "NOT_FOUND" });
+  res.json({ request: r });
+});
+app.get("/api/staff/summary", (req, res) => res.json(E.satisfaction(store.feedback(), store.requests())));
 app.get("/api/feedback", (req, res) => res.json({ feedback: store.feedback() }));
 
 app.use("/voice", express.static(store.VOICE_DIR, { maxAge: "1h" }));

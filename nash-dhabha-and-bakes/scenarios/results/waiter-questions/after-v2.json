@@ -1,0 +1,640 @@
+{
+  "label": "after-v2",
+  "ranAt": "2026-11-02T15:35:35.228Z",
+  "passed": 44,
+  "total": 44,
+  "bySection": {
+    "A": {
+      "passed": 5,
+      "total": 5
+    },
+    "B": {
+      "passed": 8,
+      "total": 8
+    },
+    "C": {
+      "passed": 7,
+      "total": 7
+    },
+    "D": {
+      "passed": 6,
+      "total": 6
+    },
+    "E": {
+      "passed": 6,
+      "total": 6
+    },
+    "F": {
+      "passed": 6,
+      "total": 6
+    },
+    "G": {
+      "passed": 4,
+      "total": 4
+    },
+    "H": {
+      "passed": 2,
+      "total": 2
+    }
+  },
+  "conversation": {
+    "passed": 6,
+    "total": 6,
+    "turns": [
+      {
+        "customer": "Hello",
+        "waiter": "Hi! Welcome to NASH Dhabha & Bakes. May I know your name?",
+        "pass": true
+      },
+      {
+        "customer": "Can you suggest a vegetarian dish?",
+        "waiter": "Sure! For veg dishes, here's what I'd suggest:\nMy pick: Paneer Butter Masala with Butter Naan. Paneer in a creamy tomato-butter gravy. It's one of our bestsellers.\nCan I add Paneer Butter Masala (₹260) to your cart?",
+        "pass": true
+      },
+      {
+        "customer": "Yes. Also, is it very spicy?",
+        "waiter": "Paneer Butter Masala is ₹260. Paneer Butter Masala is mild, only lightly spiced, not very spicy. I can also ask the kitchen to make it even milder. Paneer in a creamy tomato-butter gravy.\nCan I add Paneer Butter Masala (₹260) to your cart?",
+        "pass": true
+      },
+      {
+        "customer": "Okay, I'll order it.",
+        "waiter": "Great choice! I've added Paneer Butter Masala (₹260) to your cart. Shall I send your order to the kitchen now, or would you like to add more?",
+        "pass": true
+      },
+      {
+        "customer": "yes",
+        "waiter": "Which table are you at? Or say takeaway.",
+        "pass": true
+      },
+      {
+        "customer": "table 5",
+        "waiter": "Order NDB-3109 placed! 1 item, dine-in at table 5.\nGreat! Your order has been sent to the kitchen. I'll keep you updated here. Thank you!",
+        "pass": true
+      }
+    ]
+  },
+  "rows": [
+    {
+      "section": "A",
+      "question": "Hello!",
+      "pass": true,
+      "reply": "Hi! Welcome to NASH Dhabha & Bakes. May I know your name?",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "A",
+      "question": "How are you?",
+      "pass": true,
+      "reply": "I'm doing great, thanks for asking! How can I assist you today?",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "A",
+      "question": "What can you do?",
+      "pass": true,
+      "reply": "I'm Masala Mitra, your AI waiter. I can:\n• show the menu and recommend dishes for your mood, diet, spice level and budget\n• answer questions about any dish (price, spice, veg or not)\n• take your order and send it to the kitchen, with notes for the chef\n• tell you where your order is and bring the bill\n• share restaurant information (timings, washroom, payment)\n• call a staff member whenever you need one",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "A",
+      "question": "Can you help me?",
+      "pass": true,
+      "reply": "Of course! What do you need help with? I can suggest dishes, take your order, answer questions about the food, or call a staff member.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "A",
+      "question": "Where should I sit?",
+      "pass": true,
+      "reply": "I can help with that. I've asked our staff to find you an available table; someone will guide you in a moment.",
+      "dishes": [],
+      "staffRequests": [
+        {
+          "id": "REQ-6560",
+          "type": "seating",
+          "text": "Seating needed",
+          "priority": "normal",
+          "at": 1793633735155,
+          "table": "",
+          "customer": "",
+          "orderNo": null,
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "section": "B",
+      "question": "Show me the menu.",
+      "pass": true,
+      "reply": "Opening the menu for you.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "B",
+      "question": "What is today's special?",
+      "pass": true,
+      "reply": "Today's (Monday) special is Hyderabadi Mutton Biryani (₹380). For vegetarians, it's Paneer Tikka Biryani (₹280). Would you like to know more?",
+      "dishes": [
+        "Hyderabadi Mutton Biryani",
+        "Paneer Tikka Biryani"
+      ],
+      "staffRequests": []
+    },
+    {
+      "section": "B",
+      "question": "What is your best-selling food?",
+      "pass": true,
+      "reply": "Our house specials, the dishes guests order most:\nMy pick: Chicken Dum Biryani. Hyderabadi-style chicken dum biryani with raita. It's one of our bestsellers.\nCan I add Chicken Dum Biryani (₹290) to your cart?",
+      "dishes": [
+        "Chicken Dum Biryani",
+        "Butter Naan",
+        "Hyderabadi Mutton Biryani"
+      ],
+      "staffRequests": []
+    },
+    {
+      "section": "B",
+      "question": "Do you have vegetarian food?",
+      "pass": true,
+      "reply": "Yes, we do! Here are our veg dishes:\nMy pick: Paneer Butter Masala. Paneer in a creamy tomato-butter gravy. It's one of our bestsellers.\nCan I add Paneer Butter Masala (₹260) to your cart?",
+      "dishes": [
+        "Paneer Butter Masala",
+        "Dal Makhani",
+        "Butter Naan",
+        "Paneer Tikka",
+        "Mango Lassi"
+      ],
+      "staffRequests": []
+    },
+    {
+      "section": "B",
+      "question": "Do you have spicy food?",
+      "pass": true,
+      "reply": "Yes, we do! Here are our spicy dishes:\nMy pick: Chicken 65. Deep-fried spicy chicken with curry leaves. It's one of our bestsellers.\nCan I add Chicken 65 (₹260) to your cart?",
+      "dishes": [
+        "Chicken 65",
+        "Chicken Dum Biryani",
+        "Paneer Tikka",
+        "Hyderabadi Mutton Biryani",
+        "Tandoori Chicken (Half)"
+      ],
+      "staffRequests": []
+    },
+    {
+      "section": "B",
+      "question": "Is this food sweet or spicy?",
+      "pass": true,
+      "reply": "Paneer Tikka is medium spicy. Want it milder? Add a chef note like “less spicy”. Paneer Tikka isn't sweet; it's a savoury dish. Tandoor-charred paneer, peppers and onion.\nCan I add Paneer Tikka (₹250) to your cart?",
+      "dishes": [
+        "Paneer Tikka"
+      ],
+      "staffRequests": []
+    },
+    {
+      "section": "B",
+      "question": "What is the price of this dish?",
+      "pass": true,
+      "reply": "Butter Chicken is ₹320. Tandoori chicken in a velvety tomato-butter gravy.\nCan I add Butter Chicken (₹320) to your cart?",
+      "dishes": [
+        "Butter Chicken"
+      ],
+      "staffRequests": []
+    },
+    {
+      "section": "B",
+      "question": "Do you have Jain food?",
+      "pass": true,
+      "reply": "Jain preparation (no onion, garlic or root vegetables) is possible for most gravies on request. Add it as a chef note. Bakes contain wheat and dairy; kulfi and desserts may contain nuts. Tell the chef about any allergy in the chef note. I've also asked a staff member to confirm which dishes the chef can make Jain today.",
+      "dishes": [],
+      "staffRequests": [
+        {
+          "id": "REQ-8974",
+          "type": "dietary",
+          "text": "Jain preparation requested: please confirm suitable dishes",
+          "priority": "normal",
+          "at": 1793633735190,
+          "table": "",
+          "customer": "",
+          "orderNo": null,
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "section": "C",
+      "question": "I want to order food.",
+      "pass": true,
+      "reply": "Sure! What would you like? Tell me a dish, your mood or your budget, or pick from the menu. I'll add it and send it to the kitchen when you're ready.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "C",
+      "question": "Can I change my order?",
+      "pass": true,
+      "reply": "Certainly! Your order NDB-2028 hadn't started cooking, so I've taken it back from the kitchen and put the dishes in your cart. Tell me what to change, then say \"send it to the kitchen\".",
+      "dishes": [],
+      "staffRequests": [
+        {
+          "id": "REQ-9485",
+          "type": "order",
+          "text": "Order NDB-2028 pulled back for changes",
+          "priority": "normal",
+          "at": 1793633735195,
+          "table": "5",
+          "customer": "",
+          "orderNo": "NDB-2028",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "section": "C",
+      "question": "How long will my food take?",
+      "pass": true,
+      "reply": "Your order NDB-7954 is cooking in the kitchen right now. Estimated waiting time: about 10 to 15 minutes.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "C",
+      "question": "Where is my order?",
+      "pass": true,
+      "reply": "Your order NDB-5295 is cooking in the kitchen right now. Estimated time: about 10 to 15 minutes.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "C",
+      "question": "Can I cancel my order?",
+      "pass": true,
+      "reply": "Done. Your order NDB-6163 hadn't started cooking yet, so I've cancelled it and told the kitchen. Nothing will be charged.",
+      "dishes": [],
+      "staffRequests": [
+        {
+          "id": "REQ-8024",
+          "type": "order",
+          "text": "Order NDB-6163 cancelled by customer",
+          "priority": "normal",
+          "at": 1793633735199,
+          "table": "5",
+          "customer": "",
+          "orderNo": "NDB-6163",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "section": "C",
+      "question": "Can I cancel my order? (already cooking)",
+      "pass": true,
+      "reply": "Your order NDB-9403 is already being cooked, so I can't cancel it myself. I've asked a staff member to come and help you with it.",
+      "dishes": [],
+      "staffRequests": [
+        {
+          "id": "REQ-7227",
+          "type": "order",
+          "text": "Customer wants to cancel NDB-9403, but it is already cooking",
+          "priority": "high",
+          "at": 1793633735201,
+          "table": "5",
+          "customer": "",
+          "orderNo": "NDB-9403",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "section": "C",
+      "question": "Can I get extra water?",
+      "pass": true,
+      "reply": "Certainly! I've sent your request for extra water to our service staff. It'll be with you shortly. Tell me your table number so they can find you quickly.",
+      "dishes": [],
+      "staffRequests": [
+        {
+          "id": "REQ-1099",
+          "type": "table-request",
+          "text": "Please bring extra water",
+          "priority": "normal",
+          "at": 1793633735202,
+          "table": "",
+          "customer": "",
+          "orderNo": null,
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "section": "D",
+      "question": "Where is the washroom?",
+      "pass": true,
+      "reply": "The washrooms are at the back of the dining hall, past the bakery counter, on the left. Need someone to show you? Just say \"call staff\".",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "D",
+      "question": "Where is the drinking water?",
+      "pass": true,
+      "reply": "Filtered drinking water is free. There's a water station near the entrance, and staff can bring a jug to your table. Need someone to show you? Just say \"call staff\".",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "D",
+      "question": "Can I get an extra chair?",
+      "pass": true,
+      "reply": "Certainly! I've sent your request for extra chair to our service staff. It'll be with you shortly. Tell me your table number so they can find you quickly.",
+      "dishes": [],
+      "staffRequests": [
+        {
+          "id": "REQ-5932",
+          "type": "table-request",
+          "text": "Please bring extra chair",
+          "priority": "normal",
+          "at": 1793633735202,
+          "table": "",
+          "customer": "",
+          "orderNo": null,
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "section": "D",
+      "question": "Can I get a spoon?",
+      "pass": true,
+      "reply": "Certainly! I've sent your request for spoon to our service staff. It'll be with you shortly. Tell me your table number so they can find you quickly.",
+      "dishes": [],
+      "staffRequests": [
+        {
+          "id": "REQ-2983",
+          "type": "table-request",
+          "text": "Please bring spoon",
+          "priority": "normal",
+          "at": 1793633735202,
+          "table": "",
+          "customer": "",
+          "orderNo": null,
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "section": "D",
+      "question": "Can I speak to a human?",
+      "pass": true,
+      "reply": "Of course. I've asked a team member to come over. They'll be with you shortly. Tell me your table number so they can find you quickly.",
+      "dishes": [],
+      "staffRequests": [
+        {
+          "id": "REQ-9263",
+          "type": "human",
+          "text": "Customer would like to speak to a staff member",
+          "priority": "high",
+          "at": 1793633735202,
+          "table": "",
+          "customer": "",
+          "orderNo": null,
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "section": "D",
+      "question": "Where is the reception?",
+      "pass": true,
+      "reply": "The reception and billing counter is at the entrance, next to the bakery counter. Need someone to show you? Just say \"call staff\".",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "E",
+      "question": "I'm allergic to peanuts.",
+      "pass": true,
+      "reply": "Thank you for telling me. These dishes list peanuts on our menu, so please avoid them: Lemon Rice.\nI've added \"ALLERGY: peanuts\" to your order for the chef and asked a staff member to confirm. Not every ingredient is listed on the menu and kitchens share equipment, so please wait for their confirmation before ordering.",
+      "dishes": [
+        "Lemon Rice"
+      ],
+      "staffRequests": [
+        {
+          "id": "REQ-2534",
+          "type": "allergy",
+          "text": "Allergy (peanuts): please confirm safe dishes with the chef",
+          "priority": "high",
+          "at": 1793633735203,
+          "table": "",
+          "customer": "",
+          "orderNo": null,
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "section": "E",
+      "question": "I don't eat spicy food.",
+      "pass": true,
+      "reply": "Sure! For mild dishes, here's what I'd suggest:\nMy pick: Butter Naan. Soft tandoor naan brushed with white butter. It's one of our bestsellers.\nCan I add Butter Naan (₹60) to your cart?",
+      "dishes": [
+        "Butter Naan",
+        "Mango Lassi",
+        "Gulab Jamun (2 pcs)",
+        "Masala Chai"
+      ],
+      "staffRequests": []
+    },
+    {
+      "section": "E",
+      "question": "My food is cold.",
+      "pass": true,
+      "reply": "I'm sorry about that. I've informed our staff immediately, and they'll replace or reheat it for you.",
+      "dishes": [],
+      "staffRequests": [
+        {
+          "id": "REQ-5785",
+          "type": "complaint",
+          "text": "Food quality: My food is cold.",
+          "priority": "high",
+          "at": 1793633735207,
+          "table": "5",
+          "customer": "",
+          "orderNo": "NDB-1879",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "section": "E",
+      "question": "My order is incorrect.",
+      "pass": true,
+      "reply": "Sorry for the inconvenience. I've notified the restaurant staff, and someone will come to fix your order right away.",
+      "dishes": [],
+      "staffRequests": [
+        {
+          "id": "REQ-9492",
+          "type": "complaint",
+          "text": "Order incorrect: My order is incorrect.",
+          "priority": "high",
+          "at": 1793633735208,
+          "table": "5",
+          "customer": "",
+          "orderNo": "NDB-5565",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "section": "E",
+      "question": "The service is slow.",
+      "pass": true,
+      "reply": "I apologise for the delay. I've checked with the kitchen and alerted the staff. Tell me your table number so they can find you quickly.",
+      "dishes": [],
+      "staffRequests": [
+        {
+          "id": "REQ-5708",
+          "type": "complaint",
+          "text": "Slow service: The service is slow.",
+          "priority": "normal",
+          "at": 1793633735209,
+          "table": "",
+          "customer": "",
+          "orderNo": null,
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "section": "E",
+      "question": "I need assistance urgently.",
+      "pass": true,
+      "reply": "I've alerted a staff member right away. Someone is coming now. Tell me your table number so they can find you quickly.",
+      "dishes": [],
+      "staffRequests": [
+        {
+          "id": "REQ-4753",
+          "type": "urgent",
+          "text": "Customer needs assistance urgently",
+          "priority": "urgent",
+          "at": 1793633735209,
+          "table": "",
+          "customer": "",
+          "orderNo": null,
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "section": "F",
+      "question": "Can I pay by UPI?",
+      "pass": true,
+      "reply": "Yes! You can pay by UPI. We accept UPI, debit and credit cards, and cash. I'll bring the bill here once your food is ready.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "F",
+      "question": "Can I get the bill?",
+      "pass": true,
+      "reply": "Here is your bill:\nHow would you like to pay ₹399?",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "F",
+      "question": "Can I get the bill? (not ready yet)",
+      "pass": true,
+      "reply": "Your order NDB-6158 is still being prepared, so the bill isn't ready yet. I'll bring it here as soon as your food is served.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "F",
+      "question": "Can I split the bill between 3?",
+      "pass": true,
+      "reply": "Your total is ₹399. Split 3 ways, that's ₹133 each (the last share adjusts by a rupee or two). Each person can pay by UPI, card or cash.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "F",
+      "question": "How can I give feedback?",
+      "pass": true,
+      "reply": "You can share your feedback right here! Tap a rating, or type what you liked or what we can improve. The team reads every review.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "F",
+      "question": "Thank you!",
+      "pass": true,
+      "reply": "You're welcome! Anything else I can get you?",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "G",
+      "question": "hindi mein baat karo",
+      "pass": true,
+      "reply": "ठीक है, अब मैं हिंदी में बात करूँगा। मैं आपकी क्या मदद कर सकता हूँ?",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "G",
+      "question": "tamil la pesunga",
+      "pass": true,
+      "reply": "சரி, இனி நான் தமிழில் பேசுகிறேன். உங்களுக்கு எப்படி உதவலாம்?",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "G",
+      "question": "नमस्ते",
+      "pass": true,
+      "reply": "नमस्ते! NASH Dhabha & Bakes में आपका स्वागत है। क्या मैं आपका नाम जान सकता हूँ?",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "G",
+      "question": "வணக்கம்",
+      "pass": true,
+      "reply": "வணக்கம்! NASH Dhabha & Bakes-க்கு உங்களை வரவேற்கிறோம். உங்கள் பெயர் என்ன?",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "H",
+      "question": "Do you have parking?",
+      "pass": true,
+      "reply": "I'm not sure about that, and I don't want to guess. It isn't in our menu or restaurant information. Shall I ask a staff member to help you?",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "H",
+      "question": "yes please (after the staff offer)",
+      "pass": true,
+      "reply": "Okay! I've asked a staff member to help with that. They'll come over shortly. Tell me your table number so they can find you quickly.",
+      "dishes": [],
+      "staffRequests": [
+        {
+          "id": "REQ-2007",
+          "type": "question",
+          "text": "Customer question: do you have parking",
+          "priority": "normal",
+          "at": 1793633735224,
+          "table": "",
+          "customer": "",
+          "orderNo": null,
+          "status": "open"
+        }
+      ]
+    }
+  ]
+}

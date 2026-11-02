@@ -1,6 +1,6 @@
 # Gen AI Project
 
-**Student:** N Mailesh (CB.EN.U4ARE23025) · **Course:** Introduction to Gen AI · **Professor:** Rakesh Kumar Siddarantan
+**Student:** N Mailesh (CB.EN.U4ARE23025) · **Course:** Introduction to Gen AI · **Professor:** Rakesh Kumar
 
 ## [NASH Dhabha & Bakes: Masala Mitra](nash-dhabha-and-bakes/)
 

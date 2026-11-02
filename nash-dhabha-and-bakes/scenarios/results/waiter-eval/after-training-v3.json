@@ -1,6 +1,6 @@
 {
   "label": "after-training-v3",
-  "ranAt": "2026-11-02T08:10:52.570Z",
+  "ranAt": "2026-11-02T15:36:06.656Z",
   "passed": 50,
   "total": 50,
   "accuracy": "100%",
@@ -214,7 +214,7 @@
       "expected": "Says it's mild",
       "pass": true,
       "via": "rules",
-      "reply": "Butter Chicken is mild, only lightly spiced. Tandoori chicken in a velvety tomato-butter gravy.\nCan I add Butter Chicken (₹320) to your cart?",
+      "reply": "Butter Chicken is mild, only lightly spiced, not very spicy. I can also ask the kitchen to make it even milder. Tandoori chicken in a velvety tomato-butter gravy.\nCan I add Butter Chicken (₹320) to your cart?",
       "dishes": [
         "Butter Chicken (non-veg, Gravies & Curries, ₹320, Mild)"
       ]
@@ -267,9 +267,9 @@
       "reply": "Our house specials, the dishes guests order most:\nMy pick: Butter Chicken. Tandoori chicken in a velvety tomato-butter gravy. It's one of our bestsellers.\nCan I add Butter Chicken (₹320) to your cart?",
       "dishes": [
         "Butter Chicken (non-veg, Gravies & Curries, ₹320, Mild)",
+        "Paneer Butter Masala (veg, Gravies & Curries, ₹260, Mild)",
         "Chicken Dum Biryani (non-veg, Biryani, ₹290, Medium)",
-        "Dal Makhani (veg, Gravies & Curries, ₹220, Mild)",
-        "Paneer Butter Masala (veg, Gravies & Curries, ₹260, Mild)"
+        "Dal Makhani (veg, Gravies & Curries, ₹220, Mild)"
       ]
     },
     {
@@ -312,10 +312,10 @@
       "expected": "Paneer dishes only",
       "pass": true,
       "via": "rules",
-      "reply": "Sure! For veg paneer dishes, here's what I'd suggest:\nMy pick: Paneer Tikka. Tandoor-charred paneer, peppers and onion. It's one of our bestsellers.\nCan I add Paneer Tikka (₹250) to your cart?",
+      "reply": "Sure! For veg paneer dishes, here's what I'd suggest:\nMy pick: Paneer Butter Masala. Paneer in a creamy tomato-butter gravy. It's one of our bestsellers.\nCan I add Paneer Butter Masala (₹260) to your cart?",
       "dishes": [
-        "Paneer Tikka (veg, Starters, ₹250, Medium)",
         "Paneer Butter Masala (veg, Gravies & Curries, ₹260, Mild)",
+        "Paneer Tikka (veg, Starters, ₹250, Medium)",
         "Paneer Kulcha (veg, Breads, ₹110, Mild)",
         "Palak Paneer (veg, Gravies & Curries, ₹240, Mild)"
       ]
@@ -338,12 +338,12 @@
       "expected": "Not spicy",
       "pass": true,
       "via": "rules",
-      "reply": "Sure! For kid-friendly dishes, here's what I'd suggest:\nMy pick: Masala Chai. Kadak tea with ginger and cardamom. It's one of our bestsellers.\nCan I add Masala Chai (₹40) to your cart?",
+      "reply": "Sure! For kid-friendly dishes, here's what I'd suggest:\nMy pick: Butter Naan. Soft tandoor naan brushed with white butter. It's one of our bestsellers.\nCan I add Butter Naan (₹60) to your cart?",
       "dishes": [
-        "Masala Chai (veg, Chai & Coffee, ₹40)",
         "Butter Naan (veg, Breads, ₹60)",
+        "Mango Lassi (veg, Juices & Lassi, ₹130)",
         "Gulab Jamun (2 pcs) (veg, Desserts, ₹90)",
-        "Chocolate Truffle Pastry (veg, Bakes, ₹120)"
+        "Masala Chai (veg, Chai & Coffee, ₹40)"
       ]
     },
     {
@@ -519,10 +519,10 @@
       "expected": "Veg curries",
       "pass": true,
       "via": "rules",
-      "reply": "Sure! For veg curries, here's what I'd suggest:\nMy pick: Dal Makhani. Black lentils slow-cooked overnight with butter and cream. It's one of our bestsellers.\nCan I add Dal Makhani (₹220) to your cart?",
+      "reply": "Sure! For veg curries, here's what I'd suggest:\nMy pick: Paneer Butter Masala. Paneer in a creamy tomato-butter gravy. It's one of our bestsellers.\nCan I add Paneer Butter Masala (₹260) to your cart?",
       "dishes": [
-        "Dal Makhani (veg, Gravies & Curries, ₹220, Mild)",
         "Paneer Butter Masala (veg, Gravies & Curries, ₹260, Mild)",
+        "Dal Makhani (veg, Gravies & Curries, ₹220, Mild)",
         "Dal Tadka (veg, Gravies & Curries, ₹180, Mild)",
         "Chole Masala (veg, Gravies & Curries, ₹200, Medium)"
       ]
@@ -542,12 +542,12 @@
       "expected": "Tandoor dishes",
       "pass": true,
       "via": "rules",
-      "reply": "Sure! For tandoori dishes, here's what I'd suggest:\nMy pick: Butter Naan. Soft tandoor naan brushed with white butter. It's one of our bestsellers.\nCan I add Butter Naan (₹60) to your cart?",
+      "reply": "Sure! For tandoori dishes, here's what I'd suggest:\nMy pick: Butter Chicken. Tandoori chicken in a velvety tomato-butter gravy. It's one of our bestsellers.\nCan I add Butter Chicken (₹320) to your cart?",
       "dishes": [
+        "Butter Chicken (non-veg, Gravies & Curries, ₹320, Mild)",
         "Butter Naan (veg, Breads, ₹60)",
         "Paneer Tikka (veg, Starters, ₹250, Medium)",
-        "Tandoori Chicken (Half) (non-veg, Starters, ₹300, Medium)",
-        "Butter Chicken (non-veg, Gravies & Curries, ₹320, Mild)"
+        "Tandoori Chicken (Half) (non-veg, Starters, ₹300, Medium)"
       ]
     },
     {

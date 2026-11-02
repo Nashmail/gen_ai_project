@@ -40,7 +40,7 @@
   function botBubble(m, opts) {
     const live = !opts || !opts.replay;
     const d = document.createElement("div"); d.className = "msg bot";
-    d.innerHTML = md(m.text) + (m.items && m.items.length ? itemsHtml(m.items) : "") + (m.bill ? billHtml(m.bill) : "") + (m.noteFor ? `<div class="row" style="margin-top:8px"><button class="mini-add note-open" type="button" data-note-open="${esc(m.noteFor)}">🎙 Record voice note</button></div>` : "") + (m.source ? `<span class="src${m.ai ? " ai" : ""}">${m.ai ? "✦ " : "Source: "}${esc(m.source)}</span>` : "");
+    d.innerHTML = md(m.text) + (m.items && m.items.length ? itemsHtml(m.items) : "") + (m.bill ? billHtml(m.bill) : "") + (m.staffAlert ? `<span class="staff-tag">🛎 Staff notified</span>` : "") + (m.noteFor ? `<div class="row" style="margin-top:8px"><button class="mini-add note-open" type="button" data-note-open="${esc(m.noteFor)}">🎙 Record voice note</button></div>` : "") + (m.source ? `<span class="src${m.ai ? " ai" : ""}">${m.ai ? "✦ " : "Source: "}${esc(m.source)}</span>` : "");
     msgs.appendChild(d);
     if (m.chips && m.chips.length && live) {
       const c = document.createElement("div"); c.className = "chips";
@@ -108,6 +108,7 @@
     $$("[data-flag]").forEach((el) => (el.innerHTML = flagHtml(el.dataset.flag)));
     if (cur() === "checkout") renderCheckout();
     renderTracker(); ensurePolling();
+    $$(".lang-seg button").forEach((b) => b.setAttribute("aria-pressed", b.dataset.lang === (ST.lang || "en")));
   }
   async function changeQty(id, qty, announce) {
     try {
@@ -226,6 +227,28 @@
   }
 
   /* ================= KITCHEN ================= */
+  /* ================= STAFF DESK ================= */
+  const LANG_CODE = { en: "en-IN", hi: "hi-IN", ta: "ta-IN" };
+  async function renderStaff() {
+    const body = $("#staff-body");
+    let reqs, sum;
+    try { [reqs, sum] = await Promise.all([API.staffRequests(), API.staffSummary()]); }
+    catch (e) { body.innerHTML = `<div class="card empty"><b>Can't reach the server</b><p>Press Refresh to try again.</p></div>`; return; }
+    const list = reqs.requests;
+    const ago = (t) => { const m = Math.max(0, Math.round((Date.now() - t) / 60000)); return m < 1 ? "just now" : m + " min ago"; };
+    const reqHtml = list.length ? list.map((r) => `<div class="req ${r.status === "done" ? "done" : ""}"><span class="prio ${esc(r.priority)}">${esc(r.priority)}</span><div><b>${esc(r.text)}</b><small>${esc(r.type)} · ${r.table ? "Table " + esc(r.table) : "Table not given"}${r.customer ? " · " + esc(r.customer) : ""} · ${ago(r.at)}</small></div>${r.status === "done" ? `<small>Done</small>` : `<button class="btn btn-ghost" type="button" data-req-done="${esc(r.id)}">Done</button>`}</div>`).join("") : `<p class="fine">No requests yet. When a guest asks for water, a chair, a human, or complains, it appears here.</p>`;
+    const maxC = Math.max(1, ...sum.distribution.map((d) => d.count));
+    body.innerHTML = `<div class="card"><h2>Service requests <small style="color:var(--muted);font-weight:500">(${sum.openRequests} open)</small></h2>${reqHtml}</div>
+      <aside class="card"><h2>Customer satisfaction</h2>
+        <div class="sat-big"><b>${sum.average != null ? sum.average.toFixed(1) : "–"}</b><span>/ 5 average from ${sum.reviews} review${sum.reviews === 1 ? "" : "s"}${sum.happyShare != null ? " · " + sum.happyShare + "% happy (4–5★)" : ""}</span></div>
+        <div class="dist">${sum.distribution.map((d) => `<div><span>${d.stars}★</span><i><em style="width:${(d.count / maxC) * 100}%"></em></i><span>${d.count}</span></div>`).join("")}</div>
+        <p class="fine">${sum.complaints} complaint${sum.complaints === 1 ? "" : "s"} logged by the AI waiter.</p>
+        ${sum.recent.map((x) => `<div class="review"><span class="st">${"★".repeat(x.stars)}</span> ${esc(x.customer || "Guest")}<br>${esc(x.text)}</div>`).join("")}
+      </aside>`;
+  }
+  document.addEventListener("click", async (e) => { const b = e.target.closest("[data-req-done]"); if (!b) return; b.disabled = true; await API.staffDone(b.dataset.reqDone); renderStaff(); });
+  $("#staff-refresh").addEventListener("click", renderStaff);
+
   async function renderKitchen() {
     const body = $("#kitchen-body");
     let data;
@@ -245,7 +268,7 @@
   function dictate({ onText, onEnd, onError, continuous }) {
     if (!SR) { onError && onError("unsupported"); return null; }
     let r; try { r = new SR(); } catch (e) { onError && onError("unsupported"); return null; }
-    r.lang = "en-IN"; r.interimResults = true; r.continuous = !!continuous;
+    r.lang = LANG_CODE[ST.lang] || "en-IN"; r.interimResults = true; r.continuous = !!continuous;
     r.onresult = (e) => { let s = ""; for (let i = 0; i < e.results.length; i++) s += e.results[i][0].transcript; onText(s); };
     r.onerror = (e) => onError && onError(e.error);
     r.onend = () => onEnd && onEnd();
@@ -268,7 +291,11 @@
       }
     });
   });
-  function speak(s) { if (!ui.tts || !window.speechSynthesis) return; try { const u = new SpeechSynthesisUtterance(s.replace(/₹/g, "rupees ").slice(0, 400)); u.lang = "en-IN"; speechSynthesis.speak(u); } catch (e) {} }
+  function speak(s) { if (!ui.tts || !window.speechSynthesis) return; try { const u = new SpeechSynthesisUtterance(s.replace(/₹/g, "rupees ").slice(0, 400)); u.lang = LANG_CODE[ST.lang] || "en-IN"; speechSynthesis.speak(u); } catch (e) {} }
+  $$(".lang-seg button").forEach((b) => b.addEventListener("click", () => {
+    if (b.dataset.lang === (ST.lang || "en")) return;
+    send({ en: "speak in english", hi: "hindi mein baat karo", ta: "tamil la pesunga" }[b.dataset.lang]);
+  }));
   $("#tts-btn").addEventListener("click", (e) => { ui.tts = !ui.tts; e.currentTarget.setAttribute("aria-pressed", ui.tts); if (!ui.tts && window.speechSynthesis) speechSynthesis.cancel(); toast(ui.tts ? "Masala Mitra will read replies aloud" : "Read-aloud off"); });
 
   /* ================= CHEF NOTE MODAL ================= */
@@ -335,7 +362,7 @@
   document.addEventListener("keydown", (e) => { if (e.key === "Escape") { if (!$("#note-modal").hidden) closeNote(); else closeDrawer(); } });
 
   /* ================= ROUTING ================= */
-  const VIEWS = ["home", "menu", "checkout", "kitchen"];
+  const VIEWS = ["home", "menu", "checkout", "kitchen", "staff"];
   const cur = () => { const h = location.hash.slice(1); return VIEWS.includes(h) ? h : "home"; };
   function route() {
     const v = cur();
@@ -346,6 +373,7 @@
     $("#fab").hidden = v === "home";
     if (v === "checkout") renderCheckout();
     clearInterval(kT); if (v === "kitchen") { renderKitchen(); kT = setInterval(renderKitchen, 4000); }
+    if (v === "staff") { renderStaff(); kT = setInterval(renderStaff, 4000); }
     applyState(ST);
     window.scrollTo(0, 0); scrollDown();
   }

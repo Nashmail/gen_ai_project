@@ -25,7 +25,7 @@ LINES = [
     (29.3, "Pay, and rate your food."),
     (31.8, "Under the hood, it's RAG. It searches the real menu first, so every answer uses real dishes, and real prices."),
     (38.2, "I tested it like a real product. Eighty-four test steps: security attacks, a server crash, even Hinglish. Nineteen failures, all fixed."),
-    (44.8, "Built by N. Mailesh, for Introduction to Gen A.I., guided by Professor Rakesh Kumar Siddarantan."),
+    (44.8, "Built by N. Mailesh, for Introduction to Gen A.I., guided by Professor Rakesh Kumar."),
 ]
 STAGE_END = 51.0
 SPEED = 1.02

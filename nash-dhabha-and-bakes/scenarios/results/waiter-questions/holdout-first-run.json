@@ -1,0 +1,311 @@
+{
+  "label": "holdout-first-run",
+  "ranAt": "2026-11-02T15:35:57.730Z",
+  "passed": 15,
+  "total": 17,
+  "bySection": {
+    "A": {
+      "passed": 0,
+      "total": 2
+    },
+    "B": {
+      "passed": 3,
+      "total": 3
+    },
+    "C": {
+      "passed": 2,
+      "total": 2
+    },
+    "D": {
+      "passed": 3,
+      "total": 3
+    },
+    "E": {
+      "passed": 3,
+      "total": 3
+    },
+    "F": {
+      "passed": 2,
+      "total": 2
+    },
+    "G": {
+      "passed": 1,
+      "total": 1
+    },
+    "H": {
+      "passed": 1,
+      "total": 1
+    }
+  },
+  "conversation": {
+    "passed": 6,
+    "total": 6,
+    "turns": [
+      {
+        "customer": "Hello",
+        "waiter": "Hi! Welcome to NASH Dhabha & Bakes. May I know your name?",
+        "pass": true
+      },
+      {
+        "customer": "Can you suggest a vegetarian dish?",
+        "waiter": "Sure! For veg dishes, here's what I'd suggest:\nMy pick: Paneer Butter Masala with Butter Naan. Paneer in a creamy tomato-butter gravy. It's one of our bestsellers.\nCan I add Paneer Butter Masala (₹260) to your cart?",
+        "pass": true
+      },
+      {
+        "customer": "Yes. Also, is it very spicy?",
+        "waiter": "Paneer Butter Masala is ₹260. Paneer Butter Masala is mild, only lightly spiced, not very spicy. I can also ask the kitchen to make it even milder. Paneer in a creamy tomato-butter gravy.\nCan I add Paneer Butter Masala (₹260) to your cart?",
+        "pass": true
+      },
+      {
+        "customer": "Okay, I'll order it.",
+        "waiter": "Great choice! I've added Paneer Butter Masala (₹260) to your cart. Shall I send your order to the kitchen now, or would you like to add more?",
+        "pass": true
+      },
+      {
+        "customer": "yes",
+        "waiter": "Which table are you at? Or say takeaway.",
+        "pass": true
+      },
+      {
+        "customer": "table 5",
+        "waiter": "Order NDB-3612 placed! 1 item, dine-in at table 5.\nGreat! Your order has been sent to the kitchen. I'll keep you updated here. Thank you!",
+        "pass": true
+      }
+    ]
+  },
+  "rows": [
+    {
+      "section": "A",
+      "question": "hey, what all can you help me with?",
+      "pass": false,
+      "reply": "You can change or cancel an order until the kitchen starts cooking it. After that, a staff member will help you.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "A",
+      "question": "is there any table free for 4 people?",
+      "pass": false,
+      "reply": "Filtered drinking water is free. There's a water station near the entrance, and staff can bring a jug to your table.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "B",
+      "question": "what's special today?",
+      "pass": true,
+      "reply": "Today's (Monday) special is Hyderabadi Mutton Biryani (₹380). For vegetarians, it's Paneer Tikka Biryani (₹280). Would you like to know more?",
+      "dishes": [
+        "Hyderabadi Mutton Biryani",
+        "Paneer Tikka Biryani"
+      ],
+      "staffRequests": []
+    },
+    {
+      "section": "B",
+      "question": "how much does this cost?",
+      "pass": true,
+      "reply": "Chicken 65 is ₹260. Deep-fried spicy chicken with curry leaves.\nCan I add Chicken 65 (₹260) to your cart?",
+      "dishes": [
+        "Chicken 65"
+      ],
+      "staffRequests": []
+    },
+    {
+      "section": "B",
+      "question": "any jain options?",
+      "pass": true,
+      "reply": "Jain preparation (no onion, garlic or root vegetables) is possible for most gravies on request. Add it as a chef note. Bakes contain wheat and dairy; kulfi and desserts may contain nuts. Tell the chef about any allergy in the chef note. I've also asked a staff member to confirm which dishes the chef can make Jain today.",
+      "dishes": [],
+      "staffRequests": [
+        {
+          "id": "REQ-2517",
+          "type": "dietary",
+          "text": "Jain preparation requested: please confirm suitable dishes",
+          "priority": "normal",
+          "at": 1793633757703,
+          "table": "",
+          "customer": "",
+          "orderNo": null,
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "section": "C",
+      "question": "i changed my mind, cancel the order",
+      "pass": true,
+      "reply": "Done. Your order NDB-7087 hadn't started cooking yet, so I've cancelled it and told the kitchen. Nothing will be charged.",
+      "dishes": [],
+      "staffRequests": [
+        {
+          "id": "REQ-8186",
+          "type": "order",
+          "text": "Order NDB-7087 cancelled by customer",
+          "priority": "normal",
+          "at": 1793633757708,
+          "table": "5",
+          "customer": "",
+          "orderNo": "NDB-7087",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "section": "C",
+      "question": "how much longer for my food?",
+      "pass": true,
+      "reply": "Most orders are ready in 15 to 25 minutes. Biryani and tandoor items take a little longer at peak hours.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "D",
+      "question": "can you bring some napkins?",
+      "pass": true,
+      "reply": "Certainly! I've sent your request for napkins to our service staff. It'll be with you shortly. Tell me your table number so they can find you quickly.",
+      "dishes": [],
+      "staffRequests": [
+        {
+          "id": "REQ-3264",
+          "type": "table-request",
+          "text": "Please bring napkins",
+          "priority": "normal",
+          "at": 1793633757711,
+          "table": "",
+          "customer": "",
+          "orderNo": null,
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "section": "D",
+      "question": "where's the toilet?",
+      "pass": true,
+      "reply": "The washrooms are at the back of the dining hall, past the bakery counter, on the left. Need someone to show you? Just say \"call staff\".",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "D",
+      "question": "i want to talk to the manager",
+      "pass": true,
+      "reply": "Of course. I've asked a team member to come over. They'll be with you shortly. Tell me your table number so they can find you quickly.",
+      "dishes": [],
+      "staffRequests": [
+        {
+          "id": "REQ-7904",
+          "type": "human",
+          "text": "Customer would like to speak to a staff member",
+          "priority": "high",
+          "at": 1793633757714,
+          "table": "",
+          "customer": "",
+          "orderNo": null,
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "section": "E",
+      "question": "i have a nut allergy",
+      "pass": true,
+      "reply": "Thank you for telling me. These dishes list nuts on our menu, so please avoid them: Lemon Rice, Hot Badam Milk, Shahi Tukda, Rice Kheer, Kesar Pista Kulfi, Butterscotch Scoop, Banana Walnut Muffin.\nI've added \"ALLERGY: nuts\" to your order for the chef and asked a staff member to confirm. Not every ingredient is listed on the menu and kitchens share equipment, so please wait for their confirmation before ordering.",
+      "dishes": [
+        "Lemon Rice",
+        "Hot Badam Milk",
+        "Shahi Tukda",
+        "Rice Kheer",
+        "Kesar Pista Kulfi",
+        "Butterscotch Scoop",
+        "Banana Walnut Muffin"
+      ],
+      "staffRequests": [
+        {
+          "id": "REQ-3220",
+          "type": "allergy",
+          "text": "Allergy (nuts): please confirm safe dishes with the chef",
+          "priority": "high",
+          "at": 1793633757714,
+          "table": "",
+          "customer": "",
+          "orderNo": null,
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "section": "E",
+      "question": "the biryani is too salty",
+      "pass": true,
+      "reply": "I'm sorry about that. I've informed our staff immediately, and they'll replace or reheat it for you.",
+      "dishes": [],
+      "staffRequests": [
+        {
+          "id": "REQ-3117",
+          "type": "complaint",
+          "text": "Food quality: the biryani is too salty",
+          "priority": "high",
+          "at": 1793633757717,
+          "table": "5",
+          "customer": "",
+          "orderNo": "NDB-6035",
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "section": "E",
+      "question": "we've been waiting so long",
+      "pass": true,
+      "reply": "I apologise for the delay. I've checked with the kitchen and alerted the staff. Tell me your table number so they can find you quickly.",
+      "dishes": [],
+      "staffRequests": [
+        {
+          "id": "REQ-8547",
+          "type": "complaint",
+          "text": "Slow service: we've been waiting so long",
+          "priority": "normal",
+          "at": 1793633757720,
+          "table": "",
+          "customer": "",
+          "orderNo": null,
+          "status": "open"
+        }
+      ]
+    },
+    {
+      "section": "F",
+      "question": "can we split it 4 ways",
+      "pass": true,
+      "reply": "Your total is ₹399. Split 4 ways, that's ₹100 each (the last share adjusts by a rupee or two). Each person can pay by UPI, card or cash.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "F",
+      "question": "do you take card?",
+      "pass": true,
+      "reply": "Yes! You can pay by CARD. We accept UPI, debit and credit cards, and cash. I'll bring the bill here once your food is ready.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "G",
+      "question": "mujhe hindi mein baat karni hai",
+      "pass": true,
+      "reply": "ठीक है, अब मैं हिंदी में बात करूँगा। मैं आपकी क्या मदद कर सकता हूँ?",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "H",
+      "question": "do you have wifi?",
+      "pass": true,
+      "reply": "I'm not sure about that, and I don't want to guess. It isn't in our menu or restaurant information. Shall I ask a staff member to help you?",
+      "dishes": [],
+      "staffRequests": []
+    }
+  ]
+}

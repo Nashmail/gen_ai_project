@@ -1,0 +1,478 @@
+{
+  "label": "baseline-before",
+  "ranAt": "2026-11-02T15:30:47.665Z",
+  "passed": 9,
+  "total": 44,
+  "bySection": {
+    "A": {
+      "passed": 1,
+      "total": 5
+    },
+    "B": {
+      "passed": 4,
+      "total": 8
+    },
+    "C": {
+      "passed": 2,
+      "total": 7
+    },
+    "D": {
+      "passed": 0,
+      "total": 6
+    },
+    "E": {
+      "passed": 0,
+      "total": 6
+    },
+    "F": {
+      "passed": 2,
+      "total": 6
+    },
+    "G": {
+      "passed": 0,
+      "total": 4
+    },
+    "H": {
+      "passed": 0,
+      "total": 2
+    }
+  },
+  "conversation": {
+    "passed": 1,
+    "total": 6,
+    "turns": [
+      {
+        "customer": "Hello",
+        "waiter": "Hi! Welcome to NASH Dhabha & Bakes. May I know your name?",
+        "pass": true
+      },
+      {
+        "customer": "Can you suggest a vegetarian dish?",
+        "waiter": "Sure! For veg dishes, here's what I'd suggest:\nMy pick: Masala Chai. Kadak tea with ginger and cardamom. It's one of our bestsellers.\nCan I add Masala Chai (₹40) to your cart?",
+        "pass": false
+      },
+      {
+        "customer": "Yes. Also, is it very spicy?",
+        "waiter": "Let's try something bold and spicy. You sound adventurous. From our menu:\nCan I add Mix Veg Kolhapuri (₹210) to your cart?",
+        "pass": false
+      },
+      {
+        "customer": "Okay, I'll order it.",
+        "waiter": "Sorry, I couldn't find “okay, i ll it” on our menu. Try another name, or open the menu.",
+        "pass": false
+      },
+      {
+        "customer": "yes",
+        "waiter": "Done! Mix Veg Kolhapuri is in your cart. Cart total: ₹210.\nWant anything else? You can add a note for the chef from the menu or the cart.",
+        "pass": false
+      },
+      {
+        "customer": "table 5",
+        "waiter": "Bills include 5% GST, split as 2.5% CGST and 2.5% SGST. Totals are rounded to the nearest rupee.",
+        "pass": false
+      }
+    ]
+  },
+  "rows": [
+    {
+      "section": "A",
+      "question": "Hello!",
+      "pass": true,
+      "reply": "Hi! Welcome to NASH Dhabha & Bakes. May I know your name?",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "A",
+      "question": "How are you?",
+      "pass": false,
+      "reply": "I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "A",
+      "question": "What can you do?",
+      "pass": false,
+      "reply": "I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "A",
+      "question": "Can you help me?",
+      "pass": false,
+      "reply": "I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "A",
+      "question": "Where should I sit?",
+      "pass": false,
+      "reply": "I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "B",
+      "question": "Show me the menu.",
+      "pass": false,
+      "reply": "We serve Breads, Rice, Gravies & Curries, Biryani, Starters, Juices & Lassi, Chai & Coffee, Desserts, Ice Cream & Kulfi, Bakes, with both veg and non-veg dishes.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "B",
+      "question": "What is today's special?",
+      "pass": false,
+      "reply": "Our house specials, the dishes guests order most:\nMy pick: Butter Chicken. Tandoori chicken in a velvety tomato-butter gravy. It's one of our bestsellers.\nCan I add Butter Chicken (₹320) to your cart?",
+      "dishes": [
+        "Butter Chicken",
+        "Chicken Dum Biryani",
+        "Dal Makhani",
+        "Paneer Butter Masala"
+      ],
+      "staffRequests": []
+    },
+    {
+      "section": "B",
+      "question": "What is your best-selling food?",
+      "pass": true,
+      "reply": "Our house specials, the dishes guests order most:\nMy pick: Chicken Dum Biryani. Hyderabadi-style chicken dum biryani with raita. It's one of our bestsellers.\nCan I add Chicken Dum Biryani (₹290) to your cart?",
+      "dishes": [
+        "Chicken Dum Biryani",
+        "Butter Naan",
+        "Hyderabadi Mutton Biryani"
+      ],
+      "staffRequests": []
+    },
+    {
+      "section": "B",
+      "question": "Do you have vegetarian food?",
+      "pass": true,
+      "reply": "Yes, we do! Here are our veg dishes:\nMy pick: Masala Chai. Kadak tea with ginger and cardamom. It's one of our bestsellers.\nCan I add Masala Chai (₹40) to your cart?",
+      "dishes": [
+        "Masala Chai",
+        "Butter Naan",
+        "Gulab Jamun (2 pcs)",
+        "Chocolate Truffle Pastry",
+        "Mango Lassi"
+      ],
+      "staffRequests": []
+    },
+    {
+      "section": "B",
+      "question": "Do you have spicy food?",
+      "pass": true,
+      "reply": "Yes, we do! Here are our spicy dishes:\nMy pick: Chicken 65. Deep-fried spicy chicken with curry leaves. It's one of our bestsellers.\nCan I add Chicken 65 (₹260) to your cart?",
+      "dishes": [
+        "Chicken 65",
+        "Paneer Tikka",
+        "Chicken Dum Biryani",
+        "Tandoori Chicken (Half)",
+        "Hyderabadi Mutton Biryani"
+      ],
+      "staffRequests": []
+    },
+    {
+      "section": "B",
+      "question": "Is this food sweet or spicy?",
+      "pass": false,
+      "reply": "We don't have spicy sweets right now. The closest options are:\nMy pick: Gulab Jamun (2 pcs). Warm khoya dumplings in rose syrup. It's one of our bestsellers.\nCan I add Gulab Jamun (2 pcs) (₹90) to your cart?",
+      "dishes": [
+        "Gulab Jamun (2 pcs)",
+        "Chocolate Truffle Pastry",
+        "Plum Cake Slice",
+        "Banana Walnut Muffin"
+      ],
+      "staffRequests": []
+    },
+    {
+      "section": "B",
+      "question": "What is the price of this dish?",
+      "pass": false,
+      "reply": "Each dish shows its spice level: Mild, Medium or Hot. Want it changed? Add a chef note such as 'make it mild' or 'extra spicy'.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "B",
+      "question": "Do you have Jain food?",
+      "pass": true,
+      "reply": "Jain preparation (no onion, garlic or root vegetables) is possible for most gravies on request. Add it as a chef note. Bakes contain wheat and dairy; kulfi and desserts may contain nuts. Tell the chef about any allergy in the chef note.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "C",
+      "question": "I want to order food.",
+      "pass": false,
+      "reply": "Sorry, I couldn't find “food” on our menu. Try another name, or open the menu.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "C",
+      "question": "Can I change my order?",
+      "pass": true,
+      "reply": "Your cart is empty. Tell me a dish or open the menu.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "C",
+      "question": "How long will my food take?",
+      "pass": true,
+      "reply": "Most orders are ready in 15 to 25 minutes. Biryani and tandoor items take a little longer at peak hours.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "C",
+      "question": "Where is my order?",
+      "pass": false,
+      "reply": "Your cart is empty. Tell me a dish or open the menu.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "C",
+      "question": "Can I cancel my order?",
+      "pass": false,
+      "reply": "Your cart is empty. Tell me a dish or open the menu.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "C",
+      "question": "Can I cancel my order? (already cooking)",
+      "pass": false,
+      "reply": "Your cart is empty. Tell me a dish or open the menu.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "C",
+      "question": "Can I get extra water?",
+      "pass": false,
+      "reply": "Sorry, I couldn't find “extra water” on our menu. Try another name, or open the menu.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "D",
+      "question": "Where is the washroom?",
+      "pass": false,
+      "reply": "Sure! For veg mushroom dishes, here's what I'd suggest:\nMy pick: Mushroom Biryani. Seeraga samba rice with mushrooms, South Indian style.\nCan I add Mushroom Biryani (₹260) to your cart?",
+      "dishes": [
+        "Mushroom Biryani"
+      ],
+      "staffRequests": []
+    },
+    {
+      "section": "D",
+      "question": "Where is the drinking water?",
+      "pass": false,
+      "reply": "I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "D",
+      "question": "Can I get an extra chair?",
+      "pass": false,
+      "reply": "Sure! For tea and coffee, here's what I'd suggest:\nMy pick: Masala Chai. Kadak tea with ginger and cardamom. It's one of our bestsellers.\nCan I add Masala Chai (₹40) to your cart?",
+      "dishes": [
+        "Masala Chai",
+        "Ginger Honey Lemon Tea",
+        "Filter Coffee",
+        "Hot Badam Milk"
+      ],
+      "staffRequests": []
+    },
+    {
+      "section": "D",
+      "question": "Can I get a spoon?",
+      "pass": false,
+      "reply": "Sorry, I couldn't find “spoon” on our menu. Try another name, or open the menu.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "D",
+      "question": "Can I speak to a human?",
+      "pass": false,
+      "reply": "I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "D",
+      "question": "Where is the reception?",
+      "pass": false,
+      "reply": "I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "E",
+      "question": "I'm allergic to peanuts.",
+      "pass": false,
+      "reply": "Nice to meet you, Allergic! What is your mood today? Tell me in chat or tap the mic and say it.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "E",
+      "question": "I don't eat spicy food.",
+      "pass": false,
+      "reply": "Sure! For spicy dishes, here's what I'd suggest:\nMy pick: Chicken 65. Deep-fried spicy chicken with curry leaves. It's one of our bestsellers.\nCan I add Chicken 65 (₹260) to your cart?",
+      "dishes": [
+        "Chicken 65",
+        "Paneer Tikka",
+        "Chicken Dum Biryani",
+        "Tandoori Chicken (Half)"
+      ],
+      "staffRequests": []
+    },
+    {
+      "section": "E",
+      "question": "My food is cold.",
+      "pass": false,
+      "reply": "Sure! For cold treats, here's what I'd suggest:\nMy pick: Mango Lassi. Thick yoghurt and Alphonso mango. It's one of our bestsellers.\nCan I add Mango Lassi (₹130) to your cart?",
+      "dishes": [
+        "Mango Lassi",
+        "Masala Chaas",
+        "Fresh Lime Soda",
+        "Rose Milk"
+      ],
+      "staffRequests": []
+    },
+    {
+      "section": "E",
+      "question": "My order is incorrect.",
+      "pass": false,
+      "reply": "Your cart is empty. Tell me a dish or open the menu.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "E",
+      "question": "The service is slow.",
+      "pass": false,
+      "reply": "Bills include 5% GST, split as 2.5% CGST and 2.5% SGST. Totals are rounded to the nearest rupee.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "E",
+      "question": "I need assistance urgently.",
+      "pass": false,
+      "reply": "I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "F",
+      "question": "Can I pay by UPI?",
+      "pass": false,
+      "reply": "There's nothing to pay for yet. Add a dish to get started.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "F",
+      "question": "Can I get the bill?",
+      "pass": false,
+      "reply": "Please choose how you'd like to pay: UPI, Card or Cash.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "F",
+      "question": "Can I get the bill? (not ready yet)",
+      "pass": true,
+      "reply": "Your order NDB-3226 is still being prepared. I'll share the bill here as soon as it's ready, then you can pay by UPI, card or cash.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "F",
+      "question": "Can I split the bill between 3?",
+      "pass": false,
+      "reply": "Please choose how you'd like to pay: UPI, Card or Cash.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "F",
+      "question": "How can I give feedback?",
+      "pass": false,
+      "reply": "I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "F",
+      "question": "Thank you!",
+      "pass": true,
+      "reply": "You're welcome! Anything else I can get you?",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "G",
+      "question": "hindi mein baat karo",
+      "pass": false,
+      "reply": "I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "G",
+      "question": "tamil la pesunga",
+      "pass": false,
+      "reply": "Sure! For South Indian dishes, here's what I'd suggest:\nMy pick: Chicken 65. Deep-fried spicy chicken with curry leaves. It's one of our bestsellers.\nCan I add Chicken 65 (₹260) to your cart?",
+      "dishes": [
+        "Chicken 65",
+        "Ambur Chicken Biryani",
+        "Filter Coffee",
+        "Curd Rice"
+      ],
+      "staffRequests": []
+    },
+    {
+      "section": "G",
+      "question": "नमस्ते",
+      "pass": false,
+      "reply": "Sorry, I didn't catch that. You can ask me things like “dry non veg”, “something sweet” or “is paneer tikka spicy?”, or tap Direct me to menu.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "G",
+      "question": "வணக்கம்",
+      "pass": false,
+      "reply": "Sorry, I didn't catch that. You can ask me things like “dry non veg”, “something sweet” or “is paneer tikka spicy?”, or tap Direct me to menu.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "H",
+      "question": "Do you have parking?",
+      "pass": false,
+      "reply": "Sorry, we don't have parking on our menu. We're a dhaba and bakery, so you'll find tandoor breads, curries, biryani, starters, drinks, desserts and bakes.",
+      "dishes": [],
+      "staffRequests": []
+    },
+    {
+      "section": "H",
+      "question": "yes please (after the staff offer)",
+      "pass": false,
+      "reply": "Sorry, we don't have yes on our menu. We're a dhaba and bakery, so you'll find tandoor breads, curries, biryani, starters, drinks, desserts and bakes.",
+      "dishes": [],
+      "staffRequests": []
+    }
+  ]
+}

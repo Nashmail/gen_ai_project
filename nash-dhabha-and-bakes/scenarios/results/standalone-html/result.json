@@ -1,0 +1,105 @@
+{
+  "ranAt": "2026-11-02T15:50:58.305Z",
+  "file": "dist/NASH-Dhabha-voice-app.html",
+  "opened": "file:// (no server)",
+  "passed": 16,
+  "total": 16,
+  "steps": [
+    {
+      "step": "1 open from disk",
+      "check": "page loads with no server, title shown",
+      "ok": true,
+      "detail": "NASH Dhabha & Bakes"
+    },
+    {
+      "step": "2 voice: name",
+      "check": "speech is transcribed and the name is kept",
+      "ok": true,
+      "detail": "Nice to meet you, Mailesh! What is your mood today? Tell me in chat or tap the mic and say it."
+    },
+    {
+      "step": "2 voice: transcript",
+      "check": "spoken words appear as the customer's message",
+      "ok": true,
+      "detail": "VOICE · TRANSCRIBED hi i am mailesh"
+    },
+    {
+      "step": "3 voice: call waiter",
+      "check": "waiter called, staff notified, asks table",
+      "ok": true,
+      "detail": "Sure! I've asked a waiter to come. They'll be with you in a minute. Tell me your table number so they can find you quickly.🛎 Staff notified"
+    },
+    {
+      "step": "4 table number",
+      "check": "table 4 attached to the request",
+      "ok": true,
+      "detail": "Thank you! Table 4 noted. The staff member is on the way.🛎 Staff notified"
+    },
+    {
+      "step": "5 menu",
+      "check": "all dishes listed",
+      "ok": true,
+      "detail": "78 dishes"
+    },
+    {
+      "step": "6 add from menu",
+      "check": "cart badge shows 1",
+      "ok": true,
+      "detail": "1"
+    },
+    {
+      "step": "7 voice chef note",
+      "check": "microphone recording saved",
+      "ok": true,
+      "detail": "audio=1 status=Voice note saved."
+    },
+    {
+      "step": "8 note on cart",
+      "check": "chef note shown in the cart",
+      "ok": true,
+      "detail": " Home/Menu/Checkout CheckoutReview your order, add notes for the chef, then place it. Your order (1 item) Butter Naan₹60 each₹60 −1+ Ed"
+    },
+    {
+      "step": "9 place order",
+      "check": "order placed in the chat",
+      "ok": true,
+      "detail": "Order NDB-3514 placed, Mailesh! 1 item, dine-in at table 4. 1 × Butter Naan Breads ₹60"
+    },
+    {
+      "step": "10 order updates",
+      "check": "kitchen updates and bill in the chat",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "step": "11 pay + feedback",
+      "check": "paid by UPI, thanked for 5 stars",
+      "ok": true,
+      "detail": "Thank you, Mailesh! So happy you enjoyed it. I've passed your 5-star review to the chef. Visit NASH Dhabha & Bakes again soon!"
+    },
+    {
+      "step": "12 staff desk",
+      "check": "waiter request for table 4 listed",
+      "ok": true,
+      "detail": "Service requests (1 open)normalWaiter requested at the tablewaiter · Table 4 · Mailesh · just nowDone Customer satisfaction 5.0/ 5 average from 1 review · 100% happy (4–5★) 5★14★03★02★01★0 0 complaints logged by the AI w"
+    },
+    {
+      "step": "13 satisfaction",
+      "check": "rating shown",
+      "ok": true,
+      "detail": "Service requests (1 open)normalWaiter requested at the tablewaiter · Table 4 · Mailesh · just nowDone Customer satisfaction 5.0/ 5 average from 1 review · 100% happy (4–5★) 5★14★03★02★01★0 0 complaints logged by the AI w"
+    },
+    {
+      "step": "14 Hindi voice",
+      "check": "Hindi reply, mic set to hi-IN",
+      "ok": true,
+      "detail": "ज़रूर! मैंने वेटर को टेबल 4 पर बुला दिया है, वे एक मिनट में आएँगे।🛎 Staff notified | hi-IN"
+    },
+    {
+      "step": "15 no page errors",
+      "check": "clean console",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

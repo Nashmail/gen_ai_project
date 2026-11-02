@@ -40,6 +40,9 @@
       order: (details) => http("POST", `/api/sessions/${sid}/orders`, details),
       progress: () => http("GET", `/api/sessions/${sid}/progress`),
       kitchen: () => http("GET", "/api/kitchen/orders"),
+      staffRequests: () => http("GET", "/api/staff/requests"),
+      staffDone: (id) => http("POST", `/api/staff/requests/${encodeURIComponent(id)}`, { status: "done" }),
+      staffSummary: () => http("GET", "/api/staff/summary"),
       reset() { store.del(SID_KEY); }
     };
   }
@@ -47,7 +50,7 @@
   function Offline() {
     const S = E.createState();
     const orders = [], history = [];
-    const pub = () => ({ name: S.name, diet: S.diet, awaiting: S.awaiting, cart: E.cartView(S), order: S.order });
+    const pub = () => ({ name: S.name, diet: S.diet, awaiting: S.awaiting, lang: S.lang || "en", table: S.table || null, cart: E.cartView(S), order: S.order });
     const ok = (messages) => Promise.resolve({ messages: messages || [], state: pub() });
     const track = () => { if (S.order) { const i = orders.findIndex((o) => o.no === S.order.no); if (i < 0) orders.unshift(S.order); } };
     return {
@@ -82,7 +85,10 @@
         catch (e) { const err = new Error("Your cart is empty."); err.code = e.message; return Promise.reject(err); }
       },
       progress() { return ok(E.advanceOrder(S, Date.now())); },
-      kitchen: () => Promise.resolve({ orders: orders.map((o) => Object.assign({ stageLabel: o.stage >= 7 ? "Done" : E.STAGES[o.stage] }, o)) }),
+      kitchen: () => Promise.resolve({ orders: orders.map((o) => Object.assign({ stageLabel: o.cancelled ? "Cancelled" : o.stage >= 7 ? "Done" : E.STAGES[o.stage] }, o)) }),
+      staffRequests: () => Promise.resolve({ requests: (S.requests || []).slice().reverse() }),
+      staffDone(id) { const r = (S.requests || []).find((x) => x.id === id); if (r) { r.status = "done"; r.doneAt = Date.now(); } return Promise.resolve({ request: r }); },
+      staffSummary: () => Promise.resolve(E.satisfaction(orders.filter((o) => o.feedback).map((o) => Object.assign({ customer: o.customer }, o.feedback)).reverse(), S.requests)),
       reset() {}
     };
   }

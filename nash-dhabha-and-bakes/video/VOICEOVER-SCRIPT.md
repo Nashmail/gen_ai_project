@@ -17,7 +17,7 @@ Voice: Kokoro TTS (open source, runs locally), Indian male voice `hm_omega`, spe
 | 31.6–33.2 s | Pay, and rate your food. |
 | 34.1–41.6 s | Under the hood, it's RAG. It searches the real menu first, so every answer uses real dishes, and real prices. |
 | 41.9–51.0 s | I tested it like a real product. Eighty-four test steps: security attacks, a server crash, even Hinglish. Nineteen failures, all fixed. |
-| 51.4–58.5 s | Built by N. Mailesh, for Introduction to Gen A.I., guided by Professor Rakesh Kumar Siddarantan. |
+| 51.4–58.5 s | Built by N. Mailesh, for Introduction to Gen A.I., guided by Professor Rakesh Kumar. |
 
 ## Rebuild
 

@@ -23,6 +23,8 @@
     "6. If one dish is the natural suggestion, set offer_id to its id so the app can ask \"Can I add it?\". Otherwise null.",
     "7. Never claim to add to the cart, place orders or take payment yourself. The app does that.",
     "8. The DRAFT is the app's rule-based answer. Keep it if it is right; improve it if it misunderstood the customer.",
+    "9. Reply in the customer's language (see CUSTOMER language: English, Hindi or Tamil). Keep dish names as they are on the menu.",
+    "10. Never guess about ingredients, allergens, prices or order status. If the context doesn't answer it, say you'll ask a staff member.",
     "Return JSON only, matching the schema."
   ].join("\n");
 
@@ -44,7 +46,7 @@
   function buildRequest(ctx, history) {
     const c = ctx.customer;
     const block = [
-      `CUSTOMER: name=${c.name || "unknown"}; diet preference=${c.diet_preference || "none"}; cart=${c.cart.length ? c.cart.join(", ") : "empty"}; active order=${c.active_order ? c.active_order.no + " (" + c.active_order.stage + ")" : "none"}`,
+      `CUSTOMER: language=${c.language || "English"}; allergy=${c.allergy || "none stated"}; name=${c.name || "unknown"}; diet preference=${c.diet_preference || "none"}; cart=${c.cart.length ? c.cart.join(", ") : "empty"}; active order=${c.active_order ? c.active_order.no + " (" + c.active_order.stage + ")" : "none"}`,
       `MENU SECTIONS: ${ctx.categories.join(", ")}`,
       "HOUSE INFO:", ...ctx.info.map((i) => `- ${i.title}: ${i.text}`),
       "MENU CONTEXT (retrieved for this question; the only dishes you may mention):", ...ctx.items.map(compactDish),

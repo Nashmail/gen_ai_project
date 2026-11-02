@@ -16,9 +16,23 @@ const [bp, bt] = tot(base), [fp, ft] = tot(fixed);
 const [tbp, tbt] = tot(tb), [tap, tat] = tot(ta);
 const icon = (s) => (s === "PASS" ? "✅ Pass" : "❌ Fail");
 
+// AI-waiter question bank (brief sections A–F)
+let waiterMd = "";
+{
+  const WQ = (n) => JSON.parse(fs.readFileSync(path.join(R, "waiter-questions", n + ".json")));
+  const qb = WQ("baseline-before"), qa = WQ("after-waiter-call"), h1 = WQ("holdout-first-run"), h2 = WQ("holdout-after-waiter-call");
+  const sb = JSON.parse(fs.readFileSync(path.join(R, "waiter-service-browser", "result.json"))), sh = JSON.parse(fs.readFileSync(path.join(R, "standalone-html", "result.json")));
+  const names = { A: "Greeting & general", B: "Menu & food", C: "Orders", D: "Assistance (waiter call, water, chair, washroom)", E: "Special needs & complaints", F: "Payment & feedback", G: "Hindi / Tamil", H: "Never guess → staff" };
+  let m = "## AI-waiter question bank (brief sections A–F)\n\nEvery question from the brief is a saved test (`scenarios/run-waiter-questions.js`). The rule: never invent ingredients, allergens, prices or order status; hand over to staff when unsure.\n\n| Section | Before | After |\n|---|---|---|\n";
+  Object.keys(names).forEach((k) => { const b = qb.bySection[k], a = qa.bySection[k]; m += `| ${k} · ${names[k]} | ${b.passed}/${b.total} | ${a.passed}/${a.total} |\n`; });
+  m += `| **Total** | **${qb.passed}/${qb.total}** | **${qa.passed}/${qa.total}** |\n\n`;
+  m += `- Sample conversation from the brief: ${qb.conversation.passed}/6 before, ${qa.conversation.passed}/6 after\n- Held-out questions (written after tuning): ${h1.passed}/${h1.total} on the first run, ${h2.passed}/${h2.total} after one fix\n- Browser, live backend (staff desk, Hindi, order, complaints): ${sb.passed}/${sb.total}\n- Browser, single HTML file opened from disk (voice, waiter call, voice chef note, order, staff desk, Hindi): ${sh.passed}/${sh.total}\n\n| Customer | Masala Mitra |\n|---|---|\n`;
+  qa.conversation.turns.forEach((t) => { m += `| ${cell(t.customer)} | ${short(t.waiter, 200)} |\n`; });
+  waiterMd = m + "\nResults: `results/waiter-questions/`, `results/waiter-service-browser/`, `results/standalone-html/`.\n\n";
+}
 let md = `# Masala Mitra: scenario test report
 
-**Project:** NASH Dhabha & Bakes · **Student:** N Mailesh (CB.EN.U4ARE23025) · **Course:** Introduction to Gen AI · **Professor:** Rakesh Kumar Siddarantan
+**Project:** NASH Dhabha & Bakes · **Student:** N Mailesh (CB.EN.U4ARE23025) · **Course:** Introduction to Gen AI · **Professor:** Rakesh Kumar
 
 **App:** NASH Dhabha & Bakes (frontend + Node.js backend, live mode)
 **How it was tested:** each scenario drives the real website in Chromium (Playwright). The browser talks to the backend API, which runs the RAG chatbot and stores every message. Every step's input, output, pass/fail checks, screenshots and the server-side transcript are saved in \`scenarios/results/\`.
@@ -116,7 +130,7 @@ User testing found more wrong answers: "what is spl herre", "do u hv parota", "v
 
 All earlier suites were re-run after training: 47/47 scenario steps, 31/31 tough steps and 6/6 voice tests still pass. Results: \`results/waiter-eval/\`, \`results/run-7-after-chatspeak/\`, \`results/run-8-tough-after-chatspeak/\`.
 
-## Known gaps (extra probes, not yet fixed)
+${waiterMd}## Known gaps (extra probes, not yet fixed)
 
 These came from 8 extra inputs run against the engine (\`results/extra-probes.json\`). The scenarios above don't cover them.
 

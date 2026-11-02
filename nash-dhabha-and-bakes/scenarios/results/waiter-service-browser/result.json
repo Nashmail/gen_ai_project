@@ -1,0 +1,158 @@
+{
+  "ranAt": "2026-11-02T15:51:41.433Z",
+  "baseUrl": "http://localhost:4000",
+  "passed": 25,
+  "total": 25,
+  "steps": [
+    {
+      "step": "1 Hello!",
+      "check": "welcome",
+      "ok": true,
+      "detail": "Hi! Welcome to NASH Dhabha & Bakes. May I know your name?"
+    },
+    {
+      "step": "2 name",
+      "check": "name kept",
+      "ok": true,
+      "detail": "Nice to meet you, Mailesh! What is your mood today? Tell me in chat or tap the mic and say it."
+    },
+    {
+      "step": "3 extra chair",
+      "check": "staff notified tag shown",
+      "ok": true,
+      "detail": "Certainly! I've sent your request for extra chair to our service staff. It'll be with you shortly. Tell me your table number so they can find you quickly.🛎 Staff notified"
+    },
+    {
+      "step": "4 peanut allergy",
+      "check": "names Lemon Rice + staff confirm",
+      "ok": true,
+      "detail": "Thank you for telling me. These dishes list peanuts on our menu, so please avoid them: Lemon Rice. Lemon Rice Rice · Mild Tangy rice with peanuts and curry leaves. ₹130 Source: Menu descriptions I've added \"ALLERGY: peanuts\" to your order for the chef and asked a staff member to confirm. Not every i"
+    },
+    {
+      "step": "5 हिं button",
+      "check": "replies in Hindi; voice language hi-IN",
+      "ok": true,
+      "detail": "ठीक है, अब मैं हिंदी में बात करूँगा। मैं आपकी क्या मदद कर सकता हूँ?"
+    },
+    {
+      "step": "6 Hindi question",
+      "check": "today's special understood from Hindi words",
+      "ok": true,
+      "detail": "Today's (Monday) special is Hyderabadi Mutton Biryani (₹380). For vegetarians, it's Paneer Tikka Biryani (₹280). Would you like to know more? Hyderabadi Mutton Biryani Biryani · Medium Kacchi mutton biryani with saffron and fried onion. ₹380 Add Paneer Tikka Biryani Biryani · Medium Biryani layered "
+    },
+    {
+      "step": "7 suggest veg",
+      "check": "Paneer Butter Masala with Butter Naan",
+      "ok": true,
+      "detail": "Sure! For veg dishes, here's what I'd suggest: Paneer Butter Masala Gravies & Curries · Mild Paneer in a creamy tomato-butter gravy. ₹260 Add Dal Makhani Gravies & Curries · Mild Black lentils slow-cooked overnight with butter and cream. ₹220 Add Dal Tadka Gravies & Curries · Mild Yellow dal with gh"
+    },
+    {
+      "step": "8 price + spice",
+      "check": "₹260 and mild, can make milder",
+      "ok": true,
+      "detail": "Paneer Butter Masala is ₹260. Paneer Butter Masala is mild, only lightly spiced, not very spicy. I can also ask the kitchen to make it even milder. Paneer in a creamy tomato-butter gravy. Paneer Butter Masala Gravies & Curries · Mild Paneer in a creamy tomato-butter gravy. ₹260 Add Source: Menu: Pan"
+    },
+    {
+      "step": "9 order it",
+      "check": "added + asks to send to kitchen",
+      "ok": true,
+      "detail": "Great choice! I've added Paneer Butter Masala (₹260) to your cart. Shall I send your order to the kitchen now, or would you like to add more?"
+    },
+    {
+      "step": "10 yes",
+      "check": "asks table",
+      "ok": true,
+      "detail": "Which table are you at? Or say takeaway."
+    },
+    {
+      "step": "11 table 5",
+      "check": "sent to the kitchen",
+      "ok": true,
+      "detail": "Order NDB-1426 placed, Mailesh! 1 item, dine-in at table 5. 1 × Paneer Butter Masala Gravies & Curries · Mild ₹260 Great! Your order has been sent to the kitchen. I'll keep you updated here. Thank you!"
+    },
+    {
+      "step": "12 change order (not cooking yet)",
+      "check": "moved back to the cart",
+      "ok": true,
+      "detail": "Certainly! Your order NDB-1426 hadn't started cooking, so I've taken it back from the kitchen and put the dishes in your cart. Tell me what to change, then say \"send it to the kitchen\"."
+    },
+    {
+      "step": "13 send again",
+      "check": "re-sent without asking table",
+      "ok": true,
+      "detail": "Order NDB-6020 placed, Mailesh! 2 items, dine-in at table 5. 1 × Paneer Butter Masala Gravies & Curries · Mild ₹260 1 × Masala Chai Chai & Coffee ₹40 Great! Your order has been sent to the kitchen. I'll keep you updated here. Thank you!"
+    },
+    {
+      "step": "14 cancel while cooking",
+      "check": "refuses, calls staff",
+      "ok": true,
+      "detail": "Your order NDB-6020 is already being cooked, so I can't cancel it myself. I've asked a staff member to come and help you with it.🛎 Staff notified"
+    },
+    {
+      "step": "15 where is my order",
+      "check": "status with order number",
+      "ok": true,
+      "detail": "Your order NDB-6020 is cooking in the kitchen right now. Estimated time: about 10 to 15 minutes."
+    },
+    {
+      "step": "16 complaint",
+      "check": "apology + staff",
+      "ok": true,
+      "detail": "I'm sorry about that. I've informed our staff immediately, and they'll replace or reheat it for you.🛎 Staff notified"
+    },
+    {
+      "step": "17 split bill",
+      "check": "per-person amount",
+      "ok": true,
+      "detail": "Your total is ₹315. Split 2 ways, that's ₹158 each (the last share adjusts by a rupee or two). Each person can pay by UPI, card or cash. | total 315"
+    },
+    {
+      "step": "18 get bill",
+      "check": "bill shown",
+      "ok": true,
+      "detail": "Here is your bill: NASH DHABHA & BAKES Bill NDB-6020 · 2/11/2026 03:51 pm Dine-in · Table 5 · Mailesh 1 × Paneer Butter Masala ₹260 1 × Masala Chai ₹40 Subtotal ₹300 CGST 2.5% ₹7.50 SGST 2.5% ₹7.50 Total ₹315 How would you like to pay ₹315?"
+    },
+    {
+      "step": "19 pay + feedback",
+      "check": "paid, 4-star thanks",
+      "ok": true,
+      "detail": "Thank you, Mailesh! So happy you enjoyed it. I've passed your 4-star review to the chef. Visit NASH Dhabha & Bakes again soon!"
+    },
+    {
+      "step": "20 unknown question",
+      "check": "doesn't guess, offers staff",
+      "ok": true,
+      "detail": "I'm not sure about that, and I don't want to guess. It isn't in our menu or restaurant information. Shall I ask a staff member to help you?"
+    },
+    {
+      "step": "21 call staff",
+      "check": "staff asked",
+      "ok": true,
+      "detail": "Okay! I've asked a staff member to help with that. They'll come over shortly.🛎 Staff notified"
+    },
+    {
+      "step": "22 staff desk",
+      "check": "chair, allergy, complaint, cancel and question requests listed",
+      "ok": true,
+      "detail": "Service requests (12 open)normalCustomer question: do you have parkingquestion · Table 5 · Mailesh · just nowDonehighFood quality: My food is cold.complaint · Table 5 · Mailesh · just nowDonehighCustomer wants to cancel NDB-6020, but it is already cookingorder · Table 5 · Mailesh · just nowDonenorma"
+    },
+    {
+      "step": "23 satisfaction",
+      "check": "average rating shown",
+      "ok": true,
+      "detail": "Service requests (12 open)normalCustomer question: do you have parkingquestion · Table 5 · Mailesh · just nowDonehighFood quality: My food is cold.complaint · Table 5 · Mailesh · just nowDonehighCusto"
+    },
+    {
+      "step": "24 mark done",
+      "check": "one fewer open request",
+      "ok": true,
+      "detail": "12 -> 11"
+    },
+    {
+      "step": "no page errors",
+      "check": "clean console",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

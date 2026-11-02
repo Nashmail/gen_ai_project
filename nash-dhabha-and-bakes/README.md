@@ -4,7 +4,7 @@
 
 A restaurant ordering website with **Masala Mitra**, a voice-enabled, retrieval-augmented (RAG) chatbot that answers like a waiter.
 
-**Student:** N Mailesh (CB.EN.U4ARE23025) · **Course:** Introduction to Gen AI · **Professor:** Rakesh Kumar Siddarantan
+**Student:** N Mailesh (CB.EN.U4ARE23025) · **Course:** Introduction to Gen AI · **Professor:** Rakesh Kumar
 
 ## What it does
 
@@ -14,6 +14,11 @@ A restaurant ordering website with **Masala Mitra**, a voice-enabled, retrieval-
 - **Chef notes:** type, dictate or record a voice note for any dish or the whole order, from the menu or straight from the chat.
 - **Order flow:** checkout (dine-in or takeaway), live order tracking, a bill with GST in the chat, UPI, card or cash (demo payment), and feedback.
 - **Kitchen display:** every order with its notes and playable voice notes.
+- **AI-waiter service:** call the waiter to your table ("I want the waiter to come to my table", "waiter please"), ask for water, a chair or a spoon, ask where the washroom is, report a cold dish, or tell it about an allergy. Each request goes to the **Staff desk** with its table number and priority.
+- **Never guesses:** answers about ingredients, allergens, prices and order status come only from the menu, the house info and the live order. Anything else goes to a staff member.
+- **English, Hindi and Tamil:** EN / हिं / த buttons, or say "hindi mein baat karo" / "tamil la pesunga". Voice input and read-aloud switch language too.
+- **Customer satisfaction:** the Staff desk shows the average rating, the star distribution, complaints and the latest reviews.
+- **One-file app:** `dist/NASH-Dhabha-voice-app.html` (built by `node scripts/build-artifact.js`) runs straight from disk in Chrome or Edge, voice included.
 
 ## How the RAG works
 
@@ -30,8 +35,6 @@ A restaurant ordering website with **Masala Mitra**, a voice-enabled, retrieval-
 | `shared/` | `engine.js` (retrieval, dialogue, orders) and `llm.js` (Gemini), shared by backend and browser |
 | `scenarios/` | Test runners, all stored results and `REPORT.md` |
 | `video/` | The LinkedIn video and how it was made |
-| `standalone-app/` | The whole app as one HTML file: open it in Chrome, no server needed |
-| `archive-v1-single-file/` | The first single-file version, kept for comparison |
 
 ## Run it locally
 
@@ -66,4 +69,8 @@ cd backend && npm test
 node scenarios/run-waiter-eval.js latest
 ```
 
-The browser suites (`run-scenarios.js`, `run-tough.js`, `run-voice-tests.js`, `run-chefnote-chat-test.js`, `run-gemini-browser-test.js`) need Playwright and a running backend. See `scenarios/REPORT.md` for every result, what failed and what was fixed.
+```bash
+node scenarios/run-waiter-questions.js latest
+```
+
+The browser suites (`run-scenarios.js`, `run-tough.js`, `run-voice-tests.js`, `run-chefnote-chat-test.js`, `run-gemini-browser-test.js`, `run-waiter-service-browser.js`, `run-standalone-test.js`) need Playwright and a running backend. See `scenarios/REPORT.md` for every result, what failed and what was fixed.

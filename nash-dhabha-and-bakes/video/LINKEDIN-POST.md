@@ -10,7 +10,7 @@ For my Introduction to Gen AI course project, I built Masala Mitra, a voice-enab
 
 I tested it like a real product: 84 test steps in a real browser, including XSS and prompt-injection attempts, a server crash mid-order, two customers ordering at once, Hinglish input, and voice notes. Testing found 19 failing steps, and I fixed every one.
 
-Thank you, Prof. Rakesh Kumar Siddarantan, for the guidance.
+Thank you, Prof. Rakesh Kumar, for the guidance.
 
 N Mailesh · CB.EN.U4ARE23025
 

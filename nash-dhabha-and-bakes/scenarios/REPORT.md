@@ -1,6 +1,6 @@
 # Masala Mitra: scenario test report
 
-**Project:** NASH Dhabha & Bakes · **Student:** N Mailesh (CB.EN.U4ARE23025) · **Course:** Introduction to Gen AI · **Professor:** Rakesh Kumar Siddarantan
+**Project:** NASH Dhabha & Bakes · **Student:** N Mailesh (CB.EN.U4ARE23025) · **Course:** Introduction to Gen AI · **Professor:** Rakesh Kumar
 
 **App:** NASH Dhabha & Bakes (frontend + Node.js backend, live mode)
 **How it was tested:** each scenario drives the real website in Chromium (Playwright). The browser talks to the backend API, which runs the RAG chatbot and stores every message. Every step's input, output, pass/fail checks, screenshots and the server-side transcript are saved in `scenarios/results/`.
@@ -110,20 +110,52 @@ User testing found more wrong answers: "what is spl herre", "do u hv parota", "v
 
 All earlier suites were re-run after training: 47/47 scenario steps, 31/31 tough steps and 6/6 voice tests still pass. Results: `results/waiter-eval/`, `results/run-7-after-chatspeak/`, `results/run-8-tough-after-chatspeak/`.
 
+## AI-waiter question bank (brief sections A–F)
+
+Every question from the brief is a saved test (`scenarios/run-waiter-questions.js`). The rule: never invent ingredients, allergens, prices or order status; hand over to staff when unsure.
+
+| Section | Before | After |
+|---|---|---|
+| A · Greeting & general | 1/5 | 5/5 |
+| B · Menu & food | 4/8 | 8/8 |
+| C · Orders | 2/7 | 7/7 |
+| D · Assistance (waiter call, water, chair, washroom) | 0/6 | 9/9 |
+| E · Special needs & complaints | 0/6 | 6/6 |
+| F · Payment & feedback | 2/6 | 6/6 |
+| G · Hindi / Tamil | 0/4 | 4/4 |
+| H · Never guess → staff | 0/2 | 2/2 |
+| **Total** | **9/44** | **47/47** |
+
+- Sample conversation from the brief: 1/6 before, 6/6 after
+- Held-out questions (written after tuning): 15/17 on the first run, 17/17 after one fix
+- Browser, live backend (staff desk, Hindi, order, complaints): 25/25
+- Browser, single HTML file opened from disk (voice, waiter call, voice chef note, order, staff desk, Hindi): 16/16
+
+| Customer | Masala Mitra |
+|---|---|
+| Hello | Hi! Welcome to NASH Dhabha & Bakes. May I know your name? |
+| Can you suggest a vegetarian dish? | Sure! For veg dishes, here's what I'd suggest: My pick: Paneer Butter Masala with Butter Naan. Paneer in a creamy tomato-butter gravy. It's one of our bestsellers. Can I add Paneer Butter Masala (₹26… |
+| Yes. Also, is it very spicy? | Paneer Butter Masala is ₹260. Paneer Butter Masala is mild, only lightly spiced, not very spicy. I can also ask the kitchen to make it even milder. Paneer in a creamy tomato-butter gravy. Can I add P… |
+| Okay, I'll order it. | Great choice! I've added Paneer Butter Masala (₹260) to your cart. Shall I send your order to the kitchen now, or would you like to add more? |
+| yes | Which table are you at? Or say takeaway. |
+| table 5 | Order NDB-8514 placed! 1 item, dine-in at table 5. Great! Your order has been sent to the kitchen. I'll keep you updated here. Thank you! |
+
+Results: `results/waiter-questions/`, `results/waiter-service-browser/`, `results/standalone-html/`.
+
 ## Known gaps (extra probes, not yet fixed)
 
 These came from 8 extra inputs run against the engine (`results/extra-probes.json`). The scenarios above don't cover them.
 
 | Input | Expected | What the bot did | Result |
 |---|---|---|---|
-| I want something not spicy | Mild or non-spicy dishes | Sure! For mild dishes, here's what I'd suggest: [Masala Chai ₹40, Butter Naan ₹60, Gulab Jamun (2 pcs) ₹90, Chocolate Truffle Pastry ₹120] \|\| My pick: Masala… | ✅ Pass |
+| I want something not spicy | Mild or non-spicy dishes | Sure! For mild dishes, here's what I'd suggest: [Butter Naan ₹60, Mango Lassi ₹130, Gulab Jamun (2 pcs) ₹90, Masala Chai ₹40] \|\| My pick: Butter Naan. Soft t… | ✅ Pass |
 | add 3 butter naans | 3 × Butter Naan added (plural handled) | Added to your cart: 3 × Butter Naan. Cart total: ₹180. | ✅ Pass |
-| cancel my order | Cancel the order or explain how | Your cart is empty. Tell me a dish or open the menu. | ❌ Fail |
+| cancel my order | Cancel the order or explain how | There's no active order to cancel. | ✅ Pass |
 | enaku biryani venum | Biryani options (Tamil-English) | Sure! For biryanis, here's what I'd suggest: [Chicken Dum Biryani ₹290, Hyderabadi Mutton Biryani ₹380, Egg Biryani ₹230, Veg Dum Biryani ₹240] \|\| My pick: C… | ✅ Pass |
-| do you deliver to my home? | A delivery answer | I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood. | ❌ Fail |
+| do you deliver to my home? | A delivery answer | I'm not sure about that, and I don't want to guess. I couldn't find it in our menu or restaurant information. Shall I ask a staff member to help you? | ❌ Fail |
 | what is the cheapest dessert? | Gulab Jamun (₹90), the cheapest dessert | Our most affordable sweets: [Gulab Jamun (2 pcs) ₹90, Plum Cake Slice ₹90, Banana Walnut Muffin ₹90, Malai Kulfi ₹100] \|\| My pick: Gulab Jamun (2 pcs). Warm … | ❌ Fail |
 | add 100 butter naan | 100 added, or a clear message about the limit | Added to your cart: 50 × Butter Naan. Cart total: ₹3,000. The online limit is 50 per dish, so I added 50 Butter Naan. For bigger orders, please talk to the cou… | ✅ Pass |
-| where are you located? | The restaurant address | I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood. | ❌ Fail |
+| where are you located? | The restaurant address | I'm not sure about that, and I don't want to guess. I couldn't find it in our menu or restaurant information. Shall I ask a staff member to help you? | ❌ Fail |
 
 What these mean:
 - **Negation in search** ("not spicy") is ignored, so it returned the spiciest dishes. Needs a negation filter on spice level.

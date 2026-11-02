@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-11-02T08:10:42.005Z",
+  "ranAt": "2026-11-02T15:55:02.740Z",
   "baseUrl": "http://localhost:4000",
   "passed": 14,
   "total": 14,
@@ -50,7 +50,7 @@
       "step": "6 · recorded voice note",
       "check": "voice note + transcript stored on the server",
       "ok": true,
-      "detail": "{\"id\":\"dal-makhani\",\"name\":\"Dal Makhani\",\"veg\":true,\"price\":220,\"qty\":1,\"amount\":220,\"note\":\"make it less spicy for my kid\",\"voice\":{\"url\":\"/voice/34ca34a4-a065-410a-a97c-0a950fcb3309.webm\",\"transcript\":\"make it less spicy for my kid\"}}"
+      "detail": "{\"id\":\"dal-makhani\",\"name\":\"Dal Makhani\",\"veg\":true,\"price\":220,\"qty\":1,\"amount\":220,\"note\":\"make it less spicy for my kid\",\"voice\":{\"url\":\"/voice/499bdf92-80d5-4a7c-96c3-118a67c712ca.webm\",\"transcript\":\"make it less spicy for my kid\"}}"
     },
     {
       "step": "7 · show my cart (after voice note)",
@@ -80,7 +80,7 @@
       "step": "11 · kitchen",
       "check": "chef sees typed, dictated and recorded notes",
       "ok": true,
-      "detail": "NDB-7443 08:10 am · Table 4 Sent to chef 1× Mushroom Biryani Chef note: “Less spicy and no onion” 1× Butter Naan Chef note: “Extra butter on top; Make the butter naan crispy” 1× Dal Makhani Chef note: “make it less spicy for my kid” Transcript: “make it less spicy for my kid” Whole order “Please pac"
+      "detail": "NDB-9599 03:54 pm · Table 4 Sent to chef 1× Mushroom Biryani Chef note: “Less spicy and no onion” 1× Butter Naan Chef note: “Extra butter on top; Make the butter naan crispy” 1× Dal Makhani Chef note: “make it less spicy for my kid” Transcript: “make it less spicy for my kid” Whole order “Please pac"
     },
     {
       "step": "no page errors",

@@ -1,5 +1,5 @@
 {
-  "ranAt": "2026-11-02T08:13:47.730Z",
+  "ranAt": "2026-11-02T15:56:36.173Z",
   "baseUrl": "http://localhost:4000",
   "passed": 6,
   "total": 6,
@@ -60,27 +60,27 @@
         {
           "check": "server stored the voice note and transcript",
           "ok": true,
-          "detail": "{\"url\":\"/voice/13d60347-5437-459e-a4a4-7442561f71c0.webm\",\"transcript\":\"less oil and make it extra spicy please\"}"
+          "detail": "{\"url\":\"/voice/c2bda194-ee4b-4c0d-8782-85d0491095f6.webm\",\"transcript\":\"less oil and make it extra spicy please\"}"
         },
         {
           "check": "saved audio file is a real recording (≥ 2 s, > 5 KB)",
           "ok": true,
-          "detail": "3.42 s, 56324 bytes"
+          "detail": "3.45 s, 56324 bytes"
         },
         {
           "check": "kitchen ticket shows the note, transcript and an audio player",
           "ok": true,
-          "detail": "NDB-7605 08:13 am · Table 9 Placed 1× Dal Makhani Chef note: “less oil and make it extra spicy please” Transcript: “less oil and make it extra spicy please” Total ₹231"
+          "detail": "NDB-7474 03:56 pm · Table 9 Placed 1× Dal Makhani Chef note: “less oil and make it extra spicy please” Transcript: “less oil and make it extra spicy please” Total ₹231"
         },
         {
           "check": "chef can play it: kitchen audio loads from the server",
           "ok": true,
-          "detail": "duration reported 3.42"
+          "detail": "duration reported 3.45"
         }
       ],
-      "output": "in-browser clip 3.42 s · NDB-7605 08:13 am · Table 9 Placed 1× Dal Makhani Chef note: “less oil and make it extra spicy please” Transcript: “less oil and make it extra spicy please” Total ₹231",
+      "output": "in-browser clip 3.45 s · NDB-7474 03:56 pm · Table 9 Placed 1× Dal Makhani Chef note: “less oil and make it extra spicy please” Transcript: “less oil and make it extra spicy please” Total ₹231",
       "status": "PASS",
-      "audioSeconds": 3.42
+      "audioSeconds": 3.45
     },
     {
       "id": "V3",
@@ -109,7 +109,7 @@
         {
           "check": "server stored the attached recording",
           "ok": true,
-          "detail": "{\"url\":\"/voice/a783e829-c05f-4cfe-a6cc-55cff069aa1c.wav\",\"transcript\":\"\"}"
+          "detail": "{\"url\":\"/voice/066f000b-e9f1-4362-b524-f748fa342315.wav\",\"transcript\":\"\"}"
         },
         {
           "check": "stored file is the full 3-second clip",
@@ -168,15 +168,15 @@
         {
           "check": "chef confirmation mentions the voice note",
           "ok": true,
-          "detail": " 1 veg puffAdded to your cart: 1 × Veg Puff. Cart total: ₹40.Source: MenuShow my cartCheckoutDirect me to menuOrder NDB-3198 placed! 1 item, takeaway.1 × Veg PuffBakes · Mild₹40Your order has been sent to the chef. The chef received these notes:• Whole order: “please pack it separately” + voice note"
+          "detail": " 1 veg puffAdded to your cart: 1 × Veg Puff. Cart total: ₹40.Source: MenuShow my cartCheckoutDirect me to menuOrder NDB-1131 placed! 1 item, takeaway.1 × Veg PuffBakes · Mild₹40Your order has been sent to the chef. The chef received these notes:• Whole order: “please pack it separately” + voice note"
         },
         {
           "check": "kitchen shows the whole-order voice note with its transcript",
           "ok": true,
-          "detail": "NDB-3198 08:13 am · Takeaway Sent to chef 1× Veg Puff Whole order “please pack it separately” Transcript: “please pack it separately” Total ₹42"
+          "detail": "NDB-1131 03:56 pm · Takeaway Sent to chef 1× Veg Puff Whole order “please pack it separately” Transcript: “please pack it separately” Total ₹42"
         }
       ],
-      "output": "NDB-3198 08:13 am · Takeaway Sent to chef 1× Veg Puff Whole order “please pack it separately” Transcript: “please pack it separately” Total ₹42",
+      "output": "NDB-1131 03:56 pm · Takeaway Sent to chef 1× Veg Puff Whole order “please pack it separately” Transcript: “please pack it separately” Total ₹42",
       "status": "PASS"
     }
   ]

@@ -29,6 +29,10 @@ jobs:
           node scenarios/run-waiter-eval.js ci-holdout --holdout
           node scenarios/run-waiter-eval.js ci-chatspeak --chatspeak
           node scenarios/run-waiter-eval.js ci-chatspeak-holdout --holdout2
+      - name: AI-waiter question bank (brief sections A-F, languages, no-guess)
+        run: |
+          node scenarios/run-waiter-questions.js ci-waiter-questions
+          node scenarios/run-waiter-questions.js ci-waiter-holdout --holdout
       - name: Browser suites
         if: ${{ inputs.browser }}
         run: |
@@ -38,3 +42,5 @@ jobs:
           node scenarios/run-tough.js ci-tough
           node scenarios/run-voice-tests.js http://localhost:4000
           node scenarios/run-chefnote-chat-test.js http://localhost:4000
+          node scenarios/run-waiter-service-browser.js http://localhost:4000
+          node scripts/build-artifact.js && node scenarios/run-standalone-test.js

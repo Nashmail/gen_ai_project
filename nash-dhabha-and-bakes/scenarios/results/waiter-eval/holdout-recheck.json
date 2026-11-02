@@ -1,6 +1,6 @@
 {
   "label": "holdout-recheck",
-  "ranAt": "2026-11-02T08:10:52.684Z",
+  "ranAt": "2026-11-02T15:36:06.790Z",
   "passed": 25,
   "total": 25,
   "accuracy": "100%",
@@ -113,10 +113,10 @@
       "expected": "Drinks",
       "pass": true,
       "via": "rules",
-      "reply": "Sure! For drinks, here's what I'd suggest:\nMy pick: Masala Chai. Kadak tea with ginger and cardamom. It's one of our bestsellers.\nCan I add Masala Chai (₹40) to your cart?",
+      "reply": "Sure! For drinks, here's what I'd suggest:\nMy pick: Mango Lassi. Thick yoghurt and Alphonso mango. It's one of our bestsellers.\nCan I add Mango Lassi (₹130) to your cart?",
       "dishes": [
-        "Masala Chai (veg, Chai & Coffee, ₹40)",
         "Mango Lassi (veg, Juices & Lassi, ₹130)",
+        "Masala Chai (veg, Chai & Coffee, ₹40)",
         "Ginger Honey Lemon Tea (veg, Chai & Coffee, ₹60)",
         "Filter Coffee (veg, Chai & Coffee, ₹60)"
       ]
@@ -156,12 +156,12 @@
       "expected": "Veg, mild",
       "pass": true,
       "via": "rules",
-      "reply": "Sure! For kid-friendly veg dishes, here's what I'd suggest:\nMy pick: Masala Chai. Kadak tea with ginger and cardamom. It's one of our bestsellers.\nCan I add Masala Chai (₹40) to your cart?",
+      "reply": "Sure! For kid-friendly veg dishes, here's what I'd suggest:\nMy pick: Butter Naan. Soft tandoor naan brushed with white butter. It's one of our bestsellers.\nCan I add Butter Naan (₹60) to your cart?",
       "dishes": [
-        "Masala Chai (veg, Chai & Coffee, ₹40)",
         "Butter Naan (veg, Breads, ₹60)",
+        "Mango Lassi (veg, Juices & Lassi, ₹130)",
         "Gulab Jamun (2 pcs) (veg, Desserts, ₹90)",
-        "Chocolate Truffle Pastry (veg, Bakes, ₹120)"
+        "Masala Chai (veg, Chai & Coffee, ₹40)"
       ]
     },
     {
