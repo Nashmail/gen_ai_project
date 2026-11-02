@@ -1,0 +1,2180 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"></head><body>
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>NASH Dhabha &amp; Bakes</title>
+<meta name="description" content="Order dhaba food and fresh bakes from NASH Dhabha & Bakes. Chat with Masala Mitra to pick dishes for your mood.">
+<meta name="theme-color" content="#0F4D3A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+<style>
+/* NASH Dhabha & Bakes — site styles
+   Layout: white, content-first restaurant site. 1200px container, sticky header,
+   hero = brand copy + live chat, category grid, menu with sticky sidebar, two-column checkout. */
+:root {
+  --white: #ffffff;
+  --soft: #f7f8f6;
+  --soft-2: #f0f2ee;
+  --line: #e5e8e2;
+  --ink: #16201b;
+  --ink-2: #33403a;
+  --muted: #65716b;
+  --brand: #0f4d3a;
+  --brand-700: #0b3b2c;
+  --brand-50: #e9f3ef;
+  --accent: #f2a900;
+  --accent-700: #b87800;
+  --accent-50: #fff7e0;
+  --veg: #1b8a3a;
+  --nonveg: #a0441a;
+  --danger: #c2410c;
+  --font: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --r-sm: 8px; --r: 12px; --r-lg: 18px;
+  --sh-sm: 0 1px 2px rgba(16, 24, 20, .06);
+  --sh: 0 8px 24px rgba(16, 24, 20, .08);
+  --sh-lg: 0 20px 50px rgba(16, 24, 20, .14);
+  --header-h: 72px;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; }
+html, body { margin: 0; }
+body { background: var(--white); color: var(--ink); font-family: var(--font); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+img { max-width: 100%; }
+a { color: var(--brand); }
+button, input, textarea, select { font: inherit; color: inherit; }
+button { cursor: pointer; }
+h1, h2, h3 { margin: 0; text-wrap: balance; color: var(--ink); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+.container { max-width: 1200px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+
+/* ---------- buttons ---------- */
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 10px; padding: 9px 18px; font-weight: 600; font-size: .92rem; border: 1px solid transparent; text-decoration: none; transition: background .15s, border-color .15s, transform .15s, box-shadow .15s; white-space: nowrap; }
+.btn svg { width: 18px; height: 18px; }
+.btn-lg { padding: 13px 24px; font-size: 1rem; border-radius: 12px; }
+.btn-primary { background: var(--brand); color: #fff; }
+.btn-primary:hover { background: var(--brand-700); box-shadow: var(--sh); }
+.btn-accent { background: var(--accent); color: #2b1d00; }
+.btn-accent:hover { background: #e09d00; }
+.btn-ghost { background: #fff; color: var(--ink); border-color: var(--line); }
+.btn-ghost:hover { border-color: var(--brand); color: var(--brand); }
+.btn-link { background: none; border: 0; color: var(--danger); padding: 6px 4px; }
+.btn.rec { background: var(--danger); color: #fff; border-color: var(--danger); }
+.icon-btn { width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--line); background: #fff; display: grid; place-items: center; flex: none; color: var(--ink-2); }
+.icon-btn svg { width: 18px; height: 18px; }
+.icon-btn[aria-pressed="true"] { background: var(--accent); border-color: var(--accent); color: #2b1d00; }
+
+/* ---------- header ---------- */
+.site-header { position: sticky; top: 0; z-index: 40; background: rgba(255, 255, 255, .96); backdrop-filter: saturate(1.4) blur(8px); border-bottom: 1px solid var(--line); padding-top: env(safe-area-inset-top, 0px); }
+.header-in { height: var(--header-h); display: flex; align-items: center; gap: 24px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); flex: none; }
+.brand img { width: 42px; height: 42px; }
+.brand-text { display: grid; line-height: 1.05; }
+.brand-text b { font-size: 1.3rem; font-weight: 800; letter-spacing: .04em; color: var(--brand); }
+.brand-text small { font-size: .66rem; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--accent-700); }
+.main-nav { display: flex; gap: 4px; margin-left: auto; }
+.main-nav a { text-decoration: none; color: var(--ink-2); font-weight: 500; padding: 8px 14px; border-radius: 8px; }
+.main-nav a:hover { background: var(--soft); color: var(--brand); }
+.main-nav a[aria-current="page"] { color: var(--brand); background: var(--brand-50); font-weight: 600; }
+.cart-btn { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: #fff; background: var(--brand); padding: 9px 14px; border-radius: 10px; font-weight: 600; }
+.cart-btn svg { width: 19px; height: 19px; }
+.cart-btn:hover { background: var(--brand-700); }
+.badge { background: var(--accent); color: #2b1d00; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 999px; font-size: .75rem; font-weight: 700; display: inline-grid; place-items: center; }
+@media (max-width: 720px) {
+  .header-in { gap: 10px; height: 64px; }
+  .brand-text small { display: none; }
+  .main-nav { gap: 0; }
+  .main-nav a { padding: 6px 9px; font-size: .88rem; }
+  .cart-label { display: none; }
+  .cart-btn { padding: 8px 10px; }
+}
+@media (max-width: 480px) { .brand-text { display: none; } .header-in { gap: 6px; } .main-nav { margin-left: auto; } .facts { display: none; } }
+
+/* ---------- hero ---------- */
+.hero { padding-block: 48px 40px; background: radial-gradient(900px 400px at 85% -10%, var(--accent-50), transparent 60%), #fff; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.02fr); gap: 48px; align-items: center; }
+.pill { display: inline-flex; align-items: center; gap: 8px; font-size: .78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--brand); background: var(--brand-50); padding: 6px 12px; border-radius: 999px; }
+.hero h1 { font-size: clamp(2.4rem, 5.2vw, 4rem); line-height: 1.05; font-weight: 800; letter-spacing: -.02em; margin: 18px 0 14px; color: var(--brand); }
+.hero h1 span { color: var(--accent-700); }
+.lead { font-size: 1.08rem; color: var(--ink-2); max-width: 52ch; margin: 0 0 24px; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.facts { list-style: none; padding: 0; margin: 32px 0 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.facts li { display: flex; gap: 10px; align-items: flex-start; font-size: .85rem; color: var(--muted); line-height: 1.35; }
+.facts b { display: block; color: var(--ink); font-weight: 600; font-size: .9rem; }
+.fact-ic { width: 36px; height: 36px; border-radius: 10px; background: var(--accent-50); color: var(--accent-700); display: grid; place-items: center; flex: none; }
+.fact-ic svg { width: 19px; height: 19px; }
+@media (max-width: 960px) { .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 28px; } .hero { padding-block: 28px; } }
+@media (max-width: 560px) { .facts { grid-template-columns: minmax(0, 1fr); gap: 12px; } }
+
+/* ---------- chat widget ---------- */
+.chat { display: flex; flex-direction: column; background: #fff; border: 1px solid var(--line); border-radius: var(--r-lg); box-shadow: var(--sh-lg); height: 600px; max-height: 78vh; min-height: 460px; overflow: hidden; }
+.drawer .chat { height: 100%; max-height: none; min-height: 0; border: 0; border-radius: 0; box-shadow: none; }
+.chat-head { display: flex; align-items: center; gap: 12px; padding: 12px 14px; background: var(--brand); color: #fff; }
+.chat-ava { width: 40px; height: 40px; border-radius: 50%; background: #fff; box-shadow: 0 0 0 2px rgba(255, 255, 255, .35); flex: none; }
+.chat-who { flex: 1; min-width: 0; line-height: 1.25; }
+.chat-who b { display: block; color: #fff; font-weight: 600; font-size: 1rem; }
+.chat-who small { color: rgba(255, 255, 255, .8); font-size: .76rem; display: inline-flex; align-items: center; gap: 6px; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: #b9c4be; display: inline-block; }
+.dot.live { background: #4ade80; box-shadow: 0 0 0 3px rgba(74, 222, 128, .25); }
+.dot.offline { background: var(--accent); }
+.chat-head .icon-btn { background: rgba(255, 255, 255, .12); border-color: rgba(255, 255, 255, .25); color: #fff; }
+.chat-head .icon-btn[aria-pressed="true"] { background: var(--accent); color: #2b1d00; border-color: var(--accent); }
+.drawer-only { display: none !important; }
+.drawer .drawer-only { display: grid !important; }
+.tracker { display: flex; flex-wrap: wrap; gap: 6px; padding: 10px 14px; border-bottom: 1px solid var(--line); background: var(--accent-50); }
+.tracker-title { width: 100%; display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: .8rem; color: var(--ink-2); }
+.tracker-title b { color: var(--ink); }
+.step { font-size: .72rem; font-weight: 600; padding: 3px 9px; border-radius: 999px; background: #fff; color: var(--muted); border: 1px solid var(--line); }
+.step.done { background: var(--brand); border-color: var(--brand); color: #fff; }
+.step.now { background: var(--accent); border-color: var(--accent); color: #2b1d00; animation: pulse 1.4s ease-in-out infinite; }
+@keyframes pulse { 50% { opacity: .55; } }
+.msgs { flex: 1; overflow-y: auto; padding: 18px 14px; display: flex; flex-direction: column; gap: 10px; background: var(--soft); }
+.msg { max-width: 88%; padding: 10px 14px; border-radius: 16px; font-size: .92rem; line-height: 1.5; overflow-wrap: anywhere; min-width: 0; }
+.msg.bot { background: #fff; border: 1px solid var(--line); border-bottom-left-radius: 4px; align-self: flex-start; box-shadow: var(--sh-sm); }
+.msg.me { background: var(--brand); color: #fff; border-bottom-right-radius: 4px; align-self: flex-end; }
+.msg.me .via { display: block; font-size: .66rem; opacity: .8; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; }
+.msg .src { display: block; margin-top: 6px; font-size: .7rem; color: var(--muted); }
+.typing { display: inline-flex; gap: 4px; padding: 14px 16px; }
+.typing i { width: 6px; height: 6px; border-radius: 50%; background: var(--muted); animation: blink 1s infinite; }
+.typing i:nth-child(2) { animation-delay: .15s; } .typing i:nth-child(3) { animation-delay: .3s; }
+@keyframes blink { 50% { opacity: .25; } }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; align-self: flex-start; max-width: 100%; }
+.chip { border: 1px solid var(--brand); background: #fff; color: var(--brand); border-radius: 999px; padding: 5px 13px; font-size: .82rem; font-weight: 500; }
+.chip:hover { background: var(--brand); color: #fff; }
+.mini { display: grid; gap: 6px; margin-top: 8px; }
+.mini-item { display: flex; align-items: center; gap: 9px; border: 1px solid var(--line); border-radius: 10px; padding: 7px 9px; background: #fff; }
+.mini-item .nm { flex: 1; min-width: 0; font-weight: 500; font-size: .88rem; line-height: 1.25; }
+.mini-item .nm small { display: block; color: var(--muted); font-weight: 400; font-size: .74rem; }
+.mini-item .nm .dd { display: block; font-style: normal; font-weight: 400; color: var(--ink-2); font-size: .78rem; line-height: 1.35; margin-top: 2px; }
+.mini-item .pr { font-weight: 600; font-size: .85rem; white-space: nowrap; font-variant-numeric: tabular-nums; }
+.mini-add { border: 0; background: var(--brand); color: #fff; border-radius: 8px; padding: 4px 11px; font-size: .78rem; font-weight: 600; }
+.mini-add:disabled { background: var(--soft-2); color: var(--muted); }
+.receipt { margin-top: 8px; border: 1px dashed #b9c1bc; border-radius: 10px; padding: 12px; background: #fffef9; font-size: .8rem; font-variant-numeric: tabular-nums; overflow-x: auto; }
+.receipt .rh { text-align: center; line-height: 1.4; margin-bottom: 8px; color: var(--ink-2); }
+.receipt .rh b { color: var(--brand); letter-spacing: .08em; }
+.receipt table { width: 100%; border-collapse: collapse; }
+.receipt td { padding: 2px 0; vertical-align: top; }
+.receipt td:last-child { text-align: right; white-space: nowrap; padding-left: 10px; }
+.receipt .sep td { border-top: 1px dashed #b9c1bc; padding-top: 6px; }
+.receipt .tot td { font-weight: 700; font-size: .92rem; color: var(--ink); }
+.chat-input { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--line); background: #fff; }
+.chat-input input { flex: 1; min-width: 0; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; background: #fff; }
+.chat-input input:focus { border-color: var(--brand); outline: none; box-shadow: 0 0 0 3px var(--brand-50); }
+.mic.on { background: var(--danger); border-color: var(--danger); color: #fff; animation: pulse 1.2s infinite; }
+.send { background: var(--brand); border-color: var(--brand); color: #fff; }
+
+/* ---------- menu door ---------- */
+.door-section { padding-block: 8px 24px; }
+.door { display: flex; align-items: center; gap: 20px; max-width: 760px; margin: 0 auto; padding: 18px 22px; border: 1px solid var(--line); border-radius: var(--r-lg); text-decoration: none; color: var(--ink); background: #fff; box-shadow: var(--sh); transition: transform .2s, box-shadow .2s, border-color .2s; }
+.door:hover { transform: translateY(-2px); box-shadow: var(--sh-lg); border-color: var(--accent); }
+.door-disc { width: 76px; height: 76px; border-radius: 50%; background: var(--accent); color: #2b1d00; display: grid; place-items: center; flex: none; }
+.door-disc svg { width: 40px; height: 40px; }
+.door-text { flex: 1; min-width: 0; display: grid; }
+.door-text b { font-size: 1.3rem; font-weight: 700; color: var(--brand); }
+.door-text small { color: var(--muted); font-size: .88rem; }
+.door-arrow { width: 44px; height: 44px; border-radius: 50%; background: var(--brand-50); color: var(--brand); display: grid; place-items: center; flex: none; }
+.door-arrow svg { width: 22px; height: 22px; }
+@media (max-width: 560px) { .door { flex-direction: column; text-align: center; } .door-arrow { display: none; } }
+
+/* ---------- sections ---------- */
+.section { padding-block: 56px; }
+.section-soft { background: var(--soft); }
+.section-head { margin-bottom: 26px; max-width: 640px; }
+.section-head h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); font-weight: 700; letter-spacing: -.01em; }
+.section-head p { margin: 6px 0 0; color: var(--muted); }
+.cat-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; }
+@media (max-width: 960px) { .cat-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .cat-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.cat-card { display: grid; gap: 10px; padding: 16px; border: 1px solid var(--line); border-radius: var(--r); text-decoration: none; color: var(--ink); background: #fff; transition: border-color .15s, box-shadow .15s, transform .15s; }
+.cat-card:hover { border-color: var(--brand); box-shadow: var(--sh); transform: translateY(-2px); }
+.cat-card .ci { width: 48px; height: 48px; border-radius: 12px; display: grid; place-items: center; }
+.cat-card .ci svg { width: 28px; height: 28px; }
+.cat-card b { font-weight: 600; line-height: 1.25; }
+.cat-card small { color: var(--muted); font-size: .8rem; }
+.steps { list-style: none; counter-reset: s; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.steps li { counter-increment: s; background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: 20px; display: grid; gap: 6px; align-content: start; }
+.steps li::before { content: counter(s); width: 34px; height: 34px; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 700; display: grid; place-items: center; margin-bottom: 4px; }
+.steps b { font-weight: 600; }
+.steps span { color: var(--muted); font-size: .88rem; }
+@media (max-width: 960px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .steps { grid-template-columns: minmax(0, 1fr); } }
+
+/* category tints */
+[data-cat="bread"] { --t: #fff3dc; --ti: #9a5b00; }
+[data-cat="rice"] { --t: #eef6ea; --ti: #3f7a2a; }
+[data-cat="gravy"] { --t: #fdebe3; --ti: #a8431c; }
+[data-cat="biryani"] { --t: #fff0d6; --ti: #a86a00; }
+[data-cat="starters"] { --t: #fcebea; --ti: #a33a30; }
+[data-cat="juices"] { --t: #e7f6f2; --ti: #1f7a66; }
+[data-cat="chai"] { --t: #f4ece4; --ti: #7a4b26; }
+[data-cat="desserts"] { --t: #fdecf2; --ti: #a33a64; }
+[data-cat="icecream"] { --t: #ecf0fd; --ti: #3f55a8; }
+[data-cat="bakes"] { --t: #fbefe2; --ti: #94551a; }
+.ci, .thumb { background: var(--t, var(--soft)); color: var(--ti, var(--brand)); }
+
+/* ---------- page head ---------- */
+.page-head { padding-block: 28px 22px; border-bottom: 1px solid var(--line); background: linear-gradient(#fff, var(--soft)); }
+.crumbs { display: flex; gap: 8px; font-size: .82rem; color: var(--muted); margin-bottom: 8px; flex-wrap: wrap; }
+.crumbs a { color: var(--muted); text-decoration: none; }
+.crumbs a:hover { color: var(--brand); }
+.page-head-row { display: flex; flex-wrap: wrap; gap: 16px; align-items: flex-end; justify-content: space-between; }
+.page-head h1 { font-size: clamp(1.8rem, 4vw, 2.4rem); font-weight: 700; letter-spacing: -.01em; }
+.page-head p { margin: 4px 0 0; color: var(--muted); }
+.tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.seg { display: inline-flex; padding: 3px; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+.seg button { border: 0; background: none; border-radius: 8px; padding: 6px 12px; font-size: .86rem; font-weight: 500; display: inline-flex; align-items: center; gap: 6px; color: var(--ink-2); }
+.seg button[aria-pressed="true"] { background: var(--brand); color: #fff; }
+.search { display: flex; align-items: center; gap: 8px; border: 1px solid var(--line); background: #fff; border-radius: 10px; padding: 0 12px; height: 38px; width: 240px; max-width: 100%; }
+.search svg { width: 17px; height: 17px; color: var(--muted); flex: none; }
+.search input { border: 0; outline: none; width: 100%; background: none; }
+.search:focus-within { border-color: var(--brand); box-shadow: 0 0 0 3px var(--brand-50); }
+
+/* ---------- menu ---------- */
+.mark { width: 15px; height: 15px; border: 1.6px solid var(--veg); border-radius: 3px; display: inline-grid; place-items: center; flex: none; vertical-align: -2px; background: #fff; }
+.mark::after { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--veg); }
+.mark.nv { border-color: var(--nonveg); }
+.mark.nv::after { border-radius: 0; width: 8px; height: 7px; background: var(--nonveg); clip-path: polygon(50% 0, 100% 100%, 0 100%); }
+.menu-layout { display: grid; grid-template-columns: 230px minmax(0, 1fr); gap: 32px; padding-block: 24px 120px; align-items: start; }
+.cat-nav { position: sticky; top: calc(var(--header-h) + 16px + env(safe-area-inset-top, 0px)); display: grid; gap: 2px; }
+.cat-nav a { display: flex; justify-content: space-between; gap: 8px; padding: 9px 12px; border-radius: 8px; text-decoration: none; color: var(--ink-2); font-weight: 500; font-size: .9rem; }
+.cat-nav a span { color: var(--muted); font-size: .8rem; font-variant-numeric: tabular-nums; }
+.cat-nav a:hover { background: var(--soft); color: var(--brand); }
+.cat-nav a.active { background: var(--brand-50); color: var(--brand); font-weight: 600; }
+.cat-sec { scroll-margin-top: calc(var(--header-h) + 70px); }
+.cat-sec + .cat-sec { margin-top: 40px; }
+.cat-title { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.cat-title .ci { width: 40px; height: 40px; border-radius: 10px; display: grid; place-items: center; }
+.cat-title .ci svg { width: 24px; height: 24px; }
+.cat-title h2 { font-size: 1.35rem; font-weight: 700; }
+.cat-title p { margin: 0; color: var(--muted); font-size: .85rem; }
+.dish-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 16px; }
+.dish { border: 1px solid var(--line); border-radius: var(--r); background: #fff; overflow: hidden; display: flex; flex-direction: column; transition: box-shadow .15s, border-color .15s; min-width: 0; }
+.dish:hover { box-shadow: var(--sh); border-color: #d6dbd3; }
+.thumb { height: 96px; position: relative; display: grid; place-items: center; }
+.thumb svg { width: 46px; height: 46px; opacity: .9; }
+.thumb .tag { position: absolute; top: 10px; left: 10px; display: inline-flex; align-items: center; gap: 6px; background: #fff; border-radius: 999px; padding: 3px 9px 3px 6px; font-size: .7rem; font-weight: 600; color: var(--ink-2); box-shadow: var(--sh-sm); }
+.thumb .spice { position: absolute; top: 10px; right: 10px; background: #fff; border-radius: 999px; padding: 3px 9px; font-size: .7rem; font-weight: 600; color: var(--danger); box-shadow: var(--sh-sm); }
+.dish-body { padding: 14px; display: flex; flex-direction: column; gap: 6px; flex: 1; }
+.dish h3 { font-size: 1rem; font-weight: 600; line-height: 1.3; }
+.dish p { margin: 0; color: var(--muted); font-size: .84rem; line-height: 1.45; flex: 1; }
+.dish-foot { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-top: 6px; }
+.price { font-weight: 700; font-size: 1.02rem; font-variant-numeric: tabular-nums; }
+.add { border: 1px solid var(--brand); background: #fff; color: var(--brand); border-radius: 8px; padding: 5px 18px; font-weight: 600; font-size: .86rem; }
+.add:hover { background: var(--brand); color: #fff; }
+.stepper { display: inline-flex; align-items: center; border-radius: 8px; overflow: hidden; background: var(--brand); color: #fff; }
+.stepper button { border: 0; background: none; color: #fff; width: 32px; height: 32px; font-weight: 700; font-size: 1rem; }
+.stepper button:hover { background: var(--brand-700); }
+.stepper span { min-width: 26px; text-align: center; font-weight: 700; font-size: .9rem; font-variant-numeric: tabular-nums; }
+.note-btn { border: 0; background: none; padding: 4px 0 0; color: var(--accent-700); font-weight: 600; font-size: .82rem; display: inline-flex; align-items: center; gap: 6px; align-self: flex-start; }
+.note-btn svg { width: 16px; height: 16px; }
+.note-btn:hover { color: var(--brand); }
+.note-flag { display: block; font-size: .78rem; color: var(--ink-2); background: var(--accent-50); border-radius: 8px; padding: 5px 9px; overflow-wrap: anywhere; }
+.empty-note { color: var(--muted); text-align: center; padding: 40px 0; }
+@media (max-width: 860px) {
+  .menu-layout { grid-template-columns: minmax(0, 1fr); gap: 8px; padding-top: 0; }
+  .cat-nav { top: calc(64px + env(safe-area-inset-top, 0px)); z-index: 20; display: flex; gap: 6px; overflow-x: auto; background: #fff; padding-block: 10px; border-bottom: 1px solid var(--line); margin-inline: calc(-1 * max(20px, env(safe-area-inset-left, 0px))); padding-inline: max(20px, env(safe-area-inset-left, 0px)); scrollbar-width: none; }
+  .cat-nav a { flex: none; border: 1px solid var(--line); border-radius: 999px; padding: 5px 12px; }
+  .cat-nav a span { display: none; }
+  .cat-sec { scroll-margin-top: 140px; }
+}
+
+/* ---------- checkout ---------- */
+.co-grid { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 28px; padding-block: 28px 80px; align-items: start; }
+@media (max-width: 900px) { .co-grid { grid-template-columns: minmax(0, 1fr); } }
+.card { background: #fff; border: 1px solid var(--line); border-radius: var(--r); padding: 20px; display: grid; gap: 14px; min-width: 0; }
+.card + .card { margin-top: 16px; }
+.card h2 { font-size: 1.05rem; font-weight: 600; }
+.summary { position: sticky; top: calc(var(--header-h) + 20px); box-shadow: var(--sh); }
+.line { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 6px 12px; align-items: start; padding-bottom: 14px; border-bottom: 1px solid var(--line); }
+.line:last-child { border-bottom: 0; padding-bottom: 0; }
+.line .mark { margin-top: 4px; }
+.line .nm b { display: block; font-weight: 600; line-height: 1.3; }
+.line .nm small { color: var(--muted); }
+.line .amt { font-weight: 600; text-align: right; font-variant-numeric: tabular-nums; }
+.line .sub { grid-column: 2 / -1; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.line audio, .card audio, .ticket audio { width: 100%; max-width: 320px; height: 36px; }
+.field { display: grid; gap: 6px; font-size: .86rem; font-weight: 500; color: var(--ink-2); }
+.field input { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-weight: 400; color: var(--ink); }
+.field select { border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-weight: 400; color: var(--ink); background: #fff; }
+.status.ok { color: var(--veg); font-weight: 600; } .status.err { color: var(--danger); font-weight: 600; }
+.msg .src.ai { color: var(--brand); font-weight: 600; }
+.field input:focus { border-color: var(--brand); outline: none; box-shadow: 0 0 0 3px var(--brand-50); }
+.opt-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.opt { position: relative; }
+.opt input { position: absolute; opacity: 0; }
+.opt span { display: block; border: 1.5px solid var(--line); border-radius: 10px; padding: 10px 12px; font-weight: 600; text-align: center; cursor: pointer; }
+.opt input:checked + span { border-color: var(--brand); background: var(--brand-50); color: var(--brand); }
+.opt input:focus-visible + span { outline: 3px solid var(--accent); outline-offset: 2px; }
+.sum { display: grid; gap: 8px; font-variant-numeric: tabular-nums; font-size: .92rem; }
+.sum div { display: flex; justify-content: space-between; gap: 8px; color: var(--ink-2); }
+.sum .grand { border-top: 1px solid var(--line); padding-top: 12px; margin-top: 4px; font-size: 1.15rem; font-weight: 700; color: var(--ink); }
+.place { width: 100%; }
+.fine { margin: 0; font-size: .78rem; color: var(--muted); }
+.empty { text-align: center; display: grid; gap: 12px; justify-items: center; padding: 56px 20px; }
+.empty b { font-size: 1.15rem; }
+.empty p { margin: 0; color: var(--muted); }
+.row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.row.end { justify-content: flex-end; }
+
+/* ---------- kitchen ---------- */
+.k-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; padding-block: 28px 80px; }
+.ticket { border: 1px solid var(--line); border-radius: var(--r); background: #fff; overflow: hidden; display: flex; flex-direction: column; }
+.ticket-head { display: flex; justify-content: space-between; gap: 8px; align-items: center; padding: 12px 14px; background: var(--soft); border-bottom: 1px solid var(--line); }
+.ticket-head b { font-weight: 700; }
+.ticket-head small { display: block; color: var(--muted); font-size: .76rem; }
+.stage-pill { font-size: .72rem; font-weight: 700; padding: 3px 10px; border-radius: 999px; background: var(--accent-50); color: var(--accent-700); white-space: nowrap; }
+.stage-pill.paid { background: var(--brand-50); color: var(--brand); }
+.ticket ul { list-style: none; margin: 0; padding: 12px 14px; display: grid; gap: 10px; }
+.ticket li { display: grid; gap: 4px; font-size: .9rem; }
+.ticket li > div { display: flex; gap: 8px; align-items: center; }
+.ticket .qty { font-weight: 700; color: var(--brand); min-width: 26px; }
+.ticket .cnote { font-size: .8rem; background: var(--accent-50); border-radius: 8px; padding: 5px 9px; color: var(--ink-2); }
+.ticket-foot { margin-top: auto; padding: 10px 14px; border-top: 1px solid var(--line); font-size: .8rem; color: var(--muted); display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; }
+
+/* ---------- footer ---------- */
+.site-footer { border-top: 1px solid var(--line); background: #fff; padding-block: 40px 24px; padding-bottom: calc(24px + env(safe-area-inset-bottom, 0px)); }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 28px; }
+.footer-grid h3 { font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; font-weight: 600; }
+.footer-grid p { margin: 0; color: var(--ink-2); font-size: .88rem; line-height: 1.8; }
+.footer-grid a { color: var(--ink-2); text-decoration: none; }
+.footer-grid a:hover { color: var(--brand); }
+.footer-bottom { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--line); color: var(--muted); font-size: .8rem; }
+@media (max-width: 760px) { .footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 460px) { .footer-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---------- overlays ---------- */
+.cartbar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; background: var(--brand); color: #fff; padding-block: 12px; padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px)); box-shadow: 0 -8px 24px rgba(0, 0, 0, .12); }
+.cartbar-in { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.cartbar b { font-variant-numeric: tabular-nums; }
+.fab { position: fixed; right: max(20px, env(safe-area-inset-right, 0px)); bottom: calc(20px + env(safe-area-inset-bottom, 0px)); z-index: 31; display: flex; align-items: center; gap: 8px; border: 0; background: var(--brand); color: #fff; border-radius: 999px; padding: 8px 18px 8px 8px; font-weight: 600; box-shadow: var(--sh-lg); }
+.fab img { width: 30px; height: 30px; border-radius: 50%; background: #fff; }
+body.has-bar .fab { bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
+.scrim { position: fixed; inset: 0; background: rgba(10, 18, 14, .4); z-index: 50; }
+.drawer { position: fixed; top: 0; right: 0; bottom: 0; width: min(440px, 100%); z-index: 51; background: #fff; box-shadow: var(--sh-lg); padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px); display: flex; flex-direction: column; }
+#drawer-slot { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+.modal { position: fixed; inset: 0; z-index: 60; background: rgba(10, 18, 14, .45); display: grid; place-items: center; padding: 16px; }
+.sheet { width: min(500px, 100%); max-height: 90vh; overflow-y: auto; background: #fff; border-radius: var(--r-lg); padding: 22px; display: grid; gap: 12px; box-shadow: var(--sh-lg); }
+.sheet-head { display: flex; justify-content: space-between; gap: 12px; align-items: center; }
+.sheet h2 { font-size: 1.2rem; font-weight: 600; }
+.sheet p { margin: 0; color: var(--muted); font-size: .88rem; }
+.sheet textarea { width: 100%; min-height: 100px; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; resize: vertical; }
+.sheet textarea:focus { border-color: var(--brand); outline: none; box-shadow: 0 0 0 3px var(--brand-50); }
+.status { font-size: .84rem; color: var(--muted); min-height: 1.3em; }
+.sheet audio { width: 100%; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); border: 0; }
+.rec-phone { justify-self: start; cursor: pointer; }
+.file-lbl { font-size: .82rem; color: var(--muted); display: grid; gap: 4px; }
+.file-lbl input { font-size: .82rem; max-width: 100%; }
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(96px + env(safe-area-inset-bottom, 0px)); z-index: 70; background: var(--ink); color: #fff; padding: 10px 18px; border-radius: 10px; font-weight: 500; font-size: .9rem; box-shadow: var(--sh-lg); max-width: calc(100% - 40px); text-align: center; }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
+
+</style>
+<!--ICONS-->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l16-8-6 16-2-7-8-1z"/></symbol>
+  <symbol id="i-speak" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 8a5 5 0 0 1 0 8"/></symbol>
+  <symbol id="i-cloche" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 34h36M9 34a15 15 0 0 1 30 0"/><path d="M24 15v-3M21 12h6"/><path d="M8 39h32"/><path d="M17 26a8 8 0 0 1 5-5"/></symbol>
+  <symbol id="i-chef" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 14a4 4 0 1 1 1.5-7.7A4 4 0 0 1 16 6.3 4 4 0 1 1 17 14v5H7v-5z"/><path d="M7 16h10"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4V5z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"/><path d="M5 19l7-7"/></symbol>
+  <symbol id="i-oven" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/><rect x="7" y="12" width="10" height="5" rx="1"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8L19 16z"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></symbol>
+  <!-- category icons -->
+  <symbol id="c-bread" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><ellipse cx="12" cy="12" rx="9" ry="6.5"/><path d="M8 10.5h.01M12 9h.01M15.5 11h.01M10 14h.01M14 14.5h.01"/></symbol>
+  <symbol id="c-rice" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18a9 8 0 0 1-18 0z"/><path d="M7.5 9.5c1-2 3-3 4.5-3s3.5 1 4.5 3"/><path d="M9 20h6"/></symbol>
+  <symbol id="c-gravy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h16v4a6 6 0 0 1-6 6h-4a6 6 0 0 1-6-6v-4z"/><path d="M2 10h20"/><path d="M9 7c0-1.2 1-1.2 1-2.5M14 7c0-1.2 1-1.2 1-2.5"/></symbol>
+  <symbol id="c-biryani" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10h14l-1.2 7.5A3 3 0 0 1 14.8 20H9.2a3 3 0 0 1-3-2.5L5 10z"/><path d="M4 10h16"/><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"/><path d="M12 4v1"/></symbol>
+  <symbol id="c-starters" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 20L20 4"/><circle cx="8.5" cy="15.5" r="2.4"/><circle cx="12" cy="12" r="2.4"/><circle cx="15.5" cy="8.5" r="2.4"/></symbol>
+  <symbol id="c-juices" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 5h11l-1.6 15H8.1L6.5 5z"/><path d="M7.2 10h9.6"/><path d="M13 5l2.5-3"/></symbol>
+  <symbol id="c-chai" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9z"/><path d="M16 11h1.5a2 2 0 0 1 0 4H16"/><path d="M8 3.5v2.5M12 3.5v2.5"/></symbol>
+  <symbol id="c-desserts" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h18a9 7 0 0 1-18 0z"/><circle cx="9" cy="10" r="2.6"/><circle cx="15" cy="10" r="2.6"/></symbol>
+  <symbol id="c-icecream" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 11l4 10 4-10"/><path d="M7 11a5 5 0 1 1 10 0H7z"/></symbol>
+  <symbol id="c-bakes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12h12l-1.5 8h-9L6 12z"/><path d="M5.5 12a6.5 5 0 0 1 13 0"/><path d="M12 4.5v2"/></symbol>
+</svg>
+
+<header class="site-header">
+  <div class="container header-in">
+    <a class="brand" href="#home" aria-label="NASH Dhabha &amp; Bakes home">
+      <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJOQVNIIERoYWJoYSAmYW1wOyBCYWtlcyI+CiAgPGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMzIiIGZpbGw9IiMwRjREM0EiLz4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIyNy41IiBmaWxsPSJub25lIiBzdHJva2U9IiNGMkE5MDAiIHN0cm9rZS13aWR0aD0iMS40IiBzdHJva2UtZGFzaGFycmF5PSIyLjIgMi42Ii8+CiAgPGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj4KICAgIDxwYXRoIGQ9Ik0yNC41IDI1LjVjLTIuMi0yLjYgMi4yLTQuNCAwLTcuNCIvPgogICAgPHBhdGggZD0iTTMyIDI0Yy0yLjItMi42IDIuMi00LjQgMC03LjQiLz4KICAgIDxwYXRoIGQ9Ik0zOS41IDI1LjVjLTIuMi0yLjYgMi4yLTQuNCAwLTcuNCIvPgogIDwvZz4KICA8cmVjdCB4PSIxNS41IiB5PSIyOSIgd2lkdGg9IjMzIiBoZWlnaHQ9IjUuMiIgcng9IjIuNiIgZmlsbD0iI0ZGRDM2QiIvPgogIDxwYXRoIGQ9Ik0xOCAzNC4yaDI4YzAgOC42LTYuMyAxNS4zLTE0IDE1LjNzLTE0LTYuNy0xNC0xNS4zeiIgZmlsbD0iI0YyQTkwMCIvPgogIDxwYXRoIGQ9Ik0yMiA0MC41aDIwIiBzdHJva2U9IiMwRjREM0EiIHN0cm9rZS13aWR0aD0iMS42IiBzdHJva2UtbGluZWNhcD0icm91bmQiIG9wYWNpdHk9Ii41NSIvPgogIDxwYXRoIGQ9Ik0yNSA0NC42aDE0IiBzdHJva2U9IiMwRjREM0EiIHN0cm9rZS13aWR0aD0iMS42IiBzdHJva2UtbGluZWNhcD0icm91bmQiIG9wYWNpdHk9Ii4zNSIvPgo8L3N2Zz4K" alt="" width="42" height="42">
+      <span class="brand-text"><b>NASH</b><small>Dhabha &amp; Bakes</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#menu" data-nav="menu">Menu</a>
+      <a href="#kitchen" data-nav="kitchen">Kitchen</a>
+    </nav>
+    <a class="cart-btn" href="#checkout" data-nav="checkout" aria-label="Cart"><svg><use href="#i-bag"/></svg><span class="cart-label">Cart</span><span class="badge" id="cart-count">0</span></a>
+  </div>
+</header>
+
+<!-- ============ HOME ============ -->
+<main id="view-home" class="view">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="pill">Dhaba kitchen · Tandoor · Bakery</span>
+        <h1>NASH Dhabha <span>&amp; Bakes</span></h1>
+        <p class="lead">Tandoor breads, slow-cooked dals, dum biryani and fresh bakes. Tell <b>Masala Mitra</b> how you feel and get dishes picked for your mood.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="#menu">Explore menu <svg><use href="#i-arrow"/></svg></a>
+          <button class="btn btn-ghost btn-lg" type="button" id="focus-chat">Chat with Masala Mitra</button>
+        </div>
+        <ul class="facts">
+          <li><span class="fact-ic"><svg><use href="#i-clock"/></svg></span><span><b>Open daily</b>7:00 AM – 11:30 PM</span></li>
+          <li><span class="fact-ic"><svg><use href="#i-leaf"/></svg></span><span><b>Veg &amp; non-veg</b>Separate tandoors</span></li>
+          <li><span class="fact-ic"><svg><use href="#i-oven"/></svg></span><span><b>Fresh bakes</b>Every morning from 7</span></li>
+        </ul>
+      </div>
+      <div class="hero-chat" id="home-slot">
+        <section class="chat" id="chat" aria-label="Chat with Masala Mitra">
+          <div class="chat-head">
+            <img class="chat-ava" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJOQVNIIERoYWJoYSAmYW1wOyBCYWtlcyI+CiAgPGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMzIiIGZpbGw9IiMwRjREM0EiLz4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIyNy41IiBmaWxsPSJub25lIiBzdHJva2U9IiNGMkE5MDAiIHN0cm9rZS13aWR0aD0iMS40IiBzdHJva2UtZGFzaGFycmF5PSIyLjIgMi42Ii8+CiAgPGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj4KICAgIDxwYXRoIGQ9Ik0yNC41IDI1LjVjLTIuMi0yLjYgMi4yLTQuNCAwLTcuNCIvPgogICAgPHBhdGggZD0iTTMyIDI0Yy0yLjItMi42IDIuMi00LjQgMC03LjQiLz4KICAgIDxwYXRoIGQ9Ik0zOS41IDI1LjVjLTIuMi0yLjYgMi4yLTQuNCAwLTcuNCIvPgogIDwvZz4KICA8cmVjdCB4PSIxNS41IiB5PSIyOSIgd2lkdGg9IjMzIiBoZWlnaHQ9IjUuMiIgcng9IjIuNiIgZmlsbD0iI0ZGRDM2QiIvPgogIDxwYXRoIGQ9Ik0xOCAzNC4yaDI4YzAgOC42LTYuMyAxNS4zLTE0IDE1LjNzLTE0LTYuNy0xNC0xNS4zeiIgZmlsbD0iI0YyQTkwMCIvPgogIDxwYXRoIGQ9Ik0yMiA0MC41aDIwIiBzdHJva2U9IiMwRjREM0EiIHN0cm9rZS13aWR0aD0iMS42IiBzdHJva2UtbGluZWNhcD0icm91bmQiIG9wYWNpdHk9Ii41NSIvPgogIDxwYXRoIGQ9Ik0yNSA0NC42aDE0IiBzdHJva2U9IiMwRjREM0EiIHN0cm9rZS13aWR0aD0iMS42IiBzdHJva2UtbGluZWNhcD0icm91bmQiIG9wYWNpdHk9Ii4zNSIvPgo8L3N2Zz4K" alt="" width="40" height="40">
+            <div class="chat-who"><b>Masala Mitra</b><small><i class="dot" id="conn-dot"></i><span id="conn-label">Connecting…</span></small></div>
+            <button class="icon-btn" id="ai-btn" type="button" title="AI settings (Google Gemini)" aria-label="AI settings"><svg><use href="#i-spark"/></svg></button>
+            <button class="icon-btn" id="tts-btn" aria-pressed="false" title="Read replies aloud" aria-label="Read replies aloud"><svg><use href="#i-speak"/></svg></button>
+            <button class="icon-btn drawer-only" id="drawer-close" aria-label="Close chat"><svg><use href="#i-x"/></svg></button>
+          </div>
+          <div class="tracker" id="tracker" hidden></div>
+          <div class="msgs" id="msgs" aria-live="polite"></div>
+          <form class="chat-input" id="chat-form" autocomplete="off">
+            <button type="button" class="icon-btn mic" id="mic-btn" title="Speak" aria-label="Speak your message"><svg><use href="#i-mic"/></svg></button>
+            <input id="chat-text" type="text" placeholder="Say hi, or ask for a dish…" aria-label="Message">
+            <button type="submit" class="icon-btn send" aria-label="Send"><svg><use href="#i-send"/></svg></button>
+          </form>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="door-section">
+    <div class="container">
+      <a class="door" href="#menu">
+        <span class="door-disc"><svg><use href="#i-cloche"/></svg></span>
+        <span class="door-text"><b>Direct me to menu</b><small>Breads, rice, gravies, biryani, juices, desserts, ice cream and bakes</small></span>
+        <span class="door-arrow"><svg><use href="#i-arrow"/></svg></span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><h2>Explore the menu</h2><p>Ten sections, veg and non-veg, from the tandoor to the bakery counter.</p></div>
+      <div class="cat-grid" id="cat-grid"></div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <div class="section-head"><h2>How ordering works</h2><p>Masala Mitra stays with you from the first hello to the bill.</p></div>
+      <ol class="steps">
+        <li><b>Tell your mood</b><span>Say hi, share your name and how you feel. Mitra suggests dishes from the menu.</span></li>
+        <li><b>Build your order</b><span>Add dishes from the chat or the menu. Veg and non-veg are clearly marked.</span></li>
+        <li><b>Talk to the chef</b><span>Leave a chef note on any dish, typed or as a voice note.</span></li>
+        <li><b>Track, pay, rate</b><span>Mitra tells you when it's cooking and ready, then shares the bill and payment.</span></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<!-- ============ MENU ============ -->
+<main id="view-menu" class="view" hidden>
+  <section class="page-head">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a><span>/</span><span>Menu</span></nav>
+      <div class="page-head-row">
+        <div><h1>Our Menu</h1><p><span class="mark" aria-hidden="true"></span> Veg &nbsp;&nbsp;<span class="mark nv" aria-hidden="true"></span> Non-veg (includes egg) · Use <b>Chef note</b> on any dish</p></div>
+        <div class="tools">
+          <div class="seg" role="group" aria-label="Diet filter">
+            <button type="button" data-diet="all" aria-pressed="true">All</button>
+            <button type="button" data-diet="veg" aria-pressed="false"><span class="mark" aria-hidden="true"></span>Veg</button>
+            <button type="button" data-diet="nonveg" aria-pressed="false"><span class="mark nv" aria-hidden="true"></span>Non-veg</button>
+          </div>
+          <label class="search"><svg><use href="#i-search"/></svg><input id="menu-search" type="search" placeholder="Search dishes" aria-label="Search dishes"></label>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="container menu-layout">
+    <aside class="cat-nav" id="cat-nav" aria-label="Menu categories"></aside>
+    <div class="menu-main"><div id="menu-body"></div><p class="empty-note" id="menu-empty" hidden>No dishes match. Clear the search or switch the filter.</p></div>
+  </div>
+</main>
+
+<!-- ============ CHECKOUT ============ -->
+<main id="view-checkout" class="view" hidden>
+  <section class="page-head">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a><span>/</span><a href="#menu">Menu</a><span>/</span><span>Checkout</span></nav>
+      <div class="page-head-row"><div><h1>Checkout</h1><p>Review your order, add notes for the chef, then place it.</p></div></div>
+    </div>
+  </section>
+  <div class="container" id="co-body"></div>
+</main>
+
+<!-- ============ KITCHEN ============ -->
+<main id="view-kitchen" class="view" hidden>
+  <section class="page-head">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a><span>/</span><span>Kitchen</span></nav>
+      <div class="page-head-row"><div><h1>Kitchen display</h1><p>Every order the chef receives, with chef notes and voice notes.</p></div>
+        <button class="btn btn-ghost" type="button" id="kitchen-refresh"><svg><use href="#i-refresh"/></svg>Refresh</button></div>
+    </div>
+  </section>
+  <div class="container" id="kitchen-body"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAzMDAgNzIiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iTkFTSCBEaGFiaGEgJmFtcDsgQmFrZXMiPgogIDxzdHlsZT5AaW1wb3J0IHVybCgnaHR0cHM6Ly9mb250cy5nb29nbGVhcGlzLmNvbS9jc3MyP2ZhbWlseT1Qb3BwaW5zOndnaHRANjAwOzgwMCZhbXA7ZGlzcGxheT1zd2FwJyk7PC9zdHlsZT4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0IDQpIj4KICAgIDxjaXJjbGUgY3g9IjMyIiBjeT0iMzIiIHI9IjMyIiBmaWxsPSIjMEY0RDNBIi8+CiAgICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIyNy41IiBmaWxsPSJub25lIiBzdHJva2U9IiNGMkE5MDAiIHN0cm9rZS13aWR0aD0iMS40IiBzdHJva2UtZGFzaGFycmF5PSIyLjIgMi42Ii8+CiAgICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiNGRkZGRkYiIHN0cm9rZS13aWR0aD0iMi40IiBzdHJva2UtbGluZWNhcD0icm91bmQiPgogICAgICA8cGF0aCBkPSJNMjQuNSAyNS41Yy0yLjItMi42IDIuMi00LjQgMC03LjQiLz48cGF0aCBkPSJNMzIgMjRjLTIuMi0yLjYgMi4yLTQuNCAwLTcuNCIvPjxwYXRoIGQ9Ik0zOS41IDI1LjVjLTIuMi0yLjYgMi4yLTQuNCAwLTcuNCIvPgogICAgPC9nPgogICAgPHJlY3QgeD0iMTUuNSIgeT0iMjkiIHdpZHRoPSIzMyIgaGVpZ2h0PSI1LjIiIHJ4PSIyLjYiIGZpbGw9IiNGRkQzNkIiLz4KICAgIDxwYXRoIGQ9Ik0xOCAzNC4yaDI4YzAgOC42LTYuMyAxNS4zLTE0IDE1LjNzLTE0LTYuNy0xNC0xNS4zeiIgZmlsbD0iI0YyQTkwMCIvPgogICAgPHBhdGggZD0iTTIyIDQwLjVoMjAiIHN0cm9rZT0iIzBGNEQzQSIgc3Ryb2tlLXdpZHRoPSIxLjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgb3BhY2l0eT0iLjU1Ii8+CiAgICA8cGF0aCBkPSJNMjUgNDQuNmgxNCIgc3Ryb2tlPSIjMEY0RDNBIiBzdHJva2Utd2lkdGg9IjEuNiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBvcGFjaXR5PSIuMzUiLz4KICA8L2c+CiAgPHRleHQgeD0iODQiIHk9IjQwIiBmb250LWZhbWlseT0iUG9wcGlucywgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjgwMCIgZm9udC1zaXplPSIzNCIgZmlsbD0iIzBGNEQzQSIgbGV0dGVyLXNwYWNpbmc9IjEiPk5BU0g8L3RleHQ+CiAgPHRleHQgeD0iODUiIHk9IjU5IiBmb250LWZhbWlseT0iUG9wcGlucywgQXJpYWwsIEhlbHZldGljYSwgc2Fucy1zZXJpZiIgZm9udC13ZWlnaHQ9IjYwMCIgZm9udC1zaXplPSIxMS41IiBmaWxsPSIjQjg3ODAwIiBsZXR0ZXItc3BhY2luZz0iMy4yIj5ESEFCSEEgJmFtcDsgQkFLRVM8L3RleHQ+Cjwvc3ZnPgo=" alt="NASH Dhabha &amp; Bakes" width="210" height="50"><p>Highway-style dhaba food and a bakery counter, under one roof.</p></div>
+    <div><h3>Hours</h3><p>Open daily 7:00 AM – 11:30 PM<br>Kitchen 11:00 AM – 11:00 PM<br>Bakery from 7:00 AM</p></div>
+    <div><h3>Order</h3><p><a href="#menu">Menu</a><br><a href="#checkout">Cart &amp; checkout</a><br><a href="#kitchen">Kitchen display</a></p></div>
+    <div><h3>We accept</h3><p>UPI · Debit and credit cards · Cash<br>Bills include 5% GST</p></div>
+  </div>
+  <div class="container footer-bottom">© <span id="year">2026</span> NASH Dhabha &amp; Bakes</div>
+</footer>
+
+<div class="cartbar" id="cartbar" hidden><div class="container cartbar-in"><span><b id="bar-count">0 items</b> · <b id="bar-total">₹0</b></span><a class="btn btn-accent" href="#checkout">View cart <svg><use href="#i-arrow"/></svg></a></div></div>
+<button class="fab" id="fab" type="button" hidden><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCIgcm9sZT0iaW1nIiBhcmlhLWxhYmVsPSJOQVNIIERoYWJoYSAmYW1wOyBCYWtlcyI+CiAgPGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMzIiIGZpbGw9IiMwRjREM0EiLz4KICA8Y2lyY2xlIGN4PSIzMiIgY3k9IjMyIiByPSIyNy41IiBmaWxsPSJub25lIiBzdHJva2U9IiNGMkE5MDAiIHN0cm9rZS13aWR0aD0iMS40IiBzdHJva2UtZGFzaGFycmF5PSIyLjIgMi42Ii8+CiAgPGcgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjRkZGRkZGIiBzdHJva2Utd2lkdGg9IjIuNCIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIj4KICAgIDxwYXRoIGQ9Ik0yNC41IDI1LjVjLTIuMi0yLjYgMi4yLTQuNCAwLTcuNCIvPgogICAgPHBhdGggZD0iTTMyIDI0Yy0yLjItMi42IDIuMi00LjQgMC03LjQiLz4KICAgIDxwYXRoIGQ9Ik0zOS41IDI1LjVjLTIuMi0yLjYgMi4yLTQuNCAwLTcuNCIvPgogIDwvZz4KICA8cmVjdCB4PSIxNS41IiB5PSIyOSIgd2lkdGg9IjMzIiBoZWlnaHQ9IjUuMiIgcng9IjIuNiIgZmlsbD0iI0ZGRDM2QiIvPgogIDxwYXRoIGQ9Ik0xOCAzNC4yaDI4YzAgOC42LTYuMyAxNS4zLTE0IDE1LjNzLTE0LTYuNy0xNC0xNS4zeiIgZmlsbD0iI0YyQTkwMCIvPgogIDxwYXRoIGQ9Ik0yMiA0MC41aDIwIiBzdHJva2U9IiMwRjREM0EiIHN0cm9rZS13aWR0aD0iMS42IiBzdHJva2UtbGluZWNhcD0icm91bmQiIG9wYWNpdHk9Ii41NSIvPgogIDxwYXRoIGQ9Ik0yNSA0NC42aDE0IiBzdHJva2U9IiMwRjREM0EiIHN0cm9rZS13aWR0aD0iMS42IiBzdHJva2UtbGluZWNhcD0icm91bmQiIG9wYWNpdHk9Ii4zNSIvPgo8L3N2Zz4K" alt="" width="28" height="28">Ask Masala Mitra</button>
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" hidden aria-label="Chat"><div id="drawer-slot"></div></aside>
+
+<div class="modal" id="note-modal" hidden role="dialog" aria-modal="true" aria-labelledby="note-title">
+  <div class="sheet">
+    <div class="sheet-head"><h2 id="note-title">Note for the chef</h2><button class="icon-btn" id="note-x" type="button" aria-label="Close"><svg><use href="#i-x"/></svg></button></div>
+    <p id="note-sub"></p>
+    <textarea id="note-text" placeholder="e.g. Less oil, medium spicy, no onion"></textarea>
+    <div class="row">
+      <button class="btn btn-ghost" id="rec-btn" type="button"><svg><use href="#i-mic"/></svg><span>Record voice note</span></button>
+      <button class="btn btn-link" id="rec-clear" type="button" hidden>Remove voice note</button>
+    </div>
+    <div class="status" id="rec-status"></div>
+    <audio id="rec-audio" controls hidden></audio>
+    <label class="btn btn-ghost rec-phone" for="rec-file"><svg><use href="#i-mic"/></svg><span>Record with your phone's recorder</span></label>
+    <input class="sr-only" type="file" id="rec-file" accept="audio/*" capture>
+    <p class="file-lbl" id="rec-hint">On a phone this opens your voice recorder. On a computer you can pick an audio file.</p>
+    <div class="row end"><button class="btn btn-ghost" id="note-cancel" type="button">Cancel</button><button class="btn btn-primary" id="note-save" type="button">Send to chef</button></div>
+  </div>
+</div>
+<div class="modal" id="ai-modal" hidden role="dialog" aria-modal="true" aria-labelledby="ai-title">
+  <div class="sheet">
+    <div class="sheet-head"><h2 id="ai-title">Connect Google Gemini</h2><button class="icon-btn" id="ai-x" type="button" aria-label="Close"><svg><use href="#i-x"/></svg></button></div>
+    <p>Masala Mitra always searches our menu first. With Gemini connected, Gemini writes the reply from those dishes, so it understands any way you ask. Every answer is checked: if Gemini names a dish or price that isn't on our menu, the built-in answer is used instead.</p>
+    <div id="ai-form">
+      <label class="field">Gemini API key (free)<input id="ai-key" type="password" placeholder="Paste your key, it starts with AIza…" autocomplete="off" spellcheck="false"></label>
+      <p class="fine">Get a free key at <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a>. It is saved only in this browser and sent only to Google.</p>
+      <label class="field">Model<select id="ai-model"><option value="gemini-2.5-flash">gemini-2.5-flash (recommended)</option><option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (fastest)</option><option value="gemini-2.0-flash">gemini-2.0-flash</option></select></label>
+    </div>
+    <div class="status" id="ai-status"></div>
+    <div class="row end" id="ai-actions"><button class="btn btn-link" id="ai-remove" type="button">Remove key</button><button class="btn btn-primary" id="ai-save" type="button">Save &amp; test</button></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+/* Where the backend API lives.
+   ""  = same origin (when the backend serves this frontend, e.g. http://localhost:4000 or your Render URL).
+   For GitHub Pages, set it to your deployed backend, e.g. "https://nash-dhabha-api.onrender.com".
+   If the backend can't be reached, the app switches to offline mode and runs the same engine in the browser. */
+window.NASH_CONFIG = window.NASH_CONFIG || { apiBase: "" };
+
+</script>
+<script>
+/*!
+ * NASH Dhabha & Bakes — Masala Mitra engine
+ * Retrieval-augmented chatbot: a TF-IDF retriever over the menu and house-info
+ * knowledge base, plus a dialogue manager that grounds every answer in what it
+ * retrieved. Runs unchanged in Node (backend) and the browser (offline mode).
+ */
+(function (root, factory) {
+  if (typeof module === "object" && module.exports) module.exports = factory();
+  else root.NashEngine = factory();
+})(typeof self !== "undefined" ? self : this, function () {
+  "use strict";
+
+  const BOT_NAME = "Masala Mitra";
+
+  /* ------------------------------------------------------------------ */
+  /* Knowledge base                                                      */
+  /* ------------------------------------------------------------------ */
+  const CATS = [
+    { id: "bread", label: "Breads", blurb: "From the tandoor and tawa" },
+    { id: "rice", label: "Rice", blurb: "Basmati and South Indian rice" },
+    { id: "gravy", label: "Gravies & Curries", blurb: "Pair with breads or rice" },
+    { id: "biryani", label: "Biryani", blurb: "Dum-cooked, served with raita" },
+    { id: "starters", label: "Starters", blurb: "From the tandoor and the kadai" },
+    { id: "juices", label: "Juices & Lassi", blurb: "Fresh and chilled" },
+    { id: "chai", label: "Chai & Coffee", blurb: "Hot drinks" },
+    { id: "desserts", label: "Desserts", blurb: "Mithai and halwa" },
+    { id: "icecream", label: "Ice Cream & Kulfi", blurb: "Cold sweets" },
+    { id: "bakes", label: "Bakes", blurb: "Baked fresh every morning" }
+  ];
+
+  // name | category | veg(1/0) | price | spice(0-3) | description | retrieval tags
+  const RAW = `Butter Naan|bread|1|60|0|Soft tandoor naan brushed with white butter.|comfort filling classic
+Garlic Naan|bread|1|75|0|Naan topped with chopped garlic and coriander, baked in the tandoor.|bold filling
+Tandoori Roti|bread|1|30|0|Whole-wheat roti baked on the tandoor wall.|light classic healthy
+Lachha Paratha|bread|1|55|0|Flaky layered paratha, crisp outside and soft inside.|filling hearty
+Aloo Paratha|bread|1|90|1|Stuffed potato paratha with butter and curd on the side.|comfort hearty filling breakfast
+Paneer Kulcha|bread|1|110|1|Kulcha stuffed with spiced paneer and onion.|filling hearty
+Missi Roti|bread|1|45|1|Gram-flour roti with ajwain and green chilli.|light healthy
+Keema Naan|bread|0|150|2|Naan stuffed with spiced minced mutton.|bold hearty filling
+Jeera Rice|rice|1|140|0|Basmati tempered with cumin and ghee.|light comfort
+Steamed Basmati|rice|1|110|0|Plain long-grain basmati rice.|light soothing
+Veg Pulao|rice|1|170|1|Basmati cooked with peas, carrots and whole spices.|comfort light
+Curd Rice|rice|1|130|0|Cool curd rice with mustard tempering and pomegranate.|cool soothing light sick comfort calm
+Lemon Rice|rice|1|130|1|Tangy rice with peanuts and curry leaves.|light refresh
+Egg Fried Rice|rice|0|180|1|Wok-tossed rice with scrambled egg and spring onion.|filling energy
+Chicken Fried Rice|rice|0|210|1|Wok-tossed rice with chicken and vegetables.|filling hearty
+Dal Makhani|gravy|1|220|1|Black lentils slow-cooked overnight with butter and cream.|comfort rich classic warm sad
+Dal Tadka|gravy|1|180|1|Yellow dal with ghee, garlic and red chilli tempering.|comfort light warm soothing sick
+Paneer Butter Masala|gravy|1|260|1|Paneer in a creamy tomato-butter gravy.|rich comfort celebrate happy
+Kadai Paneer|gravy|1|260|2|Paneer and peppers tossed in kadai masala.|bold spicy
+Palak Paneer|gravy|1|240|1|Paneer cubes in smooth spinach gravy.|healthy light comfort
+Chole Masala|gravy|1|200|2|Punjabi chickpea curry, dark and tangy.|hearty filling bold hungry
+Mix Veg Kolhapuri|gravy|1|210|3|Mixed vegetables in fiery Kolhapuri masala.|spicy bold adventurous
+Butter Chicken|gravy|0|320|1|Tandoori chicken in a velvety tomato-butter gravy.|rich comfort celebrate classic happy
+Chicken Chettinad|gravy|0|320|3|Chettinad pepper-and-fennel chicken curry.|spicy bold adventurous
+Mutton Rogan Josh|gravy|0|420|2|Kashmiri mutton curry with fennel and dry ginger.|rich hearty celebrate
+Kerala Fish Curry|gravy|0|360|2|Fish in coconut milk with kudampuli.|bold new adventurous
+Egg Curry|gravy|0|210|2|Boiled eggs in onion-tomato masala.|hearty energy
+Veg Dum Biryani|biryani|1|240|1|Basmati and vegetables sealed and dum-cooked.|filling celebrate hungry
+Paneer Tikka Biryani|biryani|1|280|2|Biryani layered with smoky paneer tikka.|filling bold celebrate
+Mushroom Biryani|biryani|1|260|2|Seeraga samba rice with mushrooms, South Indian style.|filling new
+Chicken Dum Biryani|biryani|0|290|2|Hyderabadi-style chicken dum biryani with raita.|filling hearty celebrate classic hungry
+Ambur Chicken Biryani|biryani|0|300|2|Tamil Nadu style biryani with seeraga samba rice.|filling bold new
+Hyderabadi Mutton Biryani|biryani|0|380|2|Kacchi mutton biryani with saffron and fried onion.|filling rich celebrate hearty hungry
+Egg Biryani|biryani|0|230|2|Spiced eggs layered with biryani rice.|filling energy
+Prawn Biryani|biryani|0|420|2|Coastal prawn biryani with mint.|bold new celebrate adventurous
+Paneer Tikka|starters|1|250|2|Tandoor-charred paneer, peppers and onion.|bold share
+Hara Bhara Kebab|starters|1|200|1|Spinach and green pea patties.|light healthy share
+Crispy Corn|starters|1|180|1|Fried sweet corn tossed with pepper and onion.|crunchy share bored
+Gobi 65|starters|1|190|2|Crisp cauliflower in a spicy red batter.|crunchy spicy bored
+Tandoori Chicken Half|starters|0|300|2|Half chicken marinated in yoghurt and spices, roasted in the tandoor.|bold celebrate share
+Chicken 65|starters|0|260|3|Deep-fried spicy chicken with curry leaves.|spicy crunchy bold bored adventurous
+Mutton Seekh Kebab|starters|0|340|2|Minced mutton skewers off the tandoor.|bold rich share
+Amritsari Fish|starters|0|330|2|Gram-flour battered fried fish with ajwain.|crunchy bold new
+Fresh Lime Soda|juices|1|80|0|Sweet, salted or mixed.|refresh cool calm angry hot
+Watermelon Juice|juices|1|100|0|Fresh watermelon, no added sugar.|refresh cool light hot
+Mosambi Juice|juices|1|110|0|Fresh sweet-lime juice.|refresh light sick healthy
+Pineapple Juice|juices|1|110|0|Fresh pineapple with a pinch of pepper.|refresh cool
+Mango Lassi|juices|1|130|0|Thick yoghurt and Alphonso mango.|sweet cool happy
+Sweet Lassi|juices|1|100|0|Punjabi lassi topped with malai.|sweet cool comfort
+Masala Chaas|juices|1|70|0|Spiced buttermilk with roasted cumin.|cool light calm refresh angry
+Rose Milk|juices|1|90|0|Chilled milk with rose syrup and sabja seeds.|sweet cool romantic
+Masala Chai|chai|1|40|0|Kadak tea with ginger and cardamom.|energy warm calm tired stressed
+Ginger Honey Lemon Tea|chai|1|60|0|Hot tea with ginger, honey and lemon.|soothing warm sick calm
+Filter Coffee|chai|1|60|0|South Indian decoction coffee with frothy milk.|energy tired warm
+Hot Badam Milk|chai|1|90|0|Almond milk with saffron.|warm soothing comfort sick
+Gulab Jamun 2 pcs|desserts|1|90|0|Warm khoya dumplings in rose syrup.|sweet comfort warm happy sad
+Rasmalai 2 pcs|desserts|1|120|0|Soft chenna discs in saffron milk.|sweet rich celebrate romantic
+Gajar Halwa|desserts|1|130|0|Slow-cooked carrot halwa with khoya.|sweet warm comfort
+Shahi Tukda|desserts|1|140|0|Fried bread soaked in rabri with nuts.|sweet rich romantic celebrate
+Rice Kheer|desserts|1|110|0|Rice pudding with cardamom and nuts.|sweet comfort soothing
+Jalebi with Rabri|desserts|1|140|0|Hot crisp jalebi with thick rabri.|sweet celebrate happy
+Moong Dal Halwa|desserts|1|140|0|Rich ghee-roasted lentil halwa.|sweet rich warm
+Kesar Pista Kulfi|icecream|1|110|0|Saffron and pistachio kulfi on a stick.|cool sweet happy
+Malai Kulfi|icecream|1|100|0|Classic reduced-milk kulfi.|cool sweet calm
+Mango Ice Cream|icecream|1|120|0|Two scoops of Alphonso mango ice cream.|cool sweet happy refresh hot
+Chocolate Fudge Sundae|icecream|1|180|0|Chocolate ice cream, hot fudge and brownie bits.|sweet comfort happy celebrate sad
+Butterscotch Scoop|icecream|1|110|0|Butterscotch ice cream with praline.|sweet cool
+Royal Falooda|icecream|1|170|0|Rose milk, vermicelli, sabja and kulfi.|sweet cool celebrate romantic
+Vanilla with Hot Gulab Jamun|icecream|1|160|0|Cold vanilla scoop over warm gulab jamun.|sweet comfort romantic happy
+Chocolate Truffle Pastry|bakes|1|120|0|Eggless dark chocolate truffle pastry.|sweet comfort sad romantic
+Red Velvet Pastry|bakes|1|130|0|Eggless red velvet with cream-cheese frosting.|sweet romantic celebrate
+Black Forest Cake 500 g|bakes|1|550|0|Eggless whole cake with cherries and cream.|celebrate sweet share
+Plum Cake Slice|bakes|0|90|0|Fruit plum cake (contains egg).|sweet warm
+Banana Walnut Muffin|bakes|0|90|0|Moist muffin with walnuts (contains egg).|sweet energy
+Butter Cookies 200 g|bakes|1|150|0|Eggless butter cookies, baked daily.|sweet share bored
+Veg Puff|bakes|1|40|1|Flaky puff with spiced vegetable filling.|crunchy light bored
+Egg Puff|bakes|0|45|1|Flaky puff with masala egg.|crunchy energy
+Chicken Puff|bakes|0|70|1|Flaky puff with chicken masala.|crunchy filling`;
+
+  const SPICE = ["", "Mild", "Medium", "Hot"];
+  const MENU = RAW.split("\n").map(function (l) {
+    const [n, c, v, p, s, d, t] = l.split("|");
+    const name = n.replace(/ 2 pcs$/, " (2 pcs)").replace(/ (500 g|200 g)$/, " ($1)").replace(/ Half$/, " (Half)");
+    return { id: n.toLowerCase().replace(/[^a-z0-9]+/g, "-"), name, cat: c, veg: v === "1", price: +p, spice: +s, desc: d, tags: t };
+  });
+  const ITEM = Object.fromEntries(MENU.map((i) => [i.id, i]));
+  const CATNAME = Object.fromEntries(CATS.map((c) => [c.id, c.label]));
+
+  /* What a waiter knows about each dish beyond the menu card */
+  const POPULAR = new Set(["butter-chicken", "chicken-dum-biryani", "dal-makhani", "paneer-butter-masala", "butter-naan", "paneer-tikka", "chicken-65", "hyderabadi-mutton-biryani", "mango-lassi", "gulab-jamun-2-pcs", "masala-chai", "chocolate-truffle-pastry", "tandoori-chicken-half"]);
+  // no dairy, egg or meat as listed (ask the chef to cook in oil, not ghee)
+  const VEGAN = new Set(["tandoori-roti", "steamed-basmati", "lemon-rice", "chole-masala", "mix-veg-kolhapuri", "crispy-corn", "gobi-65", "fresh-lime-soda", "watermelon-juice", "mosambi-juice", "pineapple-juice"]);
+  const HOT_SWEETS = new Set(["gulab-jamun-2-pcs", "gajar-halwa", "moong-dal-halwa", "jalebi-with-rabri"]);
+  const COLD_SWEETS = new Set(["rasmalai-2-pcs", "rice-kheer", "shahi-tukda"]);
+  MENU.forEach((i) => {
+    const s = i.name + " " + i.desc;
+    i.protein = /chicken/i.test(s) ? "chicken" : /mutton|keema/i.test(s) ? "mutton" : /prawn/i.test(s) ? "prawn" : /\bfish\b/i.test(s) ? "fish"
+      : /\begg\b|contains egg/i.test(s) ? "egg" : /paneer/i.test(s) ? "paneer" : /mushroom/i.test(s) ? "mushroom"
+      : i.cat === "gravy" && /\bdal\b|lentil/i.test(s) ? "dal" : /chickpea|chole/i.test(s) ? "chole" : null;
+    i.egg = /\begg\b|contains egg/i.test(s);
+    i.texture = i.cat === "starters" ? "dry" : i.id === "kadai-paneer" ? "semi-dry" : i.cat === "gravy" ? "gravy" : null;
+    i.temp = ["juices", "icecream"].includes(i.cat) || COLD_SWEETS.has(i.id) ? "cold" : i.cat === "chai" || HOT_SWEETS.has(i.id) ? "hot" : null;
+    i.popular = POPULAR.has(i.id);
+    i.south = /chettinad|kerala|ambur|lemon rice|curd rice|filter coffee|mushroom biryani|\b65\b/i.test(i.name);
+    i.tandoor = /tandoor/i.test(s);
+    i.vegan = VEGAN.has(i.id);
+    i.sweetish = ["paneer-butter-masala", "butter-chicken"].includes(i.id);
+    i.portion = /\(2 pcs\)/.test(i.name) ? "2 pieces per plate" : /\(Half\)/.test(i.name) ? "a half chicken" : (/\((\d+ g)\)/.exec(i.name) || [])[1] || (/two scoops/i.test(i.desc) ? "two scoops" : null);
+  });
+
+  const INFO = [
+    { id: "hours", title: "Timings", text: "We are open every day from 7:00 AM to 11:30 PM. The kitchen serves meals from 11:00 AM to 11:00 PM, and the bakery counter opens at 7:00 AM.", keys: "time timing timings open close closing hours when today morning night late" },
+    { id: "pay", title: "Payment", text: "You can pay by UPI, debit or credit card, or cash. I'll generate your bill in this chat once your order is ready.", keys: "payment pay upi card cash gpay phonepe paytm bill accept credit debit" },
+    { id: "vegkitchen", title: "Veg and non-veg", text: "Veg and non-veg dishes are cooked in separate tandoors and utensils. A green dot means veg; a brown triangle means non-veg (egg items count as non-veg). Most pastries and cakes are eggless.", keys: "veg vegetarian nonveg separate kitchen egg eggless pure jain mark symbol" },
+    { id: "chefnote", title: "Chef notes", text: "Every dish on the menu has a Chef note button. Type your request or record a voice note, like 'less oil' or 'extra spicy', and it goes straight to the chef with your order.", keys: "chef note voice instruction request custom customise less oil special" },
+    { id: "spice", title: "Spice levels", text: "Each dish shows its spice level: Mild, Medium or Hot. Want it changed? Add a chef note such as 'make it mild' or 'extra spicy'.", keys: "spice spicy mild hot chilli level heat" },
+    { id: "jain", title: "Allergies and Jain food", text: "Jain preparation (no onion, garlic or root vegetables) is possible for most gravies on request. Add it as a chef note. Bakes contain wheat and dairy; kulfi and desserts may contain nuts. Tell the chef about any allergy in the chef note.", keys: "jain allergy allergic nut nuts gluten dairy lactose onion garlic" },
+    { id: "time", title: "Preparation time", text: "Most orders are ready in 15 to 25 minutes. Biryani and tandoor items take a little longer at peak hours.", keys: "how long wait time ready prepare preparation minutes fast quick delay" },
+    { id: "tax", title: "Bill and taxes", text: "Bills include 5% GST, split as 2.5% CGST and 2.5% SGST. Totals are rounded to the nearest rupee.", keys: "gst tax taxes cgst sgst charge service total bill round" },
+    { id: "about", title: "About us", text: "NASH Dhabha & Bakes is a highway-style dhaba with a bakery counter. We serve North and South Indian food from the tandoor and kadai, dum biryani, fresh juices, kulfi and bakes made every morning.", keys: "about nash dhabha dhaba bakes bakery who restaurant cuisine north south indian" },
+    { id: "order", title: "Ordering", text: "Tell me a dish and I'll add it, or tap Direct me to menu. When you're ready, open the cart, check your chef notes and press Place order. I'll keep you updated here until the bill and payment.", keys: "how order ordering cart checkout place takeaway dine dine-in table parcel" }
+  ];
+
+  /* ------------------------------------------------------------------ */
+  /* Retriever: TF-IDF with synonym expansion                           */
+  /* ------------------------------------------------------------------ */
+  const STOP = new Set("a an the is are am was were be to of in on for with and or but at by from it its this that these those i me my we our you your he she they them do does did can could would should will shall have has had please pls what which who whom how any some show tell give get want like need just also there here than then so too very really much more most about as if not no yes ok okay".split(" "));
+  const SYN = { sweet: "dessert sweet", sweets: "dessert sweet", dessert: "sweet", cold: "cool", chilled: "cool", drink: "juice lassi chai cool", drinks: "juice lassi chai", beverage: "juice chai", tea: "chai", coffee: "chai", juice: "refresh", bread: "naan roti paratha", breads: "naan roti paratha", roti: "bread", naan: "bread", curry: "gravy", curries: "gravy", gravy: "curry", meat: "nonveg chicken mutton", cake: "bakes pastry", pastry: "bakes cake", bakery: "bakes", snack: "starters puff crunchy", snacks: "starters puff crunchy", starter: "starters", icecream: "icecream kulfi cool", ice: "icecream", kulfi: "icecream", spicy: "spicy hot bold", healthy: "light healthy", heavy: "filling hearty", biriyani: "biryani", briyani: "biryani", biriani: "biryani", desert: "dessert sweet", deserts: "dessert sweet", timing: "time hours", open: "hours" };
+  const TYPO = { biriyani: "biryani", briyani: "biryani", biriani: "biryani", nan: "naan", panner: "paneer", panir: "paneer", chiken: "chicken", chikken: "chicken", lasi: "lassi", gulabjamun: "gulab jamun", desert: "dessert", deserts: "dessert" };
+
+  function norm(s) {
+    return String(s).toLowerCase()
+      .replace(/\bi['’]m\b/g, "im").replace(/\b(\w+)['’]s\b/g, "$1s")
+      .replace(/non[\s-]*veg(etarian)?/g, "nonveg")
+      .replace(/ice[\s-]*cream/g, "icecream")
+      .replace(/[^a-z0-9\s]/g, " ").replace(/\s+/g, " ").trim();
+  }
+  function stem(w) {
+    if (w.length > 4 && w.endsWith("ies")) return w.slice(0, -3) + "y";
+    if (w.length > 3 && w.endsWith("s") && !w.endsWith("ss")) return w.slice(0, -1);
+    return w;
+  }
+  function toks(s) {
+    return norm(s).split(" ").filter((w) => w && !STOP.has(w)).map((w) => TYPO[w] || w).join(" ").split(" ").map(stem);
+  }
+  function expand(t) {
+    const out = t.slice();
+    t.forEach((w) => { if (SYN[w]) out.push(...SYN[w].split(" ").map(stem)); });
+    return out;
+  }
+
+  const DOCS = [
+    ...MENU.map((i) => ({ kind: "item", ref: i, text: `${i.name} ${i.name} ${CATNAME[i.cat]} ${i.cat} ${i.veg ? "veg vegetarian" : "nonveg meat"} ${i.desc} ${i.tags} ${SPICE[i.spice]} ${i.spice >= 2 ? "spicy" : ""}` })),
+    ...INFO.map((d) => ({ kind: "info", ref: d, text: `${d.title} ${d.keys} ${d.keys} ${d.text}` }))
+  ];
+  const DF = {};
+  DOCS.forEach((d) => {
+    d.tf = {};
+    toks(d.text).forEach((w) => (d.tf[w] = (d.tf[w] || 0) + 1));
+    Object.keys(d.tf).forEach((w) => (DF[w] = (DF[w] || 0) + 1));
+  });
+  const IDF = (w) => Math.log(1 + DOCS.length / (1 + (DF[w] || 0)));
+  DOCS.forEach((d) => {
+    d.vec = {}; let n = 0;
+    for (const w in d.tf) { const v = (1 + Math.log(d.tf[w])) * IDF(w); d.vec[w] = v; n += v * v; }
+    d.norm = Math.sqrt(n) || 1;
+  });
+
+  function retrieve(query, opts) {
+    const { k = 5, kind = null, diet = null } = opts || {};
+    const q = expand(toks(query));
+    if (!q.length) return [];
+    const qv = {}; q.forEach((w) => (qv[w] = (qv[w] || 0) + IDF(w)));
+    let qn = 0; for (const w in qv) qn += qv[w] * qv[w]; qn = Math.sqrt(qn) || 1;
+    return DOCS
+      .filter((d) => (!kind || d.kind === kind) && (!diet || d.kind !== "item" || (diet === "veg" ? d.ref.veg : !d.ref.veg)))
+      .map((d) => { let s = 0; for (const w in qv) if (d.vec[w]) s += qv[w] * d.vec[w]; return { d, score: s / (qn * d.norm) }; })
+      .filter((r) => r.score > 0).sort((a, b) => b.score - a.score).slice(0, k);
+  }
+
+  const nameToks = (i) => toks(i.name).filter((w) => !/^\d+$/.test(w) || w === "65").filter((w) => !["pc", "pcs", "g", "half"].includes(w));
+  function matchItems(q) {
+    const qt = toks(q);
+    if (!qt.length) return [];
+    return MENU.map((i) => {
+      const nt = nameToks(i);
+      const ov = nt.filter((w) => qt.includes(w)).length;
+      return { i, ov, s: ov / nt.length + 0.5 * ov / qt.length };
+    }).filter((r) => r.ov > 0).sort((a, b) => b.s - a.s);
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Cart and bill                                                      */
+  /* ------------------------------------------------------------------ */
+  function createState() {
+    return { name: "", diet: null, awaiting: null, pending: null, lastMood: null, cart: {}, orderNote: "", orderVoice: null, order: null };
+  }
+  const cartCount = (S) => Object.values(S.cart).reduce((a, c) => a + c.qty, 0);
+  const cartSub = (S) => Object.entries(S.cart).reduce((a, [id, c]) => a + (ITEM[id] ? ITEM[id].price * c.qty : 0), 0);
+  function addToCart(S, id, qty) {
+    if (!ITEM[id]) throw new Error("UNKNOWN_ITEM");
+    const c = S.cart[id] || (S.cart[id] = { qty: 0, note: "", voice: null });
+    c.qty = Math.min(50, c.qty + (qty || 1));
+    S.lastItem = id;
+    return c;
+  }
+  function setQty(S, id, q) {
+    if (!ITEM[id]) throw new Error("UNKNOWN_ITEM");
+    if (q <= 0) delete S.cart[id];
+    else (S.cart[id] || (S.cart[id] = { qty: 0, note: "", voice: null })).qty = Math.min(50, q);
+  }
+  function setNote(S, id, note, voice) {
+    if (S.awaiting === "note" && S.noteFor === id) { S.awaiting = null; S.noteFor = null; }
+    if (id === "__order") { S.orderNote = note || ""; S.orderVoice = voice || null; return; }
+    if (!ITEM[id]) throw new Error("UNKNOWN_ITEM");
+    if (!S.cart[id]) addToCart(S, id, 1);
+    S.cart[id].note = note || ""; S.cart[id].voice = voice || null;
+  }
+  function bill(sub) {
+    const cg = Math.round(sub * 2.5) / 100, sg = cg, raw = sub + cg + sg, tot = Math.round(raw);
+    return { sub, cgst: cg, sgst: sg, round: Math.round((tot - raw) * 100) / 100, total: tot };
+  }
+  function cartView(S) {
+    const lines = Object.entries(S.cart).filter(([id]) => ITEM[id]).map(([id, c]) => ({ id, name: ITEM[id].name, veg: ITEM[id].veg, price: ITEM[id].price, qty: c.qty, amount: ITEM[id].price * c.qty, note: c.note, voice: c.voice }));
+    return { lines, count: cartCount(S), bill: bill(cartSub(S)), orderNote: S.orderNote, orderVoice: S.orderVoice };
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Dialogue manager                                                    */
+  /* ------------------------------------------------------------------ */
+  const MOODS = {
+    happy: { w: "khush khushi mast happy good great awesome excited cheerful fantastic amazing super joy joyful celebrate celebrating celebration birthday party fine nice wonderful glad chill relaxed", r: "Love that energy! Let's celebrate with something rich.", q: "celebrate happy rich sweet" },
+    sad: { w: "udaas udas dukhi sad down low upset depressed lonely blue bad crying heartbroken unhappy meh gloomy", r: "Sorry you're feeling low. Some comfort food should help.", q: "comfort sad warm sweet" },
+    tired: { w: "thaka thaki thakan tired sleepy exhausted lazy drained fatigued weary", r: "Long day? Let's get your energy back.", q: "energy tired warm" },
+    stressed: { w: "tension pareshan stressed stress tense anxious pressure worried busy overwhelmed hectic nervous", r: "Take a breath. Something calming and comforting is on the way.", q: "calm comfort soothing stressed" },
+    angry: { w: "gussa angry irritated annoyed frustrated mad furious", r: "Let's cool things down a little.", q: "cool refresh calm angry" },
+    hungry: { w: "bhookh bhook bhukh hungry starving famished starved", r: "Then let's fill you up properly!", q: "filling hearty hungry" },
+    sick: { w: "bimaar bimar bukhar sick fever unwell ill cough cold flu headache", r: "Get well soon. Here's something light and soothing.", q: "soothing light sick warm" },
+    romantic: { w: "romantic love date partner anniversary lovely", r: "A sweet mood deserves sweet food.", q: "romantic rich sweet" },
+    adventurous: { w: "adventurous bold experiment spicy wild adventure", r: "Let's try something bold and spicy.", q: "spicy bold adventurous new" },
+    hot: { w: "garmi hot sweaty thirsty summer heat sweating", r: "It's hot out there. Something cool first.", q: "cool refresh hot" },
+    bored: { w: "bored boring", r: "Let's crunch the boredom away.", q: "crunchy bored share" }
+  };
+  const MOOD_CHIPS = ["Happy", "Hungry", "Tired", "Stressed", "Sad", "Adventurous"];
+  // Yes/no must be the whole message, so "add <dish>" is never mistaken for "yes".
+  const YES = /^((yes|yeah|yep|yup|ya|yah|sure|ok|okay|okk|haan|han|ha|haa|ji|please|go ahead|do it|of course|why not|definitely|confirm|y|add it|add that|kar do|daal do)\s*)+$/;
+  const NO = /^((no|nope|nah|not now|skip|next|other|another|something else|nahi|na|show( me)? (another|other|next|something else)( one)?|n|thanks|thank you)\s*)+$/;
+  const GREET = /^(hi+|hello+|hey+|hai|hii|namaste|namaskar|vanakkam|hola|good (morning|afternoon|evening)|yo|sup)\b/;
+  const NUM = { one: 1, a: 1, an: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, single: 1, double: 2 };
+  const NOTNAME = new Set("hi hello hey yes no ok okay veg nonveg menu cart thanks thank biryani naan food order hungry".split(" "));
+  const cap = (w) => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase();
+  const rs = (n) => "₹" + Number(n).toLocaleString("en-IN", { minimumFractionDigits: Number.isInteger(n) ? 0 : 2, maximumFractionDigits: 2 });
+  const comma = (S) => (S.name ? ", " + S.name : "");
+
+  function detectMood(t) {
+    if (/\b(not|no|never)\s+(so\s+|very\s+|that\s+|feeling\s+)?(good|great|happy|fine|well|nice|ok|okay)\b/.test(t)) return "sad";
+    if (/\b(accha|achha|acha|theek|thik|thick|sahi|badiya|badhiya)\s+(nahi|nai|nhi)\b/.test(t)) return "sad";
+    const w = t.split(" ");
+    for (const m in MOODS) { const set = MOODS[m].w.split(" "); if (w.some((x) => set.includes(x) || set.includes(stem(x)))) return m; }
+    return null;
+  }
+  function detectDiet(S, t) {
+    if (/\bnonveg\b/.test(t)) S.diet = "nonveg";
+    else if (/\b(veg|vegetarian|pure veg|only veg)\b/.test(t)) S.diet = "veg";
+  }
+  function extractName(s) {
+    const m = s.match(/\b(?:i am|i'm|im|it's|its|name)\s+([A-Za-z][A-Za-z.'-]*(?:\s+[A-Za-z][A-Za-z.'-]*)?)/i);
+    let n = m ? m[1] : null;
+    if (!n) { const c = s.trim(); if (/^[A-Za-z][A-Za-z.'\s-]{0,30}$/.test(c) && c.split(/\s+/).length <= 3) n = c; }
+    if (!n) return null;
+    const nt = norm(n);
+    if (detectMood(nt) || nt.split(" ").some((w) => NOTNAME.has(w))) return null;
+    return n.split(/\s+/).slice(0, 2).map(cap).join(" ");
+  }
+  const itemRef = (i, extra) => Object.assign({ id: i.id, name: i.name, price: i.price, veg: i.veg, cat: CATNAME[i.cat], spice: SPICE[i.spice], desc: i.desc }, extra || {});
+  function pickDiverse(results, n) {
+    const seen = new Set(), out = [];
+    for (const r of results) { if (seen.has(r.d.ref.cat)) continue; seen.add(r.d.ref.cat); out.push(r.d.ref); if (out.length === n) break; }
+    return out;
+  }
+  function parseQty(p) {
+    const m = p.trim().match(/^(\d{1,3}|one|a|an|two|three|four|five|six|seven|eight|nine|ten|single|double)\s*(?:x|nos?|pcs?|pieces?|plates?)?\s+(.*)$/);
+    if (m) { const q = /^\d/.test(m[1]) ? +m[1] : NUM[m[1]]; if (q > 0 && q <= 999) return { qty: q, rest: m[2] }; }
+    const m2 = p.trim().match(/^(.*?)\s+(?:x\s*)?(\d{1,2})$/);
+    if (m2 && +m2[2] <= 20 && !/\b(chicken|gobi)$/.test(m2[1])) return { qty: +m2[2], rest: m2[1] };
+    return { qty: 1, rest: p };
+  }
+
+  /**
+   * One chat turn. Returns an array of bot messages:
+   * { role:"bot", text, items?:[{id,name,price,veg,cat,spice,qty?,add?}], chips?:[], source?, bill?, action? }
+   * `text` uses **bold** markup only; the client escapes everything else.
+   */
+  /* ---------- understand chat-speak, Indian spellings and typos ---------- */
+  const SLANG = { u: "you", ur: "your", hv: "have", hav: "have", r: "are", pls: "please", plz: "please", plzz: "please", sugg: "suggest", sugst: "suggest", suggst: "suggest", sugest: "suggest", recom: "recommend", reco: "recommend", recomend: "recommend",
+    spl: "special", spcl: "special", specl: "special", spcls: "specials", wat: "what", wht: "what", wt: "what", hw: "how", abt: "about", n: "and", nd: "and", wid: "with", wth: "with", gud: "good", thx: "thanks", tnx: "thanks", tq: "thanks", sumthing: "something", smthng: "something", somthing: "something", anythin: "anything", dont: "dont", nv: "nonveg",
+    parota: "paratha", parotta: "paratha", porotta: "paratha", prantha: "paratha", paranta: "paratha", chapati: "roti", chapathi: "roti", chapatti: "roti", phulka: "roti", gobhi: "gobi", gobhii: "gobi", chana: "chole", channa: "chole", chickpeas: "chole", payasam: "kheer", payasa: "kheer", kheer: "kheer",
+    chief: "chef", cheif: "chef", shef: "chef", chefs: "chef", cheff: "chef", daal: "dal", dhal: "dal", alu: "aloo", jamoon: "jamun", halva: "halwa", panir: "paneer", panner: "paneer", muton: "mutton", chiken: "chicken", chikken: "chicken", chikan: "chicken", biriyani: "biryani", briyani: "biryani", biriani: "biryani", lasi: "lassi", nan: "naan", desert: "dessert", deserts: "desserts", fry: "fry" };
+  const COMMON = new Set("well good great nice best better go goes going gone along side also like love loved want wants wanted need needs know think make made take taken come came see look looking find found try tried keep give gave get got put say said tell told ask asked help call feel felt seem leave left work works play run let mean means move live believe bring happen write sit stand lose pay meet include continue set learn change lead understand watch follow stop create speak read allow add spend grow open walk win offer remember consider appear buy wait serve served serving die send expect build stay fall cut reach kill remain suggest raise pass sell require report decide pull also just only even back still too much more most many such own same other another every each few little long great old big high different small large next early young important public bad able last first new right good free full sure true whole real best hard clear easy late hot cold warm fresh fast quick slow ready done people time year way day thing man woman child world life hand part place case week point home water room mother area money story fact month lot study book eye job word business issue side kind head house service friend father power hour game line end member law car city community name president team minute idea kid body information school face others level office door health person art war history party result morning reason research girl guy moment air teacher force education foot boy age policy process music market sense nation plan college interest death experience effect use class control care field development role effort rate heart drug show leader light voice wife police mind price report decision son view relationship town road arm difference value building action model season society tax director position player record paper space ground form event official matter center couple site project activity star table need court oil situation cost industry figure street image phone data picture practice piece land product doctor wall patient worker news test movie north love support technology step baby computer type attention film tree source organization hair window evidence population site everyone everything someone nothing please thank thanks sorry okay yes yeah sure maybe today tonight tomorrow now later soon here there where when why how what which who whom whose this that these those my mine your yours our ours their his her its them they he she we you i me us him replace replaced swap change set update remove delete cancel clear empty instead actually proceed confirm checkout cart basket quantity make made meal meals lunch dinner breakfast snack hi hello hey namaste add remove cart checkout menu yes no ok okay please thanks name my is are am i you your we our the a an and or with for to of in on at it this that what which how much many when where who why do does have has can could would want need like give get show tell suggest recommend special specials something anything any some food dish dishes item items order bill pay upi card cash eat drink here there today now very really not dont mood happy sad tired hungry stressed angry sick bored hot cold veg nonveg vegan meat spicy mild sweet dry gravy cheap price cost under below above options kids light healthy heavy plz".split(" "));
+  let FOOD = null;
+  function foodVocab() {
+    if (FOOD) return FOOD;
+    FOOD = new Set();
+    MENU.forEach((i) => norm(i.name + " " + i.desc + " " + CATNAME[i.cat]).split(" ").forEach((w) => w.length > 3 && FOOD.add(w)));
+    CAT_WORDS.forEach(([re]) => (re.source.match(/[a-z]{4,}/g) || []).forEach((w) => FOOD.add(w)));
+    "vegan veg nonveg spicy mild sweet dry gravy special specials starters drinks dessert desserts icecream biryani curry curries snacks bread breads paratha roti naan kebab kebabs lassi kulfi tandoori popular bestseller suggest recommend something anything options please".split(" ").forEach((w) => FOOD.add(w));
+    return FOOD;
+  }
+  let VOCAB = null;
+  function vocab() {
+    if (VOCAB) return VOCAB;
+    VOCAB = new Set(COMMON);
+    DOCS.forEach((d) => norm(d.text).split(" ").forEach((w) => w.length > 2 && VOCAB.add(w)));
+    NEED_WORDS.forEach((w) => VOCAB.add(w)); STOP.forEach((w) => VOCAB.add(w));
+    Object.values(MOODS).forEach((m) => m.w.split(" ").forEach((w) => VOCAB.add(w)));
+    return VOCAB;
+  }
+  function dist(a, b, max) { // Damerau-Levenshtein (optimal string alignment), early exit
+    if (Math.abs(a.length - b.length) > max) return max + 1;
+    const d = Array.from({ length: a.length + 1 }, (_, i) => [i]);
+    for (let j = 1; j <= b.length; j++) d[0][j] = j;
+    for (let i = 1; i <= a.length; i++) { let best = 99;
+      for (let j = 1; j <= b.length; j++) {
+        const c = a[i - 1] === b[j - 1] ? 0 : 1;
+        d[i][j] = Math.min(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + c);
+        if (i > 1 && j > 1 && a[i - 1] === b[j - 2] && a[i - 2] === b[j - 1]) d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1);
+        best = Math.min(best, d[i][j]);
+      }
+      if (best > max) return max + 1; }
+    return d[a.length][b.length];
+  }
+  const fixCache = {};
+  function fixWord(w) {
+    if (SLANG[w]) return SLANG[w];
+    if (w.length < 4 || /\d/.test(w)) return w;
+    const V = vocab();
+    if (V.has(w) || V.has(stem(w))) return w;
+    if (fixCache[w] !== undefined) return fixCache[w];
+    if (/(.)\1$/.test(w) && V.has(w.slice(0, -1))) return (fixCache[w] = w.slice(0, -1));   // "drinkss"
+    if (/z$/.test(w) && V.has(w.slice(0, -1) + "s")) return (fixCache[w] = w.slice(0, -1) + "s"); // "starterz"
+    const max = w.length >= 7 ? 2 : 1;
+    let best = w, bd = max + 1;
+    // never "correct" a word into a diet-critical word (meal -> meat would be a serious mistake)
+    const PROTECT = new Set(["meat", "egg", "eggs", "veg", "nonveg", "vegan", "fish", "chicken", "mutton", "prawn", "beef", "pork", "not", "dont", "without", "spicy", "jain"]);
+    foodVocab().forEach((v) => { if (v.length < 3 || PROTECT.has(v)) return; const k = dist(w, v, max); if (k < bd || (k === bd && v.length === w.length)) { bd = k; best = v; } });
+    return (fixCache[w] = bd <= max ? best : w);
+  }
+  const fixWords = (t) => t.split(" ").map(fixWord).join(" ").replace(/\bdont\b/g, "dont");
+
+  function chat(S, raw) {
+    const out = [];
+    const say = (text, o) => out.push(Object.assign({ role: "bot", text }, o || {}));
+    const text = String(raw || "").trim();
+    if (!text) { say("Please type or say something."); return out; }
+    const t = fixWords(norm(text));
+
+    // quick-reply shortcuts
+    if (/^(direct me to menu|open (the )?menu|go to menu|show menu)$/.test(t)) { say("Opening the menu for you.", { action: { type: "navigate", to: "menu" } }); return out; }
+    if (t === "start a new order") { S.order = null; S.awaiting = "mood"; say(`Let's start a fresh order${comma(S)}! What's your mood now?`, { chips: MOOD_CHIPS }); return out; }
+    if (t === "suggest a dessert" || t === "something sweet") { recommend(S, "sweet dessert", say); return out; }
+    if (t === "something spicy") { recommend(S, "spicy bold", say); return out; }
+
+    if (S.awaiting === "feedback") { feedback(S, text, t, say); return out; }
+    if (S.awaiting === "note" || S.awaiting === "noteWhich") { if (noteReply(S, text, t, say)) return out; }
+    if (NOTE_CUE.test(t)) { chefNote(S, text, t, say); return out; }
+    if (S.awaiting === "payment") {
+      const m = /upi|gpay|google pay|phonepe|paytm|bhim/.test(t) ? "UPI" : /card|credit|debit|visa|rupay|master/.test(t) ? "Card" : /cash/.test(t) ? "Cash" : null;
+      if (m) { pay(S, m, say); return out; }
+      if (!/\b(menu|add|order)\b/.test(t)) { say("Please choose how you'd like to pay: UPI, Card or Cash.", { chips: ["UPI", "Card", "Cash"] }); return out; }
+    }
+    const dietOnly = /^(only |pure )?(veg|vegetarian|nonveg)( only| please| food)?$/.test(t);
+    detectDiet(S, t);
+    if (dietOnly) {
+      if (S.lastMood) { moodReply(S, S.lastMood, say, true); return out; }
+      S.awaiting = "mood";
+      say(`Got it, I'll stick to ${S.diet === "veg" ? "veg" : "non-veg"} dishes. What's your mood right now?`, { chips: MOOD_CHIPS });
+      return out;
+    }
+    if (S.pending && YES.test(t)) { acceptPending(S, say); return out; }
+    if (S.pending && NO.test(t)) { nextPending(S, say); return out; }
+    const named = text.match(/\b(?:my name is|my name's|call me|this is|mera naam|mera name|mera nam|naam)\s+([A-Za-z][A-Za-z.'-]*(?:\s+[A-Za-z][A-Za-z.'-]*)?)/i);
+    if (named) { setName(S, named[1], say); return out; }
+    // a name inside a longer message: "hi I'm Kavya and I'm really hungry"
+    const inline = !S.name && text.match(/\b(?:i['’]?m|i am)\s+([A-Za-z][A-Za-z.'-]+)/i);
+    if (inline && isNameWord(inline[1])) {
+      S.name = cap(inline[1]);
+      const m2 = detectMood(t);
+      if (m2) { say(`Nice to meet you, **${S.name}**!`); moodReply(S, m2, say); return out; }
+      setName(S, S.name, say); return out;
+    }
+    if (S.awaiting === "name") { const n = extractName(text); if (n) { setName(S, n, say); return out; } }
+    if (GREET.test(t) && t.split(" ").length <= 4 && !detectMood(t) && !parseNeeds(t).has) {
+      if (!S.name) { S.awaiting = "name"; say(`Hi! ${/\bhow (are|r) (you|u)\b/.test(t) ? "I'm doing great, thanks for asking. " : ""}Welcome to **NASH Dhabha & Bakes**. May I know your name?`); return out; }
+      S.awaiting = "mood"; say(`Hi ${S.name}, good to see you! What is your mood right now? Type it or tap the mic and say it.`, { chips: MOOD_CHIPS }); return out;
+    }
+    const needs = parseNeeds(t);
+    const menuAsk = needs.has && (needs.cats || needs.protein || needs.texture || needs.temp || needs.priceMax || needs.priceMin || needs.sort || needs.diet || needs.south || needs.tandoor);
+    const mood = menuAsk && !/\b(feel|feeling|felt|mood)\b/.test(t) ? null : detectMood(t);
+    if (mood && (S.awaiting === "mood" || /\b(feel|feeling|felt|mood|im|i am|am|so|very)\b/.test(t) || t.split(" ").length <= 2)) { moodReply(S, mood, say); return out; }
+    if (/\b(pay|bill|payment)\b/.test(t) && !(S.order && S.order.stage >= 4 && !S.order.paid) && !/\b(how|what|which|accept|do you)\b/.test(t)) {
+      if (S.order && !S.order.paid) say(`Your order **${S.order.no}** is still being prepared. I'll share the bill here as soon as it's ready, then you can pay by UPI, card or cash.`);
+      else if (cartCount(S)) say("Place your order first from the cart. The bill comes once your food is ready.", { chips: ["Checkout"] });
+      else say("There's nothing to pay for yet. Add a dish to get started.", { chips: ["Direct me to menu"] });
+      return out;
+    }
+    if (editCmd(S, t, say)) return out;
+    if (/\b(remove|delete|cancel|minus)\b/.test(t) && !/\border\b/.test(t)) { removeCmd(S, t, say); return out; }
+    if (/\b(clear|empty)\b.*\bcart\b/.test(t)) { S.cart = {}; say("Your cart is now empty."); return out; }
+    if (/\b(cart|basket|my order|what did i order)\b/.test(t) && !/\b(add|put)\b/.test(t)) { showCart(S, say); return out; }
+    if (/\b(checkout|check out|place (the |my )?order|confirm order|proceed)\b/.test(t)) { goCheckout(S, say); return out; }
+    if (/\b(bill|pay|payment)\b/.test(t) && S.order && S.order.stage >= 4 && !S.order.paid) { askPay(S, say); return out; }
+    if (/\b(menu|categories|category|what do you (have|serve))\b/.test(t) && !/\b(add|want|order)\b/.test(t)) { out.route = "menu"; menuReply(say); return out; }
+    // questions about one specific dish ("is butter chicken spicy?", "how much is paneer tikka?")
+    const dish = strongDish(t);
+    if (dish && FACT_CUE.test(t) && !/\b(add|order)\b/.test(t)) { out.route = "facts"; itemFacts(S, dish, t, say); return out; }
+    if (PAIR_CUE.test(t)) { const rep0 = dish || (needs.cats && MENU.find((i) => i.cat === needs.cats[0] && i.popular)) || (needs.cats && MENU.find((i) => i.cat === needs.cats[0])); if (rep0) { out.route = "facts"; itemFacts(S, rep0, t, say, !dish && needs.catLabel); return out; } }
+    const browse = /\b(something|anything|options|dishes|dish|items|some|any|which|what|kind|type|types)\b/.test(t);
+    const explicitAdd = /\b(add|ill have|i ll have|i will have|bring|put)\b/.test(t) || /^\d+\s|^(one|two|three|four|five)\s/.test(t);
+    const softAdd = /\b(want|order|get me|give me|can i have|can i get)\b/.test(t);
+    if (explicitAdd || (softAdd && (dish || !needs.has) && !browse)) { addCmd(S, t, say, text); return out; }
+    if (needs.has) { out.route = "waiter"; waiter(S, t, needs, say); return out; }
+    if (/\b(suggest|recommend|recommendation|best|special|popular|famous|signature|what should i|what to eat|surprise)\b/.test(t)) { out.route = "recommend"; recommend(S, t, say); return out; }
+    if (/\b(thank|thanks|thx|ty)\b/.test(t)) { say(`You're welcome${comma(S)}! Anything else I can get you?`); return out; }
+    if (/^(bye|goodbye|see you|tata)\b/.test(t)) { say("Bye! Hope to see you again at NASH Dhabha & Bakes."); return out; }
+    out.route = "answer";
+    answer(S, t, say);
+    return out;
+  }
+
+  const NOT_A_NAME = new Set("really very so feeling not a an the in at from here fine looking ordering craving hungry new back done ready good okay ok fine sure sorry starving just veg vegetarian nonveg vegan also going trying planning thinking with".split(" "));
+  function isNameWord(w) { const x = String(w).toLowerCase(); return x.length > 1 && !NOT_A_NAME.has(x) && !NOTNAME.has(x) && !STOP.has(x) && !detectMood(x) && !matchItems(x).length; }
+  function bestInCart(S, q) { const r = matchItems(q).filter((m) => S.cart[m.i.id]); return r.length ? r[0].i : null; }
+  function bestItem(q) { const ms = matchItems(q); if (!ms.length) return null; const b = ms[0], ties = ms.filter((r) => Math.abs(r.s - b.s) < 0.01); return ties.length === 1 && b.ov / nameToks(b.i).length >= 0.5 ? b.i : null; }
+  /** "replace X with Y", "make the X 4", "change X to 3" */
+  function editCmd(S, t, say) {
+    let m = t.match(/\b(?:make|change|set|update)\s+(?:the\s+|my\s+)?(.+?)\s+(?:to\s+|qty\s+|quantity\s+)?(\d{1,2})$/) || null;
+    if (m) { const i = bestInCart(S, m[1]); if (i) { setQty(S, i.id, +m[2]); say(`Updated: **${m[2]} × ${i.name}**. Cart total: **${rs(cartSub(S))}**.`, { cartChanged: true, chips: ["Show my cart", "Checkout"] }); return true; } }
+    m = t.match(/\bmake it\s+(\d{1,2})\s+(.+)$/);
+    if (m) { const i = bestInCart(S, m[2]); if (i) { setQty(S, i.id, +m[1]); say(`Updated: **${m[1]} × ${i.name}**. Cart total: **${rs(cartSub(S))}**.`, { cartChanged: true }); return true; } }
+    m = t.match(/\b(?:replace|swap|change)\s+(?:the\s+|my\s+)?(.+?)\s+(?:with|for|to)\s+(?:a\s+|an\s+|the\s+)?(.+)$/) || t.match(/\binstead of\s+(.+?)\s+(?:give me|get me|i want|add|make it)\s+(.+)$/);
+    if (m) {
+      const from = bestInCart(S, m[1]), to = bestItem(m[2]);
+      if (from && to) { const q = S.cart[from.id].qty; const note = S.cart[from.id].note; setQty(S, from.id, 0); addToCart(S, to.id, q); if (note) S.cart[to.id].note = note; say(`Done. I replaced **${from.name}** with **${q} × ${to.name}**. Cart total: **${rs(cartSub(S))}**.`, { cartChanged: true, chips: ["Show my cart", "Checkout"] }); return true; }
+      if (!from) { say(`I couldn't find “${m[1]}” in your cart.`, { chips: ["Show my cart"] }); return true; }
+    }
+    return false;
+  }
+  const NAME_FILLER = new Set(["hai", "h", "he", "hu", "hoon", "hun", "here", "ji", "please", "and", "i", "im", "am", "from", "hungry", "today", "now"]);
+  /* ---------- chef notes from the chat ---------- */
+  const NOTE_CUE = /^note for (the )?whole order$|\b(chef note|chef notes|note for (the )?chef|note to (the )?chef|tell (the )?chef|message (for|to) (the )?chef|chef instruction|special instruction|special request)\b|\bchef\b.*\bnote\b|\bnote\b.*\bchef\b/;
+  const NOTE_CHIPS = ["Less spicy", "Extra spicy", "Less oil", "No onion, no garlic", "Make it mild for kids"];
+  function noteTarget(S, t) {
+    if (/\b(whole|entire|full|all|every)\s*(the\s+)?(order|thing|dishes|items)?\b|\beverything\b/.test(t)) return "__order";
+    const inCart = matchItems(t.replace(NOTE_CUE, " ")).filter((r) => S.cart[r.i.id]);
+    if (inCart.length) return inCart[0].i.id;
+    if (S.lastItem && S.cart[S.lastItem]) return S.lastItem;
+    const ids = Object.keys(S.cart);
+    return ids.length === 1 ? ids[0] : null;
+  }
+  const noteName = (id) => (id === "__order" ? "your whole order" : "**" + ITEM[id].name + "**");
+  function saveNote(S, id, note, say) {
+    note = note.replace(/^[\s:,-]+|[\s.]+$/g, "");
+    note = note.charAt(0).toUpperCase() + note.slice(1);
+    if (id === "__order") S.orderNote = S.orderNote ? S.orderNote + "; " + note : note;
+    else { const c = S.cart[id] || addToCart(S, id, 1); c.note = c.note ? c.note + "; " + note : note; }
+    S.awaiting = null; S.noteFor = null;
+    say(`Noted. I'll tell the chef “${note}” for ${noteName(id)}. You'll see it in your cart, and the chef gets it with your order.`, { chips: ["Show my cart", "Checkout", "Direct me to menu"], cartChanged: true });
+  }
+  function askNote(S, id, say, prefix) {
+    S.awaiting = "note"; S.noteFor = id;
+    const other = Object.keys(S.cart).length > 1 && id !== "__order" ? " Not this dish? Say another dish name or “whole order”." : "";
+    say(`${prefix ? prefix + " " : ""}What should I tell the chef about ${noteName(id)}? Type it, tap the mic and say it, or record a voice note.${other}`, { chips: NOTE_CHIPS, noteFor: id });
+  }
+  function chefNote(S, text, t, say) {
+    let prefix = "";
+    // "add it also chef note" while a dish is being offered: add that dish first
+    if (S.pending && /\b(add|yes|it|this|that)\b/.test(t)) {
+      const id = S.pending.list[S.pending.idx]; S.pending = null; addToCart(S, id, 1);
+      prefix = `Added **${ITEM[id].name}** to your cart.`;
+    }
+    // note text in the same message? ("chef note: less spicy", "tell the chef to make it mild")
+    const m = text.match(/(?:chef|chief|cheif|shef)\s*(?:'s)?\s*(?:note|notes|instruction)?\s*(?:for|on)?\s*(?:the\s+)?[^:]*?(?::|-|that|to)\s*(.{3,})$/i) || text.match(/(?:chef|chief|cheif|shef)\s+(?:note|notes)\s+(.{3,})$/i);
+    let note = m ? m[1].trim() : "";
+    if (note && /^(add|please|pls|it|also|for|the|a)$/i.test(note)) note = "";
+    if (note && matchItems(note).some((r) => S.cart[r.i.id] && r.ov / nameToks(r.i).length === 1) && note.split(" ").length <= 3) note = "";   // only a dish name, no instruction
+    const id = noteTarget(S, t);
+    if (!id) {
+      if (!Object.keys(S.cart).length) { say(`${prefix}Add a dish first, then I'll pass your note to the chef. Or tell me the note for the whole order.`.trim(), { chips: ["Direct me to menu", "Note for the whole order"] }); return; }
+      S.awaiting = "noteWhich"; S.noteText = note;
+      say(`${prefix ? prefix + " " : ""}Which dish is the note for?`, { chips: Object.keys(S.cart).map((k) => ITEM[k].name).concat(["Whole order"]) });
+      return;
+    }
+    if (note) { if (prefix) say(prefix); saveNote(S, id, note, say); return; }
+    askNote(S, id, say, prefix);
+  }
+  function noteReply(S, text, t, say) {
+    if (/^(cancel|skip|no|nothing|never mind|nevermind|leave it)$/.test(t)) { S.awaiting = null; S.noteFor = null; say("No problem, no note added."); return true; }
+    if (/^(checkout|menu|show my cart|direct me to menu)$/.test(t)) { S.awaiting = null; return false; }
+    if (S.awaiting === "noteWhich") {
+      const id = /\bwhole|order|all|everything\b/.test(t) ? "__order" : (matchItems(t).filter((r) => S.cart[r.i.id])[0] || {}).i?.id;
+      if (!id) { say("Which dish? Tap one of these.", { chips: Object.keys(S.cart).map((k) => ITEM[k].name).concat(["Whole order"]) }); return true; }
+      const pre = S.noteText; S.noteText = null;
+      if (pre) saveNote(S, id, pre, say); else askNote(S, id, say);
+      return true;
+    }
+    // switching the dish: "dal makhani" / "whole order"
+    if (/^(the )?(whole|full|entire)( order)?$|^all$|^everything$/.test(t)) { askNote(S, "__order", say); return true; }
+    const sw = t.split(" ").length <= 4 && matchItems(t).filter((r) => S.cart[r.i.id] && r.ov / nameToks(r.i).length === 1)[0];
+    if (sw && sw.i.id !== S.noteFor) { askNote(S, sw.i.id, say); return true; }
+    saveNote(S, S.noteFor, text, say);
+    return true;
+  }
+
+  function setName(S, n, say) {
+    const words = n.split(/\s+/); const cut = words.findIndex((w, k) => k > 0 && (NAME_FILLER.has(w.toLowerCase()) || detectMood(w.toLowerCase())));
+    S.name = (cut > 0 ? words.slice(0, cut) : words).filter((w) => !NAME_FILLER.has(w.toLowerCase())).slice(0, 2).map(cap).join(" ") || cap(words[0]);
+    S.awaiting = "mood";
+    say(`Nice to meet you, **${S.name}**! What is your mood today? Tell me in chat or tap the mic and say it.`, { chips: MOOD_CHIPS });
+  }
+  function moodReply(S, m, say, again) {
+    S.lastMood = m; S.awaiting = null;
+    const M = MOODS[m];
+    const items = pickDiverse(retrieve(M.q, { k: 40, kind: "item", diet: S.diet }), 3);
+    const intro = again ? `Here are ${S.diet === "veg" ? "veg" : "non-veg"} picks for your mood:` : `${M.r} You sound **${m === "hot" ? "overheated" : m}**${comma(S)}. From our menu:`;
+    say(intro + (S.diet ? "" : "\nPrefer veg only? Just say “veg”."), { items: items.map((i) => itemRef(i, { add: true })), source: "Menu, matched to your mood" });
+    offer(S, items, say);
+  }
+  function offer(S, items, say) { if (!items.length) return; S.pending = { list: items.map((i) => i.id), idx: 0 }; askPending(S, say); }
+  function askPending(S, say) { const i = ITEM[S.pending.list[S.pending.idx]]; say(`Can I add **${i.name}** (${rs(i.price)}) to your cart?`, { chips: ["Yes, add it", "No, show another", "Direct me to menu"] }); }
+  function acceptPending(S, say) {
+    const id = S.pending.list[S.pending.idx]; S.pending = null; addToCart(S, id, 1);
+    say(`Done! **${ITEM[id].name}** is in your cart. Cart total: **${rs(cartSub(S))}**.\nWant anything else? You can add a note for the chef from the menu or the cart.`, { chips: ["Suggest a dessert", "Show my cart", "Direct me to menu", "Checkout"], cartChanged: true });
+  }
+  function nextPending(S, say) {
+    S.pending.idx++;
+    if (S.pending.idx < S.pending.list.length) return askPending(S, say);
+    S.pending = null;
+    say("No problem. Tap **Direct me to menu** to see everything, or tell me any dish name and I'll add it.", { chips: ["Direct me to menu", "Something spicy", "Something sweet"] });
+  }
+  function addCmd(S, t, say, raw) {
+    const FILL = /\b(please|pls|add|i want|want|order|get me|give me|ill have|i ll have|i will have|can i have|can i get|bring|put|to (my |the )?cart|in (my |the )?cart|to (my |the )?order|also|me|some|more|actually)\b/g;
+    const rawParts = String(raw || t).split(/,|\+|&|\band\b|\baur\b|\bplus\b|\bwith\b/i).map((x) => norm(x).replace(FILL, " ").replace(/\s+/g, " ").trim()).filter(Boolean);
+    const clean = t.replace(/\b(please|pls|add|i want|want|order|get me|give me|ill have|i ll have|i will have|can i have|can i get|bring|put|to (my |the )?cart|in (my |the )?cart|also|me|some|more)\b/g, " ");
+    const parts = rawParts.length ? rawParts : clean.split(/\band\b|\bplus\b|\bwith\b|\baur\b/).map((s) => s.replace(/\s+/g, " ").trim()).filter(Boolean);
+    const added = [], missed = [], amb = [], capped = [];
+    for (const p of parts) {
+      const { qty, rest } = parseQty(p);
+      const ms = matchItems(rest);
+      if (!ms.length) { missed.push(rest); continue; }
+      const best = ms[0], ties = ms.filter((r) => Math.abs(r.s - best.s) < 0.01);
+      const coverName = best.ov / nameToks(best.i).length;
+      if (ties.length > 1 || coverName < 0.5) { amb.push({ q: rest, opts: ms.slice(0, 4).map((r) => r.i) }); continue; }
+      let q2 = qty; if (q2 > 50) { capped.push(best.i.name); q2 = 50; }
+      addToCart(S, best.i.id, q2); added.push([best.i, S.cart[best.i.id].qty === 50 && q2 === 50 ? 50 : q2]);
+    }
+    if (added.length) say(`Added to your cart: ${added.map(([i, q]) => `**${q} × ${i.name}**`).join(", ")}. Cart total: **${rs(cartSub(S))}**.` + (missed.length ? `\nI couldn't find: ${missed.join(", ")}.` : "") + (capped.length ? `\nThe online limit is 50 per dish, so I added 50 ${capped.join(", ")}. For bigger orders, please talk to the counter.` : "") + (S.order && !S.order.paid ? `\nYour order **${S.order.no}** is already with the chef, so these are in a new cart. Place them as a separate order from checkout.` : ""), { chips: ["Show my cart", "Checkout", "Direct me to menu"], source: "Menu", cartChanged: true });
+    amb.forEach((a) => say(`Which “${a.q.split(" ").map((w) => TYPO[w] || w).join(" ")}” do you mean? Tap **Add** on the one you want.`, { items: a.opts.map((i) => itemRef(i, { add: true })), source: "Menu" }));
+    if (!added.length && !amb.length) {
+      const r = retrieve(missed.join(" ") || t, { k: 3, kind: "item", diet: S.diet });
+      if (r.length) say("I couldn't find that exact dish. Closest matches on our menu:", { items: r.map((x) => itemRef(x.d.ref, { add: true })), source: "Menu", chips: ["Direct me to menu"] });
+      else say(`Sorry, I couldn't find “${missed.join(", ")}” on our menu. Try another name, or open the menu.`, { chips: ["Direct me to menu"] });
+    }
+  }
+  function removeCmd(S, t, say) {
+    const q = t.replace(/\b(remove|delete|cancel|minus|from|my|the|cart|please)\b/g, " ").trim();
+    const { qty, rest } = parseQty(q);
+    const inCart = matchItems(rest).filter((r) => S.cart[r.i.id]);
+    if (!inCart.length) { say("That item isn't in your cart.", { chips: ["Show my cart"] }); return; }
+    const i = inCart[0].i;
+    setQty(S, i.id, S.cart[i.id].qty - (/^\d|^(one|two|three|a|an)\s/.test(q) ? qty : S.cart[i.id].qty));
+    const left = S.cart[i.id] ? S.cart[i.id].qty : 0;
+    say(left ? `Updated **${i.name}**. You now have **${left} × ${i.name}**. Cart total: **${rs(cartSub(S))}**.` : `Removed **${i.name}**. Cart total: **${rs(cartSub(S))}**.`, { chips: ["Show my cart"], cartChanged: true });
+  }
+  function showCart(S, say) {
+    const v = cartView(S);
+    if (!v.lines.length) { say("Your cart is empty. Tell me a dish or open the menu.", { chips: ["Direct me to menu"] }); return; }
+    say(`Your cart has ${v.count} item${v.count > 1 ? "s" : ""}. Subtotal **${rs(v.bill.sub)}**, with 5% GST the total is **${rs(v.bill.total)}**.`, { items: v.lines.map((l) => itemRef(ITEM[l.id], { qty: l.qty, note: l.note || (l.voice ? "Voice note" : "") })), chips: ["Checkout", "Direct me to menu"] });
+  }
+  function goCheckout(S, say) {
+    if (!cartCount(S)) { say("Your cart is empty right now. Add a dish first.", { chips: ["Direct me to menu"] }); return; }
+    say("Taking you to checkout. Check your chef notes there and press **Place order**.", { action: { type: "navigate", to: "checkout" } });
+  }
+  function menuReply(say) {
+    say(`We serve ${CATS.map((c) => "**" + c.label + "**").join(", ")}, with both veg and non-veg dishes.`, { chips: ["Direct me to menu", "Veg biryani", "Something sweet"], source: "Menu" });
+  }
+  /* ------------------------------------------------------------------ */
+  /* Waiter brain: understand the request, filter the menu, answer like a waiter */
+  const FACT_CUE = /\?|^(is|are|does|do|has|have|can|what|whats|which|how|tell|describe|kya)\b|\b(sweet|spicy|spice|veg|vegetarian|nonveg|egg|eggless|price|cost|how much|rate|how many|pieces|portion|quantity|plate|cold|chilled|hot|warm|contain|contains|made of|ingredients)\b/;
+  const PAIR_CUE = /\b(goes with|go with|goes well|go well|pair|pairs|pairing|eat with|have with|along with|combo|side with)\b/;
+  const CAT_WORDS = [
+    [/\b(starter|starters|appetizer|appetizers|appetiser|kebab|kebabs|kabab)\b/, ["starters"], "starters"],
+    [/\b(snack|snacks)\b/, ["starters", "bakes"], "snacks"],
+    [/\b(bread|breads|roti|rotis|naan|naans|paratha|parathas|kulcha)\b/, ["bread"], "breads"],
+    [/\b(biryani|biryanis)\b/, ["biryani"], "biryanis"],
+    [/\b(rice|pulao)\b(?! pudding)/, ["rice", "biryani"], "rice dishes"],
+    [/\b(gravy|gravies|curry|curries|main course|maincourse|mains|sabzi)\b/, ["gravy"], "curries"],
+    [/\b(dessert|desserts|sweet|sweets|mithai|halwa)\b/, ["desserts", "icecream", "bakes"], "sweets"],
+    [/\b(icecream|icecreams|kulfi|sundae|falooda|scoop)\b/, ["icecream"], "ice creams"],
+    [/\b(tea|chai|coffee)\b/, ["chai"], "tea and coffee"],
+    [/\b(drink|drinks|beverage|beverages|juice|juices|lassi|shake|soda|cooler)\b/, ["juices", "chai"], "drinks"],
+    [/\b(cake|cakes|pastry|pastries|bakery|bakes|baked|puff|puffs|cookie|cookies|muffin)\b/, ["bakes"], "bakes"]
+  ];
+  const NEED_WORDS = new Set("dry fry fried crispy crunchy gravy curry curries spicy spice hot mild bland cold chilled warm cool veg vegetarian nonveg jain egg eggless meat chicken mutton keema fish prawn prawns seafood paneer dal lentil cheap cheapest budget affordable expensive costliest premium priciest under below above over less than within upto max rs inr rupees light healthy heavy filling kids kid children child share sharing group south indian tandoor tandoori vegan plant based dairy free mock fake chaap sweetish flavour flavours flavor flavors items kind special specials here bestseller bestsellers popular famous signature special best top must try something anything options dishes dish items item food foods some any which what kind type types do you have there want get give suggest recommend i me for to with without no not and or but a an the is are of in on starter starters appetizer snack snacks bread breads rice pulao biryani biryanis main course mains dessert desserts sweet sweets mithai icecream ice cream drink drinks beverage beverages juice juices tea chai coffee bakery bakes baked".split(" "));
+  function parseNeeds(t) {
+    const n = {};
+    if (/\bvegan\b|plant based|dairy free|\bno dairy\b/.test(t)) { n.vegan = true; n.diet = "veg"; if (/\b(meat|chicken|mutton|mock|fake|chaap)\b/.test(t)) n.mockMeat = true; }
+    else if (/\beggless\b|\b(?:without|no|dont eat|dont want|do not eat|not eating|avoid|allergic to|cant eat|cannot eat)\s+eggs?\b/.test(t)) { n.diet = "veg"; n.eggless = true; }
+    else if (/\b(?:without|no|dont eat|dont want|do not eat|not eating|avoid|allergic to|cant eat|cannot eat)\s+(meat|chicken|mutton|fish|nonveg)\b|\b(not|zero)\s+(meat|nonveg)\b|\bjain\b/.test(t)) n.diet = "veg";
+    else if (/\bnonveg\b|\b(meat|seafood)\b/.test(t)) n.diet = "nonveg";
+    else if (/\b(veg|vegetarian|pure veg)\b/.test(t)) n.diet = "veg";
+    const pr = [];
+    if (/\bchicken\b/.test(t)) pr.push("chicken"); if (/\b(mutton|keema|lamb|goat)\b/.test(t)) pr.push("mutton");
+    if (/\b(fish|seafood)\b/.test(t)) pr.push("fish"); if (/\b(prawn|prawns|shrimp|seafood)\b/.test(t)) pr.push("prawn");
+    if (/\beggs?\b/.test(t) && !n.eggless) pr.push("egg");
+    if (/\bpaneer\b/.test(t)) pr.push("paneer"); if (/\b(dal|daal|lentil|lentils)\b/.test(t)) pr.push("dal"); if (/\bmushroom/.test(t)) pr.push("mushroom");
+    if (n.vegan) pr.length = 0;
+    if (pr.length) { n.protein = pr; if (!n.diet) n.diet = pr.every((x) => ["paneer", "dal", "mushroom"].includes(x)) ? "veg" : pr.some((x) => ["paneer", "dal", "mushroom"].includes(x)) ? undefined : "nonveg"; if (!n.diet) delete n.diet; }
+    const cats = [];
+    for (const [re, c, label] of CAT_WORDS) if (re.test(t)) { if (!(label === "rice dishes" && cats.includes("biryani"))) cats.push(...c); n.catLabel = n.catLabel || label; }
+    if (/\b(sweet|sweets|dessert|desserts|mithai)\b/.test(t)) n.sweet = true;
+    if (/\bsweet(ish)?\b/.test(t) && /\b(gravy|gravies|curry|curries|sabzi|masala)\b/.test(t)) { cats.length = 0; cats.push("gravy"); n.sweet = false; n.sweetGravy = true; n.catLabel = "curries"; }
+    if (cats.length) n.cats = [...new Set(cats)];
+    const drinkish = /\b(drink|drinks|beverage|juice|tea|chai|coffee|milk|dessert|desserts|sweet|sweets|icecream)\b/.test(t);
+    if (/\b(cold|chilled|cool|refreshing)\b/.test(t) && (drinkish || /\bto drink\b/.test(t) || !cats.length)) { n.temp = "cold"; if (!n.cats) { n.cats = ["juices", "icecream", "desserts"]; n.catLabel = "cold treats"; } }
+    else if (/\b(hot|warm)\b/.test(t) && drinkish) n.temp = "hot";
+    if (/\b(not|no|less|without|non|low|zero)\s+(very\s+|too\s+|so\s+)?(spicy|spice|hot|chilli|teekha)\b|\bmild\b|\bbland\b/.test(t)) n.spiceMax = 1;
+    else if (/\b(spicy|fiery|teekha|tikha|chilli|chili)\b/.test(t) || (/\bhot\b/.test(t) && !n.temp)) n.spiceMin = 2;
+    if (/\b(kid|kids|child|children|baby)\b/.test(t)) { n.spiceMax = 1; n.kids = true; }
+    if (/fried rice/.test(t)) { /* a dish name, not a texture */ }
+    else if (/\b(dry|fry|fried|crispy|crunchy)\b/.test(t)) n.texture = "dry";
+    else if (/\b(gravy|curry|curries)\b/.test(t)) n.texture = "gravy";
+    let m = /(?:under|below|less than|within|upto|up to|max|maximum|budget of|budget)\s*(?:rs|inr|rupees)?\s*(\d{2,4})/.exec(t); if (m) n.priceMax = +m[1];
+    m = /(?:above|over|more than|minimum)\s*(?:rs|inr|rupees)?\s*(\d{2,4})/.exec(t); if (m) n.priceMin = +m[1];
+    if (/\b(cheap|cheapest|budget|affordable|economical|low cost|lowest price|inexpensive)\b/.test(t)) n.sort = "asc";
+    if (/\b(expensive|costliest|premium|priciest|most expensive|luxury)\b/.test(t)) n.sort = "desc";
+    if (/\b(popular|bestseller|bestsellers|best seller|famous|signature|special|specials|must try|best|top)\b/.test(t)) n.popular = true;
+    if (/\b(light|not heavy|not too heavy|low calorie)\b/.test(t)) n.light = true;
+    if (/\b(healthy|diet|nutritious)\b/.test(t)) n.healthy = true;
+    if (/\b(heavy|filling|hearty)\b/.test(t) && !n.light) n.heavy = true;
+    if (/\b(share|sharing|group|party|friends|family)\b/.test(t)) n.share = true;
+    if (/south indian|\b(chettinad|kerala|tamil)\b/.test(t)) n.south = true;
+    if (/\btandoor|tandoori\b/.test(t)) n.tandoor = true;
+    n.residual = toks(t).filter((w) => !NEED_WORDS.has(w) && w.length > 2 && !/^\d+$/.test(w));
+    n.has = Object.keys(n).some((k) => !["residual", "catLabel", "kids", "eggless"].includes(k));
+    return n;
+  }
+  function strongDish(t, min) {
+    const ms = matchItems(t); if (!ms.length) return null;
+    // a dish word that names exactly one dish ("chole"), not a describing word ("sweet", "dry")
+    if (ms.length === 1 && !min && toks(t).some((w) => nameToks(ms[0].i).includes(w) && !NEED_WORDS.has(w) && !["sweet", "fresh", "plain", "classic", "royal", "hot", "special", "mix"].includes(w))) return ms[0].i;
+    const b = ms[0], cover = b.ov / nameToks(b.i).length;
+    const ties = ms.filter((r) => Math.abs(r.s - b.s) < 0.01);
+    return ties.length === 1 && cover >= (min || 0.66) && (nameToks(b.i).length > 1 || cover === 1) && b.ov >= Math.min(2, nameToks(b.i).length) ? b.i : null;
+  }
+  function filterMenu(n, relax) {
+    const r = relax || new Set();
+    return MENU.filter((i) =>
+      (!n.diet || r.has("diet") || (n.diet === "veg" ? i.veg : !i.veg)) &&
+      (!n.cats || r.has("cats") || n.cats.includes(i.cat)) &&
+      (!n.protein || r.has("protein") || n.protein.includes(i.protein)) &&
+      (!n.texture || r.has("texture") || (n.texture === "dry" ? i.texture === "dry" || i.texture === "semi-dry" : i.texture === n.texture)) &&
+      (n.spiceMax == null || r.has("spice") || i.spice <= n.spiceMax) &&
+      (n.spiceMin == null || r.has("spice") || i.spice >= n.spiceMin) &&
+      (n.priceMax == null || r.has("price") || i.price <= n.priceMax) &&
+      (n.priceMin == null || r.has("price") || i.price >= n.priceMin) &&
+      (!n.temp || r.has("temp") || i.temp === n.temp) &&
+      (!n.sweet || /sweet/.test(i.tags)) &&
+      (!n.vegan || i.vegan) && (!n.sweetGravy || i.sweetish) &&
+      (!n.light || (/light|healthy|soothing/.test(i.tags) && !/filling|hearty|rich/.test(i.tags))) &&
+      (!n.healthy || (/healthy|light/.test(i.tags) && !/filling|hearty|rich/.test(i.tags))) &&
+      (!n.heavy || /filling|hearty/.test(i.tags)) &&
+      (!n.south || i.south) && (!n.tandoor || i.tandoor) &&
+      (!n.popular || n.cats || n.protein || n.diet || n.texture || n.temp || i.popular));
+  }
+  function phraseOf(n) {
+    const w = [];
+    if (n.spiceMin) w.push("spicy"); if (n.spiceMax != null) w.push(n.kids ? "kid-friendly" : "mild");
+    if (n.temp && !(n.catLabel || "").includes(n.temp)) w.push(n.temp === "cold" ? "cold" : "hot");
+    if (n.texture && !n.sweetGravy) w.push(n.texture); if (n.sweetGravy) w.push("mildly sweet, creamy"); if (n.light) w.push("light"); if (n.healthy) w.push("healthy");
+    if (n.south) w.push("South Indian"); if (n.tandoor) w.push("tandoori");
+    if (n.diet) w.push(n.vegan ? "vegan" : n.eggless ? "eggless" : n.diet === "veg" ? "veg" : "non-veg");
+    if (n.protein) w.push(n.protein.join(" and "));
+    w.push(n.catLabel || (n.sweet ? "sweets" : n.popular && !n.diet && !n.protein ? "house specials" : "dishes"));
+    let s = w.join(" ");
+    if (n.priceMax) s += ` under ₹${n.priceMax}`; if (n.priceMin) s += ` above ₹${n.priceMin}`;
+    return s;
+  }
+  const RELAX = [["price", (n) => n.priceMax || n.priceMin], ["spice", (n) => n.spiceMax != null || n.spiceMin], ["temp", (n) => n.temp], ["texture", (n) => n.texture], ["protein", (n) => n.protein], ["cats", (n) => n.cats], ["diet", (n) => n.diet]];
+  function waiter(S, t, n, say) {
+    // house questions (timings, Jain food, GST...) come from the info pages
+    const info = retrieve(t, { k: 1, kind: "info" })[0];
+    if (info && info.score >= 0.3 && !(n.cats || n.protein || n.texture || n.temp || n.south || n.tandoor || n.priceMax || n.sort)) { say(info.d.ref.text, { source: info.d.ref.title }); return; }
+    let list = filterMenu(n), relaxed = null;
+    if (!list.length) for (const [k, on] of RELAX) { if (!on(n)) continue; const l = filterMenu(n, new Set([k])); if (l.length) { list = l; relaxed = k; break; } }
+    // narrow by any dish words left in the question ("lassi", "kebab"...)
+    if (n.residual.length) { const named = list.filter((i) => n.residual.some((w) => toks(i.name).includes(w))); if (named.length) list = named; }
+    if (!list.length) { notOnMenu(S, t, say); return; }
+    const sim = n.residual.length ? Object.fromEntries(retrieve(n.residual.join(" "), { k: 80, kind: "item" }).map((r) => [r.d.ref.id, r.score])) : {};
+    const POP_RANK = [...POPULAR];
+    const score = (i) => (i.popular ? 0.5 + (n.popular ? (POP_RANK.length - POP_RANK.indexOf(i.id)) * 0.02 : 0) : 0) + (sim[i.id] || 0) + (n.spiceMin ? i.spice * 0.12 : 0) + (n.spiceMax != null ? (1 - i.spice) * 0.1 : 0) - (i.texture === "semi-dry" ? 0.3 : 0) + (n.share && /share/.test(i.tags) ? 0.3 : 0);
+    list.sort((a, b) => n.sort === "asc" ? a.price - b.price : n.sort === "desc" ? b.price - a.price : score(b) - score(a) || a.price - b.price);
+    const askHave = /^(do you have|do u have|you have|have you got|is there|are there|any)\b/.test(t);
+    const shown = list.slice(0, askHave ? 5 : 4), top = shown[0], phrase = phraseOf(n);
+    let intro;
+    if (n.mockMeat) intro = "We don't have plant-based or mock meat, sorry. These dishes are fully vegan (no dairy, egg or meat):";
+    else if (n.popular && !n.cats && !n.protein && !n.diet && !n.texture) intro = "Our house specials, the dishes guests order most:";
+    else if (n.sweetGravy && !relaxed) intro = "For a mildly sweet, creamy gravy, try our makhani-style curries:";
+    else if (relaxed) intro = `We don't have ${phrase} right now. The closest options are:`;
+    else if (askHave) intro = `Yes, we do! Here ${list.length === 1 ? "is our" : "are our"} ${phrase}:`;
+    else if (n.sort === "asc") intro = `Our most affordable ${phrase}:`;
+    else if (n.sort === "desc") intro = `Our premium ${phrase}:`;
+    else intro = `Sure! For ${phrase}, here's what I'd suggest:`;
+    const why = top.popular ? "It's one of our bestsellers." : n.sort === "asc" ? `It's the lightest on your pocket at ${rs(top.price)}.` : n.sort === "desc" ? "It's our most premium choice." : top.spice >= 3 ? "It's properly fiery." : n.spiceMax != null ? (top.spice === 0 ? "No spice at all." : "Only lightly spiced.") : "";
+    say(intro, { items: shown.map((i) => itemRef(i, { add: true })), source: "Menu" });
+    say(`My pick: **${top.name}**. ${top.desc}${why ? " " + why : ""}${n.vegan ? " For fully vegan, add a chef note: “cook in oil, no ghee or butter”." : ""}`);
+    offer(S, shown, say);
+  }
+  function notOnMenu(S, t, say) {
+    const what = t.replace(/^(do you have|do u have|you have|have you got|is there|are there|any|can i get|i want)\s+/, "").replace(/\b(please|pls|here|today)\b/g, "").trim();
+    say(`Sorry, we don't have ${what || "that"} on our menu. We're a dhaba and bakery, so you'll find tandoor breads, curries, biryani, starters, drinks, desserts and bakes.`, { chips: ["Direct me to menu", "What is your bestseller?", "Something spicy"] });
+  }
+  function itemFacts(S, i, t, say, catLabel) {
+    const bits = [];
+    if (PAIR_CUE.test(t)) {
+      const pairs = pairsFor(i);
+      say(`${catLabel ? "Our " + catLabel : "**" + i.name + "**"} ${catLabel ? "go" : "goes"} best with these:`, { items: pairs.map((p) => itemRef(p, { add: true })), source: "Menu" });
+      offer(S, pairs, say); return;
+    }
+    const spiceQ = /\b(spicy|spice|teekha|mild)\b/.test(t) || (/\bhot\b/.test(t) && !i.temp);
+    if (spiceQ) bits.push(["isn't spicy at all", "is mild, only lightly spiced", "is medium spicy", "is hot and spicy"][i.spice].replace(/^/, `**${i.name}** `) + "." + (i.spice >= 2 ? " Want it milder? Add a chef note like “less spicy”." : ""));
+    if (/\bsweet(ish)?\b/.test(t)) bits.push(i.sweetish ? `**${i.name}** is mildly sweet and creamy, from the tomato-butter makhani gravy.` : /sweet/.test(i.tags) ? `**${i.name}** is sweet.` : `**${i.name}** isn't sweet; it's a savoury dish.`);
+    if (/\b(veg|vegetarian|nonveg|meat)\b/.test(t)) bits.push(`**${i.name}** is ${i.veg ? "vegetarian" : "non-veg"}${i.egg ? " (it has egg)" : ""}.`);
+    if (/\b(egg|eggs|eggless)\b/.test(t)) bits.push(i.egg ? `**${i.name}** contains egg.` : `**${i.name}** is eggless.`);
+    if (/\b(price|cost|how much|rate|rs|rupees)\b/.test(t)) bits.push(`**${i.name}** is ${rs(i.price)}.`);
+    if (/\b(how many|pieces|piece|pcs|portion|quantity|plate|serves|size)\b/.test(t)) bits.push(i.portion ? `It comes as ${i.portion}, for ${rs(i.price)}.` : `It's one regular portion, ${rs(i.price)}.`);
+    if (/\b(cold|chilled|cool|warm)\b/.test(t) || (/\bhot\b/.test(t) && i.temp)) bits.push(i.temp === "cold" ? `**${i.name}** is served chilled.` : i.temp === "hot" ? `**${i.name}** is served hot.` : `**${i.name}** is served fresh off the kitchen.`);
+    const desc = `${i.desc}${i.portion && !bits.some((b) => b.includes(i.portion)) ? " (" + i.portion + ")" : ""}`;
+    if (!bits.length) bits.push(`**${i.name}**: ${desc} It's ${i.veg ? "veg" : "non-veg"}, ${i.spice ? SPICE[i.spice].toLowerCase() + " spicy" : "not spicy"}, ${rs(i.price)}.${i.popular ? " One of our bestsellers!" : ""}`);
+    else bits.push(desc);
+    say(bits.join(" "), { items: [itemRef(i, { add: true })], source: "Menu: " + i.name });
+    offer(S, [i], say);
+  }
+  function pairsFor(i) {
+    const pick = (ids) => ids.map((x) => ITEM[x]).filter(Boolean);
+    if (i.cat === "gravy") return pick(["butter-naan", "garlic-naan", "lachha-paratha", "jeera-rice"]);
+    if (i.cat === "biryani") return pick(["masala-chaas", "sweet-lassi", "mango-lassi"]);
+    if (i.cat === "bread") return pick(i.veg ? ["dal-makhani", "paneer-butter-masala", "chole-masala"] : ["butter-chicken", "mutton-rogan-josh", "dal-makhani"]);
+    if (i.cat === "rice") return pick(i.veg ? ["dal-tadka", "dal-makhani", "palak-paneer"] : ["chicken-chettinad", "egg-curry", "dal-tadka"]);
+    if (i.cat === "starters") return pick(["fresh-lime-soda", "masala-chaas", "mango-lassi"]);
+    if (i.cat === "icecream") return pick(["chocolate-truffle-pastry", "butter-cookies-200-g"]);
+    if (i.cat === "chai") return pick(["veg-puff", "butter-cookies-200-g", "banana-walnut-muffin"]);
+    if (i.cat === "desserts" || i.cat === "bakes") return pick(["masala-chai", "filter-coffee"]);
+    return pick(["veg-puff", "crispy-corn"]);
+  }
+
+  function recommend(S, t, say) {
+    const q = t.replace(/\b(suggest|recommend|recommendation|best|special|popular|famous|signature|what should i|what to eat|surprise|me|something|eat|dish|dishes|have|item|items)\b/g, " ").trim();
+    let r = retrieve(q || "classic celebrate rich", { k: 12, kind: "item", diet: S.diet });
+    if (!r.length) r = retrieve("classic celebrate rich", { k: 12, kind: "item", diet: S.diet });
+    const items = q ? r.slice(0, 3).map((x) => x.d.ref) : pickDiverse(r, 3);
+    say(q ? "Here's what fits from our menu:" : "Our house favourites:", { items: items.map((i) => itemRef(i, { add: true })), source: "Menu" });
+    offer(S, items, say);
+  }
+  function answer(S, t, say) {
+    const diet = /\bnonveg\b/.test(t) ? "nonveg" : /\b(veg|vegetarian)\b/.test(t) ? "veg" : null;
+    const r = retrieve(t, { k: 6, diet });
+    if ((!r.length || r[0].score < 0.06) && /^(do you have|do u have|you have|have you got|is there|are there|any)\b/.test(t)) { notOnMenu(S, t, say); return; }
+    const gibberish = !t.trim() || /[^aeiou\s\d]{5,}/.test(t) || !/[aeiouy]/.test(t);
+    if ((!r.length || r[0].score < 0.06) && gibberish) { say("Sorry, I didn't catch that. You can ask me things like “dry non veg”, “something sweet” or “is paneer tikka spicy?”, or tap Direct me to menu.", { chips: ["Direct me to menu", "What is your bestseller?", "Something spicy"] }); return; }
+    if ((!r.length || r[0].score < 0.06) && t.split(" ").length <= 3 && !/\b(what|how|why|when|where|who)\b/.test(t)) { notOnMenu(S, t, say); return; }
+    if (!r.length || r[0].score < 0.06) { say("I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood.", { chips: ["What are your timings?", "Veg biryani", "Something sweet"] }); return; }
+    const top = r[0];
+    if (top.d.kind === "info" && (top.score >= 0.12 || r.filter((x) => x.d.kind === "item").length === 0)) { say(top.d.ref.text, { source: top.d.ref.title }); return; }
+    const items = r.filter((x) => x.d.kind === "item").slice(0, 4).map((x) => x.d.ref);
+    const ask = /\b(price|cost|how much|rate)\b/.test(t);
+    const question = /^(is|are|does|has|kya)\b/.test(t) || /\b(eggless|contain|contains)\b/.test(t);
+    if (question && r[0].d.kind === "item") {
+      const i = r[0].d.ref;
+      say(`**${i.name}**: ${i.desc} It is ${i.veg ? "veg" : "non-veg"}, ${i.spice ? SPICE[i.spice].toLowerCase() + " spicy" : "not spicy"}, ${rs(i.price)}.`, { items: [itemRef(i, { add: true })], source: "Menu: " + i.name });
+      offer(S, [i], say);
+      return;
+    }
+    say(ask ? "Prices from our menu:" : "From our menu:", { items: items.map((i) => itemRef(i, { add: true })), source: "Menu" });
+    if (items.length) offer(S, items.slice(0, 1), say);
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Order lifecycle (the chat narrates every stage)                    */
+  /* ------------------------------------------------------------------ */
+  const STAGES = ["Placed", "Sent to chef", "Cooking", "Ready", "Bill", "Paid", "Feedback"];
+  const STAGE_AT = [0, 2000, 5000, 10000, 12500]; // ms after placing; stages 5-6 follow payment and feedback
+
+  function placeOrder(S, details, now) {
+    if (!cartCount(S)) throw new Error("EMPTY_CART");
+    details = details || {};
+    if (details.name && String(details.name).trim()) S.name = String(details.name).trim().split(/\s+/).slice(0, 2).map(cap).join(" ");
+    const items = Object.entries(S.cart).filter(([id]) => ITEM[id]).map(([id, c]) => ({ id, name: ITEM[id].name, cat: ITEM[id].cat, veg: ITEM[id].veg, price: ITEM[id].price, qty: c.qty, amount: ITEM[id].price * c.qty, note: c.note || "", voice: c.voice || null }));
+    const sub = items.reduce((a, x) => a + x.amount, 0);
+    const order = {
+      no: "NDB-" + (1000 + Math.floor(Math.random() * 9000)),
+      customer: S.name || "", mode: details.mode === "take" ? "take" : "dine", table: details.mode === "take" ? "" : String(details.table || "").slice(0, 6),
+      items, bill: bill(sub), note: S.orderNote || "", voice: S.orderVoice || null,
+      placedAt: now || Date.now(), stage: 0, paid: false, payment: null, feedback: null
+    };
+    S.order = order; S.cart = {}; S.orderNote = ""; S.orderVoice = null; S.pending = null; S.awaiting = null;
+    const n = items.reduce((a, x) => a + x.qty, 0);
+    return {
+      order,
+      messages: [{ role: "bot", text: `Order **${order.no}** placed${comma(S)}! ${n} item${n > 1 ? "s" : ""}, ${order.mode === "dine" ? "dine-in at table " + (order.table || "-") : "takeaway"}.`, items: items.map((x) => itemRef(ITEM[x.id], { qty: x.qty, price: x.amount })) }]
+    };
+  }
+
+  function stageMessages(S, o, stage) {
+    const m = [];
+    const say = (text, x) => m.push(Object.assign({ role: "bot", text }, x || {}));
+    if (stage === 1) {
+      const notes = o.items.filter((x) => x.note || x.voice);
+      if (notes.length || o.note || o.voice) {
+        const lines = notes.map((x) => `• ${x.name}: ${x.note ? "“" + x.note + "”" : ""}${x.voice ? (x.note ? " + " : "") + "voice note" : ""}`);
+        if (o.note || o.voice) lines.push(`• Whole order: ${o.note ? "“" + o.note + "”" : ""}${o.voice ? (o.note ? " + " : "") + "voice note" : ""}`);
+        say("Your order has been sent to the chef. The chef received these notes:\n" + lines.join("\n"));
+      } else say("Your order has been sent to the chef. No special notes, so it will be cooked the house way.");
+    }
+    if (stage === 2) {
+      const cats = new Set(o.items.map((x) => x.cat)), bits = [];
+      if (cats.has("biryani")) bits.push("your biryani is on dum");
+      if (cats.has("bread") || cats.has("starters")) bits.push("the tandoor is fired up");
+      if (cats.has("gravy")) bits.push("the kadai is on the flame");
+      if (cats.has("juices") || cats.has("chai")) bits.push("drinks are being made fresh");
+      if (cats.has("desserts") || cats.has("icecream") || cats.has("bakes")) bits.push("sweets will be plated last so they're served at the right temperature");
+      say(`Your order is getting ready: ${bits.length ? bits.join(", ") : "the chef is on it"}. About 15–25 minutes in the kitchen.`);
+    }
+    if (stage === 3) say(o.mode === "dine" ? `Your order is ready and on its way to table ${o.table || "-"}. Enjoy your meal!` : "Your takeaway order is ready and packed at the counter. Enjoy!");
+    if (stage === 4) {
+      say("Here is your bill:", { bill: { no: o.no, at: o.placedAt, mode: o.mode, table: o.table, customer: o.customer, lines: o.items.map((x) => ({ name: x.name, qty: x.qty, amount: x.amount })), ...o.bill } });
+      S.awaiting = "payment";
+      say(`How would you like to pay **${rs(o.bill.total)}**?`, { chips: ["UPI", "Card", "Cash"] });
+    }
+    return m;
+  }
+
+  /** Move the active order forward in time. Returns new bot messages. */
+  function advanceOrder(S, now) {
+    const o = S.order; if (!o || o.paid) return [];
+    const elapsed = (now || Date.now()) - o.placedAt;
+    let target = 0; STAGE_AT.forEach((t, i) => { if (elapsed >= t) target = i; });
+    const out = [];
+    while (o.stage < target) { o.stage++; out.push(...stageMessages(S, o, o.stage)); }
+    return out;
+  }
+  function askPay(S, say) { S.awaiting = "payment"; say(`How would you like to pay **${rs(S.order.bill.total)}**?`, { chips: ["UPI", "Card", "Cash"] }); }
+  function pay(S, method, say) {
+    const o = S.order; S.awaiting = null;
+    o.paid = true; o.stage = 5;
+    o.payment = { method, ref: (method === "Cash" ? "CSH" : "TXN") + String(Date.now()).slice(-8), at: Date.now() };
+    say(`Payment of **${rs(o.bill.total)}** by **${method}** received. Reference **${o.payment.ref}**. Thank you!`, { source: "Demo payment: no real money is charged" });
+    o.stage = 6; S.awaiting = "feedback";
+    say(`How was the food${comma(S)}? Rate it or tell me in your own words.`, { chips: ["★★★★★ Loved it", "★★★★ Good", "★★★ Okay", "★★ Not great", "★ Bad"] });
+  }
+  function feedback(S, text, t, say) {
+    S.awaiting = null;
+    let stars = (text.match(/★/g) || []).length;
+    const n = t.match(/\b([1-5])\b/); if (!stars && n) stars = +n[1];
+    const neg = /\b(bad|cold|salty|oily|bland|late|slow|worst|poor|not good|not great|awful|terrible|too spicy|bekar|bakwas|kharab|thanda)\b/.test(t) || /\b(accha|achha|acha|badiya|badhiya|theek)\s+(nahi|nai|nhi)\b/.test(t);
+    const pos = !neg && /\b(good|great|tasty|yummy|delicious|awesome|amazing|loved|love|excellent|nice|superb|perfect|best|fantastic|wonderful|badiya|badhiya|mast|swadisht|zabardast|shandaar|accha|achha|acha|lajawab)\b/.test(t) && !/\bnot\b/.test(t);
+    const praise = /\b(good|great|tasty|yummy|delicious|awesome|amazing|loved|excellent|nice|superb|perfect|best|fantastic|wonderful|badiya|badhiya|mast|swadisht)\b/.test(t);
+    if (praise && neg && /\b(but|though|however|lekin|par)\b/.test(t)) {
+      if (!stars) stars = 3;
+      if (S.order) { S.order.feedback = { stars, text, at: Date.now() }; S.order.stage = 7; }
+      say(`Glad you enjoyed the food${comma(S)}, and sorry about what went wrong. I've passed both to the chef and the manager so we can fix it.\nVisit NASH Dhabha & Bakes again soon!`, { chips: ["Start a new order"] });
+      return;
+    }
+    if (!stars) stars = neg ? 2 : pos ? 5 : 3;
+    const reply = stars >= 4 ? `Thank you${comma(S)}! So happy you enjoyed it. I've passed your ${stars}-star review to the chef.`
+      : stars === 3 ? "Thanks for the honest feedback. I've shared it with the kitchen so we can do better next time."
+      : "Sorry the food didn't meet your expectations. I've sent your feedback to the chef and the manager so they can fix it.";
+    if (S.order) { S.order.feedback = { stars, text, at: Date.now() }; S.order.stage = 7; }
+    say(reply + "\nVisit NASH Dhabha & Bakes again soon!", { chips: ["Start a new order"] });
+  }
+
+  /* ------------------------------------------------------------------ */
+  /* Retrieval context for an AI model, and strict checks on what it says */
+  const LLM_ROUTES = new Set(["waiter", "facts", "answer", "recommend", "menu"]);
+  function dishFact(i) {
+    return { id: i.id, name: i.name, category: CATNAME[i.cat], veg: i.veg, vegan: i.vegan, egg: i.egg, price: i.price, spice: SPICE[i.spice] || "not spicy",
+      texture: i.texture, main: i.protein, served: i.temp, portion: i.portion, bestseller: i.popular, south_indian: i.south, tandoori: i.tandoor, mildly_sweet_gravy: i.sweetish, description: i.desc,
+      goes_with: pairsFor(i).map((p) => p.name) };
+  }
+  function contextFor(S, text, ruleMsgs) {
+    const t = fixWords(norm(text)), n = parseNeeds(t);
+    const ids = new Set();
+    (ruleMsgs || []).forEach((m) => (m.items || []).forEach((r) => ids.add(r.id)));
+    const filtered = n.has ? filterMenu(n) : [];
+    if (filtered.length) filtered.slice(0, 14).forEach((i) => ids.add(i.id));   // precise: only dishes that meet the request
+    else {
+      matchItems(t).slice(0, 6).forEach((r) => ids.add(r.i.id));
+      retrieve(t, { k: 10, kind: "item" }).forEach((r) => ids.add(r.d.ref.id));
+    }
+    if (!filtered.length && ids.size < 6) MENU.filter((i) => i.popular).slice(0, 6).forEach((i) => ids.add(i.id));
+    const items = [...ids].slice(0, 24).map((id) => dishFact(ITEM[id]));
+    const info = retrieve(t, { k: 3, kind: "info" }).map((r) => ({ title: r.d.ref.title, text: r.d.ref.text }));
+    return {
+      customer: { name: S.name || null, diet_preference: S.diet || null, cart: cartView(S).lines.map((l) => `${l.qty} x ${l.name}`), active_order: S.order ? { no: S.order.no, stage: STAGES[Math.min(S.order.stage, 6)] } : null },
+      categories: CATS.map((c) => c.label), items, info,
+      draft: { reply: (ruleMsgs || []).map((m) => m.text.replace(/\*\*/g, "")).join(" "), dish_ids: (ruleMsgs || []).flatMap((m) => (m.items || []).map((r) => r.id)) },
+      message: text
+    };
+  }
+  /** Turn an AI answer into chat messages, or return null if it breaks the rules (unknown dish, wrong price). */
+  function llmApply(S, ans, ctx) {
+    if (!ans || typeof ans.reply !== "string" || !ans.reply.trim()) return null;
+    const allowed = new Set(ctx.items.map((i) => i.id));
+    const ids = [...new Set((ans.dish_ids || []).filter((id) => ITEM[id] && allowed.has(id)))].slice(0, 5);
+    if ((ans.dish_ids || []).some((id) => !ITEM[id])) return null;            // invented a dish
+    const prices = new Set(MENU.map((i) => i.price));
+    const quoted = (ans.reply.match(/(?:₹|rs\.?\s?|inr\s?)(\d{2,4})/gi) || []).map((x) => +x.replace(/\D/g, ""));
+    if (quoted.some((p) => !prices.has(p) && p !== cartView(S).bill.total && p !== cartView(S).bill.sub)) return null;   // invented a price
+    const named = MENU.filter((i) => new RegExp("\\b" + i.name.replace(/[()]/g, "").replace(/[-/\\^$*+?.|[\]{}]/g, "\\$&") + "\\b", "i").test(ans.reply.replace(/[()]/g, "")));
+    if (named.some((i) => !allowed.has(i.id) && !ids.includes(i.id))) return null;   // talked about a dish outside the retrieved context
+    const out = [{ role: "bot", text: ans.reply.trim().slice(0, 700), items: ids.map((id) => itemRef(ITEM[id], { add: true })), source: "Gemini · grounded in our menu", ai: true }];
+    S.pending = null;
+    const offerId = ans.offer_id && ITEM[ans.offer_id] && allowed.has(ans.offer_id) ? ans.offer_id : null;
+    if (offerId) { S.pending = { list: [offerId].concat(ids.filter((x) => x !== offerId)), idx: 0 }; out.push({ role: "bot", text: `Can I add **${ITEM[offerId].name}** (${rs(ITEM[offerId].price)}) to your cart?`, chips: ["Yes, add it", "No, show another", "Direct me to menu"] }); }
+    return out;
+  }
+
+  function welcome() {
+    return [{ role: "bot", text: `Namaste! I'm **${BOT_NAME}**, your table-side friend at NASH Dhabha & Bakes.\nSay **hi** to start. I'll ask your mood and suggest dishes from our menu. You can type or tap the mic to speak.`, chips: ["Hi", "What are your timings?", "Veg biryani"] }];
+  }
+
+  return {
+    BOT_NAME, CATS, MENU, ITEM, CATNAME, INFO, SPICE, STAGES, STAGE_AT, MOOD_CHIPS,
+    createState, chat, welcome, retrieve, matchItems, norm, contextFor, llmApply, LLM_ROUTES,
+    addToCart, setQty, setNote, cartView, bill, placeOrder, advanceOrder
+  };
+});
+
+</script>
+<script>
+/*!
+ * Masala Mitra: Google Gemini answer writer (the "G" in RAG).
+ * The engine retrieves the relevant dishes and house info; Gemini writes the waiter's
+ * reply from ONLY that context; the engine then checks the answer (llmApply) before use.
+ * Runs in Node 18+ (backend) and in the browser (bring-your-own key).
+ */
+(function (root, factory) {
+  if (typeof module === "object" && module.exports) module.exports = factory();
+  else root.NashLLM = factory();
+})(typeof self !== "undefined" ? self : this, function () {
+  "use strict";
+
+  const DEFAULT_MODEL = "gemini-2.5-flash";
+  const SYSTEM = [
+    "You are Masala Mitra, the friendly table-side waiter at NASH Dhabha & Bakes, an Indian highway dhaba with a bakery counter.",
+    "Answer the customer like an experienced waiter: warm, short (1 to 3 sentences), helpful, and specific.",
+    "STRICT RULES:",
+    "1. Use ONLY the dishes in MENU CONTEXT and the facts in HOUSE INFO. Never invent dishes, prices, ingredients, offers, timings or policies.",
+    "2. If the customer asks for something not in the context (for example pizza, noodles, delivery), say politely that we don't have it and suggest the closest real dishes from the context.",
+    "3. Respect constraints exactly: veg vs non-veg (egg counts as non-veg), vegan, dry vs gravy, spice level, price limits, hot vs cold.",
+    "4. Customers write Indian English, Hinglish, Tamil-English, typos and chat-speak (u, hv, spl, plz). Understand them, and reply in clear simple English. A little Hinglish warmth is fine.",
+    "5. Recommend at most 4 dishes. Put their ids in dish_ids, best first. Mention prices only as given (₹).",
+    "6. If one dish is the natural suggestion, set offer_id to its id so the app can ask \"Can I add it?\". Otherwise null.",
+    "7. Never claim to add to the cart, place orders or take payment yourself. The app does that.",
+    "8. The DRAFT is the app's rule-based answer. Keep it if it is right; improve it if it misunderstood the customer.",
+    "Return JSON only, matching the schema."
+  ].join("\n");
+
+  const SCHEMA = {
+    type: "OBJECT",
+    properties: {
+      reply: { type: "STRING", description: "What the waiter says, 1-3 sentences" },
+      dish_ids: { type: "ARRAY", items: { type: "STRING" }, description: "ids of dishes to show as cards, best first, max 4" },
+      offer_id: { type: "STRING", nullable: true, description: "id of the one dish to offer adding, or null" }
+    },
+    required: ["reply", "dish_ids"]
+  };
+
+  function compactDish(d) {
+    const tags = [d.veg ? (d.vegan ? "vegan" : "veg") : "non-veg", d.egg ? "contains egg" : "", d.spice, d.texture, d.main, d.served ? "served " + d.served : "", d.portion || "", d.bestseller ? "bestseller" : "", d.south_indian ? "south indian" : "", d.tandoori ? "tandoori" : "", d.mildly_sweet_gravy ? "mildly sweet gravy" : ""].filter(Boolean).join(", ");
+    return `- [${d.id}] ${d.name} | ${d.category} | ₹${d.price} | ${tags} | "${d.description}" | goes with: ${d.goes_with.join(", ")}`;
+  }
+
+  function buildRequest(ctx, history) {
+    const c = ctx.customer;
+    const block = [
+      `CUSTOMER: name=${c.name || "unknown"}; diet preference=${c.diet_preference || "none"}; cart=${c.cart.length ? c.cart.join(", ") : "empty"}; active order=${c.active_order ? c.active_order.no + " (" + c.active_order.stage + ")" : "none"}`,
+      `MENU SECTIONS: ${ctx.categories.join(", ")}`,
+      "HOUSE INFO:", ...ctx.info.map((i) => `- ${i.title}: ${i.text}`),
+      "MENU CONTEXT (retrieved for this question; the only dishes you may mention):", ...ctx.items.map(compactDish),
+      `DRAFT (rule-based): "${ctx.draft.reply}" dishes=${JSON.stringify(ctx.draft.dish_ids)}`,
+      `CUSTOMER MESSAGE: "${ctx.message}"`
+    ].join("\n");
+    const contents = (history || []).slice(-6).map((h) => ({ role: h.role === "user" ? "user" : "model", parts: [{ text: String(h.text || "").slice(0, 400) }] }));
+    contents.push({ role: "user", parts: [{ text: block }] });
+    // Gemini needs the conversation to start with a user turn
+    while (contents.length && contents[0].role !== "user") contents.shift();
+    return {
+      systemInstruction: { parts: [{ text: SYSTEM }] },
+      contents,
+      generationConfig: { temperature: 0.4, maxOutputTokens: 500, responseMimeType: "application/json", responseSchema: SCHEMA, thinkingConfig: { thinkingBudget: 0 } }
+    };
+  }
+
+  async function ask(opts) {
+    const { key, ctx, history } = opts;
+    const model = opts.model || DEFAULT_MODEL;
+    const f = opts.fetch || (typeof fetch !== "undefined" ? fetch : null);
+    if (!key || !f) throw new Error("NO_KEY");
+    const ctl = typeof AbortController !== "undefined" ? new AbortController() : null;
+    const timer = ctl ? setTimeout(() => ctl.abort(), opts.timeoutMs || 9000) : null;
+    try {
+      let body = buildRequest(ctx, history);
+      if (!/2\.5/.test(model)) { body = JSON.parse(JSON.stringify(body)); delete body.generationConfig.thinkingConfig; }
+      const res = await f(`https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(model)}:generateContent`, {
+        method: "POST", headers: { "Content-Type": "application/json", "x-goog-api-key": key }, body: JSON.stringify(body), signal: ctl ? ctl.signal : undefined
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) { const e = new Error((data.error && data.error.message) || "Gemini error " + res.status); e.status = res.status; throw e; }
+      const txt = (((data.candidates || [])[0] || {}).content || {}).parts ? data.candidates[0].content.parts.map((p) => p.text || "").join("") : "";
+      const parsed = JSON.parse(txt.replace(/^```json\s*|```$/g, ""));
+      return { reply: String(parsed.reply || ""), dish_ids: Array.isArray(parsed.dish_ids) ? parsed.dish_ids.map(String) : [], offer_id: parsed.offer_id ? String(parsed.offer_id) : null, model };
+    } finally { if (timer) clearTimeout(timer); }
+  }
+
+  /** Quick key check: lists models with this key. */
+  async function testKey(key, fetchImpl) {
+    const f = fetchImpl || fetch;
+    const res = await f("https://generativelanguage.googleapis.com/v1beta/models?pageSize=50", { headers: { "x-goog-api-key": key } });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) throw new Error((data.error && data.error.message) || "Key check failed (" + res.status + ")");
+    return (data.models || []).map((m) => m.name.replace("models/", "")).filter((n) => /gemini/.test(n));
+  }
+
+  return { ask, testKey, buildRequest, SYSTEM, DEFAULT_MODEL };
+});
+
+</script>
+<script>
+/* API client with automatic offline fallback.
+   Live mode talks to the backend; offline mode runs NashEngine in the browser. Both expose the same methods. */
+(function () {
+  "use strict";
+  const E = window.NashEngine;
+  const base = String((window.NASH_CONFIG && window.NASH_CONFIG.apiBase) || "").replace(/\/$/, "");
+  const SID_KEY = "nash-session-id";
+  const store = { get(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }, set(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }, del(k) { try { localStorage.removeItem(k); } catch (e) {} } };
+
+  async function http(method, path, body) {
+    const res = await fetch(base + path, { method, headers: body ? { "Content-Type": "application/json" } : {}, body: body ? JSON.stringify(body) : undefined });
+    const data = await res.json().catch(() => ({}));
+    if (!res.ok) { const err = new Error(data.message || "Request failed"); err.code = data.error || res.status; throw err; }
+    return data;
+  }
+  const blobToDataUrl = (blob) => new Promise((ok, no) => { const r = new FileReader(); r.onload = () => ok(r.result); r.onerror = no; r.readAsDataURL(blob); });
+
+  function Live() {
+    let sid = null;
+    return {
+      mode: "live",
+      voiceUrl: (v) => (v && v.url ? (/^(blob:|data:|https?:)/.test(v.url) ? v.url : base + v.url) : ""),
+      async start() {
+        const saved = store.get(SID_KEY);
+        if (saved) {
+          try { const r = await http("GET", `/api/sessions/${saved}`); sid = saved; return { resumed: true, transcript: r.transcript, state: r.state }; }
+          catch (e) { store.del(SID_KEY); }
+        }
+        const r = await http("POST", "/api/sessions"); sid = r.sessionId; store.set(SID_KEY, sid);
+        return { messages: r.messages, state: r.state };
+      },
+      chat: (text, voice) => http("POST", `/api/sessions/${sid}/chat`, { text, voice: !!voice }),
+      setQty: (id, qty) => http("POST", `/api/sessions/${sid}/cart`, { id, qty }),
+      async note(id, note, voice) {
+        const body = { id, note };
+        if (voice && voice.blob) { body.audio = await blobToDataUrl(voice.blob); body.mime = voice.blob.type; body.transcript = voice.transcript || ""; }
+        else if (voice && voice.keep) body.keepVoice = true;
+        return http("POST", `/api/sessions/${sid}/notes`, body);
+      },
+      order: (details) => http("POST", `/api/sessions/${sid}/orders`, details),
+      progress: () => http("GET", `/api/sessions/${sid}/progress`),
+      kitchen: () => http("GET", "/api/kitchen/orders"),
+      reset() { store.del(SID_KEY); }
+    };
+  }
+
+  function Offline() {
+    const S = E.createState();
+    const orders = [], history = [];
+    const pub = () => ({ name: S.name, diet: S.diet, awaiting: S.awaiting, cart: E.cartView(S), order: S.order });
+    const ok = (messages) => Promise.resolve({ messages: messages || [], state: pub() });
+    const track = () => { if (S.order) { const i = orders.findIndex((o) => o.no === S.order.no); if (i < 0) orders.unshift(S.order); } };
+    return {
+      mode: "offline",
+      voiceUrl: (v) => (v && v.url) || "",
+      start: () => Promise.resolve({ messages: E.welcome(), state: pub() }),
+      async chat(text) {
+        const prev = history.slice(-6);
+        let m = E.chat(S, text);
+        const key = AI.key();
+        if (key && window.NashLLM && E.LLM_ROUTES.has(m.route)) {
+          try {
+            const ctx = E.contextFor(S, text, m);
+            const ans = await window.NashLLM.ask({ key, model: AI.model(), ctx, history: prev, timeoutMs: 9000 });
+            const ai = E.llmApply(S, ans, ctx);
+            if (ai) m = ai; else AI.last = "rejected";
+            AI.last = ai ? "ok" : "rejected";
+          } catch (e) { AI.last = "error: " + e.message; }
+        }
+        history.push({ role: "user", text }); m.forEach((x) => history.push({ role: "bot", text: x.text }));
+        track(); return ok(m);
+      },
+      setQty(id, qty) { E.setQty(S, id, qty); return ok(); },
+      note(id, note, voice) {
+        let v = null;
+        if (voice && voice.blob) v = { url: URL.createObjectURL(voice.blob), transcript: voice.transcript || "" };
+        else if (voice && voice.keep) v = id === "__order" ? S.orderVoice : (S.cart[id] && S.cart[id].voice) || null;
+        E.setNote(S, id, note, v); return ok();
+      },
+      order(details) {
+        try { const r = E.placeOrder(S, details); track(); return ok(r.messages); }
+        catch (e) { const err = new Error("Your cart is empty."); err.code = e.message; return Promise.reject(err); }
+      },
+      progress() { return ok(E.advanceOrder(S, Date.now())); },
+      kitchen: () => Promise.resolve({ orders: orders.map((o) => Object.assign({ stageLabel: o.stage >= 7 ? "Done" : E.STAGES[o.stage] }, o)) }),
+      reset() {}
+    };
+  }
+
+  async function connect() {
+    if (/^https?:$/.test(location.protocol) || base) {
+      try {
+        const ctl = new AbortController(); const t = setTimeout(() => ctl.abort(), 3000);
+        const r = await fetch(base + "/api/health", { signal: ctl.signal }); clearTimeout(t);
+        const h = r.ok ? await r.json() : null;
+        if (h && h.ok) { const l = Live(); l.llm = h.llm; return l; }
+      } catch (e) { /* fall through to offline */ }
+    }
+    return Offline();
+  }
+  // Bring-your-own Gemini key (offline mode). Stored only in this browser.
+  const AI = {
+    last: null,
+    key: () => store.get("nash-gemini-key") || "",
+    model: () => store.get("nash-gemini-model") || (window.NashLLM && window.NashLLM.DEFAULT_MODEL) || "gemini-2.5-flash",
+    save(key, model) { if (key) store.set("nash-gemini-key", key.trim()); else store.del("nash-gemini-key"); if (model) store.set("nash-gemini-model", model); }
+  };
+  window.NashAPI = { connect, AI };
+})();
+
+</script>
+<script>
+/* NASH Dhabha & Bakes — frontend app (vanilla JS, no build step) */
+(async function () {
+  "use strict";
+  const E = window.NashEngine;
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const esc = (s) => String(s == null ? "" : s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  const md = (s) => esc(s).replace(/\*\*(.+?)\*\*/g, "<b>$1</b>").replace(/\n/g, "<br>");
+  const rs = (n) => "₹" + Number(n || 0).toLocaleString("en-IN", { minimumFractionDigits: Number.isInteger(n) ? 0 : 2, maximumFractionDigits: 2 });
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  const markHtml = (veg) => `<span class="mark${veg ? "" : " nv"}" title="${veg ? "Veg" : "Non-veg"}"></span>`;
+  const ui = { diet: "all", search: "", tts: false };
+  let API = null;
+  let ST = { name: "", cart: { lines: [], count: 0, bill: E.bill(0), orderNote: "", orderVoice: null }, order: null };
+  const qtyOf = (id) => { const l = ST.cart.lines.find((x) => x.id === id); return l ? l.qty : 0; };
+  const lineOf = (id) => ST.cart.lines.find((x) => x.id === id);
+  $("#year").textContent = new Date().getFullYear();
+
+  /* ================= CHAT ================= */
+  const msgs = $("#msgs");
+  const scrollDown = () => { msgs.scrollTop = msgs.scrollHeight; };
+  const clearChips = () => $$(".chips", msgs).forEach((c) => c.remove());
+  function userBubble(text, voice) {
+    clearChips();
+    const d = document.createElement("div"); d.className = "msg me";
+    d.innerHTML = (voice ? '<span class="via">Voice · transcribed</span>' : "") + esc(text);
+    msgs.appendChild(d); scrollDown();
+  }
+  function itemsHtml(items) {
+    return `<div class="mini">${items.map((i) => `<div class="mini-item">${markHtml(i.veg)}<span class="nm">${i.qty ? i.qty + " × " : ""}${esc(i.name)}<small>${i.note ? "Chef note: " + esc(i.note) : esc(i.cat) + (i.spice ? " · " + esc(i.spice) : "")}</small>${i.desc && !i.qty ? `<em class="dd">${esc(i.desc)}</em>` : ""}</span><span class="pr">${rs(i.price)}</span>${i.add ? `<button class="mini-add" type="button" data-chat-add="${esc(i.id)}">Add</button>` : ""}</div>`).join("")}</div>`;
+  }
+  function billHtml(b) {
+    const d = new Date(b.at);
+    return `<div class="receipt"><div class="rh"><b>NASH DHABHA &amp; BAKES</b><br>Bill ${esc(b.no)} · ${d.toLocaleDateString("en-IN")} ${d.toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" })}<br>${b.mode === "dine" ? "Dine-in · Table " + esc(b.table || "-") : "Takeaway"}${b.customer ? " · " + esc(b.customer) : ""}</div><table>
+      ${b.lines.map((l) => `<tr><td>${l.qty} × ${esc(l.name)}</td><td>${rs(l.amount)}</td></tr>`).join("")}
+      <tr class="sep"><td>Subtotal</td><td>${rs(b.sub)}</td></tr><tr><td>CGST 2.5%</td><td>${rs(b.cgst)}</td></tr><tr><td>SGST 2.5%</td><td>${rs(b.sgst)}</td></tr>
+      ${b.round ? `<tr><td>Round off</td><td>${b.round > 0 ? "+" : ""}${b.round.toFixed(2)}</td></tr>` : ""}
+      <tr class="sep tot"><td>Total</td><td>${rs(b.total)}</td></tr></table></div>`;
+  }
+  function botBubble(m, opts) {
+    const live = !opts || !opts.replay;
+    const d = document.createElement("div"); d.className = "msg bot";
+    d.innerHTML = md(m.text) + (m.items && m.items.length ? itemsHtml(m.items) : "") + (m.bill ? billHtml(m.bill) : "") + (m.noteFor ? `<div class="row" style="margin-top:8px"><button class="mini-add note-open" type="button" data-note-open="${esc(m.noteFor)}">🎙 Record voice note</button></div>` : "") + (m.source ? `<span class="src${m.ai ? " ai" : ""}">${m.ai ? "✦ " : "Source: "}${esc(m.source)}</span>` : "");
+    msgs.appendChild(d);
+    if (m.chips && m.chips.length && live) {
+      const c = document.createElement("div"); c.className = "chips";
+      m.chips.forEach((t) => { const b = document.createElement("button"); b.type = "button"; b.className = "chip"; b.textContent = t; b.onclick = () => send(t); c.appendChild(b); });
+      msgs.appendChild(c);
+    }
+    scrollDown();
+    if (live) speak(m.text.replace(/\*\*/g, ""));
+    if (live && m.action && m.action.type === "navigate") setTimeout(() => { closeDrawer(); location.hash = m.action.to; }, 700);
+  }
+  const render = (m, opts) => (m.role === "user" ? userBubble(m.text, m.voice) : m.role === "bot" ? botBubble(m, opts) : null);
+  let typingEl = null;
+  function typing(on) {
+    if (on && !typingEl) { typingEl = document.createElement("div"); typingEl.className = "msg bot typing"; typingEl.innerHTML = "<i></i><i></i><i></i>"; msgs.appendChild(typingEl); scrollDown(); }
+    if (!on && typingEl) { typingEl.remove(); typingEl = null; }
+  }
+  let busy = Promise.resolve();
+  function send(text, voice) {
+    text = String(text || "").trim(); if (!text) return;
+    userBubble(text, voice); typing(true);
+    busy = busy.then(async () => {
+      try {
+        const [r] = await Promise.all([API.chat(text, voice), sleep(350)]);
+        typing(false); r.messages.forEach((m) => render(m)); applyState(r.state);
+      } catch (e) { typing(false); botBubble({ text: e.code === "SESSION_NOT_FOUND" ? "Your chat session expired. Refresh the page to start again." : "I couldn't reach the kitchen server. Check your connection and try again." }); }
+    });
+  }
+  $("#chat-form").addEventListener("submit", (e) => { e.preventDefault(); const i = $("#chat-text"); const v = i.value; i.value = ""; send(v, false); });
+  msgs.addEventListener("click", async (e) => {
+    const nb = e.target.closest("[data-note-open]"); if (nb) { openNote(nb.dataset.noteOpen); return; }
+    const b = e.target.closest("[data-chat-add]"); if (!b) return;
+    b.disabled = true; b.textContent = "Added";
+    await changeQty(b.dataset.chatAdd, qtyOf(b.dataset.chatAdd) + 1, true);
+  });
+
+  /* order tracker inside the chat */
+  function renderTracker() {
+    const o = ST.order, el = $("#tracker");
+    if (!o) { el.hidden = true; return; }
+    el.hidden = false;
+    el.innerHTML = `<div class="tracker-title"><span>Order <b>${esc(o.no)}</b> · ${o.mode === "dine" ? "Dine-in, table " + esc(o.table || "-") : "Takeaway"}</span><b>${rs(o.bill.total)}</b></div>` +
+      E.STAGES.map((s, i) => `<span class="step ${i < o.stage ? "done" : i === o.stage ? "now" : ""}">${s}</span>`).join("");
+  }
+  let pollT = null;
+  function ensurePolling() {
+    const need = ST.order && !ST.order.paid && ST.order.stage < 4;
+    if (need && !pollT) pollT = setInterval(poll, 1000);
+    if (!need && pollT) { clearInterval(pollT); pollT = null; }
+  }
+  async function poll() {
+    try { const r = await API.progress(); r.messages.forEach((m) => render(m)); applyState(r.state); } catch (e) { /* retry on next tick */ }
+  }
+
+  /* ================= STATE ================= */
+  function applyState(state) {
+    if (!state) return;
+    ST = state;
+    const n = ST.cart.count;
+    $("#cart-count").textContent = n;
+    $("#bar-count").textContent = n + (n === 1 ? " item" : " items");
+    $("#bar-total").textContent = rs(ST.cart.bill.sub);
+    const bar = n > 0 && cur() === "menu";
+    $("#cartbar").hidden = !bar; document.body.classList.toggle("has-bar", bar);
+    $$("[data-ctl]").forEach((el) => (el.innerHTML = ctlHtml(el.dataset.ctl)));
+    $$("[data-flag]").forEach((el) => (el.innerHTML = flagHtml(el.dataset.flag)));
+    if (cur() === "checkout") renderCheckout();
+    renderTracker(); ensurePolling();
+  }
+  async function changeQty(id, qty, announce) {
+    try {
+      const had = qtyOf(id);
+      const r = await API.setQty(id, qty); applyState(r.state);
+      if (announce || (!had && qty > 0)) toast(E.ITEM[id].name + " added to cart");
+    } catch (e) { toast("Couldn't update the cart. Try again."); }
+  }
+
+  /* ================= MENU ================= */
+  const icon = (cat) => `<svg><use href="#c-${cat}"/></svg>`;
+  function renderHomeCats() {
+    $("#cat-grid").innerHTML = E.CATS.map((c) => `<a class="cat-card" href="#menu" data-jump="cat-${c.id}" data-cat="${c.id}"><span class="ci">${icon(c.id)}</span><b>${esc(c.label)}</b><small>${E.MENU.filter((i) => i.cat === c.id).length} dishes</small></a>`).join("");
+  }
+  function ctlHtml(id) {
+    const q = qtyOf(id);
+    return q ? `<span class="stepper"><button type="button" data-dec="${id}" aria-label="One less">−</button><span>${q}</span><button type="button" data-inc="${id}" aria-label="One more">+</button></span>` : `<button class="add" type="button" data-inc="${id}">Add</button>`;
+  }
+  function flagHtml(id) {
+    const l = lineOf(id); if (!l || (!l.note && !l.voice)) return "";
+    return `<span class="note-flag">To chef: ${l.note ? "“" + esc(l.note) + "”" : ""}${l.voice ? (l.note ? " + " : "") + "voice note" : ""}</span>`;
+  }
+  function dishCard(i) {
+    return `<article class="dish" data-cat="${i.cat}"><div class="thumb">${icon(i.cat)}<span class="tag">${markHtml(i.veg)}${i.veg ? "Veg" : "Non-veg"}</span>${i.spice ? `<span class="spice">${E.SPICE[i.spice]}</span>` : ""}</div>
+      <div class="dish-body"><h3>${esc(i.name)}</h3><p>${esc(i.desc)}</p>
+      <div class="dish-foot"><span class="price">${rs(i.price)}</span><span data-ctl="${i.id}">${ctlHtml(i.id)}</span></div>
+      <button class="note-btn" type="button" data-note="${i.id}"><svg><use href="#i-chef"/></svg>Chef note</button><span data-flag="${i.id}">${flagHtml(i.id)}</span></div></article>`;
+  }
+  function renderMenu() {
+    const q = E.norm(ui.search);
+    const filt = (i) => (ui.diet === "all" || (ui.diet === "veg" ? i.veg : !i.veg)) && (!q || E.norm(i.name + " " + i.desc + " " + E.CATNAME[i.cat]).includes(q));
+    let shown = 0;
+    $("#cat-nav").innerHTML = E.CATS.map((c) => `<a href="#menu" data-jump="cat-${c.id}" data-navcat="${c.id}">${esc(c.label)}<span>${E.MENU.filter((i) => i.cat === c.id && filt(i)).length}</span></a>`).join("");
+    $("#menu-body").innerHTML = E.CATS.map((c) => {
+      const items = E.MENU.filter((i) => i.cat === c.id && filt(i)); shown += items.length;
+      if (!items.length) return "";
+      return `<section class="cat-sec" id="cat-${c.id}" data-cat="${c.id}"><div class="cat-title"><span class="ci">${icon(c.id)}</span><div><h2>${esc(c.label)}</h2><p>${esc(c.blurb)}</p></div></div><div class="dish-grid">${items.map(dishCard).join("")}</div></section>`;
+    }).join("");
+    $("#menu-empty").hidden = shown > 0;
+    observeSections();
+  }
+  let io = null;
+  function observeSections() {
+    if (io) io.disconnect();
+    if (!("IntersectionObserver" in window)) return;
+    io = new IntersectionObserver((ents) => {
+      ents.forEach((en) => { if (en.isIntersecting) $$("[data-navcat]").forEach((a) => a.classList.toggle("active", a.dataset.navcat === en.target.dataset.cat)); });
+    }, { rootMargin: "-30% 0px -60% 0px" });
+    $$(".cat-sec").forEach((s) => io.observe(s));
+  }
+  $$(".seg button").forEach((b) => b.addEventListener("click", () => { ui.diet = b.dataset.diet; $$(".seg button").forEach((x) => x.setAttribute("aria-pressed", x === b)); renderMenu(); }));
+  $("#menu-search").addEventListener("input", (e) => { ui.search = e.target.value; renderMenu(); });
+
+  document.addEventListener("click", (e) => {
+    const inc = e.target.closest("[data-inc]"), dec = e.target.closest("[data-dec]"), nt = e.target.closest("[data-note]"), j = e.target.closest("[data-jump]");
+    if (inc) changeQty(inc.dataset.inc, qtyOf(inc.dataset.inc) + 1);
+    if (dec) changeQty(dec.dataset.dec, qtyOf(dec.dataset.dec) - 1);
+    if (nt) openNote(nt.dataset.note);
+    if (j) {
+      e.preventDefault();
+      const go = () => { const el = document.getElementById(j.dataset.jump); if (el) el.scrollIntoView({ behavior: "smooth", block: "start" }); };
+      if (cur() !== "menu") { location.hash = "menu"; setTimeout(go, 120); } else go();
+    }
+  });
+
+  /* ================= CHECKOUT ================= */
+  const coForm = { mode: "dine", table: "5", name: "" };
+  function renderCheckout() {
+    const body = $("#co-body"), c = ST.cart;
+    const nameEl = $("#co-name"); if (nameEl) { coForm.name = nameEl.value; coForm.table = $("#co-table").value; coForm.mode = ($("input[name=mode]:checked") || {}).value || "dine"; }
+    if (!c.lines.length) {
+      body.innerHTML = `<div class="card empty" style="margin-block:28px 80px"><b>Your cart is empty</b><p>${ST.order && !ST.order.paid ? "Order " + esc(ST.order.no) + " is in progress. Follow it in the chat on the home page." : "Add dishes from the menu or ask Masala Mitra in the chat."}</p><div class="row" style="justify-content:center"><a class="btn btn-primary" href="#menu">Browse menu</a><a class="btn btn-ghost" href="#home">Chat with Masala Mitra</a></div></div>`;
+      return;
+    }
+    const b = c.bill, ov = c.orderVoice;
+    body.innerHTML = `<div class="co-grid"><div>
+      <div class="card"><h2>Your order (${c.count} item${c.count > 1 ? "s" : ""})</h2>
+        ${c.lines.map((l) => `<div class="line">${markHtml(l.veg)}<div class="nm"><b>${esc(l.name)}</b><small>${rs(l.price)} each</small></div><div class="amt">${rs(l.amount)}</div>
+          <div class="sub"><span class="stepper"><button type="button" data-dec="${l.id}" aria-label="One less">−</button><span>${l.qty}</span><button type="button" data-inc="${l.id}" aria-label="One more">+</button></span>
+          <button class="note-btn" type="button" data-note="${l.id}"><svg><use href="#i-chef"/></svg>${l.note || l.voice ? "Edit chef note" : "Add chef note"}</button>
+          ${l.note || l.voice ? `<span class="note-flag">${l.note ? "“" + esc(l.note) + "”" : ""}${l.voice ? (l.note ? " + " : "") + "voice note" : ""}</span>` : ""}
+          ${l.voice ? `<audio controls preload="none" src="${esc(API.voiceUrl(l.voice))}"></audio>` : ""}</div></div>`).join("")}
+      </div>
+      <div class="card"><h2>Order details</h2>
+        <div class="opt-row" role="radiogroup" aria-label="Order type"><label class="opt"><input type="radio" name="mode" value="dine" id="mode-dine"><span>Dine-in</span></label><label class="opt"><input type="radio" name="mode" value="take" id="mode-take"><span>Takeaway</span></label></div>
+        <label class="field" id="table-field">Table number<input id="co-table" inputmode="numeric" maxlength="4"></label>
+        <label class="field">Name on the bill<input id="co-name" placeholder="Your name" maxlength="40"></label>
+        <div class="field">Note for the chef (whole order)
+          <div class="row"><button class="btn btn-ghost" type="button" data-note="__order"><svg><use href="#i-chef"/></svg>${c.orderNote || ov ? "Edit note" : "Add note or voice note"}</button></div>
+          ${c.orderNote || ov ? `<span class="note-flag">${c.orderNote ? "“" + esc(c.orderNote) + "”" : ""}${ov ? (c.orderNote ? " + " : "") + "voice note" : ""}</span>` : ""}
+          ${ov ? `<audio controls preload="none" src="${esc(API.voiceUrl(ov))}"></audio>` : ""}
+        </div>
+      </div></div>
+      <aside class="card summary"><h2>Bill summary</h2>
+        <div class="sum"><div><span>Subtotal</span><span>${rs(b.sub)}</span></div><div><span>CGST 2.5%</span><span>${rs(b.cgst)}</span></div><div><span>SGST 2.5%</span><span>${rs(b.sgst)}</span></div>${b.round ? `<div><span>Round off</span><span>${b.round > 0 ? "+" : ""}${b.round.toFixed(2)}</span></div>` : ""}<div class="grand"><span>Total</span><span>${rs(b.total)}</span></div></div>
+        <button class="btn btn-accent btn-lg place" id="place-btn" type="button">Place order · ${rs(b.total)}</button>
+        <p class="fine">After you place the order, Masala Mitra updates you in the chat, then shares the bill and payment options.</p>
+      </aside></div>`;
+    $(`input[name=mode][value=${coForm.mode}]`).checked = true;
+    $("#co-table").value = coForm.table; $("#co-name").value = coForm.name || ST.name || "";
+    const syncT = () => { $("#table-field").hidden = ($("input[name=mode]:checked") || {}).value !== "dine"; };
+    syncT(); $$("input[name=mode]").forEach((r) => r.addEventListener("change", syncT));
+    $("#place-btn").addEventListener("click", placeOrder);
+  }
+  async function placeOrder() {
+    const btn = $("#place-btn"); btn.disabled = true;
+    const details = { mode: ($("input[name=mode]:checked") || {}).value || "dine", table: $("#co-table").value.trim(), name: $("#co-name").value.trim() };
+    if (details.mode === "dine" && !details.table) { toast("Enter your table number"); btn.disabled = false; $("#co-table").focus(); return; }
+    try {
+      const r = await API.order(details);
+      location.hash = "home";
+      await sleep(250);
+      r.messages.forEach((m) => render(m)); applyState(r.state);
+      toast("Order placed");
+    } catch (e) { btn.disabled = false; toast(e.message || "Couldn't place the order. Try again."); }
+  }
+
+  /* ================= KITCHEN ================= */
+  async function renderKitchen() {
+    const body = $("#kitchen-body");
+    let data;
+    try { data = await API.kitchen(); } catch (e) { body.innerHTML = `<div class="card empty" style="margin-block:28px"><b>Can't reach the kitchen server</b><p>Check the backend and press Refresh.</p></div>`; return; }
+    if (!data.orders.length) { body.innerHTML = `<div class="card empty" style="margin-block:28px 80px"><b>No orders yet</b><p>Orders appear here as soon as a guest places one.</p></div>`; return; }
+    const vn = (v) => (v ? `<audio controls preload="none" src="${esc(API.voiceUrl(v))}"></audio>${v.transcript ? `<span class="cnote">Transcript: “${esc(v.transcript)}”</span>` : ""}` : "");
+    body.innerHTML = `<div class="k-grid">${data.orders.map((o) => `<article class="ticket"><div class="ticket-head"><div><b>${esc(o.no)}</b><small>${new Date(o.placedAt).toLocaleTimeString("en-IN", { hour: "2-digit", minute: "2-digit" })} · ${o.mode === "dine" ? "Table " + esc(o.table || "-") : "Takeaway"}${o.customer ? " · " + esc(o.customer) : ""}</small></div><span class="stage-pill ${o.paid ? "paid" : ""}">${esc(o.stageLabel)}</span></div>
+      <ul>${o.items.map((x) => `<li><div><span class="qty">${x.qty}×</span>${markHtml(x.veg)}<span>${esc(x.name)}</span></div>${x.note ? `<span class="cnote">Chef note: “${esc(x.note)}”</span>` : ""}${vn(x.voice)}</li>`).join("")}
+      ${o.note || o.voice ? `<li><div><b>Whole order</b></div>${o.note ? `<span class="cnote">“${esc(o.note)}”</span>` : ""}${vn(o.voice)}</li>` : ""}</ul>
+      <div class="ticket-foot"><span>Total ${rs(o.bill.total)}${o.payment ? " · " + esc(o.payment.method) : ""}</span><span>${o.feedback ? "★".repeat(o.feedback.stars) + " feedback" : ""}</span></div></article>`).join("")}</div>`;
+  }
+  $("#kitchen-refresh").addEventListener("click", renderKitchen);
+  let kT = null;
+
+  /* ================= VOICE ================= */
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  function dictate({ onText, onEnd, onError, continuous }) {
+    if (!SR) { onError && onError("unsupported"); return null; }
+    let r; try { r = new SR(); } catch (e) { onError && onError("unsupported"); return null; }
+    r.lang = "en-IN"; r.interimResults = true; r.continuous = !!continuous;
+    r.onresult = (e) => { let s = ""; for (let i = 0; i < e.results.length; i++) s += e.results[i][0].transcript; onText(s); };
+    r.onerror = (e) => onError && onError(e.error);
+    r.onend = () => onEnd && onEnd();
+    try { r.start(); } catch (e) { onError && onError("start"); return null; }
+    return r;
+  }
+  let chatRec = null;
+  $("#mic-btn").addEventListener("click", () => {
+    const btn = $("#mic-btn"), inp = $("#chat-text");
+    if (chatRec) { chatRec.stop(); return; }
+    let heard = "", failed = false;
+    btn.classList.add("on"); inp.placeholder = "Listening… speak now";
+    const reset = () => { btn.classList.remove("on"); inp.placeholder = "Say hi, or ask for a dish…"; chatRec = null; };
+    chatRec = dictate({
+      onText: (s) => { heard = s; inp.value = s; },
+      onEnd: () => { reset(); if (!failed && heard.trim()) { inp.value = ""; send(heard, true); } },
+      onError: (err) => {
+        failed = true; reset();
+        botBubble({ text: err === "unsupported" ? "Voice input isn't supported in this browser. Please type, or open the app in Chrome or Edge to speak." : err === "no-speech" ? "I didn't catch that. Tap the mic and try again." : err === "network" ? "Voice recognition needs an internet connection. Check your connection and try again." : "The microphone is blocked on this page. If you're in the Claude preview, open the app in Chrome or Edge to talk to me. Otherwise allow microphone access in your browser settings. You can always type." });
+      }
+    });
+  });
+  function speak(s) { if (!ui.tts || !window.speechSynthesis) return; try { const u = new SpeechSynthesisUtterance(s.replace(/₹/g, "rupees ").slice(0, 400)); u.lang = "en-IN"; speechSynthesis.speak(u); } catch (e) {} }
+  $("#tts-btn").addEventListener("click", (e) => { ui.tts = !ui.tts; e.currentTarget.setAttribute("aria-pressed", ui.tts); if (!ui.tts && window.speechSynthesis) speechSynthesis.cancel(); toast(ui.tts ? "Masala Mitra will read replies aloud" : "Read-aloud off"); });
+
+  /* ================= CHEF NOTE MODAL ================= */
+  let noteFor = null, rec = null, draft = null;
+  function openNote(id) {
+    noteFor = id;
+    const isOrder = id === "__order", l = lineOf(id);
+    const note = isOrder ? ST.cart.orderNote : l ? l.note : "";
+    const v = isOrder ? ST.cart.orderVoice : l ? l.voice : null;
+    $("#note-title").textContent = isOrder ? "Note for the chef" : "Chef note · " + E.ITEM[id].name;
+    $("#note-sub").textContent = isOrder ? "Anything the chef should know about the whole order: allergies, spice level, timing." : "Type it or record a voice note. It goes to the chef with this dish." + (l ? "" : " The dish will be added to your cart.");
+    $(".rec-phone").classList.remove("btn-primary");
+    $("#note-text").value = note || ""; draft = v ? { keep: true, url: API.voiceUrl(v) } : null;
+    showDraft(); $("#rec-status").textContent = ""; $("#rec-file").value = "";
+    $("#note-modal").hidden = false; setTimeout(() => $("#note-text").focus(), 50);
+  }
+  function showDraft() { const a = $("#rec-audio"); if (draft) { a.src = draft.url; a.hidden = false; $("#rec-clear").hidden = false; } else { a.removeAttribute("src"); a.hidden = true; $("#rec-clear").hidden = true; } }
+  function closeNote() { stopRec(); $("#note-modal").hidden = true; noteFor = null; }
+  async function startRec() {
+    const st = $("#rec-status"), btn = $("#rec-btn");
+    if (!navigator.mediaDevices || !window.MediaRecorder) { st.textContent = "Recording isn't supported in this browser. Type your note or attach an audio file."; return; }
+    let stream;
+    try { stream = await navigator.mediaDevices.getUserMedia({ audio: true }); }
+    catch (e) {
+      st.textContent = "This page isn't allowed to use the microphone here. Tap “Record with your phone's recorder” below instead, or allow the mic in your browser settings.";
+      $(".rec-phone").classList.add("btn-primary"); $(".rec-phone").focus();
+      return;
+    }
+    const mr = new MediaRecorder(stream), chunks = [], base = $("#note-text").value.trim();
+    let said = "";
+    const done = new Promise((ok) => {
+      mr.ondataavailable = (e) => e.data.size && chunks.push(e.data);
+      mr.onstop = () => { stream.getTracks().forEach((t) => t.stop()); const blob = new Blob(chunks, { type: mr.mimeType || "audio/webm" }); draft = { blob, url: URL.createObjectURL(blob), transcript: said }; showDraft(); st.textContent = said ? "Voice note saved and transcribed." : "Voice note saved."; ok(); };
+    });
+    mr.start();
+    const sr = dictate({ continuous: true, onText: (s) => { said = s.trim(); $("#note-text").value = (base ? base + " " : "") + said; }, onError: () => {} });
+    rec = { mr, sr, done }; btn.classList.add("rec"); btn.querySelector("span").textContent = "Stop recording"; st.textContent = "Recording… speak your note.";
+  }
+  function stopRec() {
+    if (!rec) return Promise.resolve();
+    const r = rec; rec = null;
+    try { if (r.mr.state !== "inactive") r.mr.stop(); } catch (e) {}
+    try { r.sr && r.sr.stop(); } catch (e) {}
+    const b = $("#rec-btn"); b.classList.remove("rec"); b.querySelector("span").textContent = "Record voice note";
+    return r.done;
+  }
+  $("#rec-btn").addEventListener("click", () => (rec ? stopRec() : startRec()));
+  $("#rec-clear").addEventListener("click", () => { draft = null; showDraft(); });
+  $("#rec-file").addEventListener("change", (e) => { const f = e.target.files[0]; if (!f) return; draft = { blob: f, url: URL.createObjectURL(f), transcript: "" }; showDraft(); $("#rec-status").textContent = "Attached " + f.name; });
+  $("#note-cancel").addEventListener("click", closeNote);
+  $("#note-x").addEventListener("click", closeNote);
+  $("#note-modal").addEventListener("click", (e) => { if (e.target.id === "note-modal") closeNote(); });
+  $("#note-save").addEventListener("click", async () => {
+    const btn = $("#note-save"); btn.disabled = true;
+    await stopRec();
+    const id = noteFor, txt = $("#note-text").value.trim();
+    try {
+      const r = await API.note(id, txt, draft ? (draft.blob ? { blob: draft.blob, transcript: draft.transcript } : { keep: true }) : null);
+      applyState(r.state); closeNote();
+      toast(txt || draft ? "Note sent to the chef" : "Note cleared");
+    } catch (e) { toast("Couldn't save the note. Try again."); }
+    btn.disabled = false;
+  });
+  document.addEventListener("keydown", (e) => { if (e.key === "Escape") { if (!$("#note-modal").hidden) closeNote(); else closeDrawer(); } });
+
+  /* ================= ROUTING ================= */
+  const VIEWS = ["home", "menu", "checkout", "kitchen"];
+  const cur = () => { const h = location.hash.slice(1); return VIEWS.includes(h) ? h : "home"; };
+  function route() {
+    const v = cur();
+    VIEWS.forEach((x) => ($("#view-" + x).hidden = x !== v));
+    $$("[data-nav]").forEach((a) => { if (a.dataset.nav === v) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current"); });
+    closeDrawer();
+    if (v === "home") $("#home-slot").appendChild($("#chat"));
+    $("#fab").hidden = v === "home";
+    if (v === "checkout") renderCheckout();
+    clearInterval(kT); if (v === "kitchen") { renderKitchen(); kT = setInterval(renderKitchen, 4000); }
+    applyState(ST);
+    window.scrollTo(0, 0); scrollDown();
+  }
+  function openDrawer() { $("#drawer-slot").appendChild($("#chat")); $("#drawer").hidden = false; $("#scrim").hidden = false; scrollDown(); setTimeout(() => $("#chat-text").focus(), 50); }
+  function closeDrawer() { if ($("#drawer").hidden) return; $("#drawer").hidden = true; $("#scrim").hidden = true; if (cur() === "home") $("#home-slot").appendChild($("#chat")); }
+  $("#fab").addEventListener("click", openDrawer);
+  $("#scrim").addEventListener("click", closeDrawer);
+  $("#drawer-close").addEventListener("click", closeDrawer);
+  $("#focus-chat").addEventListener("click", () => { $("#chat").scrollIntoView({ behavior: "smooth", block: "center" }); $("#chat-text").focus(); });
+  window.addEventListener("hashchange", route);
+  let tt; function toast(s) { const t = $("#toast"); t.textContent = s; t.hidden = false; clearTimeout(tt); tt = setTimeout(() => (t.hidden = true), 2000); }
+
+  /* ================= BOOT ================= */
+  renderHomeCats(); renderMenu(); route();
+  API = await window.NashAPI.connect();
+  $("#conn-dot").className = "dot " + API.mode;
+  const setLabel = () => {
+    const ai = API.mode === "live" ? !!API.llm : !!window.NashAPI.AI.key();
+    $("#conn-label").textContent = API.mode === "live" ? (ai ? "Online · Gemini + our menu" : "Online · answers from our menu") : (ai ? "Gemini + our menu · in your browser" : "Answers from our menu · runs in your browser");
+    $("#ai-btn").setAttribute("aria-pressed", ai);
+  };
+  setLabel();
+  /* AI settings (Google Gemini) */
+  $("#ai-btn").addEventListener("click", () => {
+    const live = API.mode === "live";
+    $("#ai-form").hidden = live; $("#ai-actions").hidden = live;
+    const st = $("#ai-status"); st.className = "status";
+    if (live) st.textContent = API.llm ? `Connected on the server: ${API.llm.model}. Every menu answer is written by Gemini from our menu.` : "Not set up on this server. The owner adds GEMINI_API_KEY to the backend settings. Until then, the built-in answers are used.";
+    else { $("#ai-key").value = window.NashAPI.AI.key(); $("#ai-model").value = window.NashAPI.AI.model(); st.textContent = window.NashAPI.AI.key() ? "A key is saved in this browser." : ""; }
+    $("#ai-modal").hidden = false;
+  });
+  const closeAI = () => ($("#ai-modal").hidden = true);
+  $("#ai-x").addEventListener("click", closeAI);
+  $("#ai-modal").addEventListener("click", (e) => { if (e.target.id === "ai-modal") closeAI(); });
+  $("#ai-remove").addEventListener("click", () => { window.NashAPI.AI.save("", null); $("#ai-key").value = ""; const st = $("#ai-status"); st.className = "status"; st.textContent = "Key removed. Built-in answers are used."; setLabel(); });
+  $("#ai-save").addEventListener("click", async () => {
+    const key = $("#ai-key").value.trim(), st = $("#ai-status"), btn = $("#ai-save");
+    if (!key) { st.className = "status err"; st.textContent = "Paste your Gemini key first."; return; }
+    btn.disabled = true; st.className = "status"; st.textContent = "Checking the key with Google…";
+    try {
+      const models = await window.NashLLM.testKey(key);
+      window.NashAPI.AI.save(key, $("#ai-model").value);
+      st.className = "status ok"; st.textContent = `Connected. ${models.length} Gemini models available. Ask Masala Mitra anything.`;
+      setLabel(); setTimeout(closeAI, 1400);
+    } catch (e) {
+      st.className = "status err";
+      st.textContent = e instanceof TypeError ? "This page can't reach Google (the Claude preview blocks outside connections). Download the app file and open it in Chrome or Edge." : "Google rejected the key: " + e.message;
+    }
+    btn.disabled = false;
+  });
+  try {
+    const r = await API.start();
+    if (r.resumed) { r.transcript.forEach((m, i, a) => render(m, { replay: i < a.length - 1 || m.role !== "bot" })); }
+    else r.messages.forEach((m) => render(m));
+    applyState(r.state);
+  } catch (e) { botBubble({ text: "I couldn't start the chat. Refresh the page to try again." }); }
+  window.__nash = { get state() { return ST; }, get mode() { return API.mode; } };
+})();
+
+</script>
+
+</body></html>

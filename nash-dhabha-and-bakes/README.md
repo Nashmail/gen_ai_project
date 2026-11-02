@@ -30,6 +30,8 @@ A restaurant ordering website with **Masala Mitra**, a voice-enabled, retrieval-
 | `shared/` | `engine.js` (retrieval, dialogue, orders) and `llm.js` (Gemini), shared by backend and browser |
 | `scenarios/` | Test runners, all stored results and `REPORT.md` |
 | `video/` | The LinkedIn video and how it was made |
+| `standalone-app/` | The whole app as one HTML file: open it in Chrome, no server needed |
+| `archive-v1-single-file/` | The first single-file version, kept for comparison |
 
 ## Run it locally
 
