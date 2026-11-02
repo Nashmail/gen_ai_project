@@ -1,0 +1,12 @@
+node_modules/
+backend/data/db.json
+backend/data/db.json.tmp
+backend/data/voice/
+scenarios/results/latest/
+scenarios/results/ci/
+dist/
+.DS_Store
+*.log
+video/build/
+backend/.env
+.env

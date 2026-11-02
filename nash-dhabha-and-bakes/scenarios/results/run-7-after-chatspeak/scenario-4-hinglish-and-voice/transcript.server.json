@@ -1,0 +1,379 @@
+{
+  "sessionId": "2c93a1ca-4bd4-41f9-9a3b-a3ac05fc9af3",
+  "state": {
+    "name": "Arjun",
+    "diet": "veg",
+    "awaiting": null,
+    "cart": {
+      "lines": [],
+      "count": 0,
+      "bill": {
+        "sub": 0,
+        "cgst": 0,
+        "sgst": 0,
+        "round": 0,
+        "total": 0
+      },
+      "orderNote": "",
+      "orderVoice": null
+    },
+    "order": {
+      "no": "NDB-4652",
+      "customer": "Arjun",
+      "mode": "dine",
+      "table": "3",
+      "items": [
+        {
+          "id": "masala-chai",
+          "name": "Masala Chai",
+          "cat": "chai",
+          "veg": true,
+          "price": 40,
+          "qty": 2,
+          "amount": 80,
+          "note": "less sugar and extra ginger",
+          "voice": {
+            "url": "/voice/1f0b83ef-2163-46e4-978c-64a79d69b7fc.webm",
+            "transcript": "less sugar and extra ginger"
+          }
+        },
+        {
+          "id": "veg-puff",
+          "name": "Veg Puff",
+          "cat": "bakes",
+          "veg": true,
+          "price": 40,
+          "qty": 1,
+          "amount": 40,
+          "note": "",
+          "voice": null
+        }
+      ],
+      "bill": {
+        "sub": 120,
+        "cgst": 3,
+        "sgst": 3,
+        "round": 0,
+        "total": 126
+      },
+      "note": "",
+      "voice": null,
+      "placedAt": 1793602028401,
+      "stage": 7,
+      "paid": true,
+      "payment": {
+        "method": "UPI",
+        "ref": "TXN02042272",
+        "at": 1793602042272
+      },
+      "feedback": {
+        "stars": 5,
+        "text": "bahut badiya tha",
+        "at": 1793602042953
+      }
+    }
+  },
+  "transcript": [
+    {
+      "at": 1793602019910,
+      "role": "bot",
+      "text": "Namaste! I'm **Masala Mitra**, your table-side friend at NASH Dhabha & Bakes.\nSay **hi** to start. I'll ask your mood and suggest dishes from our menu. You can type or tap the mic to speak.",
+      "chips": [
+        "Hi",
+        "What are your timings?",
+        "Veg biryani"
+      ]
+    },
+    {
+      "at": 1793602020208,
+      "role": "user",
+      "text": "namaste",
+      "voice": false
+    },
+    {
+      "at": 1793602020208,
+      "role": "bot",
+      "text": "Hi! Welcome to **NASH Dhabha & Bakes**. May I know your name?"
+    },
+    {
+      "at": 1793602020893,
+      "role": "user",
+      "text": "mera naam Arjun hai",
+      "voice": false
+    },
+    {
+      "at": 1793602020894,
+      "role": "bot",
+      "text": "Nice to meet you, **Arjun**! What is your mood today? Tell me in chat or tap the mic and say it.",
+      "chips": [
+        "Happy",
+        "Hungry",
+        "Tired",
+        "Stressed",
+        "Sad",
+        "Adventurous"
+      ]
+    },
+    {
+      "at": 1793602021578,
+      "role": "user",
+      "text": "mood accha nahi hai",
+      "voice": false
+    },
+    {
+      "at": 1793602021579,
+      "role": "bot",
+      "text": "Sorry you're feeling low. Some comfort food should help. You sound **sad**, Arjun. From our menu:\nPrefer veg only? Just say “veg”.",
+      "items": [
+        {
+          "id": "gulab-jamun-2-pcs",
+          "name": "Gulab Jamun (2 pcs)",
+          "price": 90,
+          "veg": true,
+          "cat": "Desserts",
+          "spice": "",
+          "desc": "Warm khoya dumplings in rose syrup.",
+          "add": true
+        },
+        {
+          "id": "sweet-lassi",
+          "name": "Sweet Lassi",
+          "price": 100,
+          "veg": true,
+          "cat": "Juices & Lassi",
+          "spice": "",
+          "desc": "Punjabi lassi topped with malai.",
+          "add": true
+        },
+        {
+          "id": "dal-makhani",
+          "name": "Dal Makhani",
+          "price": 220,
+          "veg": true,
+          "cat": "Gravies & Curries",
+          "spice": "Mild",
+          "desc": "Black lentils slow-cooked overnight with butter and cream.",
+          "add": true
+        }
+      ],
+      "source": "Menu, matched to your mood"
+    },
+    {
+      "at": 1793602021579,
+      "role": "bot",
+      "text": "Can I add **Gulab Jamun (2 pcs)** (₹90) to your cart?",
+      "chips": [
+        "Yes, add it",
+        "No, show another",
+        "Direct me to menu"
+      ]
+    },
+    {
+      "at": 1793602022590,
+      "role": "user",
+      "text": "I am very happy today",
+      "voice": true
+    },
+    {
+      "at": 1793602022591,
+      "role": "bot",
+      "text": "Love that energy! Let's celebrate with something rich. You sound **happy**, Arjun. From our menu:\nPrefer veg only? Just say “veg”.",
+      "items": [
+        {
+          "id": "shahi-tukda",
+          "name": "Shahi Tukda",
+          "price": 140,
+          "veg": true,
+          "cat": "Desserts",
+          "spice": "",
+          "desc": "Fried bread soaked in rabri with nuts.",
+          "add": true
+        },
+        {
+          "id": "paneer-butter-masala",
+          "name": "Paneer Butter Masala",
+          "price": 260,
+          "veg": true,
+          "cat": "Gravies & Curries",
+          "spice": "Mild",
+          "desc": "Paneer in a creamy tomato-butter gravy.",
+          "add": true
+        },
+        {
+          "id": "sweet-lassi",
+          "name": "Sweet Lassi",
+          "price": 100,
+          "veg": true,
+          "cat": "Juices & Lassi",
+          "spice": "",
+          "desc": "Punjabi lassi topped with malai.",
+          "add": true
+        }
+      ],
+      "source": "Menu, matched to your mood"
+    },
+    {
+      "at": 1793602022591,
+      "role": "bot",
+      "text": "Can I add **Shahi Tukda** (₹140) to your cart?",
+      "chips": [
+        "Yes, add it",
+        "No, show another",
+        "Direct me to menu"
+      ]
+    },
+    {
+      "at": 1793602023277,
+      "role": "user",
+      "text": "2 masala chai aur 1 veg puff",
+      "voice": false
+    },
+    {
+      "at": 1793602023279,
+      "role": "bot",
+      "text": "Added to your cart: **2 × Masala Chai**, **1 × Veg Puff**. Cart total: **₹120**.",
+      "chips": [
+        "Show my cart",
+        "Checkout",
+        "Direct me to menu"
+      ],
+      "source": "Menu",
+      "cartChanged": true
+    },
+    {
+      "at": 1793602027017,
+      "role": "event",
+      "type": "chef-note",
+      "id": "masala-chai",
+      "note": "less sugar and extra ginger",
+      "voice": "/voice/1f0b83ef-2163-46e4-978c-64a79d69b7fc.webm",
+      "transcript": "less sugar and extra ginger"
+    },
+    {
+      "at": 1793602028401,
+      "role": "event",
+      "type": "order-placed",
+      "orderNo": "NDB-4652",
+      "total": 126
+    },
+    {
+      "at": 1793602028401,
+      "role": "bot",
+      "text": "Order **NDB-4652** placed, Arjun! 3 items, dine-in at table 3.",
+      "items": [
+        {
+          "id": "masala-chai",
+          "name": "Masala Chai",
+          "price": 80,
+          "veg": true,
+          "cat": "Chai & Coffee",
+          "spice": "",
+          "desc": "Kadak tea with ginger and cardamom.",
+          "qty": 2
+        },
+        {
+          "id": "veg-puff",
+          "name": "Veg Puff",
+          "price": 40,
+          "veg": true,
+          "cat": "Bakes",
+          "spice": "Mild",
+          "desc": "Flaky puff with spiced vegetable filling.",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "at": 1793602030666,
+      "role": "bot",
+      "text": "Your order has been sent to the chef. The chef received these notes:\n• Masala Chai: “less sugar and extra ginger” + voice note"
+    },
+    {
+      "at": 1793602033666,
+      "role": "bot",
+      "text": "Your order is getting ready: drinks are being made fresh, sweets will be plated last so they're served at the right temperature. About 15–25 minutes in the kitchen."
+    },
+    {
+      "at": 1793602038667,
+      "role": "bot",
+      "text": "Your order is ready and on its way to table 3. Enjoy your meal!"
+    },
+    {
+      "at": 1793602041666,
+      "role": "bot",
+      "text": "Here is your bill:",
+      "bill": {
+        "no": "NDB-4652",
+        "at": 1793602028401,
+        "mode": "dine",
+        "table": "3",
+        "customer": "Arjun",
+        "lines": [
+          {
+            "name": "Masala Chai",
+            "qty": 2,
+            "amount": 80
+          },
+          {
+            "name": "Veg Puff",
+            "qty": 1,
+            "amount": 40
+          }
+        ],
+        "sub": 120,
+        "cgst": 3,
+        "sgst": 3,
+        "round": 0,
+        "total": 126
+      }
+    },
+    {
+      "at": 1793602041666,
+      "role": "bot",
+      "text": "How would you like to pay **₹126**?",
+      "chips": [
+        "UPI",
+        "Card",
+        "Cash"
+      ]
+    },
+    {
+      "at": 1793602042272,
+      "role": "user",
+      "text": "bill ka payment UPI se karunga",
+      "voice": false
+    },
+    {
+      "at": 1793602042272,
+      "role": "bot",
+      "text": "Payment of **₹126** by **UPI** received. Reference **TXN02042272**. Thank you!",
+      "source": "Demo payment: no real money is charged"
+    },
+    {
+      "at": 1793602042272,
+      "role": "bot",
+      "text": "How was the food, Arjun? Rate it or tell me in your own words.",
+      "chips": [
+        "★★★★★ Loved it",
+        "★★★★ Good",
+        "★★★ Okay",
+        "★★ Not great",
+        "★ Bad"
+      ]
+    },
+    {
+      "at": 1793602042951,
+      "role": "user",
+      "text": "bahut badiya tha",
+      "voice": false
+    },
+    {
+      "at": 1793602042953,
+      "role": "bot",
+      "text": "Thank you, Arjun! So happy you enjoyed it. I've passed your 5-star review to the chef.\nVisit NASH Dhabha & Bakes again soon!",
+      "chips": [
+        "Start a new order"
+      ]
+    }
+  ]
+}

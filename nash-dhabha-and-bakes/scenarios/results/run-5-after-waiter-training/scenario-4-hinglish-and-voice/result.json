@@ -1,0 +1,266 @@
+{
+  "id": 4,
+  "title": "Hinglish input and voice (speech-to-text chat + recorded chef voice note)",
+  "baseUrl": "http://localhost:4000",
+  "mode": "live",
+  "sessionId": "51ee30f5-dd5e-4deb-9cd6-684af4317fc1",
+  "ranAt": "2026-11-02T06:29:33.964Z",
+  "passed": 11,
+  "total": 11,
+  "consoleErrors": [],
+  "finalScreenshot": "05-final-chat.png",
+  "steps": [
+    {
+      "step": 1,
+      "input": "namaste",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Hi! Welcome to NASH Dhabha & Bakes. May I know your name?"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /may i know your name/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T06:29:08.823Z"
+    },
+    {
+      "step": 2,
+      "input": "mera naam Arjun hai",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Nice to meet you, Arjun! What is your mood today? Tell me in chat or tap the mic and say it."
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /arjun/i",
+          "ok": true
+        },
+        {
+          "check": "reply does NOT match /mera/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T06:29:09.526Z"
+    },
+    {
+      "step": 3,
+      "input": "mood accha nahi hai",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Sorry you're feeling low. Some comfort food should help. You sound sad, Arjun. From our menu:\nPrefer veg only? Just say “veg”.\nGulab Jamun (2 pcs)\nDesserts\n₹90\nAdd\nSweet Lassi\nJuices & Lassi\n₹100\nAdd\nDal Makhani\nGravies & Curries · Mild\n₹220\nAdd\nSource: Menu, matched to your mood"
+        },
+        {
+          "text": "Can I add Gulab Jamun (2 pcs) (₹90) to your cart?"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /sad|low|comfort/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T06:29:10.210Z"
+    },
+    {
+      "step": 4,
+      "input": "I am very happy today",
+      "kind": "voice",
+      "outputs": [
+        {
+          "text": "Love that energy! Let's celebrate with something rich. You sound happy, Arjun. From our menu:\nPrefer veg only? Just say “veg”.\nShahi Tukda\nDesserts\n₹140\nAdd\nPaneer Butter Masala\nGravies & Curries · Mild\n₹260\nAdd\nSweet Lassi\nJuices & Lassi\n₹100\nAdd\nSource: Menu, matched to your mood"
+        },
+        {
+          "text": "Can I add Shahi Tukda (₹140) to your cart?"
+        }
+      ],
+      "checks": [
+        {
+          "check": "user bubble is labelled as transcribed voice",
+          "ok": true,
+          "detail": "VOICE · TRANSCRIBED\nI am very happy today"
+        },
+        {
+          "check": "reply matches /happy/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T06:29:10.895Z"
+    },
+    {
+      "step": 5,
+      "input": "2 masala chai aur 1 veg puff",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Added to your cart: 2 × Masala Chai, 1 × Veg Puff. Cart total: ₹120.\nSource: Menu"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /2 × masala chai/i",
+          "ok": true
+        },
+        {
+          "check": "reply matches /1 × veg puff/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T06:29:11.897Z"
+    },
+    {
+      "step": 6,
+      "input": "Voice chef note on masala-chai: (spoken) \"less sugar and extra ginger\"",
+      "kind": "chef-note (voice)",
+      "outputs": [
+        {
+          "text": "Menu card note flag: To chef: “less sugar and extra ginger” + voice note"
+        }
+      ],
+      "checks": [
+        {
+          "check": "recorder produced an audio clip",
+          "ok": true,
+          "detail": "Voice note saved and transcribed."
+        },
+        {
+          "check": "note shows on the dish card",
+          "ok": true,
+          "detail": "To chef: “less sugar and extra ginger” + voice note"
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T06:29:12.593Z",
+      "screenshot": "01-chef-note.png"
+    },
+    {
+      "step": 7,
+      "input": "Checkout: dine-in, table 3",
+      "kind": "checkout + place order",
+      "outputs": [
+        {
+          "text": "Order NDB-9786 placed, Arjun! 3 items, dine-in at table 3.\n2 × Masala Chai\nChai & Coffee\n₹80\n1 × Veg Puff\nBakes · Mild\n₹40"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /placed/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T06:29:16.415Z",
+      "screenshot": "02-checkout.png"
+    },
+    {
+      "step": 8,
+      "input": "(waiting for kitchen updates, bill and payment prompt)",
+      "kind": "order lifecycle (automatic)",
+      "outputs": [
+        {
+          "text": "Order NDB-9786 placed, Arjun! 3 items, dine-in at table 3.\n2 × Masala Chai\nChai & Coffee\n₹80\n1 × Veg Puff\nBakes · Mild\n₹40"
+        },
+        {
+          "text": "Your order has been sent to the chef. The chef received these notes:\n• Masala Chai: “less sugar and extra ginger” + voice note"
+        },
+        {
+          "text": "Your order is getting ready: drinks are being made fresh, sweets will be plated last so they're served at the right temperature. About 15–25 minutes in the kitchen."
+        },
+        {
+          "text": "Your order is ready and on its way to table 3. Enjoy your meal!"
+        },
+        {
+          "text": "Here is your bill:\nNASH DHABHA & BAKES\nBill NDB-9786 · 2/11/2026 06:29 am\nDine-in · Table 3 · Arjun\n2 × Masala Chai\t₹80\n1 × Veg Puff\t₹40\nSubtotal\t₹120\nCGST 2.5%\t₹3\nSGST 2.5%\t₹3\nTotal\t₹126"
+        },
+        {
+          "text": "How would you like to pay ₹126?"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /voice note/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T06:29:17.629Z",
+      "elapsedMs": 13193,
+      "screenshot": "03-bill.png"
+    },
+    {
+      "step": 9,
+      "input": "bill ka payment UPI se karunga",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Payment of ₹126 by UPI received. Reference TXN00970922. Thank you!\nSource: Demo payment: no real money is charged"
+        },
+        {
+          "text": "How was the food, Arjun? Rate it or tell me in your own words."
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /by upi received/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T06:29:30.898Z"
+    },
+    {
+      "step": 10,
+      "input": "bahut badiya tha",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Thank you, Arjun! So happy you enjoyed it. I've passed your 5-star review to the chef.\nVisit NASH Dhabha & Bakes again soon!"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /so happy you enjoyed/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T06:29:31.591Z",
+      "note": "Hindi for \"it was very good\": should count as positive."
+    },
+    {
+      "step": 11,
+      "input": "Open Kitchen page",
+      "kind": "kitchen display",
+      "outputs": [
+        {
+          "text": "NDB-978606:29 am · Table 3 · ArjunDone 2×Masala ChaiChef note: “less sugar and extra ginger”Transcript: “less sugar and extra ginger”1×Veg Puff Total ₹126 · UPI★★★★★ feedbackNDB-642006:28 am · Takeaway · Priya SharmaDone 1×Paneer Butter Masala Whole order“Jain preparation please, no onion or garlic” Total ₹273 · Cash★★ feedbackNDB-224406:28 am · Table 7 · RaviDone 1×Masala Chai2×Butter NaanChef note: “Extra butter, well done please”1×Dal Makhani Total ₹399 · UPI★★★★★ feedbackNDB-869106:27 am · TakeawaySent to chef 1×Veg Puff Whole order“please pack it separately”Transcript: “please pack it sep"
+        }
+      ],
+      "checks": [
+        {
+          "check": "voice note audio player present for the chef",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "reply matches /less sugar and extra ginger/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T06:29:32.276Z",
+      "screenshot": "04-kitchen.png"
+    }
+  ]
+}

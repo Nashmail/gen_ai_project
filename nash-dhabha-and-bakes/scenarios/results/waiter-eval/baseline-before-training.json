@@ -1,0 +1,546 @@
+{
+  "label": "baseline-before-training",
+  "ranAt": "2026-11-02T06:21:32.920Z",
+  "passed": 17,
+  "total": 50,
+  "accuracy": "34%",
+  "rows": [
+    {
+      "question": "dry non veg",
+      "expected": "Only dry non-veg dishes (starters/kebabs), no curries",
+      "pass": false,
+      "reply": "From our menu:\nCan I add Mutton Rogan Josh (₹420) to your cart?",
+      "dishes": [
+        "Mutton Rogan Josh (non-veg, Gravies & Curries, ₹420, Medium)",
+        "Egg Biryani (non-veg, Biryani, ₹230, Medium)",
+        "Egg Curry (non-veg, Gravies & Curries, ₹210, Medium)",
+        "Chicken Puff (non-veg, Bakes, ₹70, Mild)"
+      ]
+    },
+    {
+      "question": "dry veg starters",
+      "expected": "Dry veg starters",
+      "pass": true,
+      "reply": "From our menu:\nCan I add Paneer Tikka (₹250) to your cart?",
+      "dishes": [
+        "Paneer Tikka (veg, Starters, ₹250, Medium)",
+        "Gobi 65 (veg, Starters, ₹190, Medium)",
+        "Crispy Corn (veg, Starters, ₹180, Mild)",
+        "Hara Bhara Kebab (veg, Starters, ₹200, Mild)"
+      ]
+    },
+    {
+      "question": "something spicy and veg",
+      "expected": "Veg dishes that are medium or hot",
+      "pass": true,
+      "reply": "From our menu:\nCan I add Mix Veg Kolhapuri (₹210) to your cart?",
+      "dishes": [
+        "Mix Veg Kolhapuri (veg, Gravies & Curries, ₹210, Hot)",
+        "Kadai Paneer (veg, Gravies & Curries, ₹260, Medium)",
+        "Gobi 65 (veg, Starters, ₹190, Medium)",
+        "Paneer Tikka (veg, Starters, ₹250, Medium)"
+      ]
+    },
+    {
+      "question": "non veg but not spicy",
+      "expected": "Non-veg, mild or not spicy",
+      "pass": false,
+      "reply": "From our menu:\nCan I add Chicken 65 (₹260) to your cart?",
+      "dishes": [
+        "Chicken 65 (non-veg, Starters, ₹260, Hot)",
+        "Chicken Chettinad (non-veg, Gravies & Curries, ₹320, Hot)",
+        "Prawn Biryani (non-veg, Biryani, ₹420, Medium)",
+        "Keema Naan (non-veg, Breads, ₹150, Medium)"
+      ]
+    },
+    {
+      "question": "mild chicken dish",
+      "expected": "Chicken, mild or not spicy",
+      "pass": false,
+      "reply": "From our menu:\nCan I add Chicken Puff (₹70) to your cart?",
+      "dishes": [
+        "Chicken Puff (non-veg, Bakes, ₹70, Mild)",
+        "Chicken Fried Rice (non-veg, Rice, ₹210, Mild)",
+        "Butter Chicken (non-veg, Gravies & Curries, ₹320, Mild)",
+        "Chicken 65 (non-veg, Starters, ₹260, Hot)"
+      ]
+    },
+    {
+      "question": "cheapest dessert",
+      "expected": "Cheapest dessert first",
+      "pass": false,
+      "reply": "From our menu:\nCan I add Rice Kheer (₹110) to your cart?",
+      "dishes": [
+        "Rice Kheer (veg, Desserts, ₹110)",
+        "Gajar Halwa (veg, Desserts, ₹130)",
+        "Shahi Tukda (veg, Desserts, ₹140)",
+        "Jalebi with Rabri (veg, Desserts, ₹140)"
+      ]
+    },
+    {
+      "question": "biryani under 250",
+      "expected": "Biryani priced ₹250 or less",
+      "pass": false,
+      "reply": "From our menu:\nCan I add Egg Biryani (₹230) to your cart?",
+      "dishes": [
+        "Egg Biryani (non-veg, Biryani, ₹230, Medium)",
+        "Paneer Tikka Biryani (veg, Biryani, ₹280, Medium)",
+        "Veg Dum Biryani (veg, Biryani, ₹240, Mild)",
+        "Prawn Biryani (non-veg, Biryani, ₹420, Medium)"
+      ]
+    },
+    {
+      "question": "veg biryani options",
+      "expected": "Only veg biryanis",
+      "pass": false,
+      "reply": "From our menu:\nCan I add Veg Dum Biryani (₹240) to your cart?",
+      "dishes": [
+        "Veg Dum Biryani (veg, Biryani, ₹240, Mild)",
+        "Paneer Tikka Biryani (veg, Biryani, ₹280, Medium)",
+        "Mushroom Biryani (veg, Biryani, ₹260, Medium)",
+        "Veg Puff (veg, Bakes, ₹40, Mild)"
+      ]
+    },
+    {
+      "question": "do you have fish?",
+      "expected": "Yes + both fish dishes",
+      "pass": false,
+      "reply": "From our menu:\nCan I add Kerala Fish Curry (₹360) to your cart?",
+      "dishes": [
+        "Kerala Fish Curry (non-veg, Gravies & Curries, ₹360, Medium)",
+        "Amritsari Fish (non-veg, Starters, ₹330, Medium)"
+      ]
+    },
+    {
+      "question": "do you have pizza?",
+      "expected": "Says we don't have it, no dishes pushed",
+      "pass": true,
+      "reply": "I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood.",
+      "dishes": []
+    },
+    {
+      "question": "chicken gravy",
+      "expected": "Chicken curries only",
+      "pass": false,
+      "reply": "From our menu:\nCan I add Butter Chicken (₹320) to your cart?",
+      "dishes": [
+        "Butter Chicken (non-veg, Gravies & Curries, ₹320, Mild)",
+        "Chicken Chettinad (non-veg, Gravies & Curries, ₹320, Hot)",
+        "Egg Curry (non-veg, Gravies & Curries, ₹210, Medium)",
+        "Chicken 65 (non-veg, Starters, ₹260, Hot)"
+      ]
+    },
+    {
+      "question": "mutton dishes",
+      "expected": "Mutton dishes only",
+      "pass": true,
+      "reply": "From our menu:\nCan I add Hyderabadi Mutton Biryani (₹380) to your cart?",
+      "dishes": [
+        "Hyderabadi Mutton Biryani (non-veg, Biryani, ₹380, Medium)",
+        "Mutton Seekh Kebab (non-veg, Starters, ₹340, Medium)",
+        "Mutton Rogan Josh (non-veg, Gravies & Curries, ₹420, Medium)",
+        "Keema Naan (non-veg, Breads, ₹150, Medium)"
+      ]
+    },
+    {
+      "question": "something cold to drink",
+      "expected": "Cold drinks only",
+      "pass": true,
+      "reply": "From our menu:\nCan I add Sweet Lassi (₹100) to your cart?",
+      "dishes": [
+        "Sweet Lassi (veg, Juices & Lassi, ₹100)",
+        "Mango Lassi (veg, Juices & Lassi, ₹130)",
+        "Pineapple Juice (veg, Juices & Lassi, ₹110)",
+        "Watermelon Juice (veg, Juices & Lassi, ₹100)"
+      ]
+    },
+    {
+      "question": "hot drinks",
+      "expected": "Hot drinks only",
+      "pass": false,
+      "reply": "It's hot out there. Something cool first. You sound overheated. From our menu:\nPrefer veg only? Just say “veg”.\nCan I add Watermelon Juice (₹100) to your cart?",
+      "dishes": [
+        "Watermelon Juice (veg, Juices & Lassi, ₹100)",
+        "Mango Ice Cream (veg, Ice Cream & Kulfi, ₹120)",
+        "Lemon Rice (veg, Rice, ₹130, Mild)"
+      ]
+    },
+    {
+      "question": "eggless cake or pastry",
+      "expected": "Eggless cakes/pastries only",
+      "pass": true,
+      "reply": "Chocolate Truffle Pastry: Eggless dark chocolate truffle pastry. It is veg, not spicy, ₹120.\nCan I add Chocolate Truffle Pastry (₹120) to your cart?",
+      "dishes": [
+        "Chocolate Truffle Pastry (veg, Bakes, ₹120)"
+      ]
+    },
+    {
+      "question": "what goes with butter chicken",
+      "expected": "Breads or rice",
+      "pass": false,
+      "reply": "From our menu:\nCan I add Butter Chicken (₹320) to your cart?",
+      "dishes": [
+        "Butter Chicken (non-veg, Gravies & Curries, ₹320, Mild)",
+        "Paneer Butter Masala (veg, Gravies & Curries, ₹260, Mild)",
+        "Butter Naan (veg, Breads, ₹60)",
+        "Chicken Puff (non-veg, Bakes, ₹70, Mild)"
+      ]
+    },
+    {
+      "question": "what goes well with biryani",
+      "expected": "Raita-style drinks: chaas or lassi",
+      "pass": false,
+      "reply": "From our menu:\nCan I add Egg Biryani (₹230) to your cart?",
+      "dishes": [
+        "Egg Biryani (non-veg, Biryani, ₹230, Medium)",
+        "Paneer Tikka Biryani (veg, Biryani, ₹280, Medium)",
+        "Veg Dum Biryani (veg, Biryani, ₹240, Mild)",
+        "Prawn Biryani (non-veg, Biryani, ₹420, Medium)"
+      ]
+    },
+    {
+      "question": "is butter chicken spicy",
+      "expected": "Says it's mild",
+      "pass": false,
+      "reply": "Chicken 65: Deep-fried spicy chicken with curry leaves. It is non-veg, hot spicy, ₹260.\nCan I add Chicken 65 (₹260) to your cart?",
+      "dishes": [
+        "Chicken 65 (non-veg, Starters, ₹260, Hot)"
+      ]
+    },
+    {
+      "question": "is egg curry veg",
+      "expected": "Says it's non-veg",
+      "pass": false,
+      "reply": "Chole Masala: Punjabi chickpea curry, dark and tangy. It is veg, medium spicy, ₹200.\nCan I add Chole Masala (₹200) to your cart?",
+      "dishes": [
+        "Chole Masala (veg, Gravies & Curries, ₹200, Medium)"
+      ]
+    },
+    {
+      "question": "how much is paneer tikka",
+      "expected": "Gives ₹250",
+      "pass": false,
+      "reply": "Prices from our menu:\nCan I add Paneer Tikka Biryani (₹280) to your cart?",
+      "dishes": [
+        "Paneer Tikka Biryani (veg, Biryani, ₹280, Medium)",
+        "Paneer Tikka (veg, Starters, ₹250, Medium)",
+        "Kadai Paneer (veg, Gravies & Curries, ₹260, Medium)",
+        "Paneer Butter Masala (veg, Gravies & Curries, ₹260, Mild)"
+      ]
+    },
+    {
+      "question": "what is shahi tukda",
+      "expected": "Describes it",
+      "pass": false,
+      "reply": "From our menu:\nCan I add Shahi Tukda (₹140) to your cart?",
+      "dishes": [
+        "Shahi Tukda (veg, Desserts, ₹140)"
+      ]
+    },
+    {
+      "question": "how many gulab jamun in one plate",
+      "expected": "2 pieces",
+      "pass": false,
+      "reply": "From our menu:\nCan I add Vanilla with Hot Gulab Jamun (₹160) to your cart?",
+      "dishes": [
+        "Vanilla with Hot Gulab Jamun (veg, Ice Cream & Kulfi, ₹160)",
+        "Gulab Jamun (2 pcs) (veg, Desserts, ₹90)"
+      ]
+    },
+    {
+      "question": "what is your bestseller",
+      "expected": "Bestseller dishes",
+      "pass": false,
+      "reply": "I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood.",
+      "dishes": []
+    },
+    {
+      "question": "something light for dinner",
+      "expected": "Light dishes, nothing heavy",
+      "pass": false,
+      "reply": "I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood.",
+      "dishes": []
+    },
+    {
+      "question": "starters under 200",
+      "expected": "Starters ₹200 or less",
+      "pass": false,
+      "reply": "From our menu:\nCan I add Paneer Tikka (₹250) to your cart?",
+      "dishes": [
+        "Paneer Tikka (veg, Starters, ₹250, Medium)",
+        "Butter Cookies (200 g) (veg, Bakes, ₹150)",
+        "Chicken 65 (non-veg, Starters, ₹260, Hot)",
+        "Gobi 65 (veg, Starters, ₹190, Medium)"
+      ]
+    },
+    {
+      "question": "any prawn dish",
+      "expected": "Prawn Biryani",
+      "pass": true,
+      "reply": "From our menu:\nCan I add Prawn Biryani (₹420) to your cart?",
+      "dishes": [
+        "Prawn Biryani (non-veg, Biryani, ₹420, Medium)"
+      ]
+    },
+    {
+      "question": "paneer dishes",
+      "expected": "Paneer dishes only",
+      "pass": true,
+      "reply": "From our menu:\nCan I add Paneer Tikka (₹250) to your cart?",
+      "dishes": [
+        "Paneer Tikka (veg, Starters, ₹250, Medium)",
+        "Kadai Paneer (veg, Gravies & Curries, ₹260, Medium)",
+        "Paneer Butter Masala (veg, Gravies & Curries, ₹260, Mild)",
+        "Paneer Kulcha (veg, Breads, ₹110, Mild)"
+      ]
+    },
+    {
+      "question": "i want rice without meat",
+      "expected": "Veg rice dishes only",
+      "pass": false,
+      "reply": "Which “rice without meat” do you mean? Tap Add on the one you want.",
+      "dishes": [
+        "Jeera Rice (veg, Rice, ₹140)",
+        "Curd Rice (veg, Rice, ₹130)",
+        "Lemon Rice (veg, Rice, ₹130, Mild)",
+        "Rice Kheer (veg, Desserts, ₹110)"
+      ]
+    },
+    {
+      "question": "food for kids",
+      "expected": "Not spicy",
+      "pass": false,
+      "reply": "NASH Dhabha & Bakes is a highway-style dhaba with a bakery counter. We serve North and South Indian food from the tandoor and kadai, dum biryani, fresh juices, kulfi and bakes made every morning.",
+      "dishes": []
+    },
+    {
+      "question": "veg gravy that is spicy",
+      "expected": "Veg curries, medium or hot",
+      "pass": false,
+      "reply": "From our menu:\nCan I add Mix Veg Kolhapuri (₹210) to your cart?",
+      "dishes": [
+        "Mix Veg Kolhapuri (veg, Gravies & Curries, ₹210, Hot)",
+        "Kadai Paneer (veg, Gravies & Curries, ₹260, Medium)",
+        "Chole Masala (veg, Gravies & Curries, ₹200, Medium)",
+        "Paneer Butter Masala (veg, Gravies & Curries, ₹260, Mild)"
+      ]
+    },
+    {
+      "question": "non veg bread",
+      "expected": "Keema Naan",
+      "pass": false,
+      "reply": "From our menu:\nCan I add Keema Naan (₹150) to your cart?",
+      "dishes": [
+        "Keema Naan (non-veg, Breads, ₹150, Medium)",
+        "Egg Biryani (non-veg, Biryani, ₹230, Medium)",
+        "Egg Curry (non-veg, Gravies & Curries, ₹210, Medium)",
+        "Chicken Puff (non-veg, Bakes, ₹70, Mild)"
+      ]
+    },
+    {
+      "question": "chilled dessert",
+      "expected": "Cold desserts or ice cream",
+      "pass": false,
+      "reply": "From our menu:\nCan I add Rose Milk (₹90) to your cart?",
+      "dishes": [
+        "Rose Milk (veg, Juices & Lassi, ₹90)",
+        "Rice Kheer (veg, Desserts, ₹110)",
+        "Gajar Halwa (veg, Desserts, ₹130)",
+        "Shahi Tukda (veg, Desserts, ₹140)"
+      ]
+    },
+    {
+      "question": "dry and spicy chicken",
+      "expected": "Dry chicken, medium or hot",
+      "pass": false,
+      "reply": "From our menu:\nCan I add Chicken 65 (₹260) to your cart?",
+      "dishes": [
+        "Chicken 65 (non-veg, Starters, ₹260, Hot)",
+        "Chicken Chettinad (non-veg, Gravies & Curries, ₹320, Hot)",
+        "Tandoori Chicken (Half) (non-veg, Starters, ₹300, Medium)",
+        "Ambur Chicken Biryani (non-veg, Biryani, ₹300, Medium)"
+      ]
+    },
+    {
+      "question": "cheap snacks",
+      "expected": "Cheapest snack first",
+      "pass": true,
+      "reply": "From our menu:\nCan I add Veg Puff (₹40) to your cart?",
+      "dishes": [
+        "Veg Puff (veg, Bakes, ₹40, Mild)",
+        "Chicken Puff (non-veg, Bakes, ₹70, Mild)",
+        "Egg Puff (non-veg, Bakes, ₹45, Mild)",
+        "Chicken 65 (non-veg, Starters, ₹260, Hot)"
+      ]
+    },
+    {
+      "question": "most expensive biryani",
+      "expected": "Prawn Biryani first",
+      "pass": false,
+      "reply": "From our menu:\nCan I add Egg Biryani (₹230) to your cart?",
+      "dishes": [
+        "Egg Biryani (non-veg, Biryani, ₹230, Medium)",
+        "Paneer Tikka Biryani (veg, Biryani, ₹280, Medium)",
+        "Veg Dum Biryani (veg, Biryani, ₹240, Mild)",
+        "Prawn Biryani (non-veg, Biryani, ₹420, Medium)"
+      ]
+    },
+    {
+      "question": "do you have dal",
+      "expected": "Both dals",
+      "pass": true,
+      "reply": "From our menu:\nCan I add Dal Tadka (₹180) to your cart?",
+      "dishes": [
+        "Dal Tadka (veg, Gravies & Curries, ₹180, Mild)",
+        "Dal Makhani (veg, Gravies & Curries, ₹220, Mild)",
+        "Moong Dal Halwa (veg, Desserts, ₹140)"
+      ]
+    },
+    {
+      "question": "south indian food",
+      "expected": "South Indian dishes",
+      "pass": false,
+      "reply": "NASH Dhabha & Bakes is a highway-style dhaba with a bakery counter. We serve North and South Indian food from the tandoor and kadai, dum biryani, fresh juices, kulfi and bakes made every morning.",
+      "dishes": []
+    },
+    {
+      "question": "is mango lassi cold",
+      "expected": "Says it's cold/chilled",
+      "pass": false,
+      "reply": "Mango Lassi: Thick yoghurt and Alphonso mango. It is veg, not spicy, ₹130.\nCan I add Mango Lassi (₹130) to your cart?",
+      "dishes": [
+        "Mango Lassi (veg, Juices & Lassi, ₹130)"
+      ]
+    },
+    {
+      "question": "give me something sweet",
+      "expected": "Sweets only",
+      "pass": false,
+      "reply": "Added to your cart: 1 × Sweet Lassi. Cart total: ₹100.",
+      "dishes": []
+    },
+    {
+      "question": "lassi",
+      "expected": "Lassis",
+      "pass": false,
+      "reply": "From our menu:\nCan I add Sweet Lassi (₹100) to your cart?",
+      "dishes": [
+        "Sweet Lassi (veg, Juices & Lassi, ₹100)",
+        "Mango Lassi (veg, Juices & Lassi, ₹130)",
+        "Mosambi Juice (veg, Juices & Lassi, ₹110)",
+        "Pineapple Juice (veg, Juices & Lassi, ₹110)"
+      ]
+    },
+    {
+      "question": "tea or coffee",
+      "expected": "Tea/coffee",
+      "pass": true,
+      "reply": "From our menu:\nCan I add Masala Chai (₹40) to your cart?",
+      "dishes": [
+        "Masala Chai (veg, Chai & Coffee, ₹40)",
+        "Ginger Honey Lemon Tea (veg, Chai & Coffee, ₹60)",
+        "Filter Coffee (veg, Chai & Coffee, ₹60)",
+        "Hot Badam Milk (veg, Chai & Coffee, ₹90)"
+      ]
+    },
+    {
+      "question": "something healthy",
+      "expected": "Healthy/light dishes",
+      "pass": true,
+      "reply": "From our menu:\nCan I add Mosambi Juice (₹110) to your cart?",
+      "dishes": [
+        "Mosambi Juice (veg, Juices & Lassi, ₹110)",
+        "Palak Paneer (veg, Gravies & Curries, ₹240, Mild)",
+        "Tandoori Roti (veg, Breads, ₹30)",
+        "Missi Roti (veg, Breads, ₹45, Mild)"
+      ]
+    },
+    {
+      "question": "non veg starters",
+      "expected": "Non-veg starters",
+      "pass": true,
+      "reply": "From our menu:\nCan I add Chicken 65 (₹260) to your cart?",
+      "dishes": [
+        "Chicken 65 (non-veg, Starters, ₹260, Hot)",
+        "Amritsari Fish (non-veg, Starters, ₹330, Medium)",
+        "Mutton Seekh Kebab (non-veg, Starters, ₹340, Medium)",
+        "Tandoori Chicken (Half) (non-veg, Starters, ₹300, Medium)"
+      ]
+    },
+    {
+      "question": "veg main course",
+      "expected": "Veg curries",
+      "pass": false,
+      "reply": "I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood.",
+      "dishes": []
+    },
+    {
+      "question": "fish fry",
+      "expected": "Amritsari Fish first",
+      "pass": false,
+      "reply": "From our menu:\nCan I add Kerala Fish Curry (₹360) to your cart?",
+      "dishes": [
+        "Kerala Fish Curry (non-veg, Gravies & Curries, ₹360, Medium)",
+        "Amritsari Fish (non-veg, Starters, ₹330, Medium)"
+      ]
+    },
+    {
+      "question": "tandoori items",
+      "expected": "Tandoor dishes",
+      "pass": true,
+      "reply": "From our menu:\nCan I add Tandoori Roti (₹30) to your cart?",
+      "dishes": [
+        "Tandoori Roti (veg, Breads, ₹30)",
+        "Tandoori Chicken (Half) (non-veg, Starters, ₹300, Medium)",
+        "Butter Chicken (non-veg, Gravies & Curries, ₹320, Mild)"
+      ]
+    },
+    {
+      "question": "which biryani is best",
+      "expected": "A biryani recommendation",
+      "pass": true,
+      "reply": "Here's what fits from our menu:\nCan I add Egg Biryani (₹230) to your cart?",
+      "dishes": [
+        "Egg Biryani (non-veg, Biryani, ₹230, Medium)",
+        "Paneer Tikka Biryani (veg, Biryani, ₹280, Medium)",
+        "Veg Dum Biryani (veg, Biryani, ₹240, Mild)"
+      ]
+    },
+    {
+      "question": "I want something with egg",
+      "expected": "Egg dishes",
+      "pass": true,
+      "reply": "Which “egg” do you mean? Tap Add on the one you want.",
+      "dishes": [
+        "Egg Curry (non-veg, Gravies & Curries, ₹210, Medium)",
+        "Egg Biryani (non-veg, Biryani, ₹230, Medium)",
+        "Egg Puff (non-veg, Bakes, ₹45, Mild)",
+        "Egg Fried Rice (non-veg, Rice, ₹180, Mild)"
+      ]
+    },
+    {
+      "question": "what ice creams do you have",
+      "expected": "Ice creams/kulfi",
+      "pass": true,
+      "reply": "From our menu:\nCan I add Malai Kulfi (₹100) to your cart?",
+      "dishes": [
+        "Malai Kulfi (veg, Ice Cream & Kulfi, ₹100)",
+        "Mango Ice Cream (veg, Ice Cream & Kulfi, ₹120)",
+        "Butterscotch Scoop (veg, Ice Cream & Kulfi, ₹110)",
+        "Kesar Pista Kulfi (veg, Ice Cream & Kulfi, ₹110)"
+      ]
+    },
+    {
+      "question": "sweet without egg",
+      "expected": "Eggless sweets",
+      "pass": false,
+      "reply": "From our menu:\nCan I add Egg Biryani (₹230) to your cart?",
+      "dishes": [
+        "Egg Biryani (non-veg, Biryani, ₹230, Medium)",
+        "Egg Curry (non-veg, Gravies & Curries, ₹210, Medium)",
+        "Rice Kheer (veg, Desserts, ₹110)",
+        "Egg Puff (non-veg, Bakes, ₹45, Mild)"
+      ]
+    }
+  ]
+}

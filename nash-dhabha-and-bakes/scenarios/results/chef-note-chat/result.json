@@ -1,0 +1,92 @@
+{
+  "ranAt": "2026-11-02T08:10:42.005Z",
+  "baseUrl": "http://localhost:4000",
+  "passed": 14,
+  "total": 14,
+  "steps": [
+    {
+      "step": "1 · mushroom biryani",
+      "check": "Mitra offers it",
+      "ok": true,
+      "detail": "Sure! For veg mushroom biryanis, here's what I'd suggest: Mushroom Biryani Biryani · Medium Seeraga samba rice with mushrooms, South Indian style. ₹260 Add Source: Menu My pick: Mushroom Biryani. Seeraga samba rice with mushrooms, South Indian style. Can I add Mushroom Biryani (₹260) to your cart?"
+    },
+    {
+      "step": "2 · add it also chief note",
+      "check": "adds the dish and asks for the note",
+      "ok": true,
+      "detail": "Added Mushroom Biryani to your cart. What should I tell the chef about Mushroom Biryani? Type it, tap the mic and say it, or record a voice note. 🎙 Record voice note"
+    },
+    {
+      "step": "2 · add it also chief note",
+      "check": "shows a Record voice note button",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "step": "3 · less spicy and no onion",
+      "check": "note saved on the dish",
+      "ok": true,
+      "detail": "{\"id\":\"mushroom-biryani\",\"name\":\"Mushroom Biryani\",\"veg\":true,\"price\":260,\"qty\":1,\"amount\":260,\"note\":\"Less spicy and no onion\",\"voice\":null}"
+    },
+    {
+      "step": "4 · add chef note",
+      "check": "asks about the last dish added (Butter Naan)",
+      "ok": true,
+      "detail": "What should I tell the chef about Butter Naan? Type it, tap the mic and say it, or record a voice note. Not this dish? Say another dish name or “whole order”. 🎙 Record voice note"
+    },
+    {
+      "step": "5 · (spoken) extra butter on top",
+      "check": "dictated note saved",
+      "ok": true,
+      "detail": "{\"id\":\"butter-naan\",\"name\":\"Butter Naan\",\"veg\":true,\"price\":60,\"qty\":1,\"amount\":60,\"note\":\"Extra butter on top\",\"voice\":null}"
+    },
+    {
+      "step": "6 · Record voice note button",
+      "check": "opens the recorder for Dal Makhani",
+      "ok": true,
+      "detail": "Chef note · Dal Makhani"
+    },
+    {
+      "step": "6 · recorded voice note",
+      "check": "voice note + transcript stored on the server",
+      "ok": true,
+      "detail": "{\"id\":\"dal-makhani\",\"name\":\"Dal Makhani\",\"veg\":true,\"price\":220,\"qty\":1,\"amount\":220,\"note\":\"make it less spicy for my kid\",\"voice\":{\"url\":\"/voice/34ca34a4-a065-410a-a97c-0a950fcb3309.webm\",\"transcript\":\"make it less spicy for my kid\"}}"
+    },
+    {
+      "step": "7 · show my cart (after voice note)",
+      "check": "next message is NOT taken as a note",
+      "ok": true,
+      "detail": "Your cart has 3 items. Subtotal ₹540, with 5% GST the total is ₹567. 1 × Mushroom Biryani Chef note: Less spicy and no onion ₹260 1 × Butter Naan Chef note: Extra butter on top ₹60 1 × Dal Makhani Chef note: make it less spicy for my kid ₹220"
+    },
+    {
+      "step": "8 · tell the chef … butter naan crispy",
+      "check": "saved on Butter Naan",
+      "ok": true,
+      "detail": "Noted. I'll tell the chef “Make the butter naan crispy” for Butter Naan. You'll see it in your cart, and the chef gets it with your order."
+    },
+    {
+      "step": "9 · note for chef … whole order",
+      "check": "saved as whole-order note",
+      "ok": true,
+      "detail": "Noted. I'll tell the chef “Please pack everything separately for the whole order” for your whole order. You'll see it in your cart, and the chef gets it with your order."
+    },
+    {
+      "step": "10 · checkout",
+      "check": "all notes visible at checkout",
+      "ok": true,
+      "detail": " Your order (3 items) Mushroom Biryani₹260 each₹260 −1+ Edit chef note “Less spicy and no onion” Butter Naan₹60 each₹60 −1+ Edit chef note “Extra butter on top; Make the butter naan crispy” Dal Makhani₹220 "
+    },
+    {
+      "step": "11 · kitchen",
+      "check": "chef sees typed, dictated and recorded notes",
+      "ok": true,
+      "detail": "NDB-7443 08:10 am · Table 4 Sent to chef 1× Mushroom Biryani Chef note: “Less spicy and no onion” 1× Butter Naan Chef note: “Extra butter on top; Make the butter naan crispy” 1× Dal Makhani Chef note: “make it less spicy for my kid” Transcript: “make it less spicy for my kid” Whole order “Please pac"
+    },
+    {
+      "step": "no page errors",
+      "check": "clean console",
+      "ok": true,
+      "detail": ""
+    }
+  ]
+}

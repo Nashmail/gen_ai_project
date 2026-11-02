@@ -1,0 +1,191 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap">
+<style>
+:root{--g:#0f4d3a;--g2:#0b3b2c;--s:#f2a900;--s2:#ffd36b;--ink:#16201b;--w:#fff;--soft:#f6f4ec}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--g);font-family:Poppins,Arial,sans-serif;color:#fff}
+.scene{position:absolute;inset:0;opacity:0;will-change:opacity,transform}
+.bg{position:absolute;inset:0;background:radial-gradient(1200px 900px at 80% 10%,#1b6b51 0%,transparent 60%),radial-gradient(900px 700px at 0% 100%,#0a3527 0%,transparent 70%),var(--g)}
+.stripe{position:absolute;left:0;right:0;height:22px;background:repeating-linear-gradient(-45deg,var(--s) 0 22px,var(--g2) 22px 44px)}
+.dots{position:absolute;inset:0;background-image:radial-gradient(rgba(255,255,255,.07) 2px,transparent 2.5px);background-size:44px 44px}
+/* hook */
+#hook .line{position:absolute;left:90px;font-weight:900;font-size:148px;line-height:1;letter-spacing:-3px}
+#hook .line.s{color:var(--s)}
+#steam path{fill:none;stroke:rgba(255,255,255,.55);stroke-width:10;stroke-linecap:round}
+/* title */
+#title .logo{position:absolute;left:50%;top:430px;width:380px;height:380px;margin-left:-190px}
+#title h1{position:absolute;left:0;right:0;top:880px;text-align:center;font-size:104px;font-weight:800;line-height:1.02;letter-spacing:-2px}
+#title h1 span{color:var(--s)}
+#title .pill{position:absolute;left:50%;top:1150px;transform:translateX(-50%);white-space:nowrap;background:#fff;color:var(--g);font-weight:700;font-size:46px;padding:18px 44px;border-radius:999px}
+#title .sub{position:absolute;left:0;right:0;top:1270px;text-align:center;font-size:40px;color:rgba(255,255,255,.85);font-weight:500}
+/* demo */
+#demo .cap{position:absolute;left:70px;right:70px;top:110px;height:300px}
+#demo .step{display:inline-block;background:var(--s);color:#2b1d00;font-weight:800;font-size:34px;padding:8px 22px;border-radius:999px;letter-spacing:1px}
+#demo .h{white-space:nowrap;font-size:76px;font-weight:800;line-height:1.05;margin-top:22px;letter-spacing:-1.5px}
+#demo .p{white-space:nowrap;font-size:38px;font-weight:500;color:rgba(255,255,255,.82);margin-top:14px}
+#phone{position:absolute;left:50%;top:445px;width:684px;height:1430px;margin-left:-342px;border-radius:84px;background:#0b0f0d;padding:22px;box-shadow:0 40px 90px rgba(0,0,0,.45),0 0 0 3px #2a3b33 inset}
+#phone .scr{width:640px;height:1386px;border-radius:64px;overflow:hidden;background:#fff;position:relative}
+#phone img{width:640px;height:1385px;display:block}
+#phone .notch{position:absolute;left:50%;top:34px;width:190px;height:40px;margin-left:-95px;background:#0b0f0d;border-radius:30px;z-index:3}
+.prog{position:absolute;left:70px;right:70px;top:405px;height:8px;background:rgba(255,255,255,.18);border-radius:8px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--s);width:0}
+.badge-voice{position:absolute;right:46px;top:1100px;background:#c2410c;color:#fff;font-weight:800;font-size:36px;padding:16px 28px;border-radius:24px;box-shadow:0 18px 40px rgba(0,0,0,.35);display:flex;gap:14px;align-items:center;opacity:0}
+.badge-voice svg{width:40px;height:40px}
+/* how */
+#how{background:#fff;color:var(--ink)}
+#how h2,#tests h2{position:absolute;left:80px;right:80px;top:150px;font-size:86px;font-weight:800;line-height:1.05;letter-spacing:-2px}
+#how h2 span{color:var(--g)}
+.node{position:absolute;left:110px;right:110px;height:200px;border-radius:36px;padding:30px 40px;display:flex;gap:30px;align-items:center;background:var(--soft);border:3px solid #e6e2d3}
+.node .ic{width:120px;height:120px;border-radius:30px;background:var(--g);color:#fff;display:grid;place-items:center;flex:none;font-weight:800;font-size:54px}
+.node.hl{background:#fff7e0;border-color:var(--s)}
+.node.hl .ic{background:var(--s);color:#2b1d00}
+.node b{display:block;font-size:46px;font-weight:700;line-height:1.15}
+.node small{display:block;font-size:31px;color:#5b6862;margin-top:6px;line-height:1.3}
+.arrow{position:absolute;left:50%;width:8px;margin-left:-4px;background:var(--s);border-radius:4px}
+.chips{position:absolute;left:80px;right:80px;display:flex;flex-wrap:wrap;gap:18px;justify-content:center}
+.chip{font-size:34px;font-weight:600;padding:14px 28px;border-radius:999px;background:var(--g);color:#fff}
+#how .chip{background:#e9f3ef;color:var(--g)}
+/* tests */
+.big{position:absolute;left:80px;right:80px;text-align:left}
+.big .n{font-size:200px;font-weight:900;line-height:1;color:var(--s);letter-spacing:-6px}
+.big .l{font-size:44px;font-weight:600;margin-top:6px}
+#tests .chip{background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.3)}
+#tests .chip b{color:var(--s2)}
+/* credits */
+#credits .logo{position:absolute;left:50%;top:250px;width:240px;height:240px;margin-left:-120px}
+#credits .k{position:absolute;left:0;right:0;text-align:center;font-size:36px;letter-spacing:6px;text-transform:uppercase;color:var(--s2);font-weight:600}
+#credits .v{position:absolute;left:40px;right:40px;text-align:center;font-weight:800;line-height:1.1}
+#credits .tags{position:absolute;left:0;right:0;top:1700px;text-align:center;font-size:36px;color:rgba(255,255,255,.75);font-weight:500}
+</style></head>
+<body>
+<section class="scene" id="hook"><div class="bg"></div><div class="dots"></div>
+  <svg id="steam" width="1080" height="1920" style="position:absolute;inset:0"><path d="M700 1580 c-40 -60 40 -90 0 -160"/><path d="M800 1560 c-40 -60 40 -90 0 -160"/><path d="M900 1580 c-40 -60 40 -90 0 -160"/></svg>
+  <div class="line" id="h1" style="top:520px">What if</div>
+  <div class="line" id="h2" style="top:690px">your dhaba</div>
+  <div class="line" id="h3" style="top:860px">had an</div>
+  <div class="line s" id="h4" style="top:1030px">AI waiter?</div>
+  <div class="stripe" style="bottom:0"></div>
+</section>
+
+<section class="scene" id="title"><div class="bg"></div><div class="dots"></div>
+  <img class="logo" id="tlogo" src="../frontend/assets/logo-mark.svg">
+  <h1 id="tname">NASH Dhabha<br><span>&amp; Bakes</span></h1>
+  <div class="pill" id="tpill">Meet Masala Mitra</div>
+  <div class="sub" id="tsub">A RAG chatbot that takes your order</div>
+  <div class="stripe" style="bottom:0"></div>
+</section>
+
+<section class="scene" id="demo"><div class="bg"></div><div class="dots"></div>
+  <div class="cap"><span class="step" id="dstep">STEP 1</span><div class="h" id="dh"></div><div class="p" id="dp"></div></div>
+  <div class="prog"><i id="dprog"></i></div>
+  <div id="phone"><div class="scr"><img id="foot"></div></div>
+  <div class="badge-voice" id="vbadge"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>VOICE</div>
+</section>
+
+<section class="scene" id="how">
+  <h2 id="hh">How <span>Masala Mitra</span> thinks</h2>
+  <div class="node" id="n1" style="top:470px"><div class="ic">1</div><div><b>You speak or type</b><small>“I'm feeling tired today”</small></div></div>
+  <div class="arrow" id="a1" style="top:676px;height:0"></div>
+  <div class="node" id="n2" style="top:740px"><div class="ic">2</div><div><b>Speech → text</b><small>Voice is transcribed live in the browser</small></div></div>
+  <div class="arrow" id="a2" style="top:946px;height:0"></div>
+  <div class="node hl" id="n3" style="top:1010px"><div class="ic">3</div><div><b>Retrieve from the menu</b><small>TF-IDF search over 78 dishes + house info</small></div></div>
+  <div class="arrow" id="a3" style="top:1216px;height:0"></div>
+  <div class="node" id="n4" style="top:1280px"><div class="ic">4</div><div><b>Grounded answer</b><small>Only real dishes and prices, with the source shown</small></div></div>
+  <div class="chips" id="hc" style="top:1560px"><span class="chip">No paid AI API</span><span class="chip">Node.js + Express backend</span><span class="chip">Works offline too</span></div>
+</section>
+
+<section class="scene" id="tests"><div class="bg"></div><div class="dots"></div>
+  <h2 id="th">Tested like a<br>real product</h2>
+  <div class="big" id="b1" style="top:520px"><div class="n" id="c1">0</div><div class="l">test steps passing, in a real browser</div></div>
+  <div class="big" id="b2" style="top:860px"><div class="n" id="c2">19 → 0</div><div class="l">failing steps found and fixed</div></div>
+  <div class="chips" id="tc" style="top:1230px;justify-content:flex-start">
+    <span class="chip"><b>XSS</b> blocked</span><span class="chip"><b>Prompt injection</b> ignored</span><span class="chip">Survives a <b>server crash</b></span><span class="chip"><b>2 customers</b> at once</span><span class="chip"><b>Hinglish</b> understood</span><span class="chip"><b>Voice notes</b> reach the chef</span>
+  </div>
+  <div class="stripe" style="bottom:0"></div>
+</section>
+
+<section class="scene" id="credits"><div class="bg"></div><div class="dots"></div>
+  <img class="logo" id="clogo" src="../frontend/assets/logo-mark.svg">
+  <div class="k" id="k1" style="top:600px">Built by</div><div class="v" id="v1" style="top:660px;font-size:110px">N Mailesh</div>
+  <div class="v" id="v2" style="top:800px;font-size:50px;font-weight:600;color:rgba(255,255,255,.85);letter-spacing:3px">CB.EN.U4ARE23025</div>
+  <div class="k" id="k3" style="top:1000px">Course</div><div class="v" id="v3" style="top:1056px;font-size:72px">Introduction to Gen AI</div>
+  <div class="k" id="k4" style="top:1250px">Guided by</div><div class="v" id="v4" style="top:1306px;font-size:66px">Prof. Rakesh Kumar<br>Siddarantan</div>
+  <div class="tags" id="ctags">#GenAI #RAG #VoiceAI #Chatbot #StudentProject</div>
+  <div class="stripe" style="bottom:0"></div>
+</section>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const ease = (x) => { x = clamp(x); return 1 - Math.pow(1 - x, 3); };
+const back = (x) => { x = clamp(x); const c = 1.7; return 1 + (c + 1) * Math.pow(x - 1, 3) + c * Math.pow(x - 1, 2); };
+const k = (t, a, d) => clamp((t - a) / d);           // 0..1 progress
+const SC = [["hook", 0, 2.8], ["title", 2.8, 5.5], ["demo", 5.5, 31.5], ["how", 31.5, 38], ["tests", 38, 44.5], ["credits", 44.5, 51]];
+const FADE = 0.35;
+// footage: [label, footStart, footEnd, videoLength, step, heading, sub, voice]
+const SEG = [
+  ["home", 0, 2507, 1.2, 1, "Meet Masala Mitra", "Your AI waiter at NASH Dhabha & Bakes"],
+  ["chat", 2507, 7094, 3.0, 1, "Just say hi", "It greets you and asks your name"],
+  ["mood", 7094, 11727, 3.4, 2, "Tell your mood by voice", "Speech → text, live in the browser", true],
+  ["add", 11727, 17293, 2.6, 3, "Dishes picked for your mood", "Retrieved from the real menu (RAG)"],
+  ["menu", 17293, 24306, 3.0, 4, "78 dishes, veg & non-veg", "Breads, biryani, desserts, bakes…"],
+  ["chefnote", 24306, 30818, 3.6, 5, "Voice note to the chef", "Recorded and transcribed", true],
+  ["checkout", 30818, 35343, 1.8, 6, "One-tap checkout", "Dine-in or takeaway"],
+  ["tracking", 35343, 50278, 3.0, 7, "Live order tracking", "Sent to chef → cooking → ready"],
+  ["bill", 50278, 53082, 2.0, 8, "Bill with GST, in the chat", "Generated by Masala Mitra"],
+  ["pay", 53082, 58210, 2.4, 9, "Pay & rate the food", "UPI, card or cash"]
+];
+let FR = null; // footage frames, injected
+function footAt(ms) { let lo = 0, hi = FR.length - 1; while (lo < hi) { const m = (lo + hi + 1) >> 1; if (FR[m].t <= ms) lo = m; else hi = m - 1; } return FR[lo].f; }
+
+function draw(t) {
+  for (const [id, a, b] of SC) {
+    const el = $(id); const inA = a === 0 ? 1 : ease(k(t, a, FADE)), outB = b >= 51 ? 1 : 1 - ease(k(t, b - FADE, FADE));
+    const o = t < a || t > b ? 0 : Math.min(inA, outB);
+    el.style.opacity = o; el.style.transform = `scale(${1 + (1 - inA) * 0.04})`;
+    el.style.visibility = o > 0 ? "visible" : "hidden";
+  }
+  // hook
+  ["h1", "h2", "h3", "h4"].forEach((id, i) => { const p = back(k(t, 0.15 + i * 0.42, 0.5)); $(id).style.opacity = clamp(p * 1.4); $(id).style.transform = `translateY(${(1 - p) * 90}px)`; });
+  document.querySelectorAll("#steam path").forEach((p, i) => { const ph = (t * 0.9 + i * 0.33) % 1; p.style.opacity = Math.sin(ph * Math.PI) * 0.9; p.style.transform = `translateY(${-ph * 160}px)`; });
+  // title
+  const tl = back(k(t, 2.9, 0.6)); $("tlogo").style.transform = `scale(${0.4 + 0.6 * tl}) rotate(${(1 - tl) * -25}deg)`; $("tlogo").style.opacity = clamp(tl * 2);
+  const tn = ease(k(t, 3.3, 0.5)); $("tname").style.opacity = tn; $("tname").style.transform = `translateY(${(1 - tn) * 60}px)`;
+  const tp = back(k(t, 3.8, 0.5)); $("tpill").style.opacity = clamp(tp); $("tpill").style.transform = `translateX(-50%) scale(${0.6 + 0.4 * tp})`;
+  $("tsub").style.opacity = ease(k(t, 4.2, 0.5));
+  // demo
+  if (t >= 5.5 - FADE && t <= 31.5 && FR) {
+    let acc = 5.5, seg = SEG[0], ft = 0, si = 0;
+    for (let i = 0; i < SEG.length; i++) { const s = SEG[i]; if (t < acc + s[3] || i === SEG.length - 1) { seg = s; si = i; const p = clamp((t - acc) / s[3]); ft = s[1] + (s[2] - s[1]) * p; break; } acc += s[3]; }
+    const src = "build/footage/" + footAt(ft);
+    if ($("foot").getAttribute("src") !== src) $("foot").setAttribute("src", src);
+    const segStart = acc, cp = ease(k(t, segStart, 0.35));
+    if ($("dh").textContent !== seg[5]) {
+      $("dh").textContent = seg[5]; $("dp").textContent = seg[6]; $("dstep").textContent = `STEP ${seg[4]} / 9`;
+      for (const [id, max] of [["dh", 76], ["dp", 38]]) { let fs = max; $(id).style.fontSize = fs + "px"; while ($(id).scrollWidth > 940 && fs > 30) { fs -= 2; $(id).style.fontSize = fs + "px"; } }
+    }
+    ["dh", "dp"].forEach((id, i) => { const q = ease(k(t, segStart + i * 0.08, 0.35)); $(id).style.opacity = q; $(id).style.transform = `translateX(${(1 - q) * 40}px)`; });
+    $("dprog").style.width = (clamp((t - 5.5) / 26) * 100).toFixed(2) + "%";
+    const vb = seg[7] ? ease(k(t, segStart + 0.2, 0.3)) * (1 - ease(k(t, segStart + seg[3] - 0.3, 0.3))) : 0;
+    $("vbadge").style.opacity = vb; $("vbadge").style.transform = `scale(${0.8 + 0.2 * vb}) rotate(-4deg)`;
+    const zoom = 1 + 0.015 * Math.sin((t - 5.5) * 0.6); $("phone").style.transform = `scale(${zoom}) translateY(${(1 - ease(k(t, 5.5, 0.6))) * 200}px)`;
+  }
+  // how
+  $("hh").style.opacity = ease(k(t, 31.6, 0.4));
+  ["n1", "n2", "n3", "n4"].forEach((id, i) => { const p = back(k(t, 32.0 + i * 0.9, 0.45)); $(id).style.opacity = clamp(p * 1.5); $(id).style.transform = `translateX(${(1 - p) * -120}px)`; });
+  ["a1", "a2", "a3"].forEach((id, i) => { $(id).style.height = 64 * ease(k(t, 32.45 + i * 0.9, 0.4)) + "px"; });
+  const hc = ease(k(t, 35.8, 0.5)); $("hc").style.opacity = hc; $("hc").style.transform = `translateY(${(1 - hc) * 40}px)`;
+  // tests
+  $("th").style.opacity = ease(k(t, 38.1, 0.4));
+  const c1 = ease(k(t, 38.5, 1.6)); $("c1").textContent = Math.round(84 * c1); $("b1").style.opacity = ease(k(t, 38.4, 0.3));
+  const b2 = back(k(t, 39.9, 0.5)); $("b2").style.opacity = clamp(b2 * 1.4); $("b2").style.transform = `translateY(${(1 - b2) * 60}px)`;
+  document.querySelectorAll("#tc .chip").forEach((c, i) => { const p = back(k(t, 40.8 + i * 0.28, 0.4)); c.style.opacity = clamp(p * 1.4); c.style.transform = `scale(${0.7 + 0.3 * p})`; });
+  // credits
+  const cl = back(k(t, 44.6, 0.6)); $("clogo").style.transform = `scale(${0.5 + 0.5 * cl})`; $("clogo").style.opacity = clamp(cl * 2);
+  [["k1", 45.0], ["v1", 45.1], ["v2", 45.5], ["k3", 46.0], ["v3", 46.1], ["k4", 46.7], ["v4", 46.8], ["ctags", 47.6]].forEach(([id, a]) => { const p = ease(k(t, a, 0.45)); $(id).style.opacity = p; $(id).style.transform = `translateY(${(1 - p) * 40}px)`; });
+}
+window.render = async (t) => { draw(t); const img = $("foot"); if (img.getAttribute("src") && !img.complete) await img.decode().catch(() => {}); };
+window.setFrames = (f) => { FR = f; };
+</script>
+</body></html>

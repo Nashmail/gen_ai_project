@@ -1,0 +1,12 @@
+{
+  "name": "nash-dhabha-and-bakes",
+  "private": true,
+  "description": "NASH Dhabha & Bakes: restaurant ordering site with the Masala Mitra RAG chatbot",
+  "scripts": {
+    "start": "node backend/src/server.js",
+    "sync-engine": "node -e \"require('fs').copyFileSync('shared/engine.js','frontend/js/engine.js')\"",
+    "scenarios": "node scenarios/run-scenarios.js http://localhost:4000 latest && node scenarios/run-probes.js",
+    "report": "node scenarios/build-report.js",
+    "build:artifact": "node scripts/build-artifact.js"
+  }
+}

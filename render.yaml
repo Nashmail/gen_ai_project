@@ -1,0 +1,15 @@
+# One-click deploy on Render (https://render.com): New > Blueprint > pick this repo.
+# The backend serves the API at /api and the frontend at /, so you get one working URL.
+services:
+  - type: web
+    name: nash-dhabha
+    runtime: node
+    plan: free
+    buildCommand: cd nash-dhabha-and-bakes/backend && npm ci --omit=dev
+    startCommand: node nash-dhabha-and-bakes/backend/src/server.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_VERSION
+        value: "20"
+      - key: CORS_ORIGIN
+        value: "*"

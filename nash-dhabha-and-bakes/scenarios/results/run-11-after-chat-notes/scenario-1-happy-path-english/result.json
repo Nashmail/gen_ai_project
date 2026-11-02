@@ -1,0 +1,283 @@
+{
+  "id": 1,
+  "title": "Happy path: English, typed, mood → cart → chef note → dine-in → UPI → 5 stars",
+  "baseUrl": "http://localhost:4000",
+  "mode": "live",
+  "sessionId": "f650e59b-3bbe-4204-9315-dafb6783e658",
+  "ranAt": "2026-11-02T08:11:17.282Z",
+  "passed": 11,
+  "total": 11,
+  "consoleErrors": [],
+  "finalScreenshot": "05-final-chat.png",
+  "steps": [
+    {
+      "step": 1,
+      "input": "hi",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Hi! Welcome to NASH Dhabha & Bakes. May I know your name?"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /may i know your name/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T08:10:54.638Z"
+    },
+    {
+      "step": 2,
+      "input": "I am Ravi",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Nice to meet you, Ravi! What is your mood today? Tell me in chat or tap the mic and say it."
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /nice to meet you, \\*?\\*?ravi/i",
+          "ok": true
+        },
+        {
+          "check": "reply matches /mood/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T08:10:55.367Z"
+    },
+    {
+      "step": 3,
+      "input": "I'm feeling tired",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Long day? Let's get your energy back. You sound tired, Ravi. From our menu:\nPrefer veg only? Just say “veg”.\nMasala Chai\nChai & Coffee\nKadak tea with ginger and cardamom.\n₹40\nAdd\nEgg Biryani\nBiryani · Medium\nSpiced eggs layered with biryani rice.\n₹230\nAdd\nEgg Curry\nGravies & Curries · Medium\nBoiled eggs in onion-tomato masala.\n₹210\nAdd\nSource: Menu, matched to your mood"
+        },
+        {
+          "text": "Can I add Masala Chai (₹40) to your cart?"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /tired/i",
+          "ok": true
+        },
+        {
+          "check": "reply matches /can i add/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T08:10:56.066Z"
+    },
+    {
+      "step": 4,
+      "input": "Yes, add it",
+      "kind": "quick-reply",
+      "outputs": [
+        {
+          "text": "Done! Masala Chai is in your cart. Cart total: ₹40.\nWant anything else? You can add a note for the chef from the menu or the cart."
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /is in your cart/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T08:10:56.755Z"
+    },
+    {
+      "step": 5,
+      "input": "add 2 butter naan and dal makhani",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Added to your cart: 2 × Butter Naan, 1 × Dal Makhani. Cart total: ₹380.\nSource: Menu"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /2 × butter naan/i",
+          "ok": true
+        },
+        {
+          "check": "reply matches /1 × dal makhani/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T08:10:57.554Z"
+    },
+    {
+      "step": 6,
+      "input": "Chef note on butter-naan: \"Extra butter, well done please\"",
+      "kind": "chef-note (typed)",
+      "outputs": [
+        {
+          "text": "Menu card note flag: To chef: “Extra butter, well done please”"
+        }
+      ],
+      "checks": [
+        {
+          "check": "note shows on the dish card",
+          "ok": true,
+          "detail": "To chef: “Extra butter, well done please”"
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T08:10:58.247Z",
+      "screenshot": "01-chef-note.png",
+      "note": {
+        "item": "butter-naan",
+        "text": "Extra butter, well done please"
+      }
+    },
+    {
+      "step": 7,
+      "input": "Checkout: dine-in, table 7",
+      "kind": "checkout + place order",
+      "outputs": [
+        {
+          "text": "Order NDB-8713 placed, Ravi! 4 items, dine-in at table 7.\n1 × Masala Chai\nChai & Coffee\n₹40\n2 × Butter Naan\nBreads\n₹120\n1 × Dal Makhani\nGravies & Curries · Mild\n₹220"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /order ndb-\\d+ placed/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T08:10:59.577Z",
+      "screenshot": "02-checkout.png"
+    },
+    {
+      "step": 8,
+      "input": "(waiting for kitchen updates, bill and payment prompt)",
+      "kind": "order lifecycle (automatic)",
+      "outputs": [
+        {
+          "text": "Order NDB-8713 placed, Ravi! 4 items, dine-in at table 7.\n1 × Masala Chai\nChai & Coffee\n₹40\n2 × Butter Naan\nBreads\n₹120\n1 × Dal Makhani\nGravies & Curries · Mild\n₹220"
+        },
+        {
+          "text": "Your order has been sent to the chef. The chef received these notes:\n• Butter Naan: “Extra butter, well done please”"
+        },
+        {
+          "text": "Your order is getting ready: the tandoor is fired up, the kadai is on the flame, drinks are being made fresh. About 15–25 minutes in the kitchen."
+        },
+        {
+          "text": "Your order is ready and on its way to table 7. Enjoy your meal!"
+        },
+        {
+          "text": "Here is your bill:\nNASH DHABHA & BAKES\nBill NDB-8713 · 2/11/2026 08:11 am\nDine-in · Table 7 · Ravi\n1 × Masala Chai\t₹40\n2 × Butter Naan\t₹120\n1 × Dal Makhani\t₹220\nSubtotal\t₹380\nCGST 2.5%\t₹9.50\nSGST 2.5%\t₹9.50\nTotal\t₹399"
+        },
+        {
+          "text": "How would you like to pay ₹399?"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /sent to the chef/i",
+          "ok": true
+        },
+        {
+          "check": "reply matches /extra butter/i",
+          "ok": true
+        },
+        {
+          "check": "reply matches /getting ready/i",
+          "ok": true
+        },
+        {
+          "check": "reply matches /on its way to table 7/i",
+          "ok": true
+        },
+        {
+          "check": "reply matches /here is your bill/i",
+          "ok": true
+        },
+        {
+          "check": "reply matches /total/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T08:11:00.866Z",
+      "elapsedMs": 13217,
+      "screenshot": "03-bill.png"
+    },
+    {
+      "step": 9,
+      "input": "UPI",
+      "kind": "quick-reply",
+      "outputs": [
+        {
+          "text": "Payment of ₹399 by UPI received. Reference TXN07074214. Thank you!\nSource: Demo payment: no real money is charged"
+        },
+        {
+          "text": "How was the food, Ravi? Rate it or tell me in your own words."
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /payment of .* by upi received/i",
+          "ok": true
+        },
+        {
+          "check": "reply matches /how was the food/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T08:11:14.168Z"
+    },
+    {
+      "step": 10,
+      "input": "★★★★★ Loved it",
+      "kind": "quick-reply",
+      "outputs": [
+        {
+          "text": "Thank you, Ravi! So happy you enjoyed it. I've passed your 5-star review to the chef.\nVisit NASH Dhabha & Bakes again soon!"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /5-star review/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T08:11:14.880Z"
+    },
+    {
+      "step": 11,
+      "input": "Open Kitchen page",
+      "kind": "kitchen display",
+      "outputs": [
+        {
+          "text": "NDB-871308:11 am · Table 7 · RaviDone 1×Masala Chai2×Butter NaanChef note: “Extra butter, well done please”1×Dal Makhani Total ₹399 · UPI★★★★★ feedbackNDB-744308:10 am · Table 4Sent to chef 1×Mushroom BiryaniChef note: “Less spicy and no onion”1×Butter NaanChef note: “Extra butter on top; Make the butter naan crispy”1×Dal MakhaniChef note: “make it less spicy for my kid”Transcript: “make it less spicy for my kid” Whole order“Please pack everything separately for the whole order” Total ₹567NDB-466007:11 am · TakeawaySent to chef 1×Veg Puff Whole order“please pack it separately”Transcript: “plea"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /extra butter, well done please/i",
+          "ok": true
+        },
+        {
+          "check": "reply matches /table 7/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T08:11:15.597Z",
+      "screenshot": "04-kitchen.png"
+    }
+  ]
+}

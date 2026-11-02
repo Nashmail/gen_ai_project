@@ -1,0 +1,134 @@
+{
+  "id": 4,
+  "title": "Two customers at once, page reload, server crash, offline fallback",
+  "ranAt": "2026-11-01T19:00:15.533Z",
+  "passed": 6,
+  "total": 6,
+  "steps": [
+    {
+      "step": 1,
+      "kind": "two customers",
+      "input": "A: Anu adds 1 veg puff · B: Bala adds 2 chicken puff (at the same time)",
+      "output": "A {\"Veg Puff\":1} | B {\"Chicken Puff\":2}",
+      "checks": [
+        {
+          "check": "A's cart has only A's item",
+          "ok": true,
+          "detail": "{\"Veg Puff\":1}"
+        },
+        {
+          "check": "B's cart has only B's item",
+          "ok": true,
+          "detail": "{\"Chicken Puff\":2}"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "step": 2,
+      "kind": "simultaneous orders",
+      "input": "Both press Place order together",
+      "output": "NDB-8837 Anu: 1x Veg Puff | NDB-1916 Bala: 2x Chicken Puff | NDB-1864 : 1x Paneer Tikka | NDB-8014 Farhan: 1x Chicken Dum Biryani, 1x Masala Chaas",
+      "checks": [
+        {
+          "check": "both orders reach the kitchen",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "different order numbers",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "no items mixed between them",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "step": 3,
+      "kind": "page reload",
+      "input": "Customer A reloads the page mid-order",
+      "output": "bot messages before 5, after reload 5",
+      "checks": [
+        {
+          "check": "chat history restored",
+          "ok": true,
+          "detail": "5 -> 5"
+        },
+        {
+          "check": "order tracker still visible",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "step": 4,
+      "kind": "server crash",
+      "input": "Backend killed (SIGKILL) mid-order, then restarted",
+      "output": "order NDB-8837 stage 0",
+      "checks": [
+        {
+          "check": "session survived the crash",
+          "ok": true,
+          "detail": "found"
+        },
+        {
+          "check": "order survived the crash",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "order continued to the bill after restart",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "step": 5,
+      "kind": "finish after restart",
+      "input": "A pays by UPI",
+      "output": "Payment of ₹42 by UPI received. Reference TXN59611505. Thank you!\nSource: Demo payment: no real money is charged\nHow was the food, Anu? Rate it or tell me in your own words.",
+      "checks": [
+        {
+          "check": "payment works after restart",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "step": 6,
+      "kind": "offline fallback",
+      "input": "Backend stopped, new visitor opens the site",
+      "output": "Hi! Welcome to NASH Dhabha & Bakes. May I know your name?\nNice to meet you, Divya! What is your mood today? Tell me in chat or tap the mic and say it.\nAdded to your cart: 1 × Masala Chai. Cart total: ₹40.\nSource: Menu",
+      "checks": [
+        {
+          "check": "switches to offline mode",
+          "ok": true,
+          "detail": "offline"
+        },
+        {
+          "check": "chat still works offline",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "no page errors",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "status": "PASS"
+    }
+  ],
+  "consoleErrors": []
+}

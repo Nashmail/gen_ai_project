@@ -1,0 +1,269 @@
+{
+  "sessionId": "69e33925-f60e-446e-988d-73e4ea14f804",
+  "state": {
+    "name": "",
+    "diet": "nonveg",
+    "awaiting": null,
+    "cart": {
+      "lines": [],
+      "count": 0,
+      "bill": {
+        "sub": 0,
+        "cgst": 0,
+        "sgst": 0,
+        "round": 0,
+        "total": 0
+      },
+      "orderNote": "",
+      "orderVoice": null
+    },
+    "order": null
+  },
+  "transcript": [
+    {
+      "at": 1793559814737,
+      "role": "bot",
+      "text": "Namaste! I'm **Masala Mitra**, your table-side friend at NASH Dhabha & Bakes.\nSay **hi** to start. I'll ask your mood and suggest dishes from our menu. You can type or tap the mic to speak.",
+      "chips": [
+        "Hi",
+        "What are your timings?",
+        "Veg biryani"
+      ]
+    },
+    {
+      "at": 1793559815095,
+      "role": "user",
+      "text": "What are your timings?",
+      "voice": false
+    },
+    {
+      "at": 1793559815096,
+      "role": "bot",
+      "text": "We are open every day from 7:00 AM to 11:30 PM. The kitchen serves meals from 11:00 AM to 11:00 PM, and the bakery counter opens at 7:00 AM.",
+      "source": "Timings"
+    },
+    {
+      "at": 1793559815790,
+      "role": "user",
+      "text": "do you have jain food?",
+      "voice": false
+    },
+    {
+      "at": 1793559815790,
+      "role": "bot",
+      "text": "Jain preparation (no onion, garlic or root vegetables) is possible for most gravies on request. Add it as a chef note. Bakes contain wheat and dairy; kulfi and desserts may contain nuts. Tell the chef about any allergy in the chef note.",
+      "source": "Allergies and Jain food"
+    },
+    {
+      "at": 1793559816472,
+      "role": "user",
+      "text": "how much GST do you charge",
+      "voice": false
+    },
+    {
+      "at": 1793559816473,
+      "role": "bot",
+      "text": "Bills include 5% GST, split as 2.5% CGST and 2.5% SGST. Totals are rounded to the nearest rupee.",
+      "source": "Bill and taxes"
+    },
+    {
+      "at": 1793559817154,
+      "role": "user",
+      "text": "is the black forest cake eggless",
+      "voice": false
+    },
+    {
+      "at": 1793559817155,
+      "role": "bot",
+      "text": "**Black Forest Cake (500 g)**: Eggless whole cake with cherries and cream. It is veg, not spicy, ₹550.",
+      "items": [
+        {
+          "id": "black-forest-cake-500-g",
+          "name": "Black Forest Cake (500 g)",
+          "price": 550,
+          "veg": true,
+          "cat": "Bakes",
+          "spice": "",
+          "add": true
+        }
+      ],
+      "source": "Menu: Black Forest Cake (500 g)"
+    },
+    {
+      "at": 1793559817155,
+      "role": "bot",
+      "text": "Can I add **Black Forest Cake (500 g)** (₹550) to your cart?",
+      "chips": [
+        "Yes, add it",
+        "No, show another",
+        "Direct me to menu"
+      ]
+    },
+    {
+      "at": 1793559817839,
+      "role": "user",
+      "text": "price of chicken 65",
+      "voice": false
+    },
+    {
+      "at": 1793559817839,
+      "role": "bot",
+      "text": "Prices from our menu:",
+      "items": [
+        {
+          "id": "chicken-65",
+          "name": "Chicken 65",
+          "price": 260,
+          "veg": false,
+          "cat": "Starters",
+          "spice": "Hot",
+          "add": true
+        },
+        {
+          "id": "gobi-65",
+          "name": "Gobi 65",
+          "price": 190,
+          "veg": true,
+          "cat": "Starters",
+          "spice": "Medium",
+          "add": true
+        },
+        {
+          "id": "chicken-puff",
+          "name": "Chicken Puff",
+          "price": 70,
+          "veg": false,
+          "cat": "Bakes",
+          "spice": "Mild",
+          "add": true
+        },
+        {
+          "id": "chicken-fried-rice",
+          "name": "Chicken Fried Rice",
+          "price": 210,
+          "veg": false,
+          "cat": "Rice",
+          "spice": "Mild",
+          "add": true
+        }
+      ],
+      "source": "Menu"
+    },
+    {
+      "at": 1793559817839,
+      "role": "bot",
+      "text": "Can I add **Chicken 65** (₹260) to your cart?",
+      "chips": [
+        "Yes, add it",
+        "No, show another",
+        "Direct me to menu"
+      ]
+    },
+    {
+      "at": 1793559818529,
+      "role": "user",
+      "text": "do you have pizza?",
+      "voice": false
+    },
+    {
+      "at": 1793559818529,
+      "role": "bot",
+      "text": "I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood.",
+      "chips": [
+        "What are your timings?",
+        "Veg biryani",
+        "Something sweet"
+      ]
+    },
+    {
+      "at": 1793559819225,
+      "role": "user",
+      "text": "checkout",
+      "voice": false
+    },
+    {
+      "at": 1793559819225,
+      "role": "bot",
+      "text": "Your cart is empty right now. Add a dish first.",
+      "chips": [
+        "Direct me to menu"
+      ]
+    },
+    {
+      "at": 1793559819903,
+      "role": "user",
+      "text": "asdfghjkl",
+      "voice": false
+    },
+    {
+      "at": 1793559819903,
+      "role": "bot",
+      "text": "I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood.",
+      "chips": [
+        "What are your timings?",
+        "Veg biryani",
+        "Something sweet"
+      ]
+    },
+    {
+      "at": 1793559820589,
+      "role": "user",
+      "text": "something spicy non veg",
+      "voice": false
+    },
+    {
+      "at": 1793559820590,
+      "role": "bot",
+      "text": "From our menu:",
+      "items": [
+        {
+          "id": "chicken-65",
+          "name": "Chicken 65",
+          "price": 260,
+          "veg": false,
+          "cat": "Starters",
+          "spice": "Hot",
+          "add": true
+        },
+        {
+          "id": "chicken-chettinad",
+          "name": "Chicken Chettinad",
+          "price": 320,
+          "veg": false,
+          "cat": "Gravies & Curries",
+          "spice": "Hot",
+          "add": true
+        },
+        {
+          "id": "prawn-biryani",
+          "name": "Prawn Biryani",
+          "price": 420,
+          "veg": false,
+          "cat": "Biryani",
+          "spice": "Medium",
+          "add": true
+        },
+        {
+          "id": "keema-naan",
+          "name": "Keema Naan",
+          "price": 150,
+          "veg": false,
+          "cat": "Breads",
+          "spice": "Medium",
+          "add": true
+        }
+      ],
+      "source": "Menu"
+    },
+    {
+      "at": 1793559820590,
+      "role": "bot",
+      "text": "Can I add **Chicken 65** (₹260) to your cart?",
+      "chips": [
+        "Yes, add it",
+        "No, show another",
+        "Direct me to menu"
+      ]
+    }
+  ]
+}

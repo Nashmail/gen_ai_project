@@ -1,0 +1,105 @@
+[
+  {
+    "id": 1,
+    "title": "Happy path: English, typed, mood → cart → chef note → dine-in → UPI → 5 stars",
+    "passed": 11,
+    "total": 11,
+    "mode": "live",
+    "failed": []
+  },
+  {
+    "id": 2,
+    "title": "Veg customer with typos and vague requests, takeaway, cash, unhappy feedback",
+    "passed": 14,
+    "total": 15,
+    "mode": "live",
+    "failed": [
+      {
+        "step": 6,
+        "input": "add briyani",
+        "failedChecks": [
+          {
+            "check": "reply matches /which .*biryani/i",
+            "ok": false
+          },
+          {
+            "check": "reply does NOT match /curd rice/i",
+            "ok": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Knowledge questions (RAG) and edge cases",
+    "passed": 9,
+    "total": 10,
+    "mode": "live",
+    "failed": [
+      {
+        "step": 4,
+        "input": "is the black forest cake eggless",
+        "failedChecks": [
+          {
+            "check": "reply matches /eggless/i",
+            "ok": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Hinglish input and voice (speech-to-text chat + recorded chef voice note)",
+    "passed": 7,
+    "total": 11,
+    "mode": "live",
+    "failed": [
+      {
+        "step": 2,
+        "input": "mera naam Arjun hai",
+        "failedChecks": [
+          {
+            "check": "reply matches /arjun/i",
+            "ok": false
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "input": "mood accha nahi hai",
+        "failedChecks": [
+          {
+            "check": "reply matches /sad|low|comfort/i",
+            "ok": false
+          }
+        ]
+      },
+      {
+        "step": 5,
+        "input": "2 masala chai aur 1 veg puff",
+        "failedChecks": [
+          {
+            "check": "reply matches /2 × masala chai/i",
+            "ok": false
+          },
+          {
+            "check": "reply matches /1 × veg puff/i",
+            "ok": false
+          }
+        ]
+      },
+      {
+        "step": 10,
+        "input": "bahut badiya tha",
+        "failedChecks": [
+          {
+            "check": "reply matches /so happy you enjoyed/i",
+            "ok": false
+          }
+        ]
+      }
+    ]
+  }
+]

@@ -1,0 +1,329 @@
+{
+  "id": 2,
+  "title": "Veg customer with typos and vague requests, takeaway, cash, unhappy feedback",
+  "baseUrl": "http://localhost:4000",
+  "mode": "live",
+  "sessionId": "ce5a9035-6040-46c0-8b55-88b2ff0ba9ae",
+  "ranAt": "2026-11-01T18:50:41.049Z",
+  "passed": 14,
+  "total": 15,
+  "consoleErrors": [],
+  "finalScreenshot": "03-final-chat.png",
+  "steps": [
+    {
+      "step": 1,
+      "input": "hello",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Hi! Welcome to NASH Dhabha & Bakes. May I know your name?"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /may i know your name/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-01T18:50:16.780Z"
+    },
+    {
+      "step": 2,
+      "input": "my name is priya sharma",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Nice to meet you, Priya Sharma! What is your mood today? Tell me in chat or tap the mic and say it."
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /priya sharma/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-01T18:50:17.501Z"
+    },
+    {
+      "step": 3,
+      "input": "im stressed",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Take a breath. Something calming and comforting is on the way. You sound stressed, Priya Sharma. From our menu:\nPrefer veg only? Just say “veg”.\nMasala Chai\nChai & Coffee\n₹40\nAdd\nCurd Rice\nRice\n₹130\nAdd\nRice Kheer\nDesserts\n₹110\nAdd\nSource: Menu, matched to your mood"
+        },
+        {
+          "text": "Can I add Masala Chai (₹40) to your cart?"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /stressed/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-01T18:50:18.186Z"
+    },
+    {
+      "step": 4,
+      "input": "veg",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Here are veg picks for your mood:\nMasala Chai\nChai & Coffee\n₹40\nAdd\nCurd Rice\nRice\n₹130\nAdd\nRice Kheer\nDesserts\n₹110\nAdd\nSource: Menu, matched to your mood"
+        },
+        {
+          "text": "Can I add Masala Chai (₹40) to your cart?"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /veg picks/i",
+          "ok": true
+        },
+        {
+          "check": "every suggested dish is veg",
+          "ok": true,
+          "detail": "3 veg, 0 non-veg"
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-01T18:50:18.873Z"
+    },
+    {
+      "step": 5,
+      "input": "no, show another",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Can I add Curd Rice (₹130) to your cart?"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /can i add/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-01T18:50:19.553Z"
+    },
+    {
+      "step": 6,
+      "input": "add briyani",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Done! Curd Rice is in your cart. Cart total: ₹130.\nWant anything else? You can add a note for the chef from the menu or the cart."
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /which .*biryani/i",
+          "ok": false
+        },
+        {
+          "check": "reply does NOT match /curd rice/i",
+          "ok": false
+        }
+      ],
+      "status": "FAIL",
+      "started": "2026-11-01T18:50:20.236Z"
+    },
+    {
+      "step": 7,
+      "input": "add 1 veg dum biryani",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Added to your cart: 1 × Veg Dum Biryani. Cart total: ₹370.\nSource: Menu"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /1 × veg dum biryani/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-01T18:50:20.933Z"
+    },
+    {
+      "step": 8,
+      "input": "add panner butter masala",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Added to your cart: 1 × Paneer Butter Masala. Cart total: ₹630.\nSource: Menu"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /paneer butter masala/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-01T18:50:21.617Z"
+    },
+    {
+      "step": 9,
+      "input": "remove veg dum biryani",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Removed Veg Dum Biryani. Cart total: ₹390."
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /removed .*veg dum biryani/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-01T18:50:22.299Z"
+    },
+    {
+      "step": 10,
+      "input": "show my cart",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Your cart has 2 items. Subtotal ₹390 (5% GST is added on the bill).\n1 × Curd Rice\nRice\n₹130\n1 × Paneer Butter Masala\nGravies & Curries · Mild\n₹260"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /paneer butter masala/i",
+          "ok": true
+        },
+        {
+          "check": "reply does NOT match /veg dum biryani/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-01T18:50:22.982Z"
+    },
+    {
+      "step": 11,
+      "input": "Whole-order chef note: \"Jain preparation please, no onion or garlic\"",
+      "kind": "order note",
+      "outputs": [
+        {
+          "text": "Checkout shows: “Jain preparation please, no onion or garlic”"
+        }
+      ],
+      "checks": [
+        {
+          "check": "order note visible at checkout",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-01T18:50:23.668Z"
+    },
+    {
+      "step": 12,
+      "input": "Checkout: takeaway",
+      "kind": "checkout + place order",
+      "outputs": [
+        {
+          "text": "Order NDB-1222 placed, Priya Sharma! 2 items, takeaway.\n1 × Curd Rice\nRice\n₹130\n1 × Paneer Butter Masala\nGravies & Curries · Mild\n₹260"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /takeaway/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-01T18:50:24.763Z",
+      "screenshot": "01-checkout.png"
+    },
+    {
+      "step": 13,
+      "input": "(waiting for kitchen updates, bill and payment prompt)",
+      "kind": "order lifecycle (automatic)",
+      "outputs": [
+        {
+          "text": "Order NDB-1222 placed, Priya Sharma! 2 items, takeaway.\n1 × Curd Rice\nRice\n₹130\n1 × Paneer Butter Masala\nGravies & Curries · Mild\n₹260"
+        },
+        {
+          "text": "Your order has been sent to the chef. The chef received these notes:\n• Whole order: “Jain preparation please, no onion or garlic”"
+        },
+        {
+          "text": "Your order is getting ready: the kadai is on the flame. About 15–25 minutes in the kitchen."
+        },
+        {
+          "text": "Your takeaway order is ready and packed at the counter. Enjoy!"
+        },
+        {
+          "text": "Here is your bill:\nNASH DHABHA & BAKES\nBill NDB-1222 · 1/11/2026 06:50 pm\nTakeaway · Priya Sharma\n1 × Curd Rice\t₹130\n1 × Paneer Butter Masala\t₹260\nSubtotal\t₹390\nCGST 2.5%\t₹9.75\nSGST 2.5%\t₹9.75\nRound off\t+0.50\nTotal\t₹410"
+        },
+        {
+          "text": "How would you like to pay ₹410?"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /no onion or garlic/i",
+          "ok": true
+        },
+        {
+          "check": "reply matches /packed at the counter/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-01T18:50:25.987Z",
+      "elapsedMs": 13195,
+      "screenshot": "02-bill.png"
+    },
+    {
+      "step": 14,
+      "input": "cash",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Payment of ₹410 by Cash received. Reference CSH59039299. Thank you!\nSource: Demo payment: no real money is charged"
+        },
+        {
+          "text": "How was the food, Priya Sharma? Rate it or tell me in your own words."
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /by cash received/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-01T18:50:39.267Z"
+    },
+    {
+      "step": 15,
+      "input": "the food was too salty and cold",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Sorry the food didn't meet your expectations. I've sent your feedback to the chef and the manager so they can fix it.\nVisit NASH Dhabha & Bakes again soon!"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /sorry/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-01T18:50:39.966Z"
+    }
+  ]
+}

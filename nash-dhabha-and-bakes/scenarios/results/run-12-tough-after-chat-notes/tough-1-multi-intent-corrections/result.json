@@ -1,0 +1,146 @@
+{
+  "id": 1,
+  "title": "Multi-intent messages and corrections",
+  "ranAt": "2026-11-02T08:12:21.985Z",
+  "passed": 7,
+  "total": 7,
+  "steps": [
+    {
+      "step": 1,
+      "kind": "chat",
+      "input": "hi I'm Kavya and I'm really hungry",
+      "output": "Nice to meet you, Kavya!\nThen let's fill you up properly! You sound hungry, Kavya. From our menu:\nPrefer veg only? Just say “veg”.\nChole Masala\nGravies & Curries · Medium\nPunjabi chickpea curry, dark and tangy.\n₹200\nAdd\nChicken Dum Biryani\nBiryani · Medium\nHyderabadi-style chicken dum biryani with raita.\n₹290\nAdd\nChicken Fried Rice\nRice · Mild\nWok-tossed rice with chicken and vegetables.\n₹210\nAdd\nSource: Menu, matched to your mood\nCan I add Chole Masala (₹200) to your cart?",
+      "checks": [
+        {
+          "check": "captures the name Kavya from a combined message",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "reacts to the hungry mood with dishes",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "step": 2,
+      "kind": "chat",
+      "input": "add 2 garlic naan, 1 butter chicken and a mango lassi",
+      "output": "Added to your cart: 2 × Garlic Naan, 1 × Butter Chicken, 1 × Mango Lassi. Cart total: ₹600.\nSource: Menu",
+      "checks": [
+        {
+          "check": "2 Garlic Naan in cart",
+          "ok": true,
+          "detail": "{\"Garlic Naan\":2,\"Butter Chicken\":1,\"Mango Lassi\":1}"
+        },
+        {
+          "check": "1 Butter Chicken in cart",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "1 Mango Lassi in cart",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "step": 3,
+      "kind": "chat",
+      "input": "actually replace butter chicken with paneer butter masala",
+      "output": "Done. I replaced Butter Chicken with 1 × Paneer Butter Masala. Cart total: ₹540.",
+      "checks": [
+        {
+          "check": "Butter Chicken removed",
+          "ok": true,
+          "detail": "{\"Garlic Naan\":2,\"Mango Lassi\":1,\"Paneer Butter Masala\":1}"
+        },
+        {
+          "check": "Paneer Butter Masala added",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "step": 4,
+      "kind": "chat",
+      "input": "make the garlic naan 4",
+      "output": "Updated: 4 × Garlic Naan. Cart total: ₹690.",
+      "checks": [
+        {
+          "check": "Garlic Naan quantity set to 4",
+          "ok": true,
+          "detail": "{\"Garlic Naan\":4,\"Mango Lassi\":1,\"Paneer Butter Masala\":1}"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "step": 5,
+      "kind": "chat",
+      "input": "remove 1 garlic naan",
+      "output": "Updated Garlic Naan. You now have 3 × Garlic Naan. Cart total: ₹615.",
+      "checks": [
+        {
+          "check": "removes exactly one naan",
+          "ok": true,
+          "detail": "4 -> 3"
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "step": 6,
+      "kind": "chat",
+      "input": "2 x jeera rice + one sweet lassi pls",
+      "output": "Added to your cart: 2 × Jeera Rice, 1 × Sweet Lassi. Cart total: ₹995.\nSource: Menu",
+      "checks": [
+        {
+          "check": "2 Jeera Rice",
+          "ok": true,
+          "detail": "{\"Garlic Naan\":3,\"Mango Lassi\":1,\"Paneer Butter Masala\":1,\"Jeera Rice\":2,\"Sweet Lassi\":1}"
+        },
+        {
+          "check": "1 Sweet Lassi",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "status": "PASS"
+    },
+    {
+      "step": 7,
+      "kind": "chat",
+      "input": "what's in my cart and how much is it with tax?",
+      "output": "Your cart has 8 items. Subtotal ₹995, with 5% GST the total is ₹1,045.\n3 × Garlic Naan\nBreads\n₹75\n1 × Mango Lassi\nJuices & Lassi\n₹130\n1 × Paneer Butter Masala\nGravies & Curries · Mild\n₹260\n2 × Jeera Rice\nRice\n₹140\n1 × Sweet Lassi\nJuices & Lassi\n₹100",
+      "checks": [
+        {
+          "check": "lists the cart",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "gives the total including GST",
+          "ok": true,
+          "detail": "expected ₹1045"
+        }
+      ],
+      "status": "PASS"
+    }
+  ],
+  "sessionId": "03406bc6-2444-4852-b7cb-2bb2e60d42bb",
+  "finalCart": {
+    "Garlic Naan": 3,
+    "Mango Lassi": 1,
+    "Paneer Butter Masala": 1,
+    "Jeera Rice": 2,
+    "Sweet Lassi": 1
+  },
+  "consoleErrors": []
+}

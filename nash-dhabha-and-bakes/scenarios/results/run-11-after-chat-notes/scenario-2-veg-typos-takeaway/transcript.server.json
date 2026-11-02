@@ -1,0 +1,481 @@
+{
+  "sessionId": "9c9bb271-06c6-46a3-a463-549696b4ea3e",
+  "state": {
+    "name": "Priya Sharma",
+    "diet": "veg",
+    "awaiting": null,
+    "cart": {
+      "lines": [],
+      "count": 0,
+      "bill": {
+        "sub": 0,
+        "cgst": 0,
+        "sgst": 0,
+        "round": 0,
+        "total": 0
+      },
+      "orderNote": "",
+      "orderVoice": null
+    },
+    "order": {
+      "no": "NDB-2614",
+      "customer": "Priya Sharma",
+      "mode": "take",
+      "table": "",
+      "items": [
+        {
+          "id": "paneer-butter-masala",
+          "name": "Paneer Butter Masala",
+          "cat": "gravy",
+          "veg": true,
+          "price": 260,
+          "qty": 1,
+          "amount": 260,
+          "note": "",
+          "voice": null
+        }
+      ],
+      "bill": {
+        "sub": 260,
+        "cgst": 6.5,
+        "sgst": 6.5,
+        "round": 0,
+        "total": 273
+      },
+      "note": "Jain preparation please, no onion or garlic",
+      "voice": null,
+      "placedAt": 1793607086627,
+      "stage": 7,
+      "paid": true,
+      "payment": {
+        "method": "Cash",
+        "ref": "CSH07100500",
+        "at": 1793607100500
+      },
+      "feedback": {
+        "stars": 2,
+        "text": "the food was too salty and cold",
+        "at": 1793607101183
+      }
+    }
+  },
+  "transcript": [
+    {
+      "at": 1793607077776,
+      "role": "bot",
+      "text": "Namaste! I'm **Masala Mitra**, your table-side friend at NASH Dhabha & Bakes.\nSay **hi** to start. I'll ask your mood and suggest dishes from our menu. You can type or tap the mic to speak.",
+      "chips": [
+        "Hi",
+        "What are your timings?",
+        "Veg biryani"
+      ]
+    },
+    {
+      "at": 1793607078095,
+      "role": "user",
+      "text": "hello",
+      "voice": false
+    },
+    {
+      "at": 1793607078095,
+      "role": "bot",
+      "text": "Hi! Welcome to **NASH Dhabha & Bakes**. May I know your name?"
+    },
+    {
+      "at": 1793607078783,
+      "role": "user",
+      "text": "my name is priya sharma",
+      "voice": false
+    },
+    {
+      "at": 1793607078783,
+      "role": "bot",
+      "text": "Nice to meet you, **Priya Sharma**! What is your mood today? Tell me in chat or tap the mic and say it.",
+      "chips": [
+        "Happy",
+        "Hungry",
+        "Tired",
+        "Stressed",
+        "Sad",
+        "Adventurous"
+      ]
+    },
+    {
+      "at": 1793607079470,
+      "role": "user",
+      "text": "im stressed",
+      "voice": false
+    },
+    {
+      "at": 1793607079471,
+      "role": "bot",
+      "text": "Take a breath. Something calming and comforting is on the way. You sound **stressed**, Priya Sharma. From our menu:\nPrefer veg only? Just say “veg”.",
+      "items": [
+        {
+          "id": "masala-chai",
+          "name": "Masala Chai",
+          "price": 40,
+          "veg": true,
+          "cat": "Chai & Coffee",
+          "spice": "",
+          "desc": "Kadak tea with ginger and cardamom.",
+          "add": true
+        },
+        {
+          "id": "curd-rice",
+          "name": "Curd Rice",
+          "price": 130,
+          "veg": true,
+          "cat": "Rice",
+          "spice": "",
+          "desc": "Cool curd rice with mustard tempering and pomegranate.",
+          "add": true
+        },
+        {
+          "id": "rice-kheer",
+          "name": "Rice Kheer",
+          "price": 110,
+          "veg": true,
+          "cat": "Desserts",
+          "spice": "",
+          "desc": "Rice pudding with cardamom and nuts.",
+          "add": true
+        }
+      ],
+      "source": "Menu, matched to your mood"
+    },
+    {
+      "at": 1793607079471,
+      "role": "bot",
+      "text": "Can I add **Masala Chai** (₹40) to your cart?",
+      "chips": [
+        "Yes, add it",
+        "No, show another",
+        "Direct me to menu"
+      ]
+    },
+    {
+      "at": 1793607080153,
+      "role": "user",
+      "text": "veg",
+      "voice": false
+    },
+    {
+      "at": 1793607080153,
+      "role": "bot",
+      "text": "Here are veg picks for your mood:",
+      "items": [
+        {
+          "id": "masala-chai",
+          "name": "Masala Chai",
+          "price": 40,
+          "veg": true,
+          "cat": "Chai & Coffee",
+          "spice": "",
+          "desc": "Kadak tea with ginger and cardamom.",
+          "add": true
+        },
+        {
+          "id": "curd-rice",
+          "name": "Curd Rice",
+          "price": 130,
+          "veg": true,
+          "cat": "Rice",
+          "spice": "",
+          "desc": "Cool curd rice with mustard tempering and pomegranate.",
+          "add": true
+        },
+        {
+          "id": "rice-kheer",
+          "name": "Rice Kheer",
+          "price": 110,
+          "veg": true,
+          "cat": "Desserts",
+          "spice": "",
+          "desc": "Rice pudding with cardamom and nuts.",
+          "add": true
+        }
+      ],
+      "source": "Menu, matched to your mood"
+    },
+    {
+      "at": 1793607080153,
+      "role": "bot",
+      "text": "Can I add **Masala Chai** (₹40) to your cart?",
+      "chips": [
+        "Yes, add it",
+        "No, show another",
+        "Direct me to menu"
+      ]
+    },
+    {
+      "at": 1793607080832,
+      "role": "user",
+      "text": "no, show another",
+      "voice": false
+    },
+    {
+      "at": 1793607080833,
+      "role": "bot",
+      "text": "Can I add **Curd Rice** (₹130) to your cart?",
+      "chips": [
+        "Yes, add it",
+        "No, show another",
+        "Direct me to menu"
+      ]
+    },
+    {
+      "at": 1793607081515,
+      "role": "user",
+      "text": "add briyani",
+      "voice": false
+    },
+    {
+      "at": 1793607081517,
+      "role": "bot",
+      "text": "Which “biryani” do you mean? Tap **Add** on the one you want.",
+      "items": [
+        {
+          "id": "mushroom-biryani",
+          "name": "Mushroom Biryani",
+          "price": 260,
+          "veg": true,
+          "cat": "Biryani",
+          "spice": "Medium",
+          "desc": "Seeraga samba rice with mushrooms, South Indian style.",
+          "add": true
+        },
+        {
+          "id": "egg-biryani",
+          "name": "Egg Biryani",
+          "price": 230,
+          "veg": false,
+          "cat": "Biryani",
+          "spice": "Medium",
+          "desc": "Spiced eggs layered with biryani rice.",
+          "add": true
+        },
+        {
+          "id": "prawn-biryani",
+          "name": "Prawn Biryani",
+          "price": 420,
+          "veg": false,
+          "cat": "Biryani",
+          "spice": "Medium",
+          "desc": "Coastal prawn biryani with mint.",
+          "add": true
+        },
+        {
+          "id": "veg-dum-biryani",
+          "name": "Veg Dum Biryani",
+          "price": 240,
+          "veg": true,
+          "cat": "Biryani",
+          "spice": "Mild",
+          "desc": "Basmati and vegetables sealed and dum-cooked.",
+          "add": true
+        }
+      ],
+      "source": "Menu"
+    },
+    {
+      "at": 1793607082202,
+      "role": "user",
+      "text": "add 1 veg dum biryani",
+      "voice": false
+    },
+    {
+      "at": 1793607082204,
+      "role": "bot",
+      "text": "Added to your cart: **1 × Veg Dum Biryani**. Cart total: **₹240**.",
+      "chips": [
+        "Show my cart",
+        "Checkout",
+        "Direct me to menu"
+      ],
+      "source": "Menu",
+      "cartChanged": true
+    },
+    {
+      "at": 1793607082882,
+      "role": "user",
+      "text": "add panner butter masala",
+      "voice": false
+    },
+    {
+      "at": 1793607082883,
+      "role": "bot",
+      "text": "Added to your cart: **1 × Paneer Butter Masala**. Cart total: **₹500**.",
+      "chips": [
+        "Show my cart",
+        "Checkout",
+        "Direct me to menu"
+      ],
+      "source": "Menu",
+      "cartChanged": true
+    },
+    {
+      "at": 1793607083562,
+      "role": "user",
+      "text": "remove veg dum biryani",
+      "voice": false
+    },
+    {
+      "at": 1793607083564,
+      "role": "bot",
+      "text": "Removed **Veg Dum Biryani**. Cart total: **₹260**.",
+      "chips": [
+        "Show my cart"
+      ],
+      "cartChanged": true
+    },
+    {
+      "at": 1793607084258,
+      "role": "user",
+      "text": "show my cart",
+      "voice": false
+    },
+    {
+      "at": 1793607084259,
+      "role": "bot",
+      "text": "Your cart has 1 item. Subtotal **₹260**, with 5% GST the total is **₹273**.",
+      "items": [
+        {
+          "id": "paneer-butter-masala",
+          "name": "Paneer Butter Masala",
+          "price": 260,
+          "veg": true,
+          "cat": "Gravies & Curries",
+          "spice": "Mild",
+          "desc": "Paneer in a creamy tomato-butter gravy.",
+          "qty": 1,
+          "note": ""
+        }
+      ],
+      "chips": [
+        "Checkout",
+        "Direct me to menu"
+      ]
+    },
+    {
+      "at": 1793607085410,
+      "role": "event",
+      "type": "chef-note",
+      "id": "__order",
+      "note": "Jain preparation please, no onion or garlic",
+      "voice": null,
+      "transcript": ""
+    },
+    {
+      "at": 1793607086627,
+      "role": "event",
+      "type": "order-placed",
+      "orderNo": "NDB-2614",
+      "total": 273
+    },
+    {
+      "at": 1793607086627,
+      "role": "bot",
+      "text": "Order **NDB-2614** placed, Priya Sharma! 1 item, takeaway.",
+      "items": [
+        {
+          "id": "paneer-butter-masala",
+          "name": "Paneer Butter Masala",
+          "price": 260,
+          "veg": true,
+          "cat": "Gravies & Curries",
+          "spice": "Mild",
+          "desc": "Paneer in a creamy tomato-butter gravy.",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "at": 1793607088894,
+      "role": "bot",
+      "text": "Your order has been sent to the chef. The chef received these notes:\n• Whole order: “Jain preparation please, no onion or garlic”"
+    },
+    {
+      "at": 1793607091894,
+      "role": "bot",
+      "text": "Your order is getting ready: the kadai is on the flame. About 15–25 minutes in the kitchen."
+    },
+    {
+      "at": 1793607096894,
+      "role": "bot",
+      "text": "Your takeaway order is ready and packed at the counter. Enjoy!"
+    },
+    {
+      "at": 1793607099894,
+      "role": "bot",
+      "text": "Here is your bill:",
+      "bill": {
+        "no": "NDB-2614",
+        "at": 1793607086627,
+        "mode": "take",
+        "table": "",
+        "customer": "Priya Sharma",
+        "lines": [
+          {
+            "name": "Paneer Butter Masala",
+            "qty": 1,
+            "amount": 260
+          }
+        ],
+        "sub": 260,
+        "cgst": 6.5,
+        "sgst": 6.5,
+        "round": 0,
+        "total": 273
+      }
+    },
+    {
+      "at": 1793607099894,
+      "role": "bot",
+      "text": "How would you like to pay **₹273**?",
+      "chips": [
+        "UPI",
+        "Card",
+        "Cash"
+      ]
+    },
+    {
+      "at": 1793607100500,
+      "role": "user",
+      "text": "cash",
+      "voice": false
+    },
+    {
+      "at": 1793607100500,
+      "role": "bot",
+      "text": "Payment of **₹273** by **Cash** received. Reference **CSH07100500**. Thank you!",
+      "source": "Demo payment: no real money is charged"
+    },
+    {
+      "at": 1793607100500,
+      "role": "bot",
+      "text": "How was the food, Priya Sharma? Rate it or tell me in your own words.",
+      "chips": [
+        "★★★★★ Loved it",
+        "★★★★ Good",
+        "★★★ Okay",
+        "★★ Not great",
+        "★ Bad"
+      ]
+    },
+    {
+      "at": 1793607101182,
+      "role": "user",
+      "text": "the food was too salty and cold",
+      "voice": false
+    },
+    {
+      "at": 1793607101183,
+      "role": "bot",
+      "text": "Sorry the food didn't meet your expectations. I've sent your feedback to the chef and the manager so they can fix it.\nVisit NASH Dhabha & Bakes again soon!",
+      "chips": [
+        "Start a new order"
+      ]
+    }
+  ]
+}

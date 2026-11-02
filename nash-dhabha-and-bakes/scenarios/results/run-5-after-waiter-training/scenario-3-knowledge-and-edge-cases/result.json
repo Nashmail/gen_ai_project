@@ -1,0 +1,230 @@
+{
+  "id": 3,
+  "title": "Knowledge questions (RAG) and edge cases",
+  "baseUrl": "http://localhost:4000",
+  "mode": "live",
+  "sessionId": "640dd2e2-9117-4689-a842-e09fb0901e37",
+  "ranAt": "2026-11-02T06:29:08.311Z",
+  "passed": 10,
+  "total": 10,
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 400 (Bad Request)"
+  ],
+  "finalScreenshot": "01-final-chat.png",
+  "steps": [
+    {
+      "step": 1,
+      "input": "What are your timings?",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "We are open every day from 7:00 AM to 11:30 PM. The kitchen serves meals from 11:00 AM to 11:00 PM, and the bakery counter opens at 7:00 AM.\nSource: Timings"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /7:00 am to 11:30 pm/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T06:29:01.736Z"
+    },
+    {
+      "step": 2,
+      "input": "do you have jain food?",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Jain preparation (no onion, garlic or root vegetables) is possible for most gravies on request. Add it as a chef note. Bakes contain wheat and dairy; kulfi and desserts may contain nuts. Tell the chef about any allergy in the chef note.\nSource: Allergies and Jain food"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /jain/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T06:29:02.442Z"
+    },
+    {
+      "step": 3,
+      "input": "how much GST do you charge",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Bills include 5% GST, split as 2.5% CGST and 2.5% SGST. Totals are rounded to the nearest rupee.\nSource: Bill and taxes"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /5% gst/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T06:29:03.127Z"
+    },
+    {
+      "step": 4,
+      "input": "is the black forest cake eggless",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Black Forest Cake (500 g) is eggless. Eggless whole cake with cherries and cream.\nBlack Forest Cake (500 g)\nBakes\n₹550\nAdd\nSource: Menu: Black Forest Cake (500 g)"
+        },
+        {
+          "text": "Can I add Black Forest Cake (500 g) (₹550) to your cart?"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /black forest/i",
+          "ok": true
+        },
+        {
+          "check": "reply matches /eggless/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T06:29:03.810Z"
+    },
+    {
+      "step": 5,
+      "input": "price of chicken 65",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Chicken 65 is ₹260. Deep-fried spicy chicken with curry leaves.\nChicken 65\nStarters · Hot\n₹260\nAdd\nSource: Menu: Chicken 65"
+        },
+        {
+          "text": "Can I add Chicken 65 (₹260) to your cart?"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /chicken 65/i",
+          "ok": true
+        },
+        {
+          "check": "reply matches /₹260/",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T06:29:04.504Z"
+    },
+    {
+      "step": 6,
+      "input": "do you have pizza?",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Sorry, we don't have pizza on our menu. We're a dhaba and bakery, so you'll find tandoor breads, curries, biryani, starters, drinks, desserts and bakes."
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /couldn't find|not on our menu|don't have/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T06:29:05.195Z",
+      "note": "Pizza is not on the menu, so the bot should say so."
+    },
+    {
+      "step": 7,
+      "input": "checkout",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Your cart is empty right now. Add a dish first."
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /cart is empty/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T06:29:05.876Z"
+    },
+    {
+      "step": 8,
+      "input": "asdfghjkl",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood."
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /couldn't find/i",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T06:29:06.560Z"
+    },
+    {
+      "step": 9,
+      "input": "something spicy non veg",
+      "kind": "chat",
+      "outputs": [
+        {
+          "text": "Sure! For spicy non-veg dishes, here's what I'd suggest:\nChicken 65\nStarters · Hot\n₹260\nAdd\nChicken Dum Biryani\nBiryani · Medium\n₹290\nAdd\nTandoori Chicken (Half)\nStarters · Medium\n₹300\nAdd\nHyderabadi Mutton Biryani\nBiryani · Medium\n₹380\nAdd\nSource: Menu"
+        },
+        {
+          "text": "My pick: Chicken 65. Deep-fried spicy chicken with curry leaves. It's one of our bestsellers."
+        },
+        {
+          "text": "Can I add Chicken 65 (₹260) to your cart?"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /spicy non-veg/i",
+          "ok": true
+        },
+        {
+          "check": "reply matches /medium|hot/i",
+          "ok": true
+        },
+        {
+          "check": "reply does NOT match /mild\\b/i",
+          "ok": true
+        },
+        {
+          "check": "every suggested dish is non-veg",
+          "ok": true,
+          "detail": "0 veg, 4 non-veg"
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T06:29:07.242Z"
+    },
+    {
+      "step": 10,
+      "input": "POST /api/sessions/:id/orders with an empty cart",
+      "kind": "API edge case",
+      "outputs": [
+        {
+          "text": "HTTP 400 {\"error\":\"EMPTY_CART\",\"message\":\"Your cart is empty.\"}"
+        }
+      ],
+      "checks": [
+        {
+          "check": "reply matches /EMPTY_CART/",
+          "ok": true
+        }
+      ],
+      "status": "PASS",
+      "started": "2026-11-02T06:29:07.925Z"
+    }
+  ]
+}

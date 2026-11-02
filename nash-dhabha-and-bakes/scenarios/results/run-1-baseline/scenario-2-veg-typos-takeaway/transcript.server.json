@@ -1,0 +1,472 @@
+{
+  "sessionId": "ce5a9035-6040-46c0-8b55-88b2ff0ba9ae",
+  "state": {
+    "name": "Priya Sharma",
+    "diet": "veg",
+    "awaiting": null,
+    "cart": {
+      "lines": [],
+      "count": 0,
+      "bill": {
+        "sub": 0,
+        "cgst": 0,
+        "sgst": 0,
+        "round": 0,
+        "total": 0
+      },
+      "orderNote": "",
+      "orderVoice": null
+    },
+    "order": {
+      "no": "NDB-1222",
+      "customer": "Priya Sharma",
+      "mode": "take",
+      "table": "",
+      "items": [
+        {
+          "id": "curd-rice",
+          "name": "Curd Rice",
+          "cat": "rice",
+          "veg": true,
+          "price": 130,
+          "qty": 1,
+          "amount": 130,
+          "note": "",
+          "voice": null
+        },
+        {
+          "id": "paneer-butter-masala",
+          "name": "Paneer Butter Masala",
+          "cat": "gravy",
+          "veg": true,
+          "price": 260,
+          "qty": 1,
+          "amount": 260,
+          "note": "",
+          "voice": null
+        }
+      ],
+      "bill": {
+        "sub": 390,
+        "cgst": 9.75,
+        "sgst": 9.75,
+        "round": 0.5,
+        "total": 410
+      },
+      "note": "Jain preparation please, no onion or garlic",
+      "voice": null,
+      "placedAt": 1793559025400,
+      "stage": 7,
+      "paid": true,
+      "payment": {
+        "method": "Cash",
+        "ref": "CSH59039299",
+        "at": 1793559039299
+      },
+      "feedback": {
+        "stars": 2,
+        "text": "the food was too salty and cold",
+        "at": 1793559039985
+      }
+    }
+  },
+  "transcript": [
+    {
+      "at": 1793559016494,
+      "role": "bot",
+      "text": "Namaste! I'm **Masala Mitra**, your table-side friend at NASH Dhabha & Bakes.\nSay **hi** to start. I'll ask your mood and suggest dishes from our menu. You can type or tap the mic to speak.",
+      "chips": [
+        "Hi",
+        "What are your timings?",
+        "Veg biryani"
+      ]
+    },
+    {
+      "at": 1793559016826,
+      "role": "user",
+      "text": "hello",
+      "voice": false
+    },
+    {
+      "at": 1793559016826,
+      "role": "bot",
+      "text": "Hi! Welcome to **NASH Dhabha & Bakes**. May I know your name?"
+    },
+    {
+      "at": 1793559017522,
+      "role": "user",
+      "text": "my name is priya sharma",
+      "voice": false
+    },
+    {
+      "at": 1793559017522,
+      "role": "bot",
+      "text": "Nice to meet you, **Priya Sharma**! What is your mood today? Tell me in chat or tap the mic and say it.",
+      "chips": [
+        "Happy",
+        "Hungry",
+        "Tired",
+        "Stressed",
+        "Sad",
+        "Adventurous"
+      ]
+    },
+    {
+      "at": 1793559018207,
+      "role": "user",
+      "text": "im stressed",
+      "voice": false
+    },
+    {
+      "at": 1793559018208,
+      "role": "bot",
+      "text": "Take a breath. Something calming and comforting is on the way. You sound **stressed**, Priya Sharma. From our menu:\nPrefer veg only? Just say “veg”.",
+      "items": [
+        {
+          "id": "masala-chai",
+          "name": "Masala Chai",
+          "price": 40,
+          "veg": true,
+          "cat": "Chai & Coffee",
+          "spice": "",
+          "add": true
+        },
+        {
+          "id": "curd-rice",
+          "name": "Curd Rice",
+          "price": 130,
+          "veg": true,
+          "cat": "Rice",
+          "spice": "",
+          "add": true
+        },
+        {
+          "id": "rice-kheer",
+          "name": "Rice Kheer",
+          "price": 110,
+          "veg": true,
+          "cat": "Desserts",
+          "spice": "",
+          "add": true
+        }
+      ],
+      "source": "Menu, matched to your mood"
+    },
+    {
+      "at": 1793559018208,
+      "role": "bot",
+      "text": "Can I add **Masala Chai** (₹40) to your cart?",
+      "chips": [
+        "Yes, add it",
+        "No, show another",
+        "Direct me to menu"
+      ]
+    },
+    {
+      "at": 1793559018892,
+      "role": "user",
+      "text": "veg",
+      "voice": false
+    },
+    {
+      "at": 1793559018892,
+      "role": "bot",
+      "text": "Here are veg picks for your mood:",
+      "items": [
+        {
+          "id": "masala-chai",
+          "name": "Masala Chai",
+          "price": 40,
+          "veg": true,
+          "cat": "Chai & Coffee",
+          "spice": "",
+          "add": true
+        },
+        {
+          "id": "curd-rice",
+          "name": "Curd Rice",
+          "price": 130,
+          "veg": true,
+          "cat": "Rice",
+          "spice": "",
+          "add": true
+        },
+        {
+          "id": "rice-kheer",
+          "name": "Rice Kheer",
+          "price": 110,
+          "veg": true,
+          "cat": "Desserts",
+          "spice": "",
+          "add": true
+        }
+      ],
+      "source": "Menu, matched to your mood"
+    },
+    {
+      "at": 1793559018892,
+      "role": "bot",
+      "text": "Can I add **Masala Chai** (₹40) to your cart?",
+      "chips": [
+        "Yes, add it",
+        "No, show another",
+        "Direct me to menu"
+      ]
+    },
+    {
+      "at": 1793559019575,
+      "role": "user",
+      "text": "no, show another",
+      "voice": false
+    },
+    {
+      "at": 1793559019575,
+      "role": "bot",
+      "text": "Can I add **Curd Rice** (₹130) to your cart?",
+      "chips": [
+        "Yes, add it",
+        "No, show another",
+        "Direct me to menu"
+      ]
+    },
+    {
+      "at": 1793559020260,
+      "role": "user",
+      "text": "add briyani",
+      "voice": false
+    },
+    {
+      "at": 1793559020260,
+      "role": "bot",
+      "text": "Done! **Curd Rice** is in your cart. Cart total: **₹130**.\nWant anything else? You can add a note for the chef from the menu or the cart.",
+      "chips": [
+        "Suggest a dessert",
+        "Show my cart",
+        "Direct me to menu",
+        "Checkout"
+      ],
+      "cartChanged": true
+    },
+    {
+      "at": 1793559020956,
+      "role": "user",
+      "text": "add 1 veg dum biryani",
+      "voice": false
+    },
+    {
+      "at": 1793559020957,
+      "role": "bot",
+      "text": "Added to your cart: **1 × Veg Dum Biryani**. Cart total: **₹370**.",
+      "chips": [
+        "Show my cart",
+        "Checkout",
+        "Direct me to menu"
+      ],
+      "source": "Menu",
+      "cartChanged": true
+    },
+    {
+      "at": 1793559021641,
+      "role": "user",
+      "text": "add panner butter masala",
+      "voice": false
+    },
+    {
+      "at": 1793559021642,
+      "role": "bot",
+      "text": "Added to your cart: **1 × Paneer Butter Masala**. Cart total: **₹630**.",
+      "chips": [
+        "Show my cart",
+        "Checkout",
+        "Direct me to menu"
+      ],
+      "source": "Menu",
+      "cartChanged": true
+    },
+    {
+      "at": 1793559022323,
+      "role": "user",
+      "text": "remove veg dum biryani",
+      "voice": false
+    },
+    {
+      "at": 1793559022325,
+      "role": "bot",
+      "text": "Removed **Veg Dum Biryani**. Cart total: **₹390**.",
+      "chips": [
+        "Show my cart"
+      ],
+      "cartChanged": true
+    },
+    {
+      "at": 1793559023008,
+      "role": "user",
+      "text": "show my cart",
+      "voice": false
+    },
+    {
+      "at": 1793559023008,
+      "role": "bot",
+      "text": "Your cart has 2 items. Subtotal **₹390** (5% GST is added on the bill).",
+      "items": [
+        {
+          "id": "curd-rice",
+          "name": "Curd Rice",
+          "price": 130,
+          "veg": true,
+          "cat": "Rice",
+          "spice": "",
+          "qty": 1,
+          "note": ""
+        },
+        {
+          "id": "paneer-butter-masala",
+          "name": "Paneer Butter Masala",
+          "price": 260,
+          "veg": true,
+          "cat": "Gravies & Curries",
+          "spice": "Mild",
+          "qty": 1,
+          "note": ""
+        }
+      ],
+      "chips": [
+        "Checkout",
+        "Direct me to menu"
+      ]
+    },
+    {
+      "at": 1793559024153,
+      "role": "event",
+      "type": "chef-note",
+      "id": "__order",
+      "note": "Jain preparation please, no onion or garlic",
+      "voice": null,
+      "transcript": ""
+    },
+    {
+      "at": 1793559025400,
+      "role": "event",
+      "type": "order-placed",
+      "orderNo": "NDB-1222",
+      "total": 410
+    },
+    {
+      "at": 1793559025400,
+      "role": "bot",
+      "text": "Order **NDB-1222** placed, Priya Sharma! 2 items, takeaway.",
+      "items": [
+        {
+          "id": "curd-rice",
+          "name": "Curd Rice",
+          "price": 130,
+          "veg": true,
+          "cat": "Rice",
+          "spice": "",
+          "qty": 1
+        },
+        {
+          "id": "paneer-butter-masala",
+          "name": "Paneer Butter Masala",
+          "price": 260,
+          "veg": true,
+          "cat": "Gravies & Curries",
+          "spice": "Mild",
+          "qty": 1
+        }
+      ]
+    },
+    {
+      "at": 1793559027665,
+      "role": "bot",
+      "text": "Your order has been sent to the chef. The chef received these notes:\n• Whole order: “Jain preparation please, no onion or garlic”"
+    },
+    {
+      "at": 1793559030665,
+      "role": "bot",
+      "text": "Your order is getting ready: the kadai is on the flame. About 15–25 minutes in the kitchen."
+    },
+    {
+      "at": 1793559035665,
+      "role": "bot",
+      "text": "Your takeaway order is ready and packed at the counter. Enjoy!"
+    },
+    {
+      "at": 1793559038666,
+      "role": "bot",
+      "text": "Here is your bill:",
+      "bill": {
+        "no": "NDB-1222",
+        "at": 1793559025400,
+        "mode": "take",
+        "table": "",
+        "customer": "Priya Sharma",
+        "lines": [
+          {
+            "name": "Curd Rice",
+            "qty": 1,
+            "amount": 130
+          },
+          {
+            "name": "Paneer Butter Masala",
+            "qty": 1,
+            "amount": 260
+          }
+        ],
+        "sub": 390,
+        "cgst": 9.75,
+        "sgst": 9.75,
+        "round": 0.5,
+        "total": 410
+      }
+    },
+    {
+      "at": 1793559038666,
+      "role": "bot",
+      "text": "How would you like to pay **₹410**?",
+      "chips": [
+        "UPI",
+        "Card",
+        "Cash"
+      ]
+    },
+    {
+      "at": 1793559039299,
+      "role": "user",
+      "text": "cash",
+      "voice": false
+    },
+    {
+      "at": 1793559039299,
+      "role": "bot",
+      "text": "Payment of **₹410** by **Cash** received. Reference **CSH59039299**. Thank you!",
+      "source": "Demo payment: no real money is charged"
+    },
+    {
+      "at": 1793559039299,
+      "role": "bot",
+      "text": "How was the food, Priya Sharma? Rate it or tell me in your own words.",
+      "chips": [
+        "★★★★★ Loved it",
+        "★★★★ Good",
+        "★★★ Okay",
+        "★★ Not great",
+        "★ Bad"
+      ]
+    },
+    {
+      "at": 1793559039985,
+      "role": "user",
+      "text": "the food was too salty and cold",
+      "voice": false
+    },
+    {
+      "at": 1793559039985,
+      "role": "bot",
+      "text": "Sorry the food didn't meet your expectations. I've sent your feedback to the chef and the manager so they can fix it.\nVisit NASH Dhabha & Bakes again soon!",
+      "chips": [
+        "Start a new order"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+name: Masala Mitra tests
+on:
+  push:
+    paths: ["nash-dhabha-and-bakes/**"]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      browser:
+        description: "Also run the browser suites (scenarios, tough, voice, chef notes)"
+        type: boolean
+        default: false
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: nash-dhabha-and-bakes
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - run: cd backend && npm ci
+      - name: Gemini layer tests
+        run: cd backend && npm test
+      - name: Customer-question evaluations
+        run: |
+          node scenarios/run-waiter-eval.js ci-main
+          node scenarios/run-waiter-eval.js ci-holdout --holdout
+          node scenarios/run-waiter-eval.js ci-chatspeak --chatspeak
+          node scenarios/run-waiter-eval.js ci-chatspeak-holdout --holdout2
+      - name: Browser suites
+        if: ${{ inputs.browser }}
+        run: |
+          npm install --no-save playwright@1.48.2 && npx playwright install --with-deps chromium
+          (cd backend && npm start &) && sleep 2 && curl -sf http://localhost:4000/api/health
+          node scenarios/run-scenarios.js http://localhost:4000 ci
+          node scenarios/run-tough.js ci-tough
+          node scenarios/run-voice-tests.js http://localhost:4000
+          node scenarios/run-chefnote-chat-test.js http://localhost:4000

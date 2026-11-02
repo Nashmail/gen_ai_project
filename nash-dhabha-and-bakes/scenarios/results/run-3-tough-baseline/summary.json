@@ -1,0 +1,197 @@
+[
+  {
+    "id": 1,
+    "title": "Multi-intent messages and corrections",
+    "passed": 0,
+    "total": 7,
+    "failed": [
+      {
+        "step": 1,
+        "input": "hi I'm Kavya and I'm really hungry",
+        "output": "From our menu:\nVeg Dum Biryani\nBiryani · Mild\n₹240\nAdd\nChole Masala\nGravies & Curries · Medium\n₹200\nAdd\nChicken Dum Biryani\nBiryani · Medium\n₹290\nAdd\nHyderabadi Mutton Biryani\nBiryani · Medium\n₹380\nAdd\nSource: Menu\nCan I add Veg Dum Biryani (₹240) to your cart?",
+        "failedChecks": [
+          {
+            "check": "captures the name Kavya from a combined message",
+            "ok": false,
+            "detail": ""
+          },
+          {
+            "check": "reacts to the hungry mood with dishes",
+            "ok": false,
+            "detail": ""
+          }
+        ]
+      },
+      {
+        "step": 2,
+        "input": "add 2 garlic naan, 1 butter chicken and a mango lassi",
+        "output": "Added to your cart: 1 × Mango Lassi. Cart total: ₹130.\nSource: Menu\nWhich “garlic naan 1 butter chicken” do you mean? Tap Add on the one you want.\nButter Naan\nBreads\n₹60\nAdd\nGarlic Naan\nBreads\n₹75\nAdd\nButter Chicken\nGravies & Curries · Mild\n₹320\nAdd\nKeema Naan\nBreads · Medium\n₹150\nAdd\nSource: Menu",
+        "failedChecks": [
+          {
+            "check": "2 Garlic Naan in cart",
+            "ok": false,
+            "detail": "{\"Mango Lassi\":1}"
+          },
+          {
+            "check": "1 Butter Chicken in cart",
+            "ok": false,
+            "detail": ""
+          }
+        ]
+      },
+      {
+        "step": 3,
+        "input": "actually replace butter chicken with paneer butter masala",
+        "output": "From our menu:\nPaneer Butter Masala\nGravies & Curries · Mild\n₹260\nAdd\nButter Chicken\nGravies & Curries · Mild\n₹320\nAdd\nButter Naan\nBreads\n₹60\nAdd\nButter Cookies (200 g)\nBakes\n₹150\nAdd\nSource: Menu\nCan I add Paneer Butter Masala (₹260) to your cart?",
+        "failedChecks": [
+          {
+            "check": "Paneer Butter Masala added",
+            "ok": false,
+            "detail": ""
+          }
+        ]
+      },
+      {
+        "step": 4,
+        "input": "make the garlic naan 4",
+        "output": "From our menu:\nGarlic Naan\nBreads\n₹75\nAdd\nButter Naan\nBreads\n₹60\nAdd\nKeema Naan\nBreads · Medium\n₹150\nAdd\nPaneer Kulcha\nBreads · Mild\n₹110\nAdd\nSource: Menu\nCan I add Garlic Naan (₹75) to your cart?",
+        "failedChecks": [
+          {
+            "check": "Garlic Naan quantity set to 4",
+            "ok": false,
+            "detail": "{\"Mango Lassi\":1}"
+          }
+        ]
+      },
+      {
+        "step": 5,
+        "input": "remove 1 garlic naan",
+        "output": "That item isn't in your cart.",
+        "failedChecks": [
+          {
+            "check": "removes exactly one naan",
+            "ok": false,
+            "detail": "0 -> 0"
+          }
+        ]
+      },
+      {
+        "step": 6,
+        "input": "2 x jeera rice + one sweet lassi pls",
+        "output": "Which “x jeera rice one sweet lassi” do you mean? Tap Add on the one you want.\nJeera Rice\nRice\n₹140\nAdd\nSweet Lassi\nJuices & Lassi\n₹100\nAdd\nCurd Rice\nRice\n₹130\nAdd\nLemon Rice\nRice · Mild\n₹130\nAdd\nSource: Menu",
+        "failedChecks": [
+          {
+            "check": "2 Jeera Rice",
+            "ok": false,
+            "detail": "{\"Mango Lassi\":1}"
+          },
+          {
+            "check": "1 Sweet Lassi",
+            "ok": false,
+            "detail": ""
+          }
+        ]
+      },
+      {
+        "step": 7,
+        "input": "what's in my cart and how much is it with tax?",
+        "output": "Your cart has 1 item. Subtotal ₹130 (5% GST is added on the bill).\n1 × Mango Lassi\nJuices & Lassi\n₹130",
+        "failedChecks": [
+          {
+            "check": "lists the cart",
+            "ok": false,
+            "detail": ""
+          },
+          {
+            "check": "gives the total including GST",
+            "ok": false,
+            "detail": "expected ₹137"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Interruptions during the order lifecycle",
+    "passed": 6,
+    "total": 9,
+    "failed": [
+      {
+        "step": 4,
+        "input": "I want to pay now",
+        "output": "Sorry, I couldn't find “to pay now” on our menu. Try another name, or open the menu.",
+        "failedChecks": [
+          {
+            "check": "explains the bill comes when the order is ready",
+            "ok": false,
+            "detail": ""
+          }
+        ]
+      },
+      {
+        "step": 5,
+        "input": "add 1 gulab jamun to my order",
+        "output": "Your order has been sent to the chef. No special notes, so it will be cooked the house way.\nAdded to your cart: 1 × Gulab Jamun (2 pcs). Cart total: ₹90.\nSource: Menu",
+        "failedChecks": [
+          {
+            "check": "says it is a separate new order (the first is already with the chef)",
+            "ok": false,
+            "detail": ""
+          }
+        ]
+      },
+      {
+        "step": 9,
+        "input": "food was great but the service was slow",
+        "output": "Sorry the food didn't meet your expectations. I've sent your feedback to the chef and the manager so they can fix it.\nVisit NASH Dhabha & Bakes again soon!",
+        "failedChecks": [
+          {
+            "check": "acknowledges both the praise and the complaint",
+            "ok": false,
+            "detail": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Adversarial and out-of-scope input",
+    "passed": 7,
+    "total": 9,
+    "failed": [
+      {
+        "step": 8,
+        "input": "5 messages sent without waiting",
+        "output": "Got it, I'll stick to veg dishes. What's your mood right now?\nHere's what fits from our menu:\nRice Kheer\nDesserts\n₹110\nAdd\nGajar Halwa\nDesserts\n₹130\nAdd\nShahi Tukda\nDesserts\n₹140\nAdd\nSource: Menu\nCan I add Rice Kheer (₹110) to your cart?\nYour order is getting ready: the tandoor is fired up. About 15",
+        "failedChecks": [
+          {
+            "check": "answers came back in order (timings answered last)",
+            "ok": false,
+            "detail": ""
+          }
+        ]
+      },
+      {
+        "step": 9,
+        "input": "unknown session, unknown dish, negative quantity",
+        "output": "404:404 400:400 neg:200 badjson:500",
+        "failedChecks": [
+          {
+            "check": "broken JSON → 4xx, not a crash",
+            "ok": false,
+            "detail": "500"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Two customers at once, page reload, server crash, offline fallback",
+    "passed": 6,
+    "total": 6,
+    "failed": []
+  }
+]

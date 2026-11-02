@@ -1,0 +1,62 @@
+[
+  {
+    "input": "I want something not spicy",
+    "setup": [
+      "hi",
+      "Meena",
+      "happy"
+    ],
+    "expected": "Mild or non-spicy dishes",
+    "output": "Sure! For mild dishes, here's what I'd suggest: [Masala Chai ₹40, Butter Naan ₹60, Gulab Jamun (2 pcs) ₹90, Chocolate Truffle Pastry ₹120] || My pick: Masala Chai. Kadak tea with ginger and cardamom. It's one of our bestsellers. || Can I add Masala Chai (₹40) to your cart?",
+    "status": "PASS"
+  },
+  {
+    "input": "add 3 butter naans",
+    "setup": [],
+    "expected": "3 × Butter Naan added (plural handled)",
+    "output": "Added to your cart: 3 × Butter Naan. Cart total: ₹180.",
+    "status": "PASS"
+  },
+  {
+    "input": "cancel my order",
+    "setup": [],
+    "expected": "Cancel the order or explain how",
+    "output": "Your cart is empty. Tell me a dish or open the menu.",
+    "status": "FAIL"
+  },
+  {
+    "input": "enaku biryani venum",
+    "setup": [],
+    "expected": "Biryani options (Tamil-English)",
+    "output": "Sure! For biryanis, here's what I'd suggest: [Chicken Dum Biryani ₹290, Hyderabadi Mutton Biryani ₹380, Egg Biryani ₹230, Veg Dum Biryani ₹240] || My pick: Chicken Dum Biryani. Hyderabadi-style chicken dum biryani with raita. It's one of our bestsellers. || Can I add Chicken Dum Biryani (₹290) to your cart?",
+    "status": "PASS"
+  },
+  {
+    "input": "do you deliver to my home?",
+    "setup": [],
+    "expected": "A delivery answer",
+    "output": "I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood.",
+    "status": "FAIL"
+  },
+  {
+    "input": "what is the cheapest dessert?",
+    "setup": [],
+    "expected": "Gulab Jamun (₹90), the cheapest dessert",
+    "output": "Our most affordable sweets: [Gulab Jamun (2 pcs) ₹90, Plum Cake Slice ₹90, Banana Walnut Muffin ₹90, Malai Kulfi ₹100] || My pick: Gulab Jamun (2 pcs). Warm khoya dumplings in rose syrup. It's one of our bestsellers. || Can I add Gulab Jamun (2 pcs) (₹90) to your cart?",
+    "status": "FAIL"
+  },
+  {
+    "input": "add 100 butter naan",
+    "setup": [],
+    "expected": "100 added, or a clear message about the limit",
+    "output": "Added to your cart: 50 × Butter Naan. Cart total: ₹3,000. The online limit is 50 per dish, so I added 50 Butter Naan. For bigger orders, please talk to the counter.",
+    "status": "PASS"
+  },
+  {
+    "input": "where are you located?",
+    "setup": [],
+    "expected": "The restaurant address",
+    "output": "I couldn't find that in our menu or house info. Try asking about a dish (like “paneer” or “chicken biryani”), our timings, payment, or tell me your mood.",
+    "status": "FAIL"
+  }
+]

@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>NASH Dhabha &amp; Bakes</title>
+<meta name="description" content="Order dhaba food and fresh bakes from NASH Dhabha & Bakes. Chat with Masala Mitra to pick dishes for your mood.">
+<meta name="theme-color" content="#0F4D3A">
+<link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<!--ICONS-->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="9" y="3" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></symbol>
+  <symbol id="i-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l16-8-6 16-2-7-8-1z"/></symbol>
+  <symbol id="i-speak" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M17 8a5 5 0 0 1 0 8"/></symbol>
+  <symbol id="i-cloche" viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 34h36M9 34a15 15 0 0 1 30 0"/><path d="M24 15v-3M21 12h6"/><path d="M8 39h32"/><path d="M17 26a8 8 0 0 1 5-5"/></symbol>
+  <symbol id="i-chef" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 14a4 4 0 1 1 1.5-7.7A4 4 0 0 1 16 6.3 4 4 0 1 1 17 14v5H7v-5z"/><path d="M7 16h10"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4V5z"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 8h14l-1 12H6L5 8z"/><path d="M9 8V6a3 3 0 0 1 6 0v2"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-leaf" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19c0-8 6-14 15-14 0 9-6 15-14 15"/><path d="M5 19l7-7"/></symbol>
+  <symbol id="i-oven" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M7 6.5h.01M10 6.5h.01"/><rect x="7" y="12" width="10" height="5" rx="1"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8L12 3z"/><path d="M19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8L19 16z"/></symbol>
+  <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11a8 8 0 1 0-2.3 5.7M20 4v7h-7"/></symbol>
+  <!-- category icons -->
+  <symbol id="c-bread" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><ellipse cx="12" cy="12" rx="9" ry="6.5"/><path d="M8 10.5h.01M12 9h.01M15.5 11h.01M10 14h.01M14 14.5h.01"/></symbol>
+  <symbol id="c-rice" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h18a9 8 0 0 1-18 0z"/><path d="M7.5 9.5c1-2 3-3 4.5-3s3.5 1 4.5 3"/><path d="M9 20h6"/></symbol>
+  <symbol id="c-gravy" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10h16v4a6 6 0 0 1-6 6h-4a6 6 0 0 1-6-6v-4z"/><path d="M2 10h20"/><path d="M9 7c0-1.2 1-1.2 1-2.5M14 7c0-1.2 1-1.2 1-2.5"/></symbol>
+  <symbol id="c-biryani" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 10h14l-1.2 7.5A3 3 0 0 1 14.8 20H9.2a3 3 0 0 1-3-2.5L5 10z"/><path d="M4 10h16"/><path d="M8.5 10V7.5a3.5 3.5 0 0 1 7 0V10"/><path d="M12 4v1"/></symbol>
+  <symbol id="c-starters" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 20L20 4"/><circle cx="8.5" cy="15.5" r="2.4"/><circle cx="12" cy="12" r="2.4"/><circle cx="15.5" cy="8.5" r="2.4"/></symbol>
+  <symbol id="c-juices" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 5h11l-1.6 15H8.1L6.5 5z"/><path d="M7.2 10h9.6"/><path d="M13 5l2.5-3"/></symbol>
+  <symbol id="c-chai" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5V9z"/><path d="M16 11h1.5a2 2 0 0 1 0 4H16"/><path d="M8 3.5v2.5M12 3.5v2.5"/></symbol>
+  <symbol id="c-desserts" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h18a9 7 0 0 1-18 0z"/><circle cx="9" cy="10" r="2.6"/><circle cx="15" cy="10" r="2.6"/></symbol>
+  <symbol id="c-icecream" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 11l4 10 4-10"/><path d="M7 11a5 5 0 1 1 10 0H7z"/></symbol>
+  <symbol id="c-bakes" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 12h12l-1.5 8h-9L6 12z"/><path d="M5.5 12a6.5 5 0 0 1 13 0"/><path d="M12 4.5v2"/></symbol>
+</svg>
+
+<header class="site-header">
+  <div class="container header-in">
+    <a class="brand" href="#home" aria-label="NASH Dhabha &amp; Bakes home">
+      <img src="assets/logo-mark.svg" alt="" width="42" height="42">
+      <span class="brand-text"><b>NASH</b><small>Dhabha &amp; Bakes</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main">
+      <a href="#home" data-nav="home">Home</a>
+      <a href="#menu" data-nav="menu">Menu</a>
+      <a href="#kitchen" data-nav="kitchen">Kitchen</a>
+    </nav>
+    <a class="cart-btn" href="#checkout" data-nav="checkout" aria-label="Cart"><svg><use href="#i-bag"/></svg><span class="cart-label">Cart</span><span class="badge" id="cart-count">0</span></a>
+  </div>
+</header>
+
+<!-- ============ HOME ============ -->
+<main id="view-home" class="view">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <span class="pill">Dhaba kitchen · Tandoor · Bakery</span>
+        <h1>NASH Dhabha <span>&amp; Bakes</span></h1>
+        <p class="lead">Tandoor breads, slow-cooked dals, dum biryani and fresh bakes. Tell <b>Masala Mitra</b> how you feel and get dishes picked for your mood.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary btn-lg" href="#menu">Explore menu <svg><use href="#i-arrow"/></svg></a>
+          <button class="btn btn-ghost btn-lg" type="button" id="focus-chat">Chat with Masala Mitra</button>
+        </div>
+        <ul class="facts">
+          <li><span class="fact-ic"><svg><use href="#i-clock"/></svg></span><span><b>Open daily</b>7:00 AM – 11:30 PM</span></li>
+          <li><span class="fact-ic"><svg><use href="#i-leaf"/></svg></span><span><b>Veg &amp; non-veg</b>Separate tandoors</span></li>
+          <li><span class="fact-ic"><svg><use href="#i-oven"/></svg></span><span><b>Fresh bakes</b>Every morning from 7</span></li>
+        </ul>
+      </div>
+      <div class="hero-chat" id="home-slot">
+        <section class="chat" id="chat" aria-label="Chat with Masala Mitra">
+          <div class="chat-head">
+            <img class="chat-ava" src="assets/logo-mark.svg" alt="" width="40" height="40">
+            <div class="chat-who"><b>Masala Mitra</b><small><i class="dot" id="conn-dot"></i><span id="conn-label">Connecting…</span></small></div>
+            <button class="icon-btn" id="ai-btn" type="button" title="AI settings (Google Gemini)" aria-label="AI settings"><svg><use href="#i-spark"/></svg></button>
+            <button class="icon-btn" id="tts-btn" aria-pressed="false" title="Read replies aloud" aria-label="Read replies aloud"><svg><use href="#i-speak"/></svg></button>
+            <button class="icon-btn drawer-only" id="drawer-close" aria-label="Close chat"><svg><use href="#i-x"/></svg></button>
+          </div>
+          <div class="tracker" id="tracker" hidden></div>
+          <div class="msgs" id="msgs" aria-live="polite"></div>
+          <form class="chat-input" id="chat-form" autocomplete="off">
+            <button type="button" class="icon-btn mic" id="mic-btn" title="Speak" aria-label="Speak your message"><svg><use href="#i-mic"/></svg></button>
+            <input id="chat-text" type="text" placeholder="Say hi, or ask for a dish…" aria-label="Message">
+            <button type="submit" class="icon-btn send" aria-label="Send"><svg><use href="#i-send"/></svg></button>
+          </form>
+        </section>
+      </div>
+    </div>
+  </section>
+
+  <section class="door-section">
+    <div class="container">
+      <a class="door" href="#menu">
+        <span class="door-disc"><svg><use href="#i-cloche"/></svg></span>
+        <span class="door-text"><b>Direct me to menu</b><small>Breads, rice, gravies, biryani, juices, desserts, ice cream and bakes</small></span>
+        <span class="door-arrow"><svg><use href="#i-arrow"/></svg></span>
+      </a>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><h2>Explore the menu</h2><p>Ten sections, veg and non-veg, from the tandoor to the bakery counter.</p></div>
+      <div class="cat-grid" id="cat-grid"></div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <div class="section-head"><h2>How ordering works</h2><p>Masala Mitra stays with you from the first hello to the bill.</p></div>
+      <ol class="steps">
+        <li><b>Tell your mood</b><span>Say hi, share your name and how you feel. Mitra suggests dishes from the menu.</span></li>
+        <li><b>Build your order</b><span>Add dishes from the chat or the menu. Veg and non-veg are clearly marked.</span></li>
+        <li><b>Talk to the chef</b><span>Leave a chef note on any dish, typed or as a voice note.</span></li>
+        <li><b>Track, pay, rate</b><span>Mitra tells you when it's cooking and ready, then shares the bill and payment.</span></li>
+      </ol>
+    </div>
+  </section>
+</main>
+
+<!-- ============ MENU ============ -->
+<main id="view-menu" class="view" hidden>
+  <section class="page-head">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a><span>/</span><span>Menu</span></nav>
+      <div class="page-head-row">
+        <div><h1>Our Menu</h1><p><span class="mark" aria-hidden="true"></span> Veg &nbsp;&nbsp;<span class="mark nv" aria-hidden="true"></span> Non-veg (includes egg) · Use <b>Chef note</b> on any dish</p></div>
+        <div class="tools">
+          <div class="seg" role="group" aria-label="Diet filter">
+            <button type="button" data-diet="all" aria-pressed="true">All</button>
+            <button type="button" data-diet="veg" aria-pressed="false"><span class="mark" aria-hidden="true"></span>Veg</button>
+            <button type="button" data-diet="nonveg" aria-pressed="false"><span class="mark nv" aria-hidden="true"></span>Non-veg</button>
+          </div>
+          <label class="search"><svg><use href="#i-search"/></svg><input id="menu-search" type="search" placeholder="Search dishes" aria-label="Search dishes"></label>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="container menu-layout">
+    <aside class="cat-nav" id="cat-nav" aria-label="Menu categories"></aside>
+    <div class="menu-main"><div id="menu-body"></div><p class="empty-note" id="menu-empty" hidden>No dishes match. Clear the search or switch the filter.</p></div>
+  </div>
+</main>
+
+<!-- ============ CHECKOUT ============ -->
+<main id="view-checkout" class="view" hidden>
+  <section class="page-head">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a><span>/</span><a href="#menu">Menu</a><span>/</span><span>Checkout</span></nav>
+      <div class="page-head-row"><div><h1>Checkout</h1><p>Review your order, add notes for the chef, then place it.</p></div></div>
+    </div>
+  </section>
+  <div class="container" id="co-body"></div>
+</main>
+
+<!-- ============ KITCHEN ============ -->
+<main id="view-kitchen" class="view" hidden>
+  <section class="page-head">
+    <div class="container">
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="#home">Home</a><span>/</span><span>Kitchen</span></nav>
+      <div class="page-head-row"><div><h1>Kitchen display</h1><p>Every order the chef receives, with chef notes and voice notes.</p></div>
+        <button class="btn btn-ghost" type="button" id="kitchen-refresh"><svg><use href="#i-refresh"/></svg>Refresh</button></div>
+    </div>
+  </section>
+  <div class="container" id="kitchen-body"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div><img src="assets/logo.svg" alt="NASH Dhabha &amp; Bakes" width="210" height="50"><p>Highway-style dhaba food and a bakery counter, under one roof.</p></div>
+    <div><h3>Hours</h3><p>Open daily 7:00 AM – 11:30 PM<br>Kitchen 11:00 AM – 11:00 PM<br>Bakery from 7:00 AM</p></div>
+    <div><h3>Order</h3><p><a href="#menu">Menu</a><br><a href="#checkout">Cart &amp; checkout</a><br><a href="#kitchen">Kitchen display</a></p></div>
+    <div><h3>We accept</h3><p>UPI · Debit and credit cards · Cash<br>Bills include 5% GST</p></div>
+  </div>
+  <div class="container footer-bottom">© <span id="year">2026</span> NASH Dhabha &amp; Bakes</div>
+</footer>
+
+<div class="cartbar" id="cartbar" hidden><div class="container cartbar-in"><span><b id="bar-count">0 items</b> · <b id="bar-total">₹0</b></span><a class="btn btn-accent" href="#checkout">View cart <svg><use href="#i-arrow"/></svg></a></div></div>
+<button class="fab" id="fab" type="button" hidden><img src="assets/logo-mark.svg" alt="" width="28" height="28">Ask Masala Mitra</button>
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" hidden aria-label="Chat"><div id="drawer-slot"></div></aside>
+
+<div class="modal" id="note-modal" hidden role="dialog" aria-modal="true" aria-labelledby="note-title">
+  <div class="sheet">
+    <div class="sheet-head"><h2 id="note-title">Note for the chef</h2><button class="icon-btn" id="note-x" type="button" aria-label="Close"><svg><use href="#i-x"/></svg></button></div>
+    <p id="note-sub"></p>
+    <textarea id="note-text" placeholder="e.g. Less oil, medium spicy, no onion"></textarea>
+    <div class="row">
+      <button class="btn btn-ghost" id="rec-btn" type="button"><svg><use href="#i-mic"/></svg><span>Record voice note</span></button>
+      <button class="btn btn-link" id="rec-clear" type="button" hidden>Remove voice note</button>
+    </div>
+    <div class="status" id="rec-status"></div>
+    <audio id="rec-audio" controls hidden></audio>
+    <label class="btn btn-ghost rec-phone" for="rec-file"><svg><use href="#i-mic"/></svg><span>Record with your phone's recorder</span></label>
+    <input class="sr-only" type="file" id="rec-file" accept="audio/*" capture>
+    <p class="file-lbl" id="rec-hint">On a phone this opens your voice recorder. On a computer you can pick an audio file.</p>
+    <div class="row end"><button class="btn btn-ghost" id="note-cancel" type="button">Cancel</button><button class="btn btn-primary" id="note-save" type="button">Send to chef</button></div>
+  </div>
+</div>
+<div class="modal" id="ai-modal" hidden role="dialog" aria-modal="true" aria-labelledby="ai-title">
+  <div class="sheet">
+    <div class="sheet-head"><h2 id="ai-title">Connect Google Gemini</h2><button class="icon-btn" id="ai-x" type="button" aria-label="Close"><svg><use href="#i-x"/></svg></button></div>
+    <p>Masala Mitra always searches our menu first. With Gemini connected, Gemini writes the reply from those dishes, so it understands any way you ask. Every answer is checked: if Gemini names a dish or price that isn't on our menu, the built-in answer is used instead.</p>
+    <div id="ai-form">
+      <label class="field">Gemini API key (free)<input id="ai-key" type="password" placeholder="Paste your key, it starts with AIza…" autocomplete="off" spellcheck="false"></label>
+      <p class="fine">Get a free key at <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener">aistudio.google.com/apikey</a>. It is saved only in this browser and sent only to Google.</p>
+      <label class="field">Model<select id="ai-model"><option value="gemini-2.5-flash">gemini-2.5-flash (recommended)</option><option value="gemini-2.5-flash-lite">gemini-2.5-flash-lite (fastest)</option><option value="gemini-2.0-flash">gemini-2.0-flash</option></select></label>
+    </div>
+    <div class="status" id="ai-status"></div>
+    <div class="row end" id="ai-actions"><button class="btn btn-link" id="ai-remove" type="button">Remove key</button><button class="btn btn-primary" id="ai-save" type="button">Save &amp; test</button></div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script src="js/config.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/llm.js"></script>
+<script src="js/api.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

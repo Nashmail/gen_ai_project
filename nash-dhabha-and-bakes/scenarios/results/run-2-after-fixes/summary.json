@@ -1,0 +1,34 @@
+[
+  {
+    "id": 1,
+    "title": "Happy path: English, typed, mood → cart → chef note → dine-in → UPI → 5 stars",
+    "passed": 11,
+    "total": 11,
+    "mode": "live",
+    "failed": []
+  },
+  {
+    "id": 2,
+    "title": "Veg customer with typos and vague requests, takeaway, cash, unhappy feedback",
+    "passed": 15,
+    "total": 15,
+    "mode": "live",
+    "failed": []
+  },
+  {
+    "id": 3,
+    "title": "Knowledge questions (RAG) and edge cases",
+    "passed": 10,
+    "total": 10,
+    "mode": "live",
+    "failed": []
+  },
+  {
+    "id": 4,
+    "title": "Hinglish input and voice (speech-to-text chat + recorded chef voice note)",
+    "passed": 11,
+    "total": 11,
+    "mode": "live",
+    "failed": []
+  }
+]

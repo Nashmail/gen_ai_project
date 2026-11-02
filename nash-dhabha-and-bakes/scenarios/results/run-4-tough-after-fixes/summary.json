@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "title": "Multi-intent messages and corrections",
+    "passed": 7,
+    "total": 7,
+    "failed": []
+  },
+  {
+    "id": 2,
+    "title": "Interruptions during the order lifecycle",
+    "passed": 9,
+    "total": 9,
+    "failed": []
+  },
+  {
+    "id": 3,
+    "title": "Adversarial and out-of-scope input",
+    "passed": 9,
+    "total": 9,
+    "failed": []
+  },
+  {
+    "id": 4,
+    "title": "Two customers at once, page reload, server crash, offline fallback",
+    "passed": 6,
+    "total": 6,
+    "failed": []
+  }
+]

@@ -1,0 +1,163 @@
+{
+  "label": "chatspeak-holdout-first-run",
+  "ranAt": "2026-11-02T06:41:49.982Z",
+  "passed": 14,
+  "total": 15,
+  "accuracy": "93%",
+  "rows": [
+    {
+      "question": "do u hv butter chiken",
+      "expected": "Butter Chicken",
+      "pass": true,
+      "reply": "Butter Chicken: Tandoori chicken in a velvety tomato-butter gravy. It's non-veg, mild spicy, ₹320. One of our bestsellers!\nCan I add Butter Chicken (₹320) to your cart?",
+      "dishes": [
+        "Butter Chicken (non-veg, Gravies & Curries, ₹320, Mild)"
+      ]
+    },
+    {
+      "question": "sumthing cold n sweet",
+      "expected": "Cold sweets",
+      "pass": true,
+      "reply": "Sure! For cold sweets, here's what I'd suggest:\nMy pick: Malai Kulfi. Classic reduced-milk kulfi.\nCan I add Malai Kulfi (₹100) to your cart?",
+      "dishes": [
+        "Malai Kulfi (veg, Ice Cream & Kulfi, ₹100)",
+        "Rice Kheer (veg, Desserts, ₹110)",
+        "Kesar Pista Kulfi (veg, Ice Cream & Kulfi, ₹110)",
+        "Butterscotch Scoop (veg, Ice Cream & Kulfi, ₹110)"
+      ]
+    },
+    {
+      "question": "any non veg gravy below 350",
+      "expected": "Non-veg curries ≤ ₹350",
+      "pass": true,
+      "reply": "Yes, we do! Here are our gravy non-veg curries under ₹350:\nMy pick: Butter Chicken. Tandoori chicken in a velvety tomato-butter gravy. It's one of our bestsellers.\nCan I add Butter Chicken (₹320) to your cart?",
+      "dishes": [
+        "Butter Chicken (non-veg, Gravies & Curries, ₹320, Mild)",
+        "Egg Curry (non-veg, Gravies & Curries, ₹210, Medium)",
+        "Chicken Chettinad (non-veg, Gravies & Curries, ₹320, Hot)"
+      ]
+    },
+    {
+      "question": "rotii",
+      "expected": "Rotis",
+      "pass": true,
+      "reply": "Sure! For breads, here's what I'd suggest:\nMy pick: Tandoori Roti. Whole-wheat roti baked on the tandoor wall.\nCan I add Tandoori Roti (₹30) to your cart?",
+      "dishes": [
+        "Tandoori Roti (veg, Breads, ₹30)",
+        "Missi Roti (veg, Breads, ₹45, Mild)"
+      ]
+    },
+    {
+      "question": "spcl biryani",
+      "expected": "A bestseller biryani first",
+      "pass": true,
+      "reply": "Sure! For biryanis, here's what I'd suggest:\nMy pick: Chicken Dum Biryani. Hyderabadi-style chicken dum biryani with raita. It's one of our bestsellers.\nCan I add Chicken Dum Biryani (₹290) to your cart?",
+      "dishes": [
+        "Chicken Dum Biryani (non-veg, Biryani, ₹290, Medium)",
+        "Hyderabadi Mutton Biryani (non-veg, Biryani, ₹380, Medium)",
+        "Egg Biryani (non-veg, Biryani, ₹230, Medium)",
+        "Veg Dum Biryani (veg, Biryani, ₹240, Mild)"
+      ]
+    },
+    {
+      "question": "is gulab jamun hot or cold",
+      "expected": "Says served hot",
+      "pass": true,
+      "reply": "Gulab Jamun (2 pcs) is served hot. Warm khoya dumplings in rose syrup. (2 pieces per plate)\nCan I add Gulab Jamun (2 pcs) (₹90) to your cart?",
+      "dishes": [
+        "Gulab Jamun (2 pcs) (veg, Desserts, ₹90)"
+      ]
+    },
+    {
+      "question": "i m vegan wat can i eat",
+      "expected": "Vegan dishes",
+      "pass": true,
+      "reply": "Sure! For vegan dishes, here's what I'd suggest:\nMy pick: Tandoori Roti. Whole-wheat roti baked on the tandoor wall. For fully vegan, add a chef note: “cook in oil, no ghee or butter”.\nCan I add Tandoori Roti (₹30) to your cart?",
+      "dishes": [
+        "Tandoori Roti (veg, Breads, ₹30)",
+        "Fresh Lime Soda (veg, Juices & Lassi, ₹80)",
+        "Watermelon Juice (veg, Juices & Lassi, ₹100)",
+        "Steamed Basmati (veg, Rice, ₹110)"
+      ]
+    },
+    {
+      "question": "kebab for 4 ppl",
+      "expected": "Kebabs",
+      "pass": true,
+      "reply": "Sure! For starters, here's what I'd suggest:\nMy pick: Mutton Seekh Kebab. Minced mutton skewers off the tandoor.\nCan I add Mutton Seekh Kebab (₹340) to your cart?",
+      "dishes": [
+        "Mutton Seekh Kebab (non-veg, Starters, ₹340, Medium)",
+        "Hara Bhara Kebab (veg, Starters, ₹200, Mild)"
+      ]
+    },
+    {
+      "question": "wat is chole",
+      "expected": "Describes Chole Masala",
+      "pass": false,
+      "reply": "From our menu:\nCan I add Chole Masala (₹200) to your cart?",
+      "dishes": [
+        "Chole Masala (veg, Gravies & Curries, ₹200, Medium)"
+      ]
+    },
+    {
+      "question": "plz giv me lassi options",
+      "expected": "Lassis",
+      "pass": true,
+      "reply": "Sure! For drinks, here's what I'd suggest:\nMy pick: Mango Lassi. Thick yoghurt and Alphonso mango. It's one of our bestsellers.\nCan I add Mango Lassi (₹130) to your cart?",
+      "dishes": [
+        "Mango Lassi (veg, Juices & Lassi, ₹130)",
+        "Sweet Lassi (veg, Juices & Lassi, ₹100)"
+      ]
+    },
+    {
+      "question": "no spicy food for my kid",
+      "expected": "Not spicy",
+      "pass": true,
+      "reply": "Sure! For kid-friendly dishes, here's what I'd suggest:\nMy pick: Masala Chai. Kadak tea with ginger and cardamom. It's one of our bestsellers.\nCan I add Masala Chai (₹40) to your cart?",
+      "dishes": [
+        "Masala Chai (veg, Chai & Coffee, ₹40)",
+        "Butter Naan (veg, Breads, ₹60)",
+        "Gulab Jamun (2 pcs) (veg, Desserts, ₹90)",
+        "Chocolate Truffle Pastry (veg, Bakes, ₹120)"
+      ]
+    },
+    {
+      "question": "pizzza",
+      "expected": "Says we don't have it",
+      "pass": true,
+      "reply": "Sorry, we don't have pizzza on our menu. We're a dhaba and bakery, so you'll find tandoor breads, curries, biryani, starters, drinks, desserts and bakes.",
+      "dishes": []
+    },
+    {
+      "question": "fish fryy",
+      "expected": "Amritsari Fish first",
+      "pass": true,
+      "reply": "Sure! For dry non-veg fish dishes, here's what I'd suggest:\nMy pick: Amritsari Fish. Gram-flour battered fried fish with ajwain.\nCan I add Amritsari Fish (₹330) to your cart?",
+      "dishes": [
+        "Amritsari Fish (non-veg, Starters, ₹330, Medium)"
+      ]
+    },
+    {
+      "question": "suggst mutton gravy",
+      "expected": "Mutton curry",
+      "pass": true,
+      "reply": "Sure! For gravy non-veg mutton curries, here's what I'd suggest:\nMy pick: Mutton Rogan Josh. Kashmiri mutton curry with fennel and dry ginger.\nCan I add Mutton Rogan Josh (₹420) to your cart?",
+      "dishes": [
+        "Mutton Rogan Josh (non-veg, Gravies & Curries, ₹420, Medium)"
+      ]
+    },
+    {
+      "question": "do u have eggless sweets",
+      "expected": "Eggless sweets",
+      "pass": true,
+      "reply": "Yes, we do! Here are our eggless sweets:\nMy pick: Gulab Jamun (2 pcs). Warm khoya dumplings in rose syrup. It's one of our bestsellers.\nCan I add Gulab Jamun (2 pcs) (₹90) to your cart?",
+      "dishes": [
+        "Gulab Jamun (2 pcs) (veg, Desserts, ₹90)",
+        "Chocolate Truffle Pastry (veg, Bakes, ₹120)",
+        "Malai Kulfi (veg, Ice Cream & Kulfi, ₹100)",
+        "Rice Kheer (veg, Desserts, ₹110)",
+        "Kesar Pista Kulfi (veg, Ice Cream & Kulfi, ₹110)"
+      ]
+    }
+  ]
+}

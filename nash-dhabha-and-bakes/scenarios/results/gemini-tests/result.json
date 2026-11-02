@@ -1,0 +1,48 @@
+{
+  "ranAt": "2026-11-02T08:13:54.458Z",
+  "note": "Gemini simulated in the browser (no real key); real-key tests run separately.",
+  "passed": 8,
+  "total": 8,
+  "checks": [
+    {
+      "name": "starts without AI",
+      "ok": true,
+      "detail": "Answers from our menu · runs in your browser"
+    },
+    {
+      "name": "AI settings: key accepted",
+      "ok": true,
+      "detail": "Connected. 2 Gemini models available. Ask Masala Mitra anything."
+    },
+    {
+      "name": "label shows Gemini",
+      "ok": true,
+      "detail": "Gemini + our menu · in your browser"
+    },
+    {
+      "name": "name turn stays rule-based (no Gemini call)",
+      "ok": true,
+      "detail": "calls=0 Nice to meet you, Mailesh! What is your mood today? Tell me in chat or tap the mic and say it."
+    },
+    {
+      "name": "menu question answered by Gemini",
+      "ok": true,
+      "detail": "For dry non-veg, our Chicken 65 (₹260) is the crowd favourite, crispy and fiery. Prefer smoky? Try the Tandoori Chicken (Half).\nChicken 65\nStarters · Hot\nDeep-fried spicy chicken with curry leaves.\n₹2"
+    },
+    {
+      "name": "Gemini answer shows dish cards + add offer",
+      "ok": true,
+      "detail": "For dry non-veg, our Chicken 65 (₹260) is the crowd favourite, crispy and fiery. Prefer smoky? Try the Tandoori Chicken (Half).\nChicken 65\nStarters · Hot\nDeep-fried spicy chicken with curry leaves.\n₹2"
+    },
+    {
+      "name": "adding to cart still works after a Gemini answer",
+      "ok": true,
+      "detail": "Done! Chicken 65 is in your cart. Cart total: ₹260.\nWant anything else? You can add a note for the chef from the menu or the cart."
+    },
+    {
+      "name": "invented dish/price is rejected; built-in answer shown",
+      "ok": true,
+      "detail": "Sure! For dry non-veg dishes, here's what I'd suggest:\nChicken 65\nStarters · Hot\nDeep-fried spicy chicken with curry leaves.\n₹260\nAdd\nTandoori Chicken (Half)\nStarters · Medium\nHalf chicken marinated i"
+    }
+  ]
+}

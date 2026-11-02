@@ -1,0 +1,17 @@
+{
+  "name": "nash-dhabha-backend",
+  "version": "1.0.0",
+  "description": "API for NASH Dhabha & Bakes: Masala Mitra RAG chatbot, cart, orders, chef notes, billing and feedback",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js",
+    "test": "node --test"
+  },
+  "engines": { "node": ">=18" },
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.2"
+  }
+}

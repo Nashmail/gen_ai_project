@@ -1,0 +1,142 @@
+{
+  "id": 1,
+  "title": "Multi-intent messages and corrections",
+  "ranAt": "2026-11-01T18:59:25.829Z",
+  "passed": 0,
+  "total": 7,
+  "steps": [
+    {
+      "step": 1,
+      "kind": "chat",
+      "input": "hi I'm Kavya and I'm really hungry",
+      "output": "From our menu:\nVeg Dum Biryani\nBiryani · Mild\n₹240\nAdd\nChole Masala\nGravies & Curries · Medium\n₹200\nAdd\nChicken Dum Biryani\nBiryani · Medium\n₹290\nAdd\nHyderabadi Mutton Biryani\nBiryani · Medium\n₹380\nAdd\nSource: Menu\nCan I add Veg Dum Biryani (₹240) to your cart?",
+      "checks": [
+        {
+          "check": "captures the name Kavya from a combined message",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "check": "reacts to the hungry mood with dishes",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "status": "FAIL"
+    },
+    {
+      "step": 2,
+      "kind": "chat",
+      "input": "add 2 garlic naan, 1 butter chicken and a mango lassi",
+      "output": "Added to your cart: 1 × Mango Lassi. Cart total: ₹130.\nSource: Menu\nWhich “garlic naan 1 butter chicken” do you mean? Tap Add on the one you want.\nButter Naan\nBreads\n₹60\nAdd\nGarlic Naan\nBreads\n₹75\nAdd\nButter Chicken\nGravies & Curries · Mild\n₹320\nAdd\nKeema Naan\nBreads · Medium\n₹150\nAdd\nSource: Menu",
+      "checks": [
+        {
+          "check": "2 Garlic Naan in cart",
+          "ok": false,
+          "detail": "{\"Mango Lassi\":1}"
+        },
+        {
+          "check": "1 Butter Chicken in cart",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "check": "1 Mango Lassi in cart",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "status": "FAIL"
+    },
+    {
+      "step": 3,
+      "kind": "chat",
+      "input": "actually replace butter chicken with paneer butter masala",
+      "output": "From our menu:\nPaneer Butter Masala\nGravies & Curries · Mild\n₹260\nAdd\nButter Chicken\nGravies & Curries · Mild\n₹320\nAdd\nButter Naan\nBreads\n₹60\nAdd\nButter Cookies (200 g)\nBakes\n₹150\nAdd\nSource: Menu\nCan I add Paneer Butter Masala (₹260) to your cart?",
+      "checks": [
+        {
+          "check": "Butter Chicken removed",
+          "ok": true,
+          "detail": "{\"Mango Lassi\":1}"
+        },
+        {
+          "check": "Paneer Butter Masala added",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "status": "FAIL"
+    },
+    {
+      "step": 4,
+      "kind": "chat",
+      "input": "make the garlic naan 4",
+      "output": "From our menu:\nGarlic Naan\nBreads\n₹75\nAdd\nButter Naan\nBreads\n₹60\nAdd\nKeema Naan\nBreads · Medium\n₹150\nAdd\nPaneer Kulcha\nBreads · Mild\n₹110\nAdd\nSource: Menu\nCan I add Garlic Naan (₹75) to your cart?",
+      "checks": [
+        {
+          "check": "Garlic Naan quantity set to 4",
+          "ok": false,
+          "detail": "{\"Mango Lassi\":1}"
+        }
+      ],
+      "status": "FAIL"
+    },
+    {
+      "step": 5,
+      "kind": "chat",
+      "input": "remove 1 garlic naan",
+      "output": "That item isn't in your cart.",
+      "checks": [
+        {
+          "check": "removes exactly one naan",
+          "ok": false,
+          "detail": "0 -> 0"
+        }
+      ],
+      "status": "FAIL"
+    },
+    {
+      "step": 6,
+      "kind": "chat",
+      "input": "2 x jeera rice + one sweet lassi pls",
+      "output": "Which “x jeera rice one sweet lassi” do you mean? Tap Add on the one you want.\nJeera Rice\nRice\n₹140\nAdd\nSweet Lassi\nJuices & Lassi\n₹100\nAdd\nCurd Rice\nRice\n₹130\nAdd\nLemon Rice\nRice · Mild\n₹130\nAdd\nSource: Menu",
+      "checks": [
+        {
+          "check": "2 Jeera Rice",
+          "ok": false,
+          "detail": "{\"Mango Lassi\":1}"
+        },
+        {
+          "check": "1 Sweet Lassi",
+          "ok": false,
+          "detail": ""
+        }
+      ],
+      "status": "FAIL"
+    },
+    {
+      "step": 7,
+      "kind": "chat",
+      "input": "what's in my cart and how much is it with tax?",
+      "output": "Your cart has 1 item. Subtotal ₹130 (5% GST is added on the bill).\n1 × Mango Lassi\nJuices & Lassi\n₹130",
+      "checks": [
+        {
+          "check": "lists the cart",
+          "ok": false,
+          "detail": ""
+        },
+        {
+          "check": "gives the total including GST",
+          "ok": false,
+          "detail": "expected ₹137"
+        }
+      ],
+      "status": "FAIL"
+    }
+  ],
+  "sessionId": "a4b36657-7a39-4c8c-a3e9-3436d6e75717",
+  "finalCart": {
+    "Mango Lassi": 1
+  },
+  "consoleErrors": []
+}

@@ -1,0 +1,183 @@
+{
+  "ranAt": "2026-11-02T08:13:47.730Z",
+  "baseUrl": "http://localhost:4000",
+  "passed": 6,
+  "total": 6,
+  "notTestable": "Real speech-recognition accuracy: headless Chromium has no Google speech service, so transcripts were scripted. Test real speech in Chrome or Edge.",
+  "tests": [
+    {
+      "id": "V1",
+      "title": "Talk to Masala Mitra with the mic (speech → text → reply)",
+      "checks": [
+        {
+          "check": "mic button shows it is listening",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "spoken words appear as a 'Voice · transcribed' message",
+          "ok": true,
+          "detail": "VOICE · TRANSCRIBED\nmy name is Mailesh"
+        },
+        {
+          "check": "bot answers the spoken name",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "bot understands the spoken mood (happy) and suggests dishes",
+          "ok": true,
+          "detail": "Love that energy! Let's celebrate with something rich. You sound happy, Mailesh. From our menu:\nPrefer veg only? Just say “veg”.\nShahi Tukda\nDesserts\nFried bread soaked in rabri with nuts.\n₹140\nAdd\nPa"
+        },
+        {
+          "check": "no page errors",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "output": "Love that energy! Let's celebrate with something rich. You sound happy, Mailesh. From our menu:\nPrefer veg only? Just say “veg”.\nShahi Tukda\nDesserts\nFried bread soaked in rabri with nuts.\n₹140\nAdd\nPaneer Butter Masala\nGravies & Curries · Mild\nPaneer in a creamy tomato-butter gravy.\n₹260\nAdd\nSweet Lassi\nJuices & Lassi\nPunjabi lassi topped with malai.\n₹100\nAdd\nSource: Menu, matched to your mood\nCan I add Shahi Tukda (₹140) to your cart?",
+      "status": "PASS"
+    },
+    {
+      "id": "V2",
+      "title": "Record a chef voice note with the mic + live transcript, send to kitchen",
+      "checks": [
+        {
+          "check": "record button switches to 'Stop recording'",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "live transcript fills the note box",
+          "ok": true,
+          "detail": "less oil and make it extra spicy please"
+        },
+        {
+          "check": "recorded clip appears with a player",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "server stored the voice note and transcript",
+          "ok": true,
+          "detail": "{\"url\":\"/voice/13d60347-5437-459e-a4a4-7442561f71c0.webm\",\"transcript\":\"less oil and make it extra spicy please\"}"
+        },
+        {
+          "check": "saved audio file is a real recording (≥ 2 s, > 5 KB)",
+          "ok": true,
+          "detail": "3.42 s, 56324 bytes"
+        },
+        {
+          "check": "kitchen ticket shows the note, transcript and an audio player",
+          "ok": true,
+          "detail": "NDB-7605 08:13 am · Table 9 Placed 1× Dal Makhani Chef note: “less oil and make it extra spicy please” Transcript: “less oil and make it extra spicy please” Total ₹231"
+        },
+        {
+          "check": "chef can play it: kitchen audio loads from the server",
+          "ok": true,
+          "detail": "duration reported 3.42"
+        }
+      ],
+      "output": "in-browser clip 3.42 s · NDB-7605 08:13 am · Table 9 Placed 1× Dal Makhani Chef note: “less oil and make it extra spicy please” Transcript: “less oil and make it extra spicy please” Total ₹231",
+      "status": "PASS",
+      "audioSeconds": 3.42
+    },
+    {
+      "id": "V3",
+      "title": "Mic blocked (like the Claude preview): phone-recorder fallback",
+      "checks": [
+        {
+          "check": "explains the mic is blocked and points to the recorder button",
+          "ok": true,
+          "detail": "This page isn't allowed to use the microphone here. Tap “Record with your phone's recorder” below instead, or allow the mic in your browser settings."
+        },
+        {
+          "check": "phone-recorder button is highlighted",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "file input asks the phone to capture audio",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "attached recording shows a player",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "server stored the attached recording",
+          "ok": true,
+          "detail": "{\"url\":\"/voice/a783e829-c05f-4cfe-a6cc-55cff069aa1c.wav\",\"transcript\":\"\"}"
+        },
+        {
+          "check": "stored file is the full 3-second clip",
+          "ok": true,
+          "detail": "3"
+        }
+      ],
+      "output": "This page isn't allowed to use the microphone here. Tap “Record with your phone's recorder” below instead, or allow the mic in your browser settings.",
+      "status": "PASS"
+    },
+    {
+      "id": "V4",
+      "title": "Chat mic blocked: clear guidance instead of silence",
+      "checks": [
+        {
+          "check": "tells the user the mic is blocked and how to fix it",
+          "ok": true,
+          "detail": "The microphone is blocked on this page. If you're in the Claude preview, open the app in Chrome or Edge to talk to me. Otherwise allow microphone access in your browser settings. You can always type."
+        },
+        {
+          "check": "mic button returns to normal",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "output": "The microphone is blocked on this page. If you're in the Claude preview, open the app in Chrome or Edge to talk to me. Otherwise allow microphone access in your browser settings. You can always type.",
+      "status": "PASS"
+    },
+    {
+      "id": "V5",
+      "title": "Browser without speech recognition (e.g. Firefox)",
+      "checks": [
+        {
+          "check": "says voice isn't supported and suggests Chrome or Edge",
+          "ok": true,
+          "detail": "Voice input isn't supported in this browser. Please type, or open the app in Chrome or Edge to speak."
+        },
+        {
+          "check": "typing still works",
+          "ok": true,
+          "detail": ""
+        }
+      ],
+      "output": "Voice input isn't supported in this browser. Please type, or open the app in Chrome or Edge to speak.",
+      "status": "PASS"
+    },
+    {
+      "id": "V6",
+      "title": "Whole-order voice note at checkout reaches the kitchen",
+      "checks": [
+        {
+          "check": "checkout shows the order voice note player",
+          "ok": true,
+          "detail": ""
+        },
+        {
+          "check": "chef confirmation mentions the voice note",
+          "ok": true,
+          "detail": " 1 veg puffAdded to your cart: 1 × Veg Puff. Cart total: ₹40.Source: MenuShow my cartCheckoutDirect me to menuOrder NDB-3198 placed! 1 item, takeaway.1 × Veg PuffBakes · Mild₹40Your order has been sent to the chef. The chef received these notes:• Whole order: “please pack it separately” + voice note"
+        },
+        {
+          "check": "kitchen shows the whole-order voice note with its transcript",
+          "ok": true,
+          "detail": "NDB-3198 08:13 am · Takeaway Sent to chef 1× Veg Puff Whole order “please pack it separately” Transcript: “please pack it separately” Total ₹42"
+        }
+      ],
+      "output": "NDB-3198 08:13 am · Takeaway Sent to chef 1× Veg Puff Whole order “please pack it separately” Transcript: “please pack it separately” Total ₹42",
+      "status": "PASS"
+    }
+  ]
+}

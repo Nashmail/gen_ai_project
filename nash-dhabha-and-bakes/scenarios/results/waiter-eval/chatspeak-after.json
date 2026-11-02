@@ -1,0 +1,301 @@
+{
+  "label": "chatspeak-after",
+  "ranAt": "2026-11-02T08:10:52.813Z",
+  "passed": 25,
+  "total": 25,
+  "accuracy": "100%",
+  "rows": [
+    {
+      "question": "what is spl herre",
+      "expected": "House specials (bestsellers)",
+      "pass": true,
+      "via": "rules",
+      "reply": "Our house specials, the dishes guests order most:\nMy pick: Butter Chicken. Tandoori chicken in a velvety tomato-butter gravy. It's one of our bestsellers.\nCan I add Butter Chicken (₹320) to your cart?",
+      "dishes": [
+        "Butter Chicken (non-veg, Gravies & Curries, ₹320, Mild)",
+        "Chicken Dum Biryani (non-veg, Biryani, ₹290, Medium)",
+        "Dal Makhani (veg, Gravies & Curries, ₹220, Mild)",
+        "Paneer Butter Masala (veg, Gravies & Curries, ₹260, Mild)"
+      ]
+    },
+    {
+      "question": "do u hv parota",
+      "expected": "Yes + parathas",
+      "pass": true,
+      "via": "rules",
+      "reply": "Yes, we do! Here are our breads:\nMy pick: Lachha Paratha. Flaky layered paratha, crisp outside and soft inside.\nCan I add Lachha Paratha (₹55) to your cart?",
+      "dishes": [
+        "Lachha Paratha (veg, Breads, ₹55)",
+        "Aloo Paratha (veg, Breads, ₹90, Mild)"
+      ]
+    },
+    {
+      "question": "vegan meat food",
+      "expected": "No plant-based meat; vegan dishes only",
+      "pass": true,
+      "via": "rules",
+      "reply": "We don't have plant-based or mock meat, sorry. These dishes are fully vegan (no dairy, egg or meat):\nMy pick: Tandoori Roti. Whole-wheat roti baked on the tandoor wall. For fully vegan, add a chef note: “cook in oil, no ghee or butter”.\nCan I add Tandoori Roti (₹30) to your cart?",
+      "dishes": [
+        "Tandoori Roti (veg, Breads, ₹30)",
+        "Fresh Lime Soda (veg, Juices & Lassi, ₹80)",
+        "Watermelon Juice (veg, Juices & Lassi, ₹100)",
+        "Steamed Basmati (veg, Rice, ₹110)"
+      ]
+    },
+    {
+      "question": "sugg any sweet gravy",
+      "expected": "Mildly sweet curries (makhani)",
+      "pass": true,
+      "via": "rules",
+      "reply": "For a mildly sweet, creamy gravy, try our makhani-style curries:\nMy pick: Paneer Butter Masala. Paneer in a creamy tomato-butter gravy. It's one of our bestsellers.\nCan I add Paneer Butter Masala (₹260) to your cart?",
+      "dishes": [
+        "Paneer Butter Masala (veg, Gravies & Curries, ₹260, Mild)",
+        "Butter Chicken (non-veg, Gravies & Curries, ₹320, Mild)"
+      ]
+    },
+    {
+      "question": "wat r ur specials",
+      "expected": "House specials",
+      "pass": true,
+      "via": "rules",
+      "reply": "Our house specials, the dishes guests order most:\nMy pick: Butter Chicken. Tandoori chicken in a velvety tomato-butter gravy. It's one of our bestsellers.\nCan I add Butter Chicken (₹320) to your cart?",
+      "dishes": [
+        "Butter Chicken (non-veg, Gravies & Curries, ₹320, Mild)",
+        "Chicken Dum Biryani (non-veg, Biryani, ₹290, Medium)",
+        "Dal Makhani (veg, Gravies & Curries, ₹220, Mild)",
+        "Paneer Butter Masala (veg, Gravies & Curries, ₹260, Mild)"
+      ]
+    },
+    {
+      "question": "any chiken items",
+      "expected": "Chicken dishes",
+      "pass": true,
+      "via": "rules",
+      "reply": "Yes, we do! Here are our non-veg chicken dishes:\nMy pick: Chicken 65. Deep-fried spicy chicken with curry leaves. It's one of our bestsellers.\nCan I add Chicken 65 (₹260) to your cart?",
+      "dishes": [
+        "Chicken 65 (non-veg, Starters, ₹260, Hot)",
+        "Chicken Dum Biryani (non-veg, Biryani, ₹290, Medium)",
+        "Tandoori Chicken (Half) (non-veg, Starters, ₹300, Medium)",
+        "Butter Chicken (non-veg, Gravies & Curries, ₹320, Mild)",
+        "Chicken Puff (non-veg, Bakes, ₹70, Mild)"
+      ]
+    },
+    {
+      "question": "plz sugst sumthing spicy veg",
+      "expected": "Spicy veg",
+      "pass": true,
+      "via": "rules",
+      "reply": "Sure! For spicy veg dishes, here's what I'd suggest:\nMy pick: Paneer Tikka. Tandoor-charred paneer, peppers and onion. It's one of our bestsellers.\nCan I add Paneer Tikka (₹250) to your cart?",
+      "dishes": [
+        "Paneer Tikka (veg, Starters, ₹250, Medium)",
+        "Mix Veg Kolhapuri (veg, Gravies & Curries, ₹210, Hot)",
+        "Gobi 65 (veg, Starters, ₹190, Medium)",
+        "Chole Masala (veg, Gravies & Curries, ₹200, Medium)"
+      ]
+    },
+    {
+      "question": "do u hav dosa",
+      "expected": "Says we don't have it",
+      "pass": true,
+      "via": "rules",
+      "reply": "Sorry, we don't have dosa on our menu. We're a dhaba and bakery, so you'll find tandoor breads, curries, biryani, starters, drinks, desserts and bakes.",
+      "dishes": []
+    },
+    {
+      "question": "chapati",
+      "expected": "Rotis",
+      "pass": true,
+      "via": "rules",
+      "reply": "Sure! For breads, here's what I'd suggest:\nMy pick: Tandoori Roti. Whole-wheat roti baked on the tandoor wall.\nCan I add Tandoori Roti (₹30) to your cart?",
+      "dishes": [
+        "Tandoori Roti (veg, Breads, ₹30)",
+        "Missi Roti (veg, Breads, ₹45, Mild)"
+      ]
+    },
+    {
+      "question": "gobhi",
+      "expected": "Gobi 65",
+      "pass": true,
+      "via": "rules",
+      "reply": "From our menu:\nCan I add Gobi 65 (₹190) to your cart?",
+      "dishes": [
+        "Gobi 65 (veg, Starters, ₹190, Medium)"
+      ]
+    },
+    {
+      "question": "chana masala",
+      "expected": "Chole Masala",
+      "pass": true,
+      "via": "rules",
+      "reply": "From our menu:\nCan I add Chole Masala (₹200) to your cart?",
+      "dishes": [
+        "Chole Masala (veg, Gravies & Curries, ₹200, Medium)",
+        "Paneer Butter Masala (veg, Gravies & Curries, ₹260, Mild)",
+        "Masala Chaas (veg, Juices & Lassi, ₹70)",
+        "Masala Chai (veg, Chai & Coffee, ₹40)"
+      ]
+    },
+    {
+      "question": "payasam",
+      "expected": "Rice Kheer",
+      "pass": true,
+      "via": "rules",
+      "reply": "From our menu:\nCan I add Rice Kheer (₹110) to your cart?",
+      "dishes": [
+        "Rice Kheer (veg, Desserts, ₹110)"
+      ]
+    },
+    {
+      "question": "cold drinkss",
+      "expected": "Cold drinks",
+      "pass": true,
+      "via": "rules",
+      "reply": "Sure! For cold drinks, here's what I'd suggest:\nMy pick: Mango Lassi. Thick yoghurt and Alphonso mango. It's one of our bestsellers.\nCan I add Mango Lassi (₹130) to your cart?",
+      "dishes": [
+        "Mango Lassi (veg, Juices & Lassi, ₹130)",
+        "Masala Chaas (veg, Juices & Lassi, ₹70)",
+        "Fresh Lime Soda (veg, Juices & Lassi, ₹80)",
+        "Rose Milk (veg, Juices & Lassi, ₹90)"
+      ]
+    },
+    {
+      "question": "nonveg starterz",
+      "expected": "Non-veg starters",
+      "pass": true,
+      "via": "rules",
+      "reply": "Sure! For non-veg starters, here's what I'd suggest:\nMy pick: Chicken 65. Deep-fried spicy chicken with curry leaves. It's one of our bestsellers.\nCan I add Chicken 65 (₹260) to your cart?",
+      "dishes": [
+        "Chicken 65 (non-veg, Starters, ₹260, Hot)",
+        "Tandoori Chicken (Half) (non-veg, Starters, ₹300, Medium)",
+        "Amritsari Fish (non-veg, Starters, ₹330, Medium)",
+        "Mutton Seekh Kebab (non-veg, Starters, ₹340, Medium)"
+      ]
+    },
+    {
+      "question": "biriyani under 300",
+      "expected": "Biryani ≤ ₹300",
+      "pass": true,
+      "via": "rules",
+      "reply": "Sure! For biryanis under ₹300, here's what I'd suggest:\nMy pick: Chicken Dum Biryani. Hyderabadi-style chicken dum biryani with raita. It's one of our bestsellers.\nCan I add Chicken Dum Biryani (₹290) to your cart?",
+      "dishes": [
+        "Chicken Dum Biryani (non-veg, Biryani, ₹290, Medium)",
+        "Egg Biryani (non-veg, Biryani, ₹230, Medium)",
+        "Veg Dum Biryani (veg, Biryani, ₹240, Mild)",
+        "Mushroom Biryani (veg, Biryani, ₹260, Medium)"
+      ]
+    },
+    {
+      "question": "is panner butter masala sweet",
+      "expected": "Says it's mildly sweet",
+      "pass": true,
+      "via": "rules",
+      "reply": "Paneer Butter Masala is mildly sweet and creamy, from the tomato-butter makhani gravy. Paneer in a creamy tomato-butter gravy.\nCan I add Paneer Butter Masala (₹260) to your cart?",
+      "dishes": [
+        "Paneer Butter Masala (veg, Gravies & Curries, ₹260, Mild)"
+      ]
+    },
+    {
+      "question": "hw much is chiken biryani",
+      "expected": "Gives chicken biryani prices",
+      "pass": true,
+      "via": "rules",
+      "reply": "Sure! For non-veg chicken biryanis, here's what I'd suggest:\nMy pick: Chicken Dum Biryani. Hyderabadi-style chicken dum biryani with raita. It's one of our bestsellers.\nCan I add Chicken Dum Biryani (₹290) to your cart?",
+      "dishes": [
+        "Chicken Dum Biryani (non-veg, Biryani, ₹290, Medium)",
+        "Ambur Chicken Biryani (non-veg, Biryani, ₹300, Medium)"
+      ]
+    },
+    {
+      "question": "somthing light n healthy",
+      "expected": "Light/healthy dishes",
+      "pass": true,
+      "via": "rules",
+      "reply": "Sure! For light healthy dishes, here's what I'd suggest:\nMy pick: Tandoori Roti. Whole-wheat roti baked on the tandoor wall.\nCan I add Tandoori Roti (₹30) to your cart?",
+      "dishes": [
+        "Tandoori Roti (veg, Breads, ₹30)",
+        "Veg Puff (veg, Bakes, ₹40, Mild)",
+        "Missi Roti (veg, Breads, ₹45, Mild)",
+        "Masala Chaas (veg, Juices & Lassi, ₹70)"
+      ]
+    },
+    {
+      "question": "noodles",
+      "expected": "Says we don't have it",
+      "pass": true,
+      "via": "rules",
+      "reply": "Sorry, we don't have noodles on our menu. We're a dhaba and bakery, so you'll find tandoor breads, curries, biryani, starters, drinks, desserts and bakes.",
+      "dishes": []
+    },
+    {
+      "question": "dal fry",
+      "expected": "Dal Tadka",
+      "pass": true,
+      "via": "rules",
+      "reply": "We don't have dry veg dal dishes right now. The closest options are:\nMy pick: Dal Makhani. Black lentils slow-cooked overnight with butter and cream. It's one of our bestsellers.\nCan I add Dal Makhani (₹220) to your cart?",
+      "dishes": [
+        "Dal Makhani (veg, Gravies & Curries, ₹220, Mild)",
+        "Dal Tadka (veg, Gravies & Curries, ₹180, Mild)"
+      ]
+    },
+    {
+      "question": "vegan options",
+      "expected": "Vegan dishes",
+      "pass": true,
+      "via": "rules",
+      "reply": "Sure! For vegan dishes, here's what I'd suggest:\nMy pick: Tandoori Roti. Whole-wheat roti baked on the tandoor wall. For fully vegan, add a chef note: “cook in oil, no ghee or butter”.\nCan I add Tandoori Roti (₹30) to your cart?",
+      "dishes": [
+        "Tandoori Roti (veg, Breads, ₹30)",
+        "Fresh Lime Soda (veg, Juices & Lassi, ₹80)",
+        "Watermelon Juice (veg, Juices & Lassi, ₹100)",
+        "Steamed Basmati (veg, Rice, ₹110)"
+      ]
+    },
+    {
+      "question": "i dont eat egg, suggest a desert",
+      "expected": "Eggless sweets",
+      "pass": true,
+      "via": "rules",
+      "reply": "Sure! For eggless sweets, here's what I'd suggest:\nMy pick: Gulab Jamun (2 pcs). Warm khoya dumplings in rose syrup. It's one of our bestsellers.\nCan I add Gulab Jamun (2 pcs) (₹90) to your cart?",
+      "dishes": [
+        "Gulab Jamun (2 pcs) (veg, Desserts, ₹90)",
+        "Chocolate Truffle Pastry (veg, Bakes, ₹120)",
+        "Malai Kulfi (veg, Ice Cream & Kulfi, ₹100)",
+        "Rice Kheer (veg, Desserts, ₹110)"
+      ]
+    },
+    {
+      "question": "kulfi flavours",
+      "expected": "Kulfis",
+      "pass": true,
+      "via": "rules",
+      "reply": "Sure! For ice creams, here's what I'd suggest:\nMy pick: Malai Kulfi. Classic reduced-milk kulfi.\nCan I add Malai Kulfi (₹100) to your cart?",
+      "dishes": [
+        "Malai Kulfi (veg, Ice Cream & Kulfi, ₹100)",
+        "Kesar Pista Kulfi (veg, Ice Cream & Kulfi, ₹110)"
+      ]
+    },
+    {
+      "question": "veg n spicy starters plz",
+      "expected": "Spicy veg starters",
+      "pass": true,
+      "via": "rules",
+      "reply": "Sure! For spicy veg starters, here's what I'd suggest:\nMy pick: Paneer Tikka. Tandoor-charred paneer, peppers and onion. It's one of our bestsellers.\nCan I add Paneer Tikka (₹250) to your cart?",
+      "dishes": [
+        "Paneer Tikka (veg, Starters, ₹250, Medium)",
+        "Gobi 65 (veg, Starters, ₹190, Medium)"
+      ]
+    },
+    {
+      "question": "wht goes wid butter naan",
+      "expected": "Curries",
+      "pass": true,
+      "via": "rules",
+      "reply": "Butter Naan goes best with these:\nCan I add Dal Makhani (₹220) to your cart?",
+      "dishes": [
+        "Dal Makhani (veg, Gravies & Curries, ₹220, Mild)",
+        "Paneer Butter Masala (veg, Gravies & Curries, ₹260, Mild)",
+        "Chole Masala (veg, Gravies & Curries, ₹200, Medium)"
+      ]
+    }
+  ]
+}
