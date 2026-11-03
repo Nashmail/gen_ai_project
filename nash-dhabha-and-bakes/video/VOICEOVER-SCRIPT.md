@@ -4,7 +4,7 @@ Voice: Kokoro TTS (open source, runs locally), Indian male voice `hm_omega`, spe
 
 | Time | Line |
 |---|---|
-| 0.3–2.7 s | What if your dhaba had an A.I. waiter? |
+| 0.2–2.7 s | What if your dhaba had an A.I. waiter? |
 | 3.1–6.2 s | Meet Masala Mitra, from Nash Dhaaba and Bakes. |
 | 6.6–9.5 s | Just say hi. It greets you, and asks your name. |
 | 10.7–14.1 s | Tell it your mood, by voice. It listens, and types it for you. |
@@ -15,26 +15,12 @@ Voice: Kokoro TTS (open source, runs locally), Indian male voice `hm_omega`, spe
 | 26.1–27.9 s | and track your order, live. |
 | 29.1–31.2 s | The bill arrives right in the chat. |
 | 31.6–33.2 s | Pay, and rate your food. |
-| 34.1–41.6 s | Under the hood, it's RAG. It searches the real menu first, so every answer uses real dishes, and real prices. |
-| 41.9–51.0 s | I tested it like a real product. Eighty-four test steps: security attacks, a server crash, even Hinglish. Nineteen failures, all fixed. |
-| 51.4–58.5 s | Built by N. Mailesh, for Introduction to Gen A.I., guided by Professor Rakesh Kumar. |
+| 33.9–36.9 s | Need help? Ask it to call the waiter to your table. |
+| 37.2–40.9 s | Not sure about something? It never guesses. It asks the staff. |
+| 41.3–43.4 s | It speaks Hindi, and Tamil, too. |
+| 44.7–48.9 s | Every request lands on the staff desk, with customer ratings, live. |
+| 49.3–56.8 s | Under the hood, it's RAG. It searches the real menu first, so every answer uses real dishes, and real prices. |
+| 57.2–67.4 s | I tested it like a real product. Three hundred and forty-seven automated checks: security attacks, a server crash, Hindi, Tamil and Hinglish. All passing. |
+| 67.8–74.0 s | Built by N. Mailesh, for Introduction to Gen A.I., guided by Professor Rakesh Kumar. |
 
-## Rebuild
-
-```bash
-pip install kokoro-onnx soundfile
-```
-
-Download `kokoro-v1.0.onnx` and `voices-v1.0.bin` from the kokoro-onnx GitHub release `model-files-v1.0` into a folder, then:
-
-```bash
-python video/voiceover.py <model-folder> hm_omega
-```
-
-```bash
-python video/mix.py
-```
-
-```bash
-node video/render.js 30
-```
+Total length: 75.3 s.

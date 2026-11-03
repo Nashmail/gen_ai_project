@@ -23,11 +23,15 @@ LINES = [
     (24.3, "and track your order, live."),
     (27.3, "The bill arrives right in the chat."),
     (29.3, "Pay, and rate your food."),
-    (31.8, "Under the hood, it's RAG. It searches the real menu first, so every answer uses real dishes, and real prices."),
-    (38.2, "I tested it like a real product. Eighty-four test steps: security attacks, a server crash, even Hinglish. Nineteen failures, all fixed."),
-    (44.8, "Built by N. Mailesh, for Introduction to Gen A.I., guided by Professor Rakesh Kumar."),
+    (31.6, "Need help? Ask it to call the waiter to your table."),
+    (34.6, "Not sure about something? It never guesses. It asks the staff."),
+    (37.4, "It speaks Hindi, and Tamil, too."),
+    (40.8, "Every request lands on the staff desk, with customer ratings, live."),
+    (44.4, "Under the hood, it's RAG. It searches the real menu first, so every answer uses real dishes, and real prices."),
+    (50.8, "I tested it like a real product. Three hundred and forty-seven automated checks: security attacks, a server crash, Hindi, Tamil and Hinglish. All passing."),
+    (57.4, "Built by N. Mailesh, for Introduction to Gen A.I., guided by Professor Rakesh Kumar."),
 ]
-STAGE_END = 51.0
+STAGE_END = 63.6
 SPEED = 1.02
 GAP = 0.35
 k = Kokoro(os.path.join(MODEL_DIR, "kokoro-v1.0.onnx"), os.path.join(MODEL_DIR, "voices-v1.0.bin"))
